@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Aurelie - Custom Fine Jewelry | Engagement Rings & Statement Pieces</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@0;1&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1A1A2E;
+            --gold: #D4AF37;
+            --pearl: #F8F4F0;
+            --burgundy: #722F37;
+            --white: #ffffff;
+            --text-dark: #2d2d2d;
+            --text-light: #666666;
+            --blush: #F5D5D0;
+            --emerald: #2d5f4f;
+            --sapphire: #1a3a52;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            line-height: 1.3;
+        }
+
+        p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        /* KEYFRAME ANIMATIONS */
+        @keyframes shimmer {
+            0%, 100% { text-shadow: 0 0 0px rgba(212, 175, 55, 0); }
+            50% { text-shadow: 0 0 15px rgba(212, 175, 55, 0.8), 0 0 30px rgba(212, 175, 55, 0.4); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .shimmer-text {
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* STICKY NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-logo {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--pearl);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.7rem 1.5rem;
+            border-radius: 2px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #0f1620 100%);
+            color: var(--pearl);
+            padding: clamp(8rem, 15vh, 12rem) 2rem;
+            margin-top: 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(114, 47, 55, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            color: var(--pearl);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .hero .gold-accent {
+            color: var(--gold);
+        }
+
+        .hero p {
+            color: var(--pearl);
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+            margin: 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .hero-cta:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* DIVIDER */
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 3rem 0;
+        }
+
+        .divider-text {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-family: 'Bodoni Moda', serif;
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+        }
+
+        /* PROBLEM AGITATION SECTION */
+        .problem-section {
+            background: var(--pearl);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+        }
+
+        .section-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .problem-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--navy);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 2rem;
+            border-left: 4px solid var(--gold);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .problem-card h3 {
+            color: var(--burgundy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .problem-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* DREAM BUYER SECTION */
+        .dream-buyer {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--burgundy) 100%);
+            color: var(--pearl);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+            text-align: center;
+        }
+
+        .dream-buyer h2 {
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-style: italic;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .dream-buyer-traits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trait {
+            font-size: 1.1rem;
+            color: var(--pearl);
+            padding: 1.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 2px;
+        }
+
+        /* SOLUTION REVEAL */
+        .solution {
+            background: var(--white);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+        }
+
+        .solution h2 {
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 3rem;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+        }
+
+        .feature h3 {
+            color: var(--navy);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .feature p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* CRAFTSMANSHIP TIMELINE */
+        .craftsmanship {
+            background: linear-gradient(135deg, #f5f1eb 0%, var(--pearl) 100%);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+        }
+
+        .craftsmanship h2 {
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 4rem;
+        }
+
+        .timeline {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+
+        .timeline-step {
+            text-align: center;
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .timeline-step::after {
+            content: '→';
+            position: absolute;
+            right: -25px;
+            top: 40px;
+            font-size: 2rem;
+            color: var(--gold);
+            display: none;
+        }
+
+        .timeline-step:last-child::after {
+            display: none !important;
+        }
+
+        @media (min-width: 768px) {
+            .timeline-step::after {
+                display: block;
+            }
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+
+        .step-title {
+            font-family: 'Bodoni Moda', serif;
+            color: var(--navy);
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+
+        .step-description {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* COLLECTION SHOWCASE */
+        .collections {
+            background: var(--white);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+        }
+
+        .collections h2 {
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 3rem;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .collection-card {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .collection-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .collection-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, var(--blush) 0%, var(--sapphire) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collection-card:nth-child(1) .collection-image {
+            background: linear-gradient(135deg, #ffe6e0 0%, #b8860b 100%);
+        }
+
+        .collection-card:nth-child(2) .collection-image {
+            background: linear-gradient(135deg, #e8d5f2 0%, #2d5f4f 100%);
+        }
+
+        .collection-card:nth-child(3) .collection-image {
+            background: linear-gradient(135deg, #fce4ec 0%, #1a3a52 100%);
+        }
+
+        .collection-card:nth-child(4) .collection-image {
+            background: linear-gradient(135deg, #fff3e0 0%, #8b4513 100%);
+        }
+
+        .collection-content {
+            padding: 2rem;
+        }
+
+        .collection-card h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .collection-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .collection-cta {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .collection-cta:hover {
+            letter-spacing: 2px;
+        }
+
+        /* SOCIAL PROOF */
+        .testimonials {
+            background: linear-gradient(135deg, var(--navy) 0%, #0f1620 100%);
+            color: var(--pearl);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            color: var(--gold);
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-left: 3px solid var(--gold);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-context {
+            font-size: 0.85rem;
+            color: rgba(248, 244, 240, 0.7);
+        }
+
+        /* AUTHORITY SECTION */
+        .authority {
+            background: var(--pearl);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+            text-align: center;
+        }
+
+        .authority h2 {
+            color: var(--navy);
+            margin-bottom: 3rem;
+        }
+
+        .authority-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .stat-number {
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--navy);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .authority-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .badge {
+            background: var(--white);
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 2px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge h3 {
+            color: var(--navy);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .badge p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* OFFER SECTION */
+        .offer {
+            background: linear-gradient(135deg, var(--burgundy) 0%, var(--navy) 100%);
+            color: var(--pearl);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .offer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .offer h2 {
+            color: var(--gold);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .offer-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .offer-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .offer-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 2px;
+        }
+
+        .offer-item h3 {
+            color: var(--pearl);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .offer-item p {
+            color: rgba(248, 244, 240, 0.9);
+            font-size: 0.95rem;
+        }
+
+        .offer-cta {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 2rem;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            border: none;
+        }
+
+        .offer-cta:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* RISK REVERSAL */
+        .guarantee {
+            background: var(--pearl);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+        }
+
+        .guarantee h2 {
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 3rem;
+        }
+
+        .guarantee-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .guarantee-item {
+            background: var(--white);
+            padding: 2rem;
+            border: 2px solid var(--gold);
+            text-align: center;
+            border-radius: 2px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .guarantee-item h3 {
+            color: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .guarantee-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* URGENCY SECTION */
+        .urgency {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--burgundy) 100%);
+            color: var(--pearl);
+            padding: clamp(3rem, 8vh, 6rem) 2rem;
+            text-align: center;
+        }
+
+        .urgency h2 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .urgency p {
+            color: var(--pearl);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .urgency-highlight {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin: 1rem 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* FAQ SECTION */
+        .faq {
+            background: var(--white);
+            padding: clamp(4rem, 10vh, 8rem) 2rem;
+        }
+
+        .faq h2 {
+            text-align: center;
+            color: var(--navy);
+            margin-bottom: 3rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 2rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--gold);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, #0f1620 100%);
+            color: var(--pearl);
+            padding: clamp(5rem, 12vh, 10rem) 2rem;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: var(--gold);
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        .final-cta p {
+            color: var(--pearl);
+            margin-bottom: 2rem;
+            font-size: 1.15rem;
+        }
+
+        .final-cta-button {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid var(--gold);
+            cursor: pointer;
+            border: none;
+        }
+
+        .final-cta-button:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* FLOATING CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            animation: float 3s ease-in-out infinite;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: var(--pearl);
+            padding: 3rem 2rem 1.5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(248, 244, 240, 0.8);
+            margin-bottom: 0.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(248, 244, 240, 0.6);
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-cta {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem;
+                margin-top: 50px;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-step::after {
+                display: none;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- STICKY NAVIGATION -->
+    <nav>
+        <div class="nav-logo">MAISON AURELIE</div>
+        <ul class="nav-links">
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#process">The Process</a></li>
+            <li><a href="#testimonials">Stories</a></li>
+            <li><a href="#offer">The Offer</a></li>
+        </ul>
+        <a href="#offer" class="nav-cta">Book Consultation</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1><span class="gold-accent">Every Piece of Jewelry Tells a Story.</span> Most Brands Just Forgot to Ask You Yours.</h1>
+            <p>In a world drowning in mass-produced perfection, we believe jewelry should be as unique as the moment it celebrates. Maison Aurelie creates bespoke fine jewelry that transforms your story into a timeless work of art.</p>
+            <button class="hero-cta" onclick="document.querySelector('#offer').scrollIntoView({ behavior: 'smooth' });">Begin Your Custom Journey</button>
+        </div>
+    </section>
+
+    <div class="divider-text">✦ THE MAISON AURELIE DIFFERENCE ✦</div>
+
+    <!-- PROBLEM AGITATION -->
+    <section class="problem-section">
+        <div class="section-container">
+            <h2>Why Mass-Produced Jewelry Falls Short</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Thousands Own the Same Piece</h3>
+                    <p>Your "unique" design exists in a hundred other jewelry boxes across the city. Fast fashion has infiltrated luxury.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Quality Disappears Within Months</h3>
+                    <p>Inferior plating tarnishes. Cheap alloys cause allergic reactions. What gleamed on day one becomes a regret by month three.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>You're Paying for a Name, Not Craft</h3>
+                    <p>Massive markups fund Instagram ads, not master artisans. You deserve jewelry created with intention, not manufactured for margins.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Shopping Feels Transactional</h3>
+                    <p>A rushed appointment. A generic box. No understanding of what this moment means to you. Jewelry deserves better.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DREAM BUYER -->
+    <section class="dream-buyer">
+        <h2>If you believe jewelry should be as unique as the moment it celebrates...</h2>
+        <p style="color: var(--pearl); font-size: 1.05rem; margin-bottom: 2rem;">You're exactly who we created Maison Aurelie for.</p>
+        <div class="dream-buyer-traits">
+            <div class="trait">You value authenticity over trends</div>
+            <div class="trait">Quality matters more than quantity</div>
+            <div class="trait">You want a story behind your jewelry</div>
+            <div class="trait">You deserve to be heard, not rushed</div>
+            <div class="trait">Investment pieces, not impulse buys</div>
+            <div class="trait">Jewelry that lasts generations</div>
+        </div>
+    </section>
+
+    <!-- SOLUTION REVEAL -->
+    <section class="solution">
+        <div class="section-container">
+            <h2>Meet Maison Aurelie</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: var(--text-light);">Where your story becomes precious.</p>
+            <div class="solution-features">
+                <div class="feature">
+                    <div class="feature-icon">👑</div>
+                    <h3>Bespoke Design</h3>
+                    <p>Every piece is born from collaboration. Your vision, our expertise. No two pieces ever the same.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✨</div>
+                    <h3>18K Gold & Ethical Gemstones</h3>
+                    <p>Only the finest. Recycled gold. Responsibly sourced diamonds and precious gems. Jewelry you can feel good about.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Master Artisans</h3>
+                    <p>Handcrafted by artisans with 30+ years of experience. Every detail finished with intention. No machines, no shortcuts.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Forever Guarantee</h3>
+                    <p>Lifetime warranty. Free resizing. Annual inspections. We stand behind our work for as long as you wear it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRAFTSMANSHIP TIMELINE -->
+    <section class="craftsmanship">
+        <div class="section-container">
+            <h2>Your Piece Comes to Life</h2>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Consultation</div>
+                    <div class="step-description">We listen. You dream. We understand not just what you want, but why it matters.</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Design</div>
+                    <div class="step-description">Our designers craft your vision. Multiple sketches. 3D renderings. Your approval at every stage.</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Handcraft</div>
+                    <div class="step-description">Master artisans bring it to life. Every curve, every setting, done by skilled hands with decades of mastery.</div>
+                </div>
+                <div class="timeline-step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Finishing</div>
+                    <div class="step-description">Final polish. Quality inspection. Your piece arrives in luxury packaging, ready to become a memory.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTION SHOWCASE -->
+    <section class="collections" id="collections">
+        <div class="section-container">
+            <h2>Our Heritage Collections</h2>
+            <div class="collection-grid">
+                <div class="collection-card">
+                    <div class="collection-image">💍</div>
+                    <div class="collection-content">
+                        <h3>Engagement Rings</h3>
+                        <p>The beginning of forever. We create engagement rings that tell your unique love story—whether vintage-inspired, modern, or entirely unconventional.</p>
+                        <a href="#offer" class="collection-cta">Explore ➜</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">✨</div>
+                    <div class="collection-content">
+                        <h3>Statement Necklaces</h3>
+                        <p>Bold. Unmissable. Conversation-starting. Our statement necklaces are architectural pieces that demand to be worn and admired.</p>
+                        <a href="#offer" class="collection-cta">Explore ➜</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">🔗</div>
+                    <div class="collection-content">
+                        <h3>Signature Bracelets</h3>
+                        <p>Elegance on your wrist. From delicate chains to bold cuffs, each bracelet is a personal statement and cherished daily companion.</p>
+                        <a href="#offer" class="collection-cta">Explore ➜</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">◆</div>
+                    <div class="collection-content">
+                        <h3>Heritage Earrings</h3>
+                        <p>Timeless sophistication. Whether studs, drops, or dramatic chandeliers, our earrings frame your beauty with precision and grace.</p>
+                        <a href="#offer" class="collection-cta">Explore ➜</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-container">
+            <h2>Stories Told in Gold</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I wanted my engagement ring to be absolutely one-of-a-kind, and Maison Aurelie delivered beyond my wildest dreams. From the first consultation, they understood the weight of this moment. Holding my custom ring for the first time felt like holding my love story in physical form. It's been two years and I still catch myself staring at it."</p>
+                    <div class="testimonial-author">— Sarah & Michael</div>
+                    <div class="testimonial-context">Engagement Ring, 2022</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"For our 25th anniversary, I wanted something that felt as monumental as our marriage. This necklace is it. The design process was collaborative and joyful. Every time I wear it, I'm transported back to that day I said 'yes.' A piece of jewelry shouldn't just sit pretty—it should remind you why it exists. Mine does."</p>
+                    <div class="testimonial-author">— Michelle K.</div>
+                    <div class="testimonial-context">Statement Necklace, Anniversary Gift</div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I bought myself this bracelet as a celebration of my own strength. After a year of incredible growth, I wanted to mark it with something as real and solid as how I felt about myself. What arrived was more beautiful than I imagined. It's become my daily reminder that I am enough, exactly as I am."</p>
+                    <div class="testimonial-author">— Jennifer T.</div>
+                    <div class="testimonial-context">Signature Bracelet, Self-Purchase</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY -->
+    <section class="authority">
+        <div class="section-container">
+            <h2>Trusted by Those Who Know</h2>
+            <div class="authority-stats">
+                <div class="stat">
+                    <div class="stat-number">3,000+</div>
+                    <div class="stat-label">Custom Pieces Created</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years of Mastery</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">GIA Certified Stones</div>
+                </div>
+            </div>
+            <div class="authority-badges">
+                <div class="badge">
+                    <div class="badge-icon">🏆</div>
+                    <h3>Master Goldsmith</h3>
+                    <p>Our lead artisan holds the highest certification in the American Goldsmith Association. Decades of award-winning work.</p>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">📜</div>
+                    <h3>Heritage Credentials</h3>
+                    <p>Featured in Vogue, Brides Magazine, and The New York Times. Recognized as one of America's premier bespoke jewelry houses.</p>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">✓</div>
+                    <h3>Ethical Excellence</h3>
+                    <p>Member of Responsible Jewellery Council. Every stone traced to source. Recycled gold practices. Sustainability at our core.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GODFATHER OFFER -->
+    <section class="offer" id="offer">
+        <div class="offer-content">
+            <div class="offer-tag">LIMITED OFFER</div>
+            <h2>The Signature Experience</h2>
+            <p style="color: var(--pearl); margin: 1.5rem 0;">Everything you need to create your dream piece, included.</p>
+
+            <div class="offer-items">
+                <div class="offer-item">
+                    <h3>Custom Design Consultation</h3>
+                    <p>Normally $250. Included FREE. We listen to your vision without the clock ticking.</p>
+                </div>
+                <div class="offer-item">
+                    <h3>3D Render Preview</h3>
+                    <p>See your piece before it exists. Multiple iterations. Your approval required before we craft a single layer of gold.</p>
+                </div>
+                <div class="offer-item">
+                    <h3>Complimentary Engraving</h3>
+                    <p>A date, initials, or your own words. Engraved inside your piece to mark the moment forever.</p>
+                </div>
+                <div class="offer-item">
+                    <h3>Luxury Presentation</h3>
+                    <p>Your piece arrives in our signature silk-lined box. Ready to become a memory, ready to tell a story.</p>
+                </div>
+            </div>
+
+            <div style="margin: 2rem 0; padding: 2rem; border: 2px solid var(--gold); border-radius: 2px;">
+                <p style="color: var(--pearl); font-size: 1.2rem; margin: 0;">Valid on any custom piece over $500</p>
+                <p style="color: rgba(248, 244, 240, 0.8); font-size: 0.95rem; margin: 1rem 0 0 0;">PLUS: <strong style="color: var(--gold);">10% off your first custom piece</strong></p>
+            </div>
+
+            <button class="offer-cta" onclick="alert('Thank you for your interest! Contact us at hello@maisonaurelie.com to book your consultation.');">Book Your Free Consultation Now</button>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL -->
+    <section class="guarantee">
+        <div class="section-container">
+            <h2>The Forever Promise</h2>
+            <p style="text-align: center; margin-bottom: 3rem; color: var(--text-light);">We don't just create jewelry. We create legacy.</p>
+            <div class="guarantee-items">
+                <div class="guarantee-item">
+                    <h3>Lifetime Warranty</h3>
+                    <p>Against any defect in materials or craftsmanship. No terms, no catches. If it breaks, we fix it. For life.</p>
+                </div>
+                <div class="guarantee-item">
+                    <h3>Free Resizing</h3>
+                    <p>Your fingers change. Your life changes. We resize your piece—perfectly—whenever you need it. No cost. No questions.</p>
+                </div>
+                <div class="guarantee-item">
+                    <h3>Annual Inspection</h3>
+                    <p>Every year, bring your piece in for a complimentary professional cleaning and inspection. We ensure it stays pristine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY -->
+    <section class="urgency">
+        <h2>Reserve Your Spot Today</h2>
+        <p>Bespoke jewelry requires time. Our artisans are booked months in advance. We work with only a select number of clients each month to ensure every piece receives the attention it deserves.</p>
+        <div class="urgency-highlight">Only 8 consultation spots available this month.</div>
+        <p style="margin-top: 2rem;">The sooner you begin your story with us, the sooner you'll wear your forever piece.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="section-container">
+            <h2>Questions About Your Custom Piece</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>How long does the custom process take?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>From consultation to delivery, the timeline typically spans 8-12 weeks. This includes the initial consultation (1 week), design iterations (2-3 weeks), your final approval (1 week), and handcrafting (4-6 weeks). Rush options are available for additional investment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>What metals do you work with?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We exclusively use 18K gold (white, yellow, and rose), platinum, and palladium. All gold is either ethically mined or recycled. We do not work with lower karat golds or imitation metals. Your piece is an investment meant to last generations.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>How do you source gemstones?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Every diamond and precious gemstone is sourced through verified suppliers who maintain full chain-of-custody documentation. All diamonds meet Kimberley Process standards, and we work exclusively with conflict-free stones. Certification from GIA is standard for all diamonds over 0.5 carats.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>What's the pricing structure?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pricing varies based on materials, complexity, and stone selection. Custom engagement rings range $3,500-$15,000+. Statement necklaces start at $2,000. We provide detailed quotes after the design phase is complete. A 50% deposit secures your spot; the balance is due upon completion.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Can you resize existing jewelry?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. Whether your piece is from Maison Aurelie or elsewhere, we offer professional resizing at competitive rates. For Maison Aurelie pieces, resizing is complimentary as part of our Forever Promise. Bring your piece in during business hours or ship it to us securely.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Do you offer insurance recommendations?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We absolutely recommend insuring your custom piece. We'll provide a detailed appraisal document for insurance purposes at the time of completion. We partner with several reputable jewelry insurers and can provide referrals. Appraisal insurance typically costs 1-3% of the piece's value annually.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <h2>Begin Your Story</h2>
+        <p>Every masterpiece begins with a conversation. Tell us about the moment you want to capture in gold. Tell us what matters. We'll listen like your story is the most important one we've ever heard—because it is.</p>
+        <button class="final-cta-button" onclick="alert('Thank you for your interest! Contact us at hello@maisonaurelie.com or call 1-800-AURELIE to schedule your free consultation.');">Book Your Consultation</button>
+        <p style="margin-top: 2rem; font-size: 0.95rem; color: rgba(248, 244, 240, 0.7);">hello@maisonaurelie.com | 1-800-AURELIE | By appointment only</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>MAISON AURELIE</h4>
+                <p>Bespoke fine jewelry crafted by master artisans. Every piece tells a story. Let us help you tell yours.</p>
+            </div>
+            <div class="footer-section">
+                <h4>COLLECTIONS</h4>
+                <a href="#collections">Engagement Rings</a>
+                <a href="#collections">Statement Necklaces</a>
+                <a href="#collections">Signature Bracelets</a>
+                <a href="#collections">Heritage Earrings</a>
+            </div>
+            <div class="footer-section">
+                <h4>SERVICE</h4>
+                <a href="#offer">Book Consultation</a>
+                <a href="#">Custom Design</a>
+                <a href="#">Resizing & Repair</a>
+                <a href="#">Insurance Appraisals</a>
+            </div>
+            <div class="footer-section">
+                <h4>CONTACT</h4>
+                <p>hello@maisonaurelie.com</p>
+                <p>1-800-AURELIE</p>
+                <p>By Appointment Only</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Maison Aurelie. All rights reserved. | Ethically Sourced | Responsibly Crafted | Forever Guaranteed</p>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA BUTTON -->
+    <button class="floating-cta" onclick="document.querySelector('#offer').scrollIntoView({ behavior: 'smooth' });">Book Now</button>
+
+    <script>
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.closest('.faq-item');
+                item.classList.toggle('active');
+            });
+        });
+
+        // Add scroll effect to nav
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.borderBottomColor = 'rgba(212, 175, 55, 0.5)';
+            } else {
+                nav.style.borderBottomColor = 'rgba(212, 175, 55, 0.2)';
+            }
+        });
+    </script>
+</body>
+</html>

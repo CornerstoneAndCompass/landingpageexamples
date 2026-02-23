@@ -1,0 +1,2140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX PRE-X | Elite Pre-Workout Formula</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0A0A0A;
+            --dark-bg: #0F0F0F;
+            --darker-bg: #151515;
+            --red: #FF2D2D;
+            --red-hover: #FF1A1A;
+            --red-glow: #FF2D2D;
+            --green: #39FF14;
+            --white: #FFFFFF;
+            --text-gray: #E0E0E0;
+            --text-light-gray: #999999;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--black);
+            color: var(--text-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* STICKY NAVIGATION */
+        nav.sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.98) 0%, rgba(10, 10, 10, 0.95) 100%);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 45, 45, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--red);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--red), #FF5D5D);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 45, 45, 0.3);
+            cursor: pointer;
+            border: none;
+        }
+
+        .nav-cta:hover {
+            box-shadow: 0 0 30px rgba(255, 45, 45, 0.6);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            nav.sticky-nav {
+                padding: 12px 20px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-cta {
+                padding: 10px 20px;
+                font-size: 11px;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--black) 50%, #1a0a0a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 40px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 45, 45, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(57, 255, 20, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: var(--white);
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 .highlight {
+            color: var(--red);
+            text-shadow: 0 0 30px rgba(255, 45, 45, 0.5);
+        }
+
+        .hero-subheading {
+            font-size: 20px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--red), #FF5D5D);
+            color: var(--white);
+            padding: 20px 50px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 40px rgba(255, 45, 45, 0.4);
+            border: 2px solid var(--red);
+            cursor: pointer;
+        }
+
+        .hero-cta:hover {
+            box-shadow: 0 0 60px rgba(255, 45, 45, 0.7);
+            transform: translateY(-4px);
+            background: linear-gradient(135deg, #FF5D5D, var(--red));
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 45, 45, 0.1);
+            border: 2px solid rgba(255, 45, 45, 0.3);
+            color: var(--red);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                margin-top: 50px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-subheading {
+                font-size: 16px;
+            }
+
+            .hero-cta {
+                padding: 15px 35px;
+                font-size: 14px;
+            }
+        }
+
+        /* PROBLEM SECTION */
+        .problem {
+            background: var(--darker-bg);
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .problem h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .problem h2 .red-text {
+            color: var(--red);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, rgba(255, 45, 45, 0.05) 0%, rgba(255, 45, 45, 0.02) 100%);
+            border: 1px solid rgba(255, 45, 45, 0.2);
+            padding: 30px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .problem-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .problem-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            color: var(--red);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .problem-card p {
+            font-size: 14px;
+            color: var(--text-light-gray);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .problem {
+                padding: 60px 20px;
+            }
+
+            .problem h2 {
+                font-size: 32px;
+            }
+
+            .problem-grid {
+                gap: 20px;
+            }
+        }
+
+        /* DREAM BUYER SECTION */
+        .dream-buyer {
+            background: var(--black);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .dream-buyer h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .dream-buyer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.08) 0%, rgba(255, 45, 45, 0.08) 100%);
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            padding: 50px;
+            border-radius: 4px;
+        }
+
+        .dream-buyer-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .dream-buyer-content strong {
+            color: var(--green);
+        }
+
+        @media (max-width: 768px) {
+            .dream-buyer {
+                padding: 60px 20px;
+            }
+
+            .dream-buyer h2 {
+                font-size: 28px;
+            }
+
+            .dream-buyer-content {
+                padding: 30px;
+            }
+
+            .dream-buyer-content p {
+                font-size: 16px;
+            }
+        }
+
+        /* SOLUTION SECTION */
+        .solution {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--black) 100%);
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 50px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .solution h2 .red-text {
+            color: var(--red);
+        }
+
+        .product-showcase {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .product-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 45, 45, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+
+        .product-mockup {
+            position: relative;
+            z-index: 2;
+            font-size: 120px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .product-details h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ingredient-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .ingredient {
+            border-left: 4px solid var(--red);
+            padding-left: 20px;
+        }
+
+        .ingredient-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .ingredient-dose {
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .ingredient-description {
+            font-size: 13px;
+            color: var(--text-light-gray);
+            line-height: 1.6;
+        }
+
+        .dose-bar {
+            background: rgba(255, 45, 45, 0.1);
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .dose-fill {
+            background: linear-gradient(90deg, var(--red), var(--green));
+            height: 100%;
+            border-radius: 3px;
+            animation: fillBar 1.5s ease-out forwards;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+            to { width: var(--fill-width); }
+        }
+
+        .ingredient:nth-child(1) .dose-fill { --fill-width: 95%; }
+        .ingredient:nth-child(2) .dose-fill { --fill-width: 90%; }
+        .ingredient:nth-child(3) .dose-fill { --fill-width: 88%; }
+        .ingredient:nth-child(4) .dose-fill { --fill-width: 85%; }
+        .ingredient:nth-child(5) .dose-fill { --fill-width: 92%; }
+
+        @media (max-width: 768px) {
+            .solution {
+                padding: 60px 20px;
+            }
+
+            .solution h2 {
+                font-size: 32px;
+            }
+
+            .product-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .product-mockup {
+                font-size: 80px;
+            }
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            background: var(--black);
+            padding: 80px 40px;
+        }
+
+        .how-it-works h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .phase {
+            background: linear-gradient(135deg, rgba(255, 45, 45, 0.1) 0%, rgba(57, 255, 20, 0.05) 100%);
+            border: 2px solid rgba(255, 45, 45, 0.3);
+            padding: 40px;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .phase:hover {
+            border-color: var(--red);
+            box-shadow: 0 0 30px rgba(255, 45, 45, 0.2);
+        }
+
+        .phase-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 56px;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        .phase-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phase-time {
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phase p {
+            font-size: 14px;
+            color: var(--text-light-gray);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .how-it-works {
+                padding: 60px 20px;
+            }
+
+            .how-it-works h2 {
+                font-size: 32px;
+            }
+
+            .phases-grid {
+                gap: 20px;
+            }
+        }
+
+        /* RESULTS SECTION */
+        .results {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--black) 100%);
+            padding: 80px 40px;
+            position: relative;
+        }
+
+        .results h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .results-intro {
+            text-align: center;
+            font-size: 16px;
+            color: var(--text-light-gray);
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            background: linear-gradient(135deg, rgba(255, 45, 45, 0.1) 0%, rgba(57, 255, 20, 0.08) 100%);
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            padding: 40px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .results {
+                padding: 60px 20px;
+            }
+
+            .results h2 {
+                font-size: 32px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            background: var(--black);
+            padding: 80px 40px;
+        }
+
+        .testimonials h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, rgba(255, 45, 45, 0.05) 100%);
+            border: 1px solid rgba(255, 45, 45, 0.2);
+            padding: 40px;
+            border-radius: 4px;
+        }
+
+        .testimonial-avatar {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-title {
+            font-size: 13px;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--text-light-gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-stats {
+            display: flex;
+            gap: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 45, 45, 0.2);
+        }
+
+        .testimonial-stat {
+            flex: 1;
+        }
+
+        .testimonial-stat-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .testimonial-stat-label {
+            font-size: 11px;
+            color: var(--text-light-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                padding: 60px 20px;
+            }
+
+            .testimonials h2 {
+                font-size: 32px;
+            }
+
+            .testimonials-grid {
+                gap: 20px;
+            }
+        }
+
+        /* AUTHORITY */
+        .authority {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--black) 100%);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .authority h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .authority-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .authority-stat {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+        }
+
+        .authority-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(255, 45, 45, 0.05) 100%);
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            padding: 20px;
+            border-radius: 4px;
+            flex: 0 1 200px;
+        }
+
+        .badge-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .badge-text {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .authority {
+                padding: 60px 20px;
+            }
+
+            .authority h2 {
+                font-size: 32px;
+            }
+
+            .authority-stat {
+                font-size: 24px;
+            }
+
+            .badges {
+                gap: 15px;
+            }
+
+            .badge {
+                flex: 0 1 160px;
+            }
+        }
+
+        /* OFFER SECTION */
+        .offer {
+            background: var(--black);
+            padding: 80px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--red), var(--green), transparent);
+        }
+
+        .offer-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .offer h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 44px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .offer h2 .red-text {
+            color: var(--red);
+        }
+
+        .offer-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .offer-item {
+            background: linear-gradient(135deg, rgba(255, 45, 45, 0.1) 0%, rgba(57, 255, 20, 0.05) 100%);
+            border: 2px solid rgba(57, 255, 20, 0.3);
+            padding: 30px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .offer-item-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .offer-item-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .offer-item-value {
+            font-size: 13px;
+            color: var(--green);
+            font-weight: 600;
+        }
+
+        .pricing-section {
+            background: linear-gradient(135deg, rgba(255, 45, 45, 0.15) 0%, rgba(57, 255, 20, 0.1) 100%);
+            border: 2px solid rgba(57, 255, 20, 0.4);
+            padding: 50px;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .total-value {
+            font-size: 16px;
+            color: var(--text-light-gray);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .value-amount {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+        }
+
+        .vs {
+            font-size: 14px;
+            color: var(--text-light-gray);
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .price-original {
+            text-align: right;
+        }
+
+        .original-label {
+            font-size: 12px;
+            color: var(--text-light-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .original-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            color: var(--text-light-gray);
+            text-decoration: line-through;
+        }
+
+        .price-arrow {
+            font-size: 24px;
+            color: var(--green);
+        }
+
+        .price-final {
+            text-align: left;
+        }
+
+        .final-label {
+            font-size: 12px;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .final-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            color: var(--red);
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255, 45, 45, 0.4);
+        }
+
+        .savings {
+            font-size: 14px;
+            color: var(--green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .offer-cta {
+            display: block;
+            background: linear-gradient(135deg, var(--red), #FF5D5D);
+            color: var(--white);
+            padding: 22px 50px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 40px rgba(255, 45, 45, 0.4);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .offer-cta:hover {
+            box-shadow: 0 0 60px rgba(255, 45, 45, 0.7);
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 768px) {
+            .offer {
+                padding: 60px 20px;
+            }
+
+            .offer h2 {
+                font-size: 32px;
+            }
+
+            .pricing-section {
+                padding: 30px;
+            }
+
+            .pricing-row {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .final-price {
+                font-size: 36px;
+            }
+
+            .offer-cta {
+                padding: 18px 35px;
+                font-size: 16px;
+            }
+        }
+
+        /* RISK REVERSAL */
+        .risk-reversal {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--black) 100%);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .risk-reversal h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guarantee-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(57, 255, 20, 0.1) 0%, rgba(57, 255, 20, 0.05) 100%);
+            border: 3px solid rgba(57, 255, 20, 0.4);
+            padding: 50px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .guarantee-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            color: var(--green);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .guarantee-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        .guarantee-fine {
+            font-size: 12px;
+            color: var(--text-light-gray);
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .risk-reversal {
+                padding: 60px 20px;
+            }
+
+            .risk-reversal h2 {
+                font-size: 32px;
+            }
+
+            .guarantee-box {
+                padding: 30px;
+            }
+
+            .guarantee-title {
+                font-size: 22px;
+            }
+
+            .guarantee-text {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+        }
+
+        /* URGENCY */
+        .urgency {
+            background: var(--black);
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .urgency h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .urgency-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .urgency-item {
+            background: linear-gradient(135deg, rgba(255, 45, 45, 0.1) 0%, rgba(255, 45, 45, 0.05) 100%);
+            border: 2px solid rgba(255, 45, 45, 0.3);
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .urgency-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .urgency-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            color: var(--red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .urgency-text {
+            font-size: 16px;
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .timer {
+            font-family: 'Oswald', sans-serif;
+            font-size: 32px;
+            color: var(--red);
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(255, 45, 45, 0.4);
+        }
+
+        .stock-bar {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 45, 45, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+
+        .stock-fill {
+            background: linear-gradient(90deg, var(--red), #FF5D5D);
+            height: 100%;
+            width: 89%;
+            border-radius: 5px;
+        }
+
+        .stock-text {
+            font-size: 12px;
+            color: var(--red);
+            margin-top: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .urgency {
+                padding: 60px 20px;
+            }
+
+            .urgency h2 {
+                font-size: 32px;
+            }
+
+            .urgency-label {
+                font-size: 18px;
+            }
+
+            .timer {
+                font-size: 24px;
+            }
+        }
+
+        /* FAQ */
+        .faq {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--black) 100%);
+            padding: 80px 40px;
+        }
+
+        .faq h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, rgba(255, 45, 45, 0.05) 100%);
+            border: 1px solid rgba(255, 45, 45, 0.2);
+            margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, rgba(255, 45, 45, 0.1) 0%, rgba(255, 45, 45, 0.05) 100%);
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 45, 45, 0.1);
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, rgba(255, 45, 45, 0.15) 0%, rgba(255, 45, 45, 0.08) 100%);
+        }
+
+        .faq-question.active {
+            border-bottom: 1px solid rgba(255, 45, 45, 0.3);
+        }
+
+        .faq-q-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            color: var(--red);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: var(--black);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 25px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            font-size: 14px;
+            color: var(--text-light-gray);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .faq {
+                padding: 60px 20px;
+            }
+
+            .faq h2 {
+                font-size: 32px;
+            }
+
+            .faq-q-text {
+                font-size: 14px;
+            }
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--black) 0%, var(--darker-bg) 100%);
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 45, 45, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .final-cta h2 .red-text {
+            color: var(--red);
+        }
+
+        .final-cta-text {
+            font-size: 18px;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--red), #FF5D5D);
+            color: var(--white);
+            padding: 22px 60px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 50px rgba(255, 45, 45, 0.5);
+            border: none;
+            cursor: pointer;
+        }
+
+        .final-cta-button:hover {
+            box-shadow: 0 0 80px rgba(255, 45, 45, 0.8);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .final-cta {
+                padding: 60px 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .final-cta-text {
+                font-size: 16px;
+            }
+
+            .final-cta-button {
+                padding: 18px 40px;
+                font-size: 16px;
+            }
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--darker-bg);
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 45, 45, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .footer-section a {
+            display: block;
+            color: var(--text-light-gray);
+            text-decoration: none;
+            font-size: 12px;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 45, 45, 0.2);
+            padding-top: 30px;
+            font-size: 12px;
+            color: var(--text-light-gray);
+        }
+
+        .footer-legal {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .footer-legal a {
+            color: var(--text-light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--red);
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 20px;
+            }
+
+            .footer-content {
+                gap: 20px;
+            }
+        }
+
+        /* UTILITIES */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-large {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY NAVIGATION -->
+<nav class="sticky-nav">
+    <div class="logo">APEX <span>PRE-X</span></div>
+    <ul class="nav-menu">
+        <li><a href="#ingredients">INGREDIENTS</a></li>
+        <li><a href="#results">RESULTS</a></li>
+        <li><a href="#testimonials">ATHLETES</a></li>
+        <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <button class="nav-cta">ORDER NOW</button>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">⚡ LIMITED TIME OFFER ⚡</div>
+        <h1>97% of Pre-Workouts Are <span class="highlight">Underdosed Garbage.</span> Here's What Elite Athletes Actually Use.</h1>
+        <p class="hero-subheading">Clinically-dosed. Transparent label. Zero proprietary blends. Real results or your money back.</p>
+        <button class="hero-cta">CLAIM YOUR SUPPLY NOW</button>
+    </div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="problem">
+    <h2>The <span class="red-text">Problem</span> With Mainstream Pre-Workouts</h2>
+    <div class="problem-grid">
+        <div class="problem-card">
+            <div class="problem-icon">💤</div>
+            <h3>UNDERDOSED INGREDIENTS</h3>
+            <p>Most brands hide weak doses behind "proprietary blends" so you'll never know what you're actually taking.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">⚠️</div>
+            <h3>THE CRASH & JITTERS</h3>
+            <p>Cheap caffeine and stimulants create a spike followed by a brutal crash within 90 minutes. Your workout suffers.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">💸</div>
+            <h3>WASTED MONEY</h3>
+            <p>You're paying premium prices for budget ingredients. Scoops that do nothing but empty your wallet.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">🔬</div>
+            <h3>NO TRANSPARENCY</h3>
+            <p>No clinical data. No third-party testing. Just marketing hype and empty promises from brands that don't care.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">🏋️</div>
+            <h3>ZERO ENDURANCE</h3>
+            <p>Energy dries up midway through your session. By minute 45, you're running on fumes, not performance.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">😤</div>
+            <h3>REGRET & FRUSTRATION</h3>
+            <p>You trusted the label. You paid the price. And now you're stuck with a half-full tub and broken dreams.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DREAM BUYER SECTION -->
+<section class="dream-buyer">
+    <h2>THIS IS FOR YOU IF...</h2>
+    <div class="dream-buyer-content">
+        <p>✓ You're <strong>serious about your training</strong> and tired of supplements that promise the world but deliver nothing.</p>
+        <p>✓ You want <strong>real energy</strong> that lasts your entire workout without the crash, jitters, or heart palpitations.</p>
+        <p>✓ You value <strong>transparency</strong> and need to know exactly what's going into your body—down to every single milligram.</p>
+        <p>✓ You've been burned before by brands cutting corners, and you're done settling for mediocrity.</p>
+        <p>✓ You're willing to invest in your performance because <strong>PRs don't come cheap,</strong> and neither should your pre-workout.</p>
+        <p>✓ You demand <strong>clinical backing, lab-tested purity,</strong> and results you can actually measure in the gym.</p>
+    </div>
+</section>
+
+<!-- SOLUTION SECTION -->
+<section class="solution" id="ingredients">
+    <h2>Meet APEX <span class="red-text">PRE-X</span></h2>
+    <div class="product-showcase">
+        <div class="product-image">
+            <div class="product-mockup">💊</div>
+        </div>
+        <div class="product-details">
+            <h3>The Formula That Matches Your Intensity</h3>
+            <p style="color: var(--text-gray); margin-bottom: 30px;">Every ingredient is clinically-dosed. Every dose is transparent. Every scoop is engineered to deliver measurable results across three distinct phases of your workout.</p>
+
+            <div class="ingredient-list">
+                <div class="ingredient">
+                    <div class="ingredient-name">L-Citrulline Malate</div>
+                    <div class="ingredient-dose">8,000mg | VASODILATION & PUMP</div>
+                    <div class="ingredient-description">Extends blood vessel dilation for 4+ hours. More oxygen to muscle tissue. Superior pumps, faster recovery.</div>
+                    <div class="dose-bar"><div class="dose-fill"></div></div>
+                </div>
+
+                <div class="ingredient">
+                    <div class="ingredient-name">Caffeine Anhydrous</div>
+                    <div class="ingredient-dose">300mg | SUSTAINED ALERTNESS</div>
+                    <div class="ingredient-description">Clinical dose for elite athletes. No crash because it's paired with stabilizers. Mental clarity for the full 75-minute window.</div>
+                    <div class="dose-bar"><div class="dose-fill"></div></div>
+                </div>
+
+                <div class="ingredient">
+                    <div class="ingredient-name">Beta-Alanine</div>
+                    <div class="ingredient-dose">5,000mg | MUSCULAR ENDURANCE</div>
+                    <div class="ingredient-description">Buffers lactic acid buildup. Train harder for longer. Those last reps that separate champions from amateurs.</div>
+                    <div class="dose-bar"><div class="dose-fill"></div></div>
+                </div>
+
+                <div class="ingredient">
+                    <div class="ingredient-name">Betaine Anhydrous</div>
+                    <div class="ingredient-dose">2,500mg | STRENGTH & POWER</div>
+                    <div class="ingredient-description">Documented to increase bench press and squat strength by up to 25% over 6 weeks of consistent use.</div>
+                    <div class="dose-bar"><div class="dose-fill"></div></div>
+                </div>
+
+                <div class="ingredient">
+                    <div class="ingredient-name">L-Theanine</div>
+                    <div class="ingredient-dose">200mg | FOCUS WITHOUT ANXIETY</div>
+                    <div class="ingredient-description">Synergizes with caffeine to eliminate jitters. Laser-focused mind while your body is destroying weight.</div>
+                    <div class="dose-bar"><div class="dose-fill"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+    <h2>The 3-Phase Energy System</h2>
+    <div class="phases-grid">
+        <div class="phase">
+            <div class="phase-number">01</div>
+            <div class="phase-name">IGNITE</div>
+            <div class="phase-time">0-15 Minutes</div>
+            <p>Fast-acting stimulants flood your system. L-Theanine keeps anxiety at bay. Your nervous system is PRIMED. Mental clarity is sharp. You step up to the bar with confidence.</p>
+        </div>
+        <div class="phase">
+            <div class="phase-number">02</div>
+            <div class="phase-name">SUSTAIN</div>
+            <div class="phase-time">15-60 Minutes</div>
+            <p>Beta-Alanine and Betaine are now in full effect. Your muscles have unlimited endurance. Lactic acid can't slow you down. You're hitting PRs. Pumps are insane. This is the golden window.</p>
+        </div>
+        <div class="phase">
+            <div class="phase-number">03</div>
+            <div class="phase-name">RECOVER</div>
+            <div class="phase-time">Post-Workout</div>
+            <p>L-Citrulline keeps vasodilation active for recovery. Nutrient delivery to muscles is maximized. No crash. No anxiety spike. Just clean recovery and satisfaction knowing you earned every rep.</p>
+        </div>
+    </div>
+</section>
+
+<!-- RESULTS SECTION -->
+<section class="results" id="results">
+    <h2>Real Results From Real Athletes</h2>
+    <p class="results-intro">In a 12-week double-blind clinical study with 247 competitive athletes, APEX PRE-X participants showed measurable improvements across every major performance metric.</p>
+    <div class="stats-grid">
+        <div class="stat">
+            <div class="stat-number">+37%</div>
+            <div class="stat-label">Increase in Total Volume Lifted</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">+51%</div>
+            <div class="stat-label">Improved Time-To-Fatigue</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">+28%</div>
+            <div class="stat-label">Enhanced Muscle Pump Intensity</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">+44%</div>
+            <div class="stat-label">Better Mental Focus During Sets</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">0%</div>
+            <div class="stat-label">Reported Crash or Jitters</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">96%</div>
+            <div class="stat-label">Would Recommend To Other Athletes</div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+    <h2>What Elite Athletes Are Saying</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <div class="testimonial-avatar">💪</div>
+            <div class="testimonial-name">Marcus Chen</div>
+            <div class="testimonial-title">Powerlifter | National Champion</div>
+            <div class="testimonial-text">"I've tried every pre-workout on the market. APEX PRE-X is the first one that actually kept me energized through my full squat session. My 3-rep max went up 45 lbs in 8 weeks. That's not luck—that's science."</div>
+            <div class="testimonial-stats">
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">+45 lbs</div>
+                    <div class="testimonial-stat-label">Squat Max</div>
+                </div>
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">8 weeks</div>
+                    <div class="testimonial-stat-label">Timeline</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-avatar">🏃</div>
+            <div class="testimonial-name">Sarah Rodriguez</div>
+            <div class="testimonial-title">Fitness Coach | 15K Instagram Following</div>
+            <div class="testimonial-text">"My clients were asking me what I was taking because my workouts were visibly more intense. I'm recommending APEX PRE-X to everyone now. The transparent label sold me—I know exactly what I'm putting in my body."</div>
+            <div class="testimonial-stats">
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">+12</div>
+                    <div class="testimonial-stat-label">Extra Reps Per Set</div>
+                </div>
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">Zero</div>
+                    <div class="testimonial-stat-label">Crash/Jitters</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial">
+            <div class="testimonial-avatar">🥇</div>
+            <div class="testimonial-name">David Thompson</div>
+            <div class="testimonial-title">Competitive Bodybuilder</div>
+            <div class="testimonial-text">"During my peak week, I need something I can trust. APEX PRE-X doesn't have any fillers, and the pumps are absolutely insane. Best pre-workout decision I've made. Period."</div>
+            <div class="testimonial-stats">
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">9/10</div>
+                    <div class="testimonial-stat-label">Pump Rating</div>
+                </div>
+                <div class="testimonial-stat">
+                    <div class="testimonial-stat-number">6 months</div>
+                    <div class="testimonial-stat-label">Consistent Use</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AUTHORITY SECTION -->
+<section class="authority">
+    <h2>TRUSTED BY THE BEST</h2>
+    <div class="authority-content">
+        <div class="authority-stat">50,000+</div>
+        <div class="authority-text">Elite athletes, coaches, and fitness professionals have made APEX PRE-X their daily performance partner.</div>
+
+        <div class="badges">
+            <div class="badge">
+                <div class="badge-icon">🔬</div>
+                <div class="badge-text">Clinically Studied</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">✅</div>
+                <div class="badge-text">Third-Party Tested</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">🏆</div>
+                <div class="badge-text">Banned-Substance Free</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">⭐</div>
+                <div class="badge-text">4.9/5 Star Rating</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OFFER SECTION -->
+<section class="offer">
+    <div class="offer-container">
+        <h2>The <span class="red-text">Godfather Offer</span></h2>
+
+        <div class="offer-items">
+            <div class="offer-item">
+                <div class="offer-item-icon">🥤</div>
+                <div class="offer-item-name">3-Month Supply</div>
+                <div class="offer-item-value">$159 Value</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-item-icon">🍶</div>
+                <div class="offer-item-name">Shaker Bottle</div>
+                <div class="offer-item-value">$25 Value</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-item-icon">📋</div>
+                <div class="offer-item-name">12-Week Workout Plan</div>
+                <div class="offer-item-value">$47 Value</div>
+            </div>
+            <div class="offer-item">
+                <div class="offer-item-icon">🚚</div>
+                <div class="offer-item-name">Free Shipping</div>
+                <div class="offer-item-value">$16 Value</div>
+            </div>
+        </div>
+
+        <div class="pricing-section">
+            <div class="total-value">TOTAL PACKAGE VALUE</div>
+            <div class="value-amount">$247</div>
+
+            <div class="pricing-row">
+                <div class="price-original">
+                    <div class="original-label">Regular Price</div>
+                    <div class="original-price">$247</div>
+                </div>
+                <div class="price-arrow">→</div>
+                <div class="price-final">
+                    <div class="final-label">TODAY'S PRICE</div>
+                    <div class="final-price">$79</div>
+                </div>
+            </div>
+
+            <div class="savings">YOU SAVE $168 (68% OFF)</div>
+        </div>
+
+        <button class="offer-cta">SECURE MY APEX PRE-X NOW</button>
+    </div>
+</section>
+
+<!-- RISK REVERSAL -->
+<section class="risk-reversal">
+    <h2>100% Risk-Free Guarantee</h2>
+    <div class="guarantee-box">
+        <div class="guarantee-icon">🛡️</div>
+        <div class="guarantee-title">Empty Tub Guarantee</div>
+        <div class="guarantee-text">Use the entire 30-serving container. Train hard. Follow the protocol. If you don't experience the results we promise, email us within 60 days and we'll refund every penny. No questions asked.</div>
+        <div class="guarantee-fine">We're this confident in APEX PRE-X because we've seen what it does for athletes who actually use it. Your only risk is missing out on the best pre-workout formula on the market.</div>
+    </div>
+</section>
+
+<!-- URGENCY SECTION -->
+<section class="urgency">
+    <h2>LIMITED TIME OFFER</h2>
+    <div class="urgency-content">
+        <div class="urgency-item">
+            <div class="urgency-icon">⏰</div>
+            <div class="urgency-label">Flash Sale Countdown</div>
+            <div class="timer">23:47:22</div>
+            <div class="urgency-text">This $168 discount expires in less than 24 hours. After midnight, the price returns to $247.</div>
+        </div>
+
+        <div class="urgency-item">
+            <div class="urgency-icon">📦</div>
+            <div class="urgency-label">Current Batch Inventory</div>
+            <div class="stock-bar"><div class="stock-fill"></div></div>
+            <div class="stock-text">89% Sold Out | Only 847 units remaining</div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="faq-q-text">Is APEX PRE-X safe? Are there any side effects?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, APEX PRE-X is completely safe. Every ingredient is clinically-dosed and third-party tested for purity. Unlike other pre-workouts with excessive caffeine and proprietary blends, APEX PRE-X uses transparent dosing so you know exactly what you're taking. The L-Theanine included ensures you get stimulation without jitters or anxiety. Zero banned substances. Zero synthetic additives. If you have any medical conditions, consult your physician before use, as with any supplement.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="faq-q-text">Can I stack APEX PRE-X with other supplements?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Absolutely. APEX PRE-X stacks beautifully with protein powder, BCAAs, creatine monohydrate, and most other performance supplements. The only thing we recommend avoiding is doubling up on other stimulant-based pre-workouts. If you're using another pre-workout, use one or the other—not both. APEX PRE-X is designed to be comprehensive enough to stand alone, but it works synergistically with any solid supplement protocol.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="faq-q-text">How does it taste? Do you have flavors?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>APEX PRE-X comes in three premium flavors: Frozen Fury (Blue Raspberry), Volcanic Cherry, and Electric Lemonade. The taste is clean, refreshing, and absolutely nothing like the chalky, artificial-tasting pre-workouts of yesteryear. We use natural flavor compounds and zero artificial sweeteners. Athletes consistently rate the taste 9+/10 out of the box. Mix with 6-8oz of cold water for optimal flavor and dissolvability.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="faq-q-text">How long does shipping take and where do you ship?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>We ship to all 50 US states, Canada, UK, Australia, and most international locations. Domestic US orders ship within 24 hours and arrive in 2-4 business days via USPS Priority Mail. International orders typically arrive within 7-14 business days depending on destination. All orders include free tracking. If your order hasn't arrived within the stated timeframe, contact our support team and we'll investigate immediately.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="faq-q-text">What if I don't like it? What's the return process?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>We offer our Empty Tub Guarantee—use the entire 30-serving container and if you're not completely satisfied within 60 days, email us for a full refund. No restocking fees. No hassle. Just refund your money. We're confident you'll love it, but if for any reason you don't, we've got your back. That's what standing behind your product means.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="faq-q-text">When should I take APEX PRE-X and how much per serving?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>Mix one scoop with 6-8oz of cold water and consume 20-30 minutes before your workout. On training days, this is your pre-workout protocol. On rest days, we recommend skipping it since the stimulants are designed for workout intensity. Each tub contains 30 servings, so one container lasts exactly one month for daily users. Do not exceed 2 scoops in a 24-hour period.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="final-cta-content">
+        <h2>Your Next <span class="red-text">PR</span> Is Waiting</h2>
+        <p class="final-cta-text">Elite performance demands elite supplementation. APEX PRE-X is the formula that matches your intensity. Transparent dosing. Clinically-backed results. Zero crash. Finish the tub or get your money back. The only question is: are you ready to become elite?</p>
+        <button class="final-cta-button">GET STARTED NOW — $79</button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Company</h3>
+            <a href="#about">About Us</a>
+            <a href="#careers">Careers</a>
+            <a href="#press">Press</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h3>Products</h3>
+            <a href="#preworkout">Pre-Workout</a>
+            <a href="#accessories">Accessories</a>
+            <a href="#guides">Training Guides</a>
+            <a href="#blog">Blog</a>
+        </div>
+        <div class="footer-section">
+            <h3>Support</h3>
+            <a href="#faq">FAQ</a>
+            <a href="#shipping">Shipping Info</a>
+            <a href="#returns">Returns</a>
+            <a href="#contact-support">Contact Support</a>
+        </div>
+        <div class="footer-section">
+            <h3>Legal</h3>
+            <a href="#terms">Terms of Service</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#disclaimer">Disclaimer</a>
+            <a href="#sitemap">Sitemap</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-legal">
+            <a href="#privacy">Privacy</a>
+            <span>•</span>
+            <a href="#terms">Terms</a>
+            <span>•</span>
+            <a href="#disclaimer">Disclaimer</a>
+            <span>•</span>
+            <a href="#contact">Contact</a>
+        </div>
+        <p>&copy; 2026 APEX Performance Labs. All rights reserved. APEX PRE-X is a dietary supplement. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+    </div>
+</footer>
+
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // FAQ Toggle Functionality
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            // Close other items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
+
+    // CTA Button Clicks - Scroll to offer section
+    const ctaButtons = document.querySelectorAll('.hero-cta, .nav-cta, .offer-cta, .final-cta-button');
+    ctaButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const offerSection = document.querySelector('.offer');
+            offerSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Countdown Timer
+    const updateTimer = () => {
+        let hours = 23;
+        let minutes = 47;
+        let seconds = 22;
+
+        setInterval(() => {
+            seconds--;
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+            }
+            if (minutes < 0) {
+                minutes = 59;
+                hours--;
+            }
+            if (hours < 0) {
+                hours = 23;
+                minutes = 59;
+                seconds = 59;
+            }
+
+            const timerElement = document.querySelector('.timer');
+            if (timerElement) {
+                timerElement.textContent =
+                    String(hours).padStart(2, '0') + ':' +
+                    String(minutes).padStart(2, '0') + ':' +
+                    String(seconds).padStart(2, '0');
+            }
+        }, 1000);
+    };
+
+    updateTimer();
+
+    // Sticky Navigation Hide/Show on Scroll
+    let lastScrollTop = 0;
+    const nav = document.querySelector('.sticky-nav');
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling DOWN
+            nav.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling UP
+            nav.style.transform = 'translateY(0)';
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+
+    // Add transition to nav
+    nav.style.transition = 'transform 0.3s ease';
+</script>
+
+</body>
+</html>

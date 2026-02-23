@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÈLAN Essentials - Sustainable Luxury Capsule Wardrobe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333333;
+            background-color: #F5F0EB;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.2;
+            color: #333333;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            line-height: 1.3;
+            color: #333333;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            color: #333333;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.8;
+            color: #555555;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #666666;
+        }
+
+        /* ===== STICKY NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(245, 240, 235, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(184, 153, 92, 0.2);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #333333;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333333;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: #B8995C;
+            border-bottom-color: #B8995C;
+        }
+
+        .cta-nav {
+            padding: 0.7rem 1.8rem;
+            background-color: #333333;
+            color: #F5F0EB;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+        }
+
+        .cta-nav:hover {
+            background-color: #B8995C;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding-top: 100px;
+            padding-bottom: 80px;
+            background-color: #F5F0EB;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(184, 153, 92, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .pattern-interrupt {
+            background: linear-gradient(135deg, rgba(184, 153, 92, 0.1), rgba(232, 213, 196, 0.15));
+            padding: 2rem 1.5rem;
+            border-left: 3px solid #B8995C;
+            margin: 2rem 0 3rem 0;
+            text-align: left;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        .pattern-interrupt strong {
+            color: #B8995C;
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 3rem;
+            background-color: #333333;
+            color: #F5F0EB;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            font-size: 0.95rem;
+            transition: all 0.4s ease;
+            border: 2px solid #333333;
+            border-radius: 2px;
+        }
+
+        .hero-cta:hover {
+            background-color: transparent;
+            color: #333333;
+        }
+
+        /* ===== PROBLEM AGITATION ===== */
+        .agitation {
+            padding: 6rem 2rem;
+            background-color: #fff;
+            border-top: 1px solid #E8D5C4;
+            border-bottom: 1px solid #E8D5C4;
+        }
+
+        .agitation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .agitation h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #B8995C;
+        }
+
+        .agitation-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .agitation-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .agitation-item h3 {
+            color: #333333;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .agitation-item p {
+            color: #666666;
+            font-size: 0.95rem;
+        }
+
+        .agitation-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1.5rem;
+            background-color: #E8D5C4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* ===== DREAM BUYER ===== */
+        .dream-buyer {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #F5F0EB 0%, #fff 100%);
+            text-align: center;
+        }
+
+        .dream-buyer h2 {
+            margin-bottom: 2rem;
+        }
+
+        .dream-buyer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #555555;
+        }
+
+        .dream-buyer-highlight {
+            color: #B8995C;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* ===== SOLUTION REVEAL ===== */
+        .solution {
+            padding: 6rem 2rem;
+            background-color: #fff;
+            border-top: 1px solid #E8D5C4;
+        }
+
+        .solution-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .solution h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-point {
+            padding: 1.5rem;
+            background: #F5F0EB;
+            border-left: 3px solid #B8995C;
+            transition: transform 0.3s ease;
+        }
+
+        .solution-point:hover {
+            transform: translateY(-5px);
+        }
+
+        .solution-point h4 {
+            color: #333333;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .solution-point p {
+            font-size: 0.9rem;
+            color: #666666;
+        }
+
+        /* ===== COLLECTION SHOWCASE ===== */
+        .collection {
+            padding: 6rem 2rem;
+            background-color: #F5F0EB;
+            border-top: 1px solid #E8D5C4;
+        }
+
+        .collection-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .collection h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .collection-subtitle {
+            text-align: center;
+            color: #666666;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+        }
+
+        .pieces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .piece-card {
+            background: #fff;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid #E8D5C4;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .piece-card:hover {
+            box-shadow: 0 15px 40px rgba(184, 153, 92, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .piece-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #B8995C 0%, #E8D5C4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .piece-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .piece-card:hover .piece-image::after {
+            opacity: 1;
+        }
+
+        .piece-label {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #333333;
+            color: #F5F0EB;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .piece-info {
+            padding: 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .piece-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #333333;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .piece-description {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .piece-details {
+            font-size: 0.85rem;
+            color: #B8995C;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* ===== SUSTAINABILITY ===== */
+        .sustainability {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #fff 0%, #F5F0EB 100%);
+            border-top: 1px solid #E8D5C4;
+        }
+
+        .sustainability-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sustainability h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .sustainability-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .sustainability-text h3 {
+            color: #B8995C;
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
+
+        .sustainability-text p {
+            margin-bottom: 1.2rem;
+            color: #555555;
+        }
+
+        .sustainability-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-block {
+            text-align: center;
+            padding: 2rem;
+            background: #fff;
+            border: 1px solid #E8D5C4;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: #B8995C;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== SOCIAL PROOF ===== */
+        .social-proof {
+            padding: 6rem 2rem;
+            background-color: #fff;
+            border-top: 1px solid #E8D5C4;
+        }
+
+        .social-proof-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .social-proof h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial {
+            background: #F5F0EB;
+            padding: 2.5rem;
+            border-left: 4px solid #B8995C;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: #B8995C;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: #555555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #333333;
+            margin-bottom: 0.3rem;
+        }
+
+        .testimonial-title {
+            font-size: 0.85rem;
+            color: #B8995C;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stars {
+            color: #B8995C;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        /* ===== AUTHORITY ===== */
+        .authority {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #F5F0EB 0%, #fff 100%);
+            border-top: 1px solid #E8D5C4;
+        }
+
+        .authority-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .authority h2 {
+            margin-bottom: 2rem;
+        }
+
+        .featured-in {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0 4rem 0;
+            align-items: center;
+        }
+
+        .featured-logo {
+            padding: 1.5rem;
+            background: #fff;
+            border: 1px solid #E8D5C4;
+            text-align: center;
+            font-weight: 600;
+            color: #B8995C;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .authority-stat {
+            background: #fff;
+            padding: 2rem;
+            border: 1px solid #E8D5C4;
+            margin-bottom: 1rem;
+        }
+
+        .authority-stat p {
+            font-size: 1.15rem;
+            color: #555555;
+        }
+
+        .authority-stat-highlight {
+            color: #B8995C;
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        /* ===== GODFATHER OFFER ===== */
+        .godfather-offer {
+            padding: 6rem 2rem;
+            background-color: #333333;
+            color: #F5F0EB;
+            border-top: 1px solid #B8995C;
+        }
+
+        .godfather-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .godfather-offer h2 {
+            color: #F5F0EB;
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-description {
+            font-size: 1.05rem;
+            color: #E8D5C4;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+            align-items: center;
+        }
+
+        .offer-breakdown {
+            text-align: left;
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-left: 3px solid #B8995C;
+        }
+
+        .offer-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.95rem;
+        }
+
+        .offer-item:last-child {
+            border-bottom: none;
+        }
+
+        .offer-price {
+            color: #B8995C;
+            font-weight: 600;
+        }
+
+        .offer-total {
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            border-top: 2px solid #B8995C;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .offer-cta {
+            padding: 1.2rem 2.5rem;
+            background-color: #B8995C;
+            color: #333333;
+            border: none;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            border-radius: 2px;
+            align-self: center;
+        }
+
+        .offer-cta:hover {
+            background-color: #E8D5C4;
+            transform: scale(1.05);
+        }
+
+        /* ===== RISK REVERSAL ===== */
+        .risk-reversal {
+            padding: 6rem 2rem;
+            background-color: #F5F0EB;
+            border-top: 1px solid #E8D5C4;
+        }
+
+        .risk-reversal-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .risk-reversal h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .guarantee {
+            background: #fff;
+            padding: 3rem;
+            border: 2px solid #B8995C;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .guarantee h3 {
+            color: #B8995C;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .guarantee-item {
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .guarantee-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #B8995C;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .guarantee-item h4 {
+            color: #333333;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== URGENCY ===== */
+        .urgency {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #B8995C 0%, #333333 100%);
+            color: #F5F0EB;
+            text-align: center;
+        }
+
+        .urgency-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .urgency h3 {
+            color: #E8D5C4;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .urgency p {
+            color: #F5F0EB;
+            font-size: 1rem;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            padding: 6rem 2rem;
+            background-color: #fff;
+            border-top: 1px solid #E8D5C4;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #E8D5C4;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: #F5F0EB;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #E8D5C4;
+            color: #333333;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+            color: #666666;
+            font-weight: normal;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 1.5rem;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #F5F0EB 0%, #E8D5C4 100%);
+            text-align: center;
+            border-top: 1px solid #E8D5C4;
+        }
+
+        .final-cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+        }
+
+        .final-cta p {
+            font-size: 1.15rem;
+            color: #555555;
+            margin-bottom: 3rem;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            padding: 1.3rem 3.5rem;
+            background-color: #333333;
+            color: #F5F0EB;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            border: 2px solid #333333;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .final-cta-button:hover {
+            background-color: #B8995C;
+            border-color: #B8995C;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 3rem 2rem;
+            background-color: #333333;
+            color: #E8D5C4;
+            border-top: 1px solid #B8995C;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h4 {
+            color: #F5F0EB;
+            margin-bottom: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+        }
+
+        .footer-section a,
+        .footer-section p {
+            color: #E8D5C4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #B8995C;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #B8995C;
+            font-size: 0.85rem;
+            color: #B8995C;
+        }
+
+        /* ===== STICKY CTA BAR ===== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #333333;
+            color: #F5F0EB;
+            padding: 1rem 2rem;
+            border-top: 2px solid #B8995C;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 998;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            gap: 1rem;
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta-text {
+            flex-grow: 1;
+            font-size: 0.95rem;
+        }
+
+        .sticky-cta-text strong {
+            color: #B8995C;
+            font-weight: 700;
+        }
+
+        .sticky-cta-button {
+            padding: 0.7rem 2rem;
+            background-color: #B8995C;
+            color: #333333;
+            border: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .sticky-cta-button:hover {
+            background-color: #E8D5C4;
+            transform: scale(1.05);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .cta-nav {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+
+            .agitation-items {
+                grid-template-columns: 1fr;
+            }
+
+            .sustainability-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sustainability-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guarantee-details {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-cta {
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+
+            .sticky-cta-text {
+                text-align: center;
+                font-size: 0.85rem;
+            }
+
+            .sticky-cta-button {
+                width: 100%;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .pattern-interrupt {
+                padding: 1.5rem 1rem;
+                margin: 1.5rem 0 2rem 0;
+            }
+
+            .pieces-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-in {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- STICKY NAVIGATION -->
+    <nav>
+        <a href="#" class="logo">ÈLAN</a>
+        <div class="nav-links">
+            <a href="#collection">Collection</a>
+            <a href="#sustainability">Sustainability</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <button class="cta-nav" onclick="scrollToOffer()">Shop Starter Capsule</button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>You Own 100+ Pieces of Clothing.</h1>
+            <h1 style="font-weight: 400;">You Wear 20.</h1>
+            <div class="pattern-interrupt">
+                <strong>What if we made those 20 pieces absolutely perfect?</strong> No more closet overwhelm. No more "nothing to wear." Just pieces you love, that love you back.
+            </div>
+            <p style="font-size: 1.1rem; margin: 2rem 0;">ÈLAN Essentials is a curated 15-piece capsule collection of luxury basics designed by a former fashion editor. Premium fabrics. Timeless cuts. Pieces that mix with everything.</p>
+            <a href="#godfather" class="hero-cta">Discover the Capsule</a>
+        </div>
+    </section>
+
+    <!-- PROBLEM AGITATION -->
+    <section class="agitation">
+        <div class="agitation-container">
+            <h2>Why Your Closet Doesn't Work (Yet)</h2>
+            <div class="agitation-items">
+                <div class="agitation-item">
+                    <div class="agitation-icon">📦</div>
+                    <h3>Fast Fashion Trap</h3>
+                    <p>You buy more because you're chasing the dopamine hit. But the pieces fall apart in 3 months. Your closet is a graveyard of regrets.</p>
+                </div>
+                <div class="agitation-item">
+                    <div class="agitation-icon">😕</div>
+                    <h3>Closet Paralysis</h3>
+                    <p>You have 100+ pieces but "nothing to wear." Nothing coordinates. Nothing makes you feel confident. You default to the same 5 outfits.</p>
+                </div>
+                <div class="agitation-item">
+                    <div class="agitation-icon">🌍</div>
+                    <h3>The Guilt</h3>
+                    <p>You know fast fashion is destroying the planet. But slow, sustainable fashion feels unattainable. So you keep buying cheap, and feeling worse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DREAM BUYER CALL OUT -->
+    <section class="dream-buyer">
+        <h2>For the Woman Who's Done With Quantity</h2>
+        <div class="dream-buyer-content">
+            <p>You're done with trends that vanish in weeks.</p>
+            <p>You're ready for <span class="dream-buyer-highlight">quality over quantity.</span></p>
+            <p>You want to get dressed quickly, feel confident always, and know your clothes were made ethically.</p>
+            <p style="margin-top: 2rem; font-weight: 600; color: #333333;">This is for you.</p>
+        </div>
+    </section>
+
+    <!-- SOLUTION REVEAL -->
+    <section class="solution">
+        <div class="solution-container">
+            <h2>Meet the 15-Piece Capsule</h2>
+            <p class="solution-intro">We've engineered 15 foundational pieces designed to mix, match, and coordinate with each other. Each piece is a blank canvas—versatile enough for work, date night, or a lazy Sunday.</p>
+            <div class="solution-grid">
+                <div class="solution-point">
+                    <h4>🧵 Premium Fabrics</h4>
+                    <p>100% organic cotton, linen, and responsibly-sourced cashmere. Fabrics that get softer with wear, not thinner.</p>
+                </div>
+                <div class="solution-point">
+                    <h4>⏳ Timeless Cuts</h4>
+                    <p>Designed by a former Vogue senior editor. No trends, no trends, no trends. These pieces will look right in 5 years.</p>
+                </div>
+                <div class="solution-point">
+                    <h4>🎨 Perfect Mix</h4>
+                    <p>Every piece coordinates with every other piece. One color palette. Infinite outfit combinations.</p>
+                </div>
+                <div class="solution-point">
+                    <h4>♻️ Sustainable</h4>
+                    <p>Organic, ethically-made, carbon-neutral shipping. Quality that lasts means less waste.</p>
+                </div>
+                <div class="solution-point">
+                    <h4>🎯 Minimal Thinking</h4>
+                    <p>Get dressed faster. No more decision fatigue. No more coordinating nightmares.</p>
+                </div>
+                <div class="solution-point">
+                    <h4>💎 Investment Pieces</h4>
+                    <p>Cost per wear is lower because you'll wear these pieces hundreds of times.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLLECTION SHOWCASE -->
+    <section class="collection" id="collection">
+        <div class="collection-container">
+            <h2>The Essentials</h2>
+            <p class="collection-subtitle">Six hero pieces that form the foundation of your capsule</p>
+
+            <div class="pieces-grid">
+                <div class="piece-card">
+                    <div class="piece-image">
+                        <div class="piece-label">Signature</div>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Essential Tee</h4>
+                        <p class="piece-description">The perfect white tee. Not too thick, not too thin. Shaped to flatter without clinginess.</p>
+                        <div class="piece-details">
+                            <span>Organic Cotton</span>
+                            <span>$89</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="piece-card">
+                    <div class="piece-image">
+                        <div class="piece-label">Bestseller</div>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Crisp Button-Up</h4>
+                        <p class="piece-description">Wear it structured or unbuttoned and oversized. The shirt that goes from boardroom to brunch.</p>
+                        <div class="piece-details">
+                            <span>Organic Linen</span>
+                            <span>$128</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="piece-card">
+                    <div class="piece-image">
+                        <div class="piece-label">Favorite</div>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Tailored Trousers</h4>
+                        <p class="piece-description">The one trouser that works for your body. Mid-rise, perfectly tapered. Not too formal, not too casual.</p>
+                        <div class="piece-details">
+                            <span>Linen Blend</span>
+                            <span>$156</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="piece-card">
+                    <div class="piece-image">
+                        <div class="piece-label">Luxury</div>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Cashmere Knit</h4>
+                        <p class="piece-description">Responsibly-sourced cashmere. Wear it as is or layer it. This is the piece you'll reach for 200 times a year.</p>
+                        <div class="piece-details">
+                            <span>100% Cashmere</span>
+                            <span>$245</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="piece-card">
+                    <div class="piece-image">
+                        <div class="piece-label">Essential</div>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Wide-Leg Jeans</h4>
+                        <p class="piece-description">The jeans that flatter every body type. High-rise, perfect length, fabric that holds its shape.</p>
+                        <div class="piece-details">
+                            <span>Organic Denim</span>
+                            <span>$134</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="piece-card">
+                    <div class="piece-image">
+                        <div class="piece-label">Transitional</div>
+                    </div>
+                    <div class="piece-info">
+                        <h4 class="piece-name">Neutral Blazer</h4>
+                        <p class="piece-description">Structured but not stuffy. Pairs with everything. The piece that transforms an outfit instantly.</p>
+                        <div class="piece-details">
+                            <span>Linen Cotton</span>
+                            <span>$198</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUSTAINABILITY STORY -->
+    <section class="sustainability" id="sustainability">
+        <div class="sustainability-container">
+            <h2>Made the Right Way</h2>
+
+            <div class="sustainability-content">
+                <div class="sustainability-text">
+                    <h3>Why We Do This</h3>
+                    <p>We started ÈLAN because we were sick of the fashion industry's lies. "Sustainable" labels on clothes made in exploitative conditions. "Premium" fabrics that pill after five washes.</p>
+                    <p>We wanted to create something different: clothes made with integrity. Fabrics that last decades, not seasons. Manufacturing that respects both people and the planet.</p>
+                    <p>Every piece in this collection is made in a certified carbon-neutral facility in Portugal. Our supply chain is transparent. Our workers are fairly paid. Our fabrics are organic or responsibly-sourced.</p>
+                </div>
+                <div>
+                    <div class="sustainability-stats">
+                        <div class="stat-block">
+                            <div class="stat-number">0 kg</div>
+                            <div class="stat-label">Plastic in Packaging</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Carbon Neutral</div>
+                        </div>
+                        <div class="stat-block">
+                            <div class="stat-number">6 yrs</div>
+                            <div class="stat-label">Average Lifespan</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="social-proof" id="reviews">
+        <div class="social-proof-container">
+            <h2>What Women Are Saying</h2>
+
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I used to spend $200+ a month on clothes I'd wear once. Now I have 15 pieces I actually love. I've worn my ÈLAN tee 90+ times already. The quality is unreal."</p>
+                    <p class="testimonial-author">Sarah M.</p>
+                    <p class="testimonial-title">Fashion Analyst, NYC</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Getting dressed is so much faster now. Everything coordinates. I feel confident. And knowing these pieces are made ethically? That's the cherry on top. This is my last 'closet reset'."</p>
+                    <p class="testimonial-author">Emma R.</p>
+                    <p class="testimonial-title">Marketing Executive, San Francisco</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The cashmere knit is my new best friend. People keep asking where I got it. The fit, the fabric, the way it doesn't pill—it's worth every penny. Best investment I've made in my wardrobe."</p>
+                    <p class="testimonial-author">Jessica L.</p>
+                    <p class="testimonial-title">Creative Director, LA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY -->
+    <section class="authority">
+        <div class="authority-container">
+            <h2>Trusted by Style Icons</h2>
+
+            <div class="featured-in">
+                <div class="featured-logo">VOGUE</div>
+                <div class="featured-logo">HARPER'S BAZAAR</div>
+                <div class="featured-logo">ELLE</div>
+                <div class="featured-logo">THE NEW YORK TIMES</div>
+            </div>
+
+            <div class="authority-stat">
+                <p><span class="authority-stat-highlight">75,000+</span> women have already joined the capsule revolution</p>
+            </div>
+            <div class="authority-stat">
+                <p>Average wearer owns <span class="authority-stat-highlight">4.2 times fewer clothes</span> but feels <span class="authority-stat-highlight">73% more confident</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GODFATHER OFFER -->
+    <section class="godfather-offer" id="godfather">
+        <div class="godfather-container">
+            <h2>The Starter Capsule Offer</h2>
+            <p class="offer-description">Start here. This 5-piece collection gives you the foundation to build infinite outfits. Add your own pieces later.</p>
+
+            <div class="offer-grid">
+                <div class="offer-breakdown">
+                    <div class="offer-item">
+                        <span>Essential Tee (White)</span>
+                        <span class="offer-price">$89</span>
+                    </div>
+                    <div class="offer-item">
+                        <span>Crisp Button-Up</span>
+                        <span class="offer-price">$128</span>
+                    </div>
+                    <div class="offer-item">
+                        <span>Tailored Trousers</span>
+                        <span class="offer-price">$156</span>
+                    </div>
+                    <div class="offer-item">
+                        <span>Cashmere Knit</span>
+                        <span class="offer-price">$245</span>
+                    </div>
+                    <div class="offer-item">
+                        <span>Wide-Leg Jeans</span>
+                        <span class="offer-price">$134</span>
+                    </div>
+                    <div class="offer-total">
+                        <span>Total Value:</span>
+                        <span class="offer-price">$752</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 2rem; align-items: center;">
+                    <div style="text-align: center;">
+                        <p style="color: #B8995C; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">TODAY ONLY</p>
+                        <p style="font-size: 2.5rem; color: #E8D5C4; font-weight: 700; margin-bottom: 0.5rem;">$389</p>
+                        <p style="color: #E8D5C4; font-size: 0.95rem; margin-bottom: 1rem;">+ free 1-on-1 styling consultation ($150 value)</p>
+                        <p style="color: #B8995C; font-size: 0.85rem; text-decoration: line-through;">Regular price: $752</p>
+                        <p style="color: #B8995C; font-size: 1rem; font-weight: 600; margin-top: 0.5rem;">Save 48%</p>
+                    </div>
+                    <button class="offer-cta" onclick="scrollToTop()">Get Your Starter Capsule</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL -->
+    <section class="risk-reversal">
+        <div class="risk-reversal-container">
+            <h2>Zero Risk Guarantee</h2>
+
+            <div class="guarantee">
+                <h3>We Back Every Piece</h3>
+                <p style="color: #555555; margin-bottom: 1.5rem; font-size: 1rem;">If you don't absolutely love every piece, we'll make it right. That's our promise.</p>
+
+                <div class="guarantee-details">
+                    <div class="guarantee-item">
+                        <h4>30-Day Promise</h4>
+                        <p style="color: #666666;">Love every piece or send it back. Full refund, no questions asked.</p>
+                    </div>
+                    <div class="guarantee-item">
+                        <h4>Free Returns</h4>
+                        <p style="color: #666666;">We cover return shipping. If it's not perfect, we want to know why.</p>
+                    </div>
+                    <div class="guarantee-item">
+                        <h4>Lifetime Support</h4>
+                        <p style="color: #666666;">Need styling help? Size adjustment? We're here for you—forever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY -->
+    <section class="urgency">
+        <div class="urgency-container">
+            <h3>⏰ Limited Inventory</h3>
+            <p>This season's collection is made in small batches. When pieces sell out, they're gone. Once this capsule sells out, the next one won't be available for 6 weeks.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <h2>Questions Answered</h2>
+
+            <div class="faq-item active">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How do I know if sizing will work for me?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Every piece is designed to fit a wide range of body types. We offer XS through XL, and each size is carefully graded. Our free 1-on-1 styling consultation includes a sizing chat—we'll make sure everything fits like it was made for you. If it doesn't, returns are free.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>How do I care for these pieces long-term?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Simple. Wash in cold water, hang dry, and they'll last for years. Each piece comes with detailed care instructions. Our cashmere knit can be spot-cleaned or hand-washed—no dry cleaning needed. We've included care tips via email, and our team is always available if you have questions.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What's the actual return process?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Email us within 30 days of delivery and we'll send you a prepaid return label. Drop it off at any shipping location. Once we receive it, we process your refund within 5 business days. That's it. No restocking fees, no questions, no hassle.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Are these really sustainable?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Every piece is made from organic or responsibly-sourced materials. We manufacture in a carbon-neutral facility in Portugal. Packaging is 100% recyclable (zero plastic). We've partnered with Carbon Trust to verify our environmental claims. Check our full sustainability report at èlanessentials.com/impact.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Can I mix these with other brands?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. These pieces are designed to be versatile. The neutral color palette and classic cuts work with literally any other pieces in your closet. That's the whole point—maximum flexibility.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>What about the styling consultation?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our styling consultants will meet with you via Zoom (30 minutes) after you receive your order. They'll help you build outfits, answer styling questions, and make sure you feel confident wearing every piece. This is included free with your starter capsule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-container">
+            <h2>Build Your Forever Wardrobe</h2>
+            <p>Stop shopping. Start living. Get dressed faster, feel more confident, reduce waste.</p>
+            <button class="final-cta-button" onclick="scrollToOffer()">Start Your Capsule Today</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <a href="#">The Capsule Collection</a>
+                <a href="#">Individual Pieces</a>
+                <a href="#">Gift Cards</a>
+            </div>
+            <div class="footer-section">
+                <h4>Our Story</h4>
+                <a href="#">About ÈLAN</a>
+                <a href="#">Sustainability</a>
+                <a href="#">Press</a>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Sizing Guide</a>
+                <a href="#">Returns & Exchanges</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow</h4>
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">Newsletter</a>
+                <p style="margin-top: 1rem; font-size: 0.85rem;">Subscribe for styling tips and new collection drops.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ÈLAN Essentials. All rights reserved. | <a href="#" style="color: inherit;">Privacy Policy</a> | <a href="#" style="color: inherit;">Terms</a></p>
+        </div>
+    </footer>
+
+    <!-- STICKY CTA BAR -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="sticky-cta-text">
+            The Starter Capsule: <strong>$389</strong> (was $752) + Free Styling Consultation
+        </div>
+        <button class="sticky-cta-button" onclick="scrollToOffer()">Claim Offer</button>
+    </div>
+
+    <script>
+        // Sticky CTA visibility
+        window.addEventListener('scroll', function() {
+            const godfather = document.getElementById('godfather');
+            const stickyCta = document.getElementById('stickyCta');
+
+            if (godfather) {
+                const rect = godfather.getBoundingClientRect();
+                if (rect.top > window.innerHeight) {
+                    stickyCta.classList.add('visible');
+                } else {
+                    stickyCta.classList.remove('visible');
+                }
+            }
+        });
+
+        // Scroll functions
+        function scrollToOffer() {
+            const godfather = document.getElementById('godfather');
+            if (godfather) {
+                godfather.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const item = element.closest('.faq-item');
+
+            // Close other items
+            document.querySelectorAll('.faq-item').forEach(faqItem => {
+                if (faqItem !== item) {
+                    faqItem.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            item.classList.toggle('active');
+        }
+
+        // Mobile nav enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

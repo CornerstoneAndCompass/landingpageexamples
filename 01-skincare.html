@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumiGlow Pro-Age Reversal Serum | Premium Anti-Aging Skincare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose-gold: #B76E79;
+            --cream: #FFF8F0;
+            --charcoal: #2D2D2D;
+            --gold: #C9A96E;
+            --light-gray: #F5F5F5;
+            --dark-gray: #666666;
+            --white: #FFFFFF;
+            --accent-pink: #E8B4BA;
+            --deep-rose: #9B5A67;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        /* ===== STICKY NAVIGATION ===== */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 248, 240, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 16px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--rose-gold);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--rose-gold);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(183, 110, 121, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-nav {
+                padding: 12px 20px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-cta {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding-top: 120px;
+            padding-bottom: 80px;
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(232, 180, 186, 0.15) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 169, 110, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-container {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 0 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--charcoal);
+            font-weight: 800;
+        }
+
+        .hero-hook {
+            color: var(--rose-gold);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--dark-gray);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
+            color: white;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 15px 40px rgba(183, 110, 121, 0.25);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(183, 110, 121, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 100px;
+                padding-bottom: 60px;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-hook {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-container {
+                padding: 0 20px;
+            }
+        }
+
+        /* ===== PROBLEM AGITATION SECTION ===== */
+        .agitation {
+            padding: 80px 40px;
+            background: white;
+            text-align: center;
+        }
+
+        .agitation-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 60px;
+            color: var(--charcoal);
+        }
+
+        .agitation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pain-point {
+            padding: 40px;
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(232, 180, 186, 0.1) 100%);
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pain-point:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .pain-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--rose-gold), var(--accent-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 40px;
+        }
+
+        .pain-point h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .pain-point p {
+            color: var(--dark-gray);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .agitation {
+                padding: 60px 20px;
+            }
+
+            .agitation-title {
+                font-size: 32px;
+            }
+
+            .pain-point {
+                padding: 30px;
+            }
+        }
+
+        /* ===== DREAM BUYER SECTION ===== */
+        .dream-buyer {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, rgba(183, 110, 121, 0.05) 100%);
+            text-align: center;
+        }
+
+        .dream-buyer-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .dream-buyer h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 40px;
+            color: var(--charcoal);
+        }
+
+        .dream-buyer-content {
+            background: white;
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .dream-buyer-content p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .dream-buyer-content strong {
+            color: var(--rose-gold);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .dream-buyer {
+                padding: 60px 20px;
+            }
+
+            .dream-buyer h2 {
+                font-size: 32px;
+            }
+
+            .dream-buyer-content {
+                padding: 30px;
+            }
+
+            .dream-buyer-content p {
+                font-size: 16px;
+            }
+        }
+
+        /* ===== SOLUTION REVEAL SECTION ===== */
+        .solution {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .solution-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .solution-image {
+            position: relative;
+        }
+
+        .product-showcase {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            background: linear-gradient(135deg, var(--rose-gold), var(--accent-pink));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: white;
+            box-shadow: 0 30px 60px rgba(183, 110, 121, 0.2);
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 30px 60px rgba(183, 110, 121, 0.2); }
+            50% { box-shadow: 0 40px 80px rgba(183, 110, 121, 0.35); }
+        }
+
+        .solution-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 30px;
+            color: var(--charcoal);
+        }
+
+        .solution-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+
+        .ingredients {
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(232, 180, 186, 0.1) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+
+        .ingredients h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--rose-gold);
+        }
+
+        .ingredient-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .ingredient-item {
+            text-align: left;
+            font-size: 14px;
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+        }
+
+        .ingredient-item::before {
+            content: '✓';
+            color: var(--rose-gold);
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .solution-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .solution {
+                padding: 60px 20px;
+            }
+
+            .solution-content h2 {
+                font-size: 32px;
+            }
+
+            .product-showcase {
+                max-width: 100%;
+                height: 400px;
+            }
+        }
+
+        /* ===== HOW IT WORKS SECTION ===== */
+        .how-it-works {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, rgba(183, 110, 121, 0.05) 100%);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--charcoal);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--rose-gold), var(--accent-pink));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .step p {
+            color: var(--dark-gray);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .how-it-works {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+
+        /* ===== BEFORE/AFTER RESULTS SECTION ===== */
+        .results {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .results-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .results-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--charcoal);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(183, 110, 121, 0.2);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .stat-text {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .testimonials-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(232, 180, 186, 0.1) 100%);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 5px solid var(--rose-gold);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--rose-gold), var(--accent-pink));
+            margin-right: 15px;
+        }
+
+        .testimonial-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .testimonial-title {
+            font-size: 12px;
+            color: var(--dark-gray);
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .testimonial-text {
+            color: var(--dark-gray);
+            font-size: 15px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .results {
+                padding: 60px 20px;
+            }
+
+            .results-title {
+                font-size: 32px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+        }
+
+        /* ===== AUTHORITY SECTION ===== */
+        .authority {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, rgba(183, 110, 121, 0.05) 100%);
+            text-align: center;
+        }
+
+        .authority-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--charcoal);
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .logo-item {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            padding: 20px 30px;
+            border: 2px solid var(--rose-gold);
+            border-radius: 8px;
+            background: white;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .authority {
+                padding: 60px 20px;
+            }
+
+            .authority-title {
+                font-size: 28px;
+            }
+
+            .logos-container {
+                gap: 20px;
+            }
+
+            .logo-item {
+                font-size: 14px;
+                padding: 15px 20px;
+            }
+        }
+
+        /* ===== OFFER STACK SECTION ===== */
+        .offer-stack {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .offer-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(183, 110, 121, 0.25);
+        }
+
+        .offer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .value-stack {
+            margin-bottom: 50px;
+        }
+
+        .value-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .value-item:last-child {
+            border-bottom: none;
+        }
+
+        .value-name {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .value-price {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .value-price span {
+            text-decoration: line-through;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .total-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .offer-price {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .offer-price-label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .offer-price-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .offer-price-sub {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .offer-cta {
+            background: white;
+            color: var(--rose-gold);
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .offer-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .offer-stack {
+                padding: 60px 20px;
+            }
+
+            .offer-container {
+                padding: 40px 25px;
+            }
+
+            .offer-title {
+                font-size: 28px;
+            }
+
+            .offer-price-main {
+                font-size: 48px;
+            }
+
+            .value-name, .value-price {
+                font-size: 16px;
+            }
+        }
+
+        /* ===== RISK REVERSAL SECTION ===== */
+        .risk-reversal {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, rgba(183, 110, 121, 0.05) 100%);
+        }
+
+        .risk-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .risk-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 40px;
+            color: var(--charcoal);
+        }
+
+        .guarantee-badge {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--gold), #D4AF9F);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 15px 40px rgba(201, 169, 110, 0.25);
+            color: white;
+            font-weight: 700;
+        }
+
+        .badge-days {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            line-height: 1;
+        }
+
+        .badge-text {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+
+        .risk-text {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+        .risk-text strong {
+            color: var(--rose-gold);
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .risk-reversal {
+                padding: 60px 20px;
+            }
+
+            .risk-title {
+                font-size: 28px;
+            }
+
+            .guarantee-badge {
+                width: 120px;
+                height: 120px;
+            }
+
+            .badge-days {
+                font-size: 32px;
+            }
+
+            .risk-text {
+                padding: 25px;
+                font-size: 14px;
+            }
+        }
+
+        /* ===== URGENCY SECTION ===== */
+        .urgency {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
+            color: white;
+            text-align: center;
+        }
+
+        .urgency-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .urgency-text {
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .timer-container {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: inline-block;
+        }
+
+        .timer {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .timer-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px 30px;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .timer-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 800;
+            display: block;
+        }
+
+        .timer-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .urgency {
+                padding: 60px 20px;
+            }
+
+            .urgency-title {
+                font-size: 28px;
+            }
+
+            .urgency-text {
+                font-size: 16px;
+            }
+
+            .timer {
+                gap: 10px;
+            }
+
+            .timer-item {
+                padding: 15px 20px;
+                min-width: 60px;
+            }
+
+            .timer-number {
+                font-size: 24px;
+            }
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .faq-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--charcoal);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(232, 180, 186, 0.1) 100%);
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--charcoal);
+            user-select: none;
+            transition: background 0.3s ease;
+        }
+
+        .faq-item.active .faq-question {
+            background: linear-gradient(135deg, var(--rose-gold), var(--accent-pink));
+            color: white;
+        }
+
+        .faq-toggle {
+            width: 30px;
+            height: 30px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rose-gold);
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: white;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 25px 25px;
+        }
+
+        .faq-answer p {
+            color: var(--dark-gray);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .faq {
+                padding: 60px 20px;
+            }
+
+            .faq-title {
+                font-size: 32px;
+            }
+
+            .faq-question {
+                font-size: 14px;
+                padding: 20px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px;
+            }
+        }
+
+        /* ===== FINAL CTA SECTION ===== */
+        .final-cta {
+            padding: 80px 40px;
+            background: linear-gradient(135deg, var(--charcoal) 0%, rgba(45, 45, 45, 0.95) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .final-button {
+            background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
+            color: white;
+            padding: 20px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 15px 40px rgba(183, 110, 121, 0.3);
+        }
+
+        .final-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(183, 110, 121, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .final-cta {
+                padding: 60px 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .final-cta p {
+                font-size: 16px;
+            }
+
+            .final-button {
+                padding: 16px 40px;
+                font-size: 16px;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 50px 40px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .footer-section a {
+            color: #999;
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--rose-gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--rose-gold);
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 20px;
+            }
+
+            .footer-container {
+                gap: 30px;
+            }
+        }
+
+        /* ===== FLOATING CTA BAR ===== */
+        .floating-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--rose-gold), var(--deep-rose));
+            color: white;
+            padding: 15px 40px;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .floating-cta.show {
+            display: flex;
+        }
+
+        .floating-cta-text {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .floating-cta-button {
+            background: white;
+            color: var(--rose-gold);
+            padding: 10px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .floating-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                padding: 12px 20px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .floating-cta-text {
+                font-size: 12px;
+            }
+
+            .floating-cta-button {
+                width: 100%;
+                padding: 10px 20px;
+                font-size: 11px;
+            }
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        .scale-in.visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- STICKY NAVIGATION -->
+    <nav class="sticky-nav">
+        <div class="logo">LumiGlow</div>
+        <div class="nav-links">
+            <a href="#solution">The Product</a>
+            <a href="#results">Results</a>
+            <a href="#offer">Limited Offer</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <button class="nav-cta" onclick="scrollToOffer()">Get Started</button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container fade-in">
+            <div class="hero-hook">The $4.7 Billion Anti-Aging Industry Has Been Lying to You...</div>
+            <h1>Stop Wasting Money on Products That Don't Work</h1>
+            <p>Discover how thousands of women over 35 reversed 5-10 years of aging in just 28 days with LumiGlow Pro-Age Reversal Serum—the only serum backed by clinical studies showing dramatic results where others fail.</p>
+            <button class="hero-cta" onclick="scrollToOffer()">Unlock Your Transformation Now</button>
+        </div>
+    </section>
+
+    <!-- PROBLEM AGITATION -->
+    <section class="agitation">
+        <h2 class="agitation-title">The Frustration Is Real</h2>
+        <div class="agitation-grid">
+            <div class="pain-point fade-in">
+                <div class="pain-icon">💸</div>
+                <h3>Throwing Away Hundreds</h3>
+                <p>You've spent $400+ on expensive creams and serums, only to see zero visible results. The lines are still there. The texture hasn't changed. Your money's gone.</p>
+            </div>
+            <div class="pain-point fade-in">
+                <div class="pain-icon">😔</div>
+                <h3>Watching Yourself Age</h3>
+                <p>Every morning mirror check reveals deeper wrinkles, more sun damage, and that tired, dull appearance. You're not ready to look this old. Nobody told you aging could happen this fast.</p>
+            </div>
+            <div class="pain-point fade-in">
+                <div class="pain-icon">🚫</div>
+                <h3>Broken Promises</h3>
+                <p>Those "miracle" serums promised the world. But after 60 days? Nothing. Just another bottle gathering dust in your bathroom cabinet and another dent in your wallet.</p>
+            </div>
+            <div class="pain-point fade-in">
+                <div class="pain-icon">😰</div>
+                <h3>The Confidence Drain</h3>
+                <p>You find yourself avoiding photos. You're not feeling like yourself. That radiant, youthful glow you once had? It's slipping away, and you're powerless to stop it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DREAM BUYER / CALL OUT -->
+    <section class="dream-buyer">
+        <div class="dream-buyer-container">
+            <h2>If You're a Woman Over 35 Who...</h2>
+            <div class="dream-buyer-content">
+                <p>...has <strong>spent hundreds on skincare with minimal results</strong> and is tired of false promises...</p>
+                <p>...is <strong>noticing deeper lines, loss of firmness, and dull texture</strong> and wants to finally DO something about it...</p>
+                <p>...is <strong>ready to invest in a real solution</strong> that actually works and comes with a guarantee...</p>
+                <p style="margin-bottom: 0;">...then <strong>LumiGlow Pro-Age Reversal Serum is specifically designed for you.</strong> This isn't another marketing gimmick. This is clinically-proven anti-aging that delivers visible results—or your money back.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION REVEAL -->
+    <section class="solution" id="solution">
+        <div class="solution-container">
+            <div class="solution-image scale-in">
+                <div class="product-showcase">✨</div>
+            </div>
+            <div class="solution-content fade-in">
+                <h2>Introducing LumiGlow Pro-Age Reversal Serum</h2>
+                <p>This isn't your average serum. For 18 months, our team of skincare scientists and dermatologists worked to create a formula that actually penetrates deep into the dermis and triggers real, visible changes in skin.</p>
+                <p><strong>The result?</strong> A lightweight, fast-absorbing serum that targets every sign of aging: fine lines, deep wrinkles, loss of firmness, uneven texture, and that dull, tired appearance.</p>
+                <p>In clinical trials, <strong>94% of women saw visible results within 28 days</strong>. By day 60, the average woman looked 5-7 years younger. By day 90, the transformation was undeniable.</p>
+                <p>But the real magic is the formula.</p>
+                <div class="ingredients">
+                    <h3>The Science-Backed Formula:</h3>
+                    <div class="ingredient-list">
+                        <div class="ingredient-item">Retinol Complex 2.5%</div>
+                        <div class="ingredient-item">Hyaluronic Acid (multi-weight)</div>
+                        <div class="ingredient-item">Peptide Biocomplex</div>
+                        <div class="ingredient-item">Squalane (plant-derived)</div>
+                        <div class="ingredient-item">Vitamin C Stabilized (15%)</div>
+                        <div class="ingredient-item">Bakuchiol (natural retinol)</div>
+                        <div class="ingredient-item">Niacinamide 5%</div>
+                        <div class="ingredient-item">Plant Stem Cell Complex</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+        <h2 class="section-title">Transform Your Skin In 3 Simple Steps</h2>
+        <div class="steps-container">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <h3>Cleanse & Prep</h3>
+                <p>Start with a clean, dry face. Pat your skin gently—don't rub. This preps your skin to absorb the serum's powerful actives without any barriers.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <h3>Apply & Absorb</h3>
+                <p>Use 2-3 drops of LumiGlow. Gently press into your face, neck, and décolletage. The lightweight formula absorbs in 60 seconds, leaving no sticky residue.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <h3>Transform & Glow</h3>
+                <p>Within days, you'll notice smoother skin and a radiant glow. By week two, lines begin softening. By week four, the transformation is undeniable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE/AFTER RESULTS -->
+    <section class="results" id="results">
+        <div class="results-container">
+            <h2 class="results-title">Real Results from Real Women</h2>
+            <div class="stats-grid">
+                <div class="stat-card scale-in">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-text">Saw Visible Results in 28 Days</div>
+                </div>
+                <div class="stat-card scale-in">
+                    <div class="stat-number">87%</div>
+                    <div class="stat-text">Reported Noticeable Firmness Increase</div>
+                </div>
+                <div class="stat-card scale-in">
+                    <div class="stat-number">91%</div>
+                    <div class="stat-text">Said Fine Lines Were Softened</div>
+                </div>
+            </div>
+
+            <h2 class="results-title" style="margin-top: 60px;">What Our Customers Are Saying</h2>
+            <div class="testimonials-section">
+                <div class="testimonial fade-in">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <div class="testimonial-name">Sarah Mitchell</div>
+                            <div class="testimonial-title">Age 42, Los Angeles</div>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I've tried everything. Honestly. But this serum? It's different. Within two weeks, my husband said, 'You look different... younger.' The lines around my eyes have noticeably softened. I'm obsessed."</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <div class="testimonial-name">Jennifer Chen</div>
+                            <div class="testimonial-title">Age 38, New York</div>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The texture of my skin has completely changed. It's smoother, more radiant, and looks so much healthier. I've never had a serum work this fast. I'm buying bottles for my friends."</p>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <div class="testimonial-name">Rachel Brooks</div>
+                            <div class="testimonial-title">Age 45, Chicago</div>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"My friends asked what I did differently. My skin literally glows now. The deep lines on my forehead have softened significantly. This is worth every penny. I'm never going back."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY / AS SEEN IN -->
+    <section class="authority">
+        <h2 class="authority-title">Trusted by Leading Publications</h2>
+        <div class="logos-container">
+            <div class="logo-item">VOGUE</div>
+            <div class="logo-item">ELLE</div>
+            <div class="logo-item">ALLURE</div>
+            <div class="logo-item">HARPER'S BAZAAR</div>
+            <div class="logo-item">SELF</div>
+            <div class="logo-item">BEAUTY LAB</div>
+        </div>
+    </section>
+
+    <!-- OFFER STACK / GODFATHER OFFER -->
+    <section class="offer-stack" id="offer">
+        <div class="offer-container">
+            <h2 class="offer-title">Limited-Time Bundle Offer</h2>
+            <div class="value-stack">
+                <div class="value-item">
+                    <span class="value-name">LumiGlow Pro-Age Reversal Serum</span>
+                    <span class="value-price"><span>$129</span></span>
+                </div>
+                <div class="value-item">
+                    <span class="value-name">Lumi Eye Contour Cream (FREE)</span>
+                    <span class="value-price"><span>$79</span></span>
+                </div>
+                <div class="value-item">
+                    <span class="value-name">Lumi Renewal Night Mask (FREE)</span>
+                    <span class="value-price"><span>$89</span></span>
+                </div>
+                <div class="total-line">
+                    <span>Total Value:</span>
+                    <span>$297</span>
+                </div>
+            </div>
+
+            <div class="offer-price">
+                <div class="offer-price-label">Your Investment Today:</div>
+                <div class="offer-price-main">$89</div>
+                <div class="offer-price-sub">You Save $208 (70% OFF) + FREE Shipping</div>
+            </div>
+
+            <button class="offer-cta" onclick="handleOrderClick()">Claim Your Bundle Now</button>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL -->
+    <section class="risk-reversal">
+        <div class="risk-container">
+            <h2 class="risk-title">Our Promise to You</h2>
+            <div class="guarantee-badge">
+                <div class="badge-days">90</div>
+                <div class="badge-text">Day Money Back<br>Guarantee</div>
+            </div>
+            <div class="risk-text">
+                <p><strong>We're so confident in LumiGlow Pro-Age Reversal Serum that we're putting our money where our mouth is.</strong></p>
+                <p>Order today, risk-free. Use it for 90 full days. If you don't see visible results—if you don't look noticeably younger—send back the bottles (even if empty) for a full refund. No questions asked. No fine print. No hassle.</p>
+                <p><strong>That's our guarantee to you.</strong> We've seen the results firsthand in thousands of women. We know this works. And we're betting on it.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY -->
+    <section class="urgency">
+        <h2 class="urgency-title">⚡ Urgent: Stock Is Running Out</h2>
+        <div class="urgency-text">Only <span id="units-left">147</span> units left at this special price</div>
+        <div class="timer-container">
+            <div class="timer">
+                <div class="timer-item">
+                    <span class="timer-number" id="days">00</span>
+                    <span class="timer-label">Days</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="hours">00</span>
+                    <span class="timer-label">Hours</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="minutes">00</span>
+                    <span class="timer-label">Minutes</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="seconds">00</span>
+                    <span class="timer-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+        <p style="font-size: 16px;">This offer expires when the timer hits zero. Don't miss out on transforming your skin.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long before I see results?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Most users see visible results within 7-14 days. You'll notice smoother, more radiant skin almost immediately. The more dramatic changes—softened lines and increased firmness—typically appear by day 28. By day 60, the transformation is undeniable.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is it safe for sensitive skin?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>LumiGlow is formulated for all skin types, including sensitive skin. It's dermatologist-tested and hypoallergenic. However, if you have very sensitive skin, we recommend doing a patch test first. Start with 2-3 drops and use 2-3 times per week initially, then increase frequency as your skin adjusts.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I use it with other products?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. Apply LumiGlow after cleansing and any toners, but before heavier moisturizers. You can layer it with other serums (we recommend vitamin C in the morning). At night, follow with your moisturizer or night cream. The serum absorbs quickly, so wait 60 seconds before applying the next product.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if it doesn't work for me?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>That's what our 90-day money-back guarantee is for. Use it for the full 90 days. If you don't see visible results, send back the bottles (yes, even if empty) for a full refund. No questions. No hassle. We're confident it works—and we're betting on it with our guarantee.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How much product do I get?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Each bottle contains 30ml of concentrated serum. Using 2-3 drops twice daily (morning and night), one bottle lasts approximately 4-5 weeks. The concentrated formula means you need less product—a little goes a long way.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Is shipping included?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Free shipping is included in the $89 bundle price for all US orders. International shipping is available at checkout. Your order ships within 24 hours and typically arrives within 5-7 business days. You'll receive a tracking number via email.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <div class="final-cta-container fade-in">
+            <h2>Your Best Skin Is Waiting</h2>
+            <p>Stop waiting. Stop spending money on products that don't work. Stop watching yourself age without doing anything about it. Take action today. Join thousands of women who've transformed their skin with LumiGlow. In 90 days, you'll look younger. You'll feel more confident. You'll finally have the radiant, healthy skin you deserve.</p>
+            <button class="final-button" onclick="handleOrderClick()">Start Your Transformation Today</button>
+            <p style="margin-top: 30px; font-size: 14px; color: rgba(255,255,255,0.7);">✓ 90-Day Money-Back Guarantee ✓ Free Shipping ✓ Ships in 24 Hours</p>
+        </div>
+    </section>
+
+    <!-- FLOATING CTA BAR -->
+    <div class="floating-cta" id="floating-cta">
+        <span class="floating-cta-text">✨ Limited offer: Complete bundle $89 (Save $208)</span>
+        <button class="floating-cta-button" onclick="handleOrderClick()">Claim Now</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="#about">About Us</a>
+                <a href="#science">Our Science</a>
+                <a href="#careers">Careers</a>
+                <a href="#press">Press</a>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Care</h4>
+                <a href="#contact">Contact Us</a>
+                <a href="#shipping">Shipping Info</a>
+                <a href="#returns">Returns</a>
+                <a href="#track">Track Order</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#terms">Terms of Service</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#disclaimer">Disclaimer</a>
+                <a href="#compliance">Compliance</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">🐦</a>
+                    <a href="#" class="social-icon">📷</a>
+                    <a href="#" class="social-icon">▶</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LumiGlow Skincare. All Rights Reserved. These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Floating CTA Bar
+        const floatingCta = document.getElementById('floating-cta');
+        window.addEventListener('scroll', function() {
+            const heroSection = document.querySelector('.hero');
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+            if (window.scrollY > heroBottom) {
+                floatingCta.classList.add('show');
+            } else {
+                floatingCta.classList.remove('show');
+            }
+        });
+
+        // Countdown Timer
+        function updateTimer() {
+            const targetDate = new Date();
+            targetDate.setHours(targetDate.getHours() + 24);
+
+            function tick() {
+                const now = new Date();
+                const difference = targetDate - now;
+
+                if (difference > 0) {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+                    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+                    const seconds = Math.floor((difference / 1000) % 60);
+
+                    document.getElementById('days').textContent = String(days).padStart(2, '0');
+                    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+                }
+            }
+
+            tick();
+            setInterval(tick, 1000);
+        }
+
+        updateTimer();
+
+        // Decreasing units counter
+        let units = 147;
+        setInterval(function() {
+            if (units > 0 && Math.random() > 0.7) {
+                units--;
+                document.getElementById('units-left').textContent = units;
+            }
+        }, 3000);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Scroll to offer section
+        function scrollToOffer() {
+            const offerSection = document.getElementById('offer');
+            offerSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Handle order click
+        function handleOrderClick() {
+            alert('🎉 Thank you for your interest! In a real implementation, this would redirect to a secure checkout page. This is a demo landing page.');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

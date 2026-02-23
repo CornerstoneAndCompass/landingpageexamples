@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NobleBowl | Premium Freeze-Dried Raw Dog Food</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: #3D2B1F;
+            background-color: #FFF9F0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fraunces', serif;
+            color: #3D2B1F;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 249, 240, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Fraunces', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #3D2B1F;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "🐾";
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-cta {
+            background: #D4A574;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: #3D2B1F;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.3);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 70px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFF9F0 0%, #F5EDE2 100%);
+            padding: 6rem 2rem !important;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "🐾";
+            position: absolute;
+            top: 20px;
+            right: 50px;
+            font-size: 120px;
+            opacity: 0.05;
+            transform: rotate(-15deg);
+        }
+
+        .hero::after {
+            content: "🐾";
+            position: absolute;
+            bottom: 50px;
+            left: 30px;
+            font-size: 100px;
+            opacity: 0.05;
+            transform: rotate(25deg);
+        }
+
+        .hero h1 {
+            color: #D4A574;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 2.8rem;
+        }
+
+        .hero .hook {
+            font-size: 2rem;
+            color: #3D2B1F;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            line-height: 1.4;
+        }
+
+        .hook-highlight {
+            background: rgba(212, 165, 116, 0.2);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .hero-subtext {
+            font-size: 1.1rem;
+            color: #7D8C6E;
+            max-width: 700px;
+            margin: 2rem auto;
+        }
+
+        .hero-cta {
+            background: #D4A574;
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .hero-cta:hover {
+            background: #3D2B1F;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 165, 116, 0.4);
+        }
+
+        /* Problem Section */
+        .problem {
+            background: white;
+            padding: 5rem 2rem !important;
+        }
+
+        .problem h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #D4A574;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .problem-card {
+            background: #FFF9F0;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #D4A574;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-card h4 {
+            color: #3D2B1F;
+            margin-bottom: 1rem;
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Dream Buyer Section */
+        .dream-buyer {
+            background: linear-gradient(135deg, #7D8C6E 0%, #5F6B54 100%);
+            color: white;
+            padding: 4rem 2rem !important;
+            text-align: center;
+        }
+
+        .dream-buyer h2 {
+            color: #D4A574;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .dream-buyer p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 1rem;
+        }
+
+        /* Solution Section */
+        .solution {
+            padding: 5rem 2rem !important;
+            background: white;
+        }
+
+        .solution h2 {
+            text-align: center;
+            color: #D4A574;
+            margin-bottom: 3rem;
+        }
+
+        .solution-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .solution-image {
+            background: #FFF9F0;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        .solution-content h3 {
+            color: #3D2B1F;
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-features {
+            list-style: none;
+        }
+
+        .solution-features li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .solution-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #7D8C6E;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        /* Ingredients Section */
+        .ingredients {
+            background: linear-gradient(135deg, #FFF9F0 0%, #F5EDE2 100%);
+            padding: 5rem 2rem !important;
+        }
+
+        .ingredients h2 {
+            text-align: center;
+            color: #D4A574;
+            margin-bottom: 3rem;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: #7D8C6E;
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #E8DDD0;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .nobleBowl {
+            color: #7D8C6E;
+            font-weight: 700;
+        }
+
+        .comparison-table .kibble {
+            color: #999;
+        }
+
+        /* Transformation Stories */
+        .stories {
+            padding: 5rem 2rem !important;
+            background: white;
+        }
+
+        .stories h2 {
+            text-align: center;
+            color: #D4A574;
+            margin-bottom: 3rem;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .story-card {
+            background: #FFF9F0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .story-image {
+            background: #E8DDD0;
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        .story-content {
+            padding: 2rem;
+        }
+
+        .story-name {
+            font-family: 'Fraunces', serif;
+            font-size: 1.3rem;
+            color: #3D2B1F;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-breed {
+            color: #7D8C6E;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-stats {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .stat {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .stat-label {
+            color: #7D8C6E;
+        }
+
+        .stat-value {
+            color: #D4A574;
+            font-weight: 700;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background: linear-gradient(135deg, #7D8C6E 0%, #5F6B54 100%);
+            color: white;
+            padding: 5rem 2rem !important;
+        }
+
+        .social-proof h2 {
+            text-align: center;
+            color: #D4A574;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stars {
+            color: #D4A574;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: #D4A574;
+        }
+
+        /* Authority Section */
+        .authority {
+            background: white;
+            padding: 5rem 2rem !important;
+        }
+
+        .authority h2 {
+            text-align: center;
+            color: #D4A574;
+            margin-bottom: 3rem;
+        }
+
+        .authority-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .authority-item {
+            text-align: center;
+        }
+
+        .authority-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .authority-item h4 {
+            color: #3D2B1F;
+            margin-bottom: 0.5rem;
+        }
+
+        .authority-item p {
+            color: #7D8C6E;
+        }
+
+        /* Offer Section */
+        .offer {
+            background: linear-gradient(135deg, #D4A574 0%, #C4945F 100%);
+            color: white;
+            padding: 5rem 2rem !important;
+            text-align: center;
+        }
+
+        .offer h2 {
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 2.3rem;
+        }
+
+        .offer-box {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .offer-items {
+            text-align: left;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .offer-item {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .offer-item::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .pricing {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .was-price {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            opacity: 0.9;
+        }
+
+        .now-price {
+            font-size: 3rem;
+            font-weight: 800;
+            font-family: 'Fraunces', serif;
+        }
+
+        .offer-cta {
+            background: #3D2B1F;
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .offer-cta:hover {
+            background: white;
+            color: #D4A574;
+            transform: scale(1.05);
+        }
+
+        /* Risk Reversal */
+        .risk-reversal {
+            background: #FFF9F0;
+            padding: 5rem 2rem !important;
+            text-align: center;
+        }
+
+        .risk-reversal h2 {
+            color: #D4A574;
+            margin-bottom: 2rem;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: white;
+            border: 2px solid #D4A574;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .guarantee-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-text {
+            font-size: 1.1rem;
+            color: #3D2B1F;
+            line-height: 1.6;
+        }
+
+        /* Urgency Section */
+        .urgency {
+            background: linear-gradient(135deg, #D4A574 0%, #C4945F 100%);
+            color: white;
+            padding: 3rem 2rem !important;
+            text-align: center;
+            border-top: 4px solid #3D2B1F;
+        }
+
+        .urgency-message {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .urgency-subtext {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: white;
+            padding: 5rem 2rem !important;
+        }
+
+        .faq h2 {
+            text-align: center;
+            color: #D4A574;
+            margin-bottom: 3rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #FFF9F0;
+            border-left: 4px solid #D4A574;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            font-family: 'Fraunces', serif;
+            font-size: 1.2rem;
+            color: #3D2B1F;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            color: #7D8C6E;
+            margin-top: 1rem;
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, #7D8C6E 0%, #5F6B54 100%);
+            color: white;
+            padding: 6rem 2rem !important;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: #D4A574;
+            margin-bottom: 2rem;
+            font-size: 2.8rem;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .final-cta-button {
+            background: #D4A574;
+            color: white;
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .final-cta-button:hover {
+            background: white;
+            color: #D4A574;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #3D2B1F;
+            color: #D4A574;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: #D4A574;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFF9F0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 165, 116, 0.2);
+            padding-top: 2rem;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Sticky CTA Button */
+        .sticky-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #D4A574;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(212, 165, 116, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .sticky-cta:hover {
+            background: #3D2B1F;
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .solution-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .hook {
+                font-size: 1.4rem;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+
+            .comparison-table table {
+                min-width: 100%;
+            }
+
+            .sticky-cta {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 2.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-cta {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem !important;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero .hook {
+                font-size: 1.2rem;
+            }
+
+            .hero-cta {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+
+            .problem-grid {
+                gap: 1rem;
+            }
+
+            .problem-card {
+                padding: 1.5rem;
+            }
+
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-box {
+                padding: 2rem 1rem;
+            }
+
+            .now-price {
+                font-size: 2.2rem;
+            }
+
+            .offer-cta {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .sticky-cta {
+                padding: 0.7rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-links a {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">NobleBowl</div>
+            <div class="nav-links"></div>
+            <button class="nav-cta">Shop Now</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 style="color: #3D2B1F; margin-bottom: 1rem;">🐾</h1>
+                <h1 class="hook"><span class="hook-highlight">The Ingredient List on Your Dog's Food Would Make You Sick.</span> Literally.</h1>
+                <p class="hero-subtext">
+                    While you think you're feeding your dog premium nutrition, most kibble contains fillers, meat by-products, and ingredients that would never pass your own dinner table. Your dog deserves better.
+                </p>
+                <button class="hero-cta">Discover the Difference</button>
+            </div>
+        </section>
+
+        <!-- Problem/Agitation Section -->
+        <section class="problem">
+            <div class="container">
+                <h2>The Hidden Truth About Your Dog's Food</h2>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">🚫</div>
+                        <h4>Mystery Meat & Fillers</h4>
+                        <p>Kibble brands hide vague ingredients like "meat by-products" and "meal" — which is literally rendered parts from meat processing facilities.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">⚠️</div>
+                        <h4>Contamination & Recalls</h4>
+                        <p>Major pet food recalls happen every year. In 2023 alone, over 40 brands recalled products due to dangerous contamination.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">😷</div>
+                        <h4>Chronic Allergies & Skin Issues</h4>
+                        <p>Low-quality fillers cause itching, ear infections, and digestive problems. You'll spend thousands on vet visits for preventable issues.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">⚡</div>
+                        <h4>Low Energy & Lethargy</h4>
+                        <p>Your dog seems tired all the time? That's because kibble is 60% carbs — dogs need meat. Real, whole-food protein.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">📉</div>
+                        <h4>Shortened Lifespan</h4>
+                        <p>Poor nutrition compounds over time. You could be robbing your best friend of 2-3 healthy years by feeding low-quality food.</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">💸</div>
+                        <h4>Vet Bills Pile Up</h4>
+                        <p>Chronic digestive issues, allergies, and health problems mean expensive vet visits. Premium nutrition prevents these costs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dream Buyer Call-Out -->
+        <section class="dream-buyer">
+            <div class="container">
+                <h2>If You Treat Your Dog Like Family, But Have No Idea What's Actually in Their Food...</h2>
+                <p>You're not alone. 87% of pet parents don't realize what they're feeding their dogs.</p>
+                <p>And it's not your fault — the pet food industry has spent decades making deceptive labels look nutritious.</p>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution">
+            <div class="container">
+                <h2>Meet NobleBowl: The Food Your Dog Actually Deserves</h2>
+                <div class="solution-wrapper">
+                    <div class="solution-image">
+                        🥩
+                    </div>
+                    <div class="solution-content">
+                        <h3>Pure. Simple. Transparent.</h3>
+                        <p>NobleBowl is premium freeze-dried raw food made from ingredients so pure, they meet human-food standards. Every ingredient is traceable. Every batch is tested. Zero mystery, zero fillers, zero guilt.</p>
+                        <ul class="solution-features">
+                            <li><strong>USDA-Inspected</strong> human-grade beef, chicken, and organ meat</li>
+                            <li><strong>Freeze-Dried</strong> at peak freshness to lock in nutrients (not heated like kibble)</li>
+                            <li><strong>Raw Nutrition</strong> with digestible enzymes that kibble destroys</li>
+                            <li><strong>Vet-Formulated</strong> to AAFCO standards for complete nutrition</li>
+                            <li><strong>Sourced Responsibly</strong> from sustainable, ethical farms</li>
+                            <li><strong>No Fillers, No By-Products</strong> — you can read every ingredient</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredients Comparison -->
+        <section class="ingredients">
+            <div class="container">
+                <h2>What's Really in Their Bowl?</h2>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nutrient</th>
+                                <th class="nobleBowl">🐾 NobleBowl</th>
+                                <th class="kibble">Typical Kibble</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Primary Protein</strong></td>
+                                <td class="nobleBowl">USDA beef, chicken, turkey, fish</td>
+                                <td class="kibble">"Meat by-product meal" (mystery source)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Carbs</strong></td>
+                                <td class="nobleBowl">15% (dogs are carnivores)</td>
+                                <td class="kibble">60%+ (cheap filler corn & wheat)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fillers</strong></td>
+                                <td class="nobleBowl">Zero</td>
+                                <td class="kibble">Corn, soy, wheat, cellulose</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Heat Processing</strong></td>
+                                <td class="nobleBowl">Freeze-dried (preserves enzymes)</td>
+                                <td class="kibble">High heat (destroys nutrients)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Digestibility</strong></td>
+                                <td class="nobleBowl">95%+ (body absorbs nutrition)</td>
+                                <td class="kibble">70-80% (much passes through)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Shelf Life</strong></td>
+                                <td class="nobleBowl">12 months frozen (no preservatives)</td>
+                                <td class="kibble">12-24 months (synthetic preservatives)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformation Stories -->
+        <section class="stories">
+            <div class="container">
+                <h2>Real Dogs. Real Results. Real Transformation.</h2>
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-image">🐕‍🦺</div>
+                        <div class="story-content">
+                            <div class="story-name">Max</div>
+                            <div class="story-breed">Golden Retriever, 6 years old</div>
+                            <p>"Max's scratching stopped within 2 weeks. His coat went from dull to shiny, and his energy is like a young dog again. The transformation was shocking."</p>
+                            <div class="story-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Itching & Scratching:</span>
+                                    <span class="stat-value">Eliminated</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Coat Quality:</span>
+                                    <span class="stat-value">Shiny & Soft</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Energy Level:</span>
+                                    <span class="stat-value">+40%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🐩</div>
+                        <div class="story-content">
+                            <div class="story-name">Luna</div>
+                            <div class="story-breed">French Bulldog, 4 years old</div>
+                            <p>"Luna had chronic ear infections and digestive issues for 2 years. We spent over $4,000 on vet visits. One month on NobleBowl and everything cleared up."</p>
+                            <div class="story-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Ear Infections:</span>
+                                    <span class="stat-value">Gone</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Digestion:</span>
+                                    <span class="stat-value">Perfect</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Vet Visits Saved:</span>
+                                    <span class="stat-value">$4,000+</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-image">🦴</div>
+                        <div class="story-content">
+                            <div class="story-name">Duke</div>
+                            <div class="story-breed">German Shepherd, 8 years old</div>
+                            <p>"We thought Duke was just slowing down with age. But within weeks on NobleBowl, he's acting like a 3-year-old. Our vet said his bloodwork is the best she's seen."</p>
+                            <div class="story-stats">
+                                <div class="stat">
+                                    <span class="stat-label">Activity Level:</span>
+                                    <span class="stat-value">+50%</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Muscle Tone:</span>
+                                    <span class="stat-value">Visible</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-label">Vet Approval:</span>
+                                    <span class="stat-value">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="social-proof">
+            <div class="container">
+                <h2>Trusted by Pet Parents Like You</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"I was skeptical about the price until my vet told me I'm saving $3,000+ per year on health issues. Best decision I've made for Bella."</p>
+                        <div class="testimonial-author">— Sarah M., Chicago</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The transparency is incredible. I can literally see what's in their food. After years of mystery kibble, this feels like the responsible choice."</p>
+                        <div class="testimonial-author">— James H., Denver</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Charlie went from picky eater to devouring every bite. And I sleep better knowing he's eating clean, whole food. Worth every penny."</p>
+                        <div class="testimonial-author">— Michelle T., Austin</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Authority & Trust -->
+        <section class="authority">
+            <div class="container">
+                <h2>Backed by Experts, Chosen by Pet Parents</h2>
+                <div class="authority-items">
+                    <div class="authority-item">
+                        <div class="authority-icon">👨‍⚕️</div>
+                        <h4>Recommended by 2,000+ Veterinarians</h4>
+                        <p>Board-certified nutritionists and vets trust NobleBowl's science-backed formula.</p>
+                    </div>
+                    <div class="authority-item">
+                        <div class="authority-icon">✅</div>
+                        <h4>AAFCO Certified</h4>
+                        <p>Complete and balanced nutrition for all life stages. Third-party tested for purity and quality.</p>
+                    </div>
+                    <div class="authority-item">
+                        <div class="authority-icon">🏆</div>
+                        <h4>Published in 12+ Veterinary Journals</h4>
+                        <p>Raw nutrition science backed by peer-reviewed research on canine health outcomes.</p>
+                    </div>
+                    <div class="authority-item">
+                        <div class="authority-icon">📰</div>
+                        <h4>Featured in Major Publications</h4>
+                        <p>Dog Magazine, Veterinary Times, Natural Pet Care Weekly — trusted by industry leaders.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Godfather Offer -->
+        <section class="offer">
+            <div class="container">
+                <h2>Your Starter Pack: Give Your Dog the Best Week of Their Life</h2>
+                <div class="offer-box">
+                    <div class="offer-items">
+                        <div class="offer-item">✓ 2-Week Starter Supply (8 meals, portion-sized)</div>
+                        <div class="offer-item">✓ Premium Freeze-Dried Treat Bag ($20 value)</div>
+                        <div class="offer-item">✓ Complete Feeding & Transition Guide</div>
+                        <div class="offer-item">✓ Free Priority Shipping ($25 value)</div>
+                        <div class="offer-item">✓ Lifetime Feeding Consultation (via email)</div>
+                    </div>
+                </div>
+                <div class="pricing">
+                    <div>
+                        <p><span class="was-price">$120</span><br>Full Value</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <p>Today Only:<br><span class="now-price">$49</span></p>
+                    </div>
+                </div>
+                <button class="offer-cta">Start Their Transformation Now</button>
+                <p style="opacity: 0.9; margin-top: 1rem;">Limited to first-time customers • Money-back guarantee included</p>
+            </div>
+        </section>
+
+        <!-- Risk Reversal -->
+        <section class="risk-reversal">
+            <div class="container">
+                <h2>The Picky Eater Guarantee</h2>
+                <div class="guarantee-badge">
+                    <div class="guarantee-icon">🛡️</div>
+                    <p class="guarantee-text"><strong>100% Money-Back Guarantee.</strong> If your dog won't eat NobleBowl, we'll refund every penny. No questions asked. We're that confident.</p>
+                </div>
+                <p style="font-size: 1rem; color: #7D8C6E;">Every dog has eaten kibble their whole life. Even the pickiest eaters convert within 3-5 days. But if yours doesn't, you're protected.</p>
+            </div>
+        </section>
+
+        <!-- Urgency -->
+        <section class="urgency">
+            <div class="container">
+                <p class="urgency-message">⏰ First-Time Customer Price • Limited to 500 Starter Packs This Month</p>
+                <p class="urgency-subtext">Once we hit our cap, the price resets to $79. Lock in your $49 price now.</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq">
+            <div class="container">
+                <h2>Questions? We've Got Answers.</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How do I transition my dog to NobleBowl?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Most dogs transition smoothly within 3-5 days. Start by mixing 25% NobleBowl with 75% of their current food, then gradually increase the ratio daily. Your Starter Pack includes a detailed transition guide. If you have a sensitive stomach pup, we recommend a slower 7-10 day transition. All feeding guidance is included free with your order.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is NobleBowl suitable for all breeds and ages?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! Our formula is AAFCO certified for all life stages — puppies, adults, and seniors. We have portion guides for small breeds (under 20 lbs), medium breeds (20-60 lbs), and large breeds (60+ lbs). For puppies under 6 months, we recommend consulting with your vet on quantity, but our nutrition is perfect for growing dogs. All guidance is included in your free feeding consultation.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>My dog has allergies. Will NobleBowl help?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Most allergy issues come from low-quality fillers and carbs in kibble. NobleBowl has zero grains, zero soy, and zero artificial ingredients — the common allergen culprits. Many of our customers see allergies disappear within 3-4 weeks. If your dog has a specific protein allergy, we can help you select the right formula (beef-free, chicken-free, etc.). Email our nutritionists — it's free with your purchase.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does freeze-dried food stay fresh?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Unopened NobleBowl stays fresh for 12 months when stored in a cool, dry place. Once opened, it stays fresh for 2 weeks in an airtight container at room temperature, or 4 weeks in the freezer. There are no synthetic preservatives — just pure, frozen nutrition. Your Starter Pack includes storage tips to maximize freshness.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is the freeze-dried process safe?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely. Freeze-drying is the gentlest preservation method — it removes only water, leaving all nutrients, enzymes, and amino acids intact. This is how NASA preserves food for astronauts. No heat. No chemicals. No loss of nutritional value. Every batch is third-party tested for pathogens and quality standards.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What if my dog is a picky eater?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Even picky eaters convert because NobleBowl smells and tastes like real food (because it is). Most transition within 3-5 days. If your dog doesn't, we have a 100% money-back guarantee — no questions asked. We also offer free consultation on picky eater strategies if you want extra support.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2>Give Them the Food They Deserve</h2>
+                <p>Your dog has been loyal, loving, and true their entire life. They've asked for nothing but your love. The least they deserve is food made from clean, whole ingredients — not mystery meat and fillers.</p>
+                <p>Don't wait. Lock in your $49 Starter Pack price today. Become one of thousands of pet parents who've already made the switch.</p>
+                <button class="final-cta-button">Claim Your Starter Pack</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">About NobleBowl</a>
+                <a href="#sourcing">Sourcing & Transparency</a>
+                <a href="#contact">Contact</a>
+                <a href="#returns">Returns & Refunds</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 NobleBowl. All rights reserved. USDA-Inspected. AAFCO Certified. Veterinarian-Formulated.</p>
+                <p>🐾 Made with love for dogs who deserve the best.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA Button -->
+    <button class="sticky-cta" onclick="document.querySelector('.final-cta').scrollIntoView({ behavior: 'smooth' })">
+        Order Now 🐾
+    </button>
+
+    <!-- FAQ Interactivity -->
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for nav buttons
+        document.querySelectorAll('.nav-cta, .hero-cta, .offer-cta').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelector('.final-cta').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

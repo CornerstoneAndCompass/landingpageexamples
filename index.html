@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Examples — Cornerstone & Compass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0A0A0F;
+            --card-bg: #141419;
+            --text: #F5F5F7;
+            --text-muted: #8E8E93;
+            --accent: #6C63FF;
+            --accent-2: #FF6B6B;
+            --border: rgba(255,255,255,0.06);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 24px 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(108,99,255,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(108,99,255,0.12);
+            border: 1px solid rgba(108,99,255,0.25);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 0%, #C4B5FD 50%, #FF6B6B 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 16px;
+            line-height: 1.7;
+        }
+
+        .hero .subtitle {
+            font-size: 14px;
+            color: var(--text-muted);
+            opacity: 0.6;
+        }
+
+        /* Methodology Section */
+        .methodology {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+        }
+
+        .methodology-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .methodology-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        }
+
+        .methodology-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .methodology-card > p {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .step {
+            padding: 16px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .step-num {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            background: rgba(108,99,255,0.15);
+            color: var(--accent);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step h4 {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .step p {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Grid */
+        .grid-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .grid-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .grid-section > p {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            border-color: rgba(108,99,255,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(108,99,255,0.08);
+        }
+
+        .card-preview {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .card .brand {
+            font-size: 13px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .card .desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .card .hook {
+            font-size: 13px;
+            color: var(--text);
+            font-style: italic;
+            padding: 12px 16px;
+            background: rgba(108,99,255,0.06);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .card-footer .sections {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .view-btn {
+            padding: 8px 18px;
+            background: var(--accent);
+            color: white;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .card:hover .view-btn {
+            background: #5B52E0;
+        }
+
+        /* Color themes for card previews */
+        .preview-skincare { background: linear-gradient(135deg, #B76E79, #C9A96E, #FFF8F0); }
+        .preview-fitness { background: linear-gradient(135deg, #0A0A0A, #FF2D2D, #39FF14); }
+        .preview-fashion { background: linear-gradient(135deg, #F5F0EB, #B8995C, #E8D5C4); }
+        .preview-home { background: linear-gradient(135deg, #2D5A3D, #C17F59, #F0E6D3); }
+        .preview-pets { background: linear-gradient(135deg, #7D8C6E, #D4A574, #FFF9F0); }
+        .preview-coffee { background: linear-gradient(135deg, #2C1810, #C4622D, #F5E6D3); }
+        .preview-tech { background: linear-gradient(135deg, #111111, #0066FF, #F3F4F6); }
+        .preview-baby { background: linear-gradient(135deg, #E8F5E9, #FDDCB5, #D1C4E9); }
+        .preview-jewelry { background: linear-gradient(135deg, #1A1A2E, #D4AF37, #722F37); }
+        .preview-wellness { background: linear-gradient(135deg, #1E1B4B, #7C3AED, #E2E8D4); }
+
+        .card-preview .preview-label {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            font-size: 32px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: rgba(255,255,255,0.9);
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .card-preview .preview-num {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+        }
+
+        /* Tag colors */
+        .tag-beauty { background: rgba(183,110,121,0.15); color: #B76E79; }
+        .tag-fitness { background: rgba(255,45,45,0.15); color: #FF2D2D; }
+        .tag-fashion { background: rgba(184,153,92,0.15); color: #B8995C; }
+        .tag-home { background: rgba(45,90,61,0.15); color: #6DAE82; }
+        .tag-pets { background: rgba(125,140,110,0.15); color: #9DB88E; }
+        .tag-coffee { background: rgba(196,98,45,0.15); color: #C4622D; }
+        .tag-tech { background: rgba(0,102,255,0.15); color: #0066FF; }
+        .tag-baby { background: rgba(140,174,104,0.15); color: #8CAE68; }
+        .tag-jewelry { background: rgba(212,175,55,0.15); color: #D4AF37; }
+        .tag-wellness { background: rgba(124,58,237,0.15); color: #7C3AED; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .steps { grid-template-columns: 1fr 1fr; }
+            .methodology-card { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="badge">Sell Like Crazy Framework × 10 Industries</div>
+        <h1>Landing Page<br>Demo Collection</h1>
+        <p>10 world-class, conversion-optimized landing pages for the most common ecommerce industries. Every page follows Sabri Suby's proven "Sell Like Crazy" methodology.</p>
+        <p class="subtitle">Built by Cornerstone & Compass</p>
+    </section>
+
+    <section class="methodology">
+        <div class="methodology-card">
+            <h2>The Framework Behind Every Page</h2>
+            <p>Each landing page follows this proven psychological selling sequence:</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h4>Pattern Interrupt</h4>
+                    <p>Bold headline that stops the scroll cold</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h4>Dream Buyer</h4>
+                    <p>Call out the exact person this is for</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h4>Agitate Problem</h4>
+                    <p>Twist the knife on their pain points</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <h4>Solution Reveal</h4>
+                    <p>Present the product as the answer</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">5</div>
+                    <h4>Social Proof</h4>
+                    <p>Testimonials, results, authority</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">6</div>
+                    <h4>Godfather Offer</h4>
+                    <p>So good they can't refuse</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">7</div>
+                    <h4>Risk Reversal</h4>
+                    <p>Remove all buying friction</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">8</div>
+                    <h4>Urgency + CTA</h4>
+                    <p>Drive immediate action</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid-section">
+        <h2>The Collection</h2>
+        <p>Click any card to view the full landing page</p>
+
+        <div class="grid">
+
+            <!-- 1. Skincare -->
+            <a href="01-skincare.html" class="card">
+                <div class="card-preview preview-skincare">
+                    <span class="preview-num">01</span>
+                    <span class="preview-label">LumiGlow</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-beauty">Skincare & Beauty</span>
+                    <h3>Pro-Age Reversal Serum</h3>
+                    <div class="brand">LumiGlow — Premium Anti-Aging</div>
+                    <p class="desc">Luxury skincare with clinical backing. Rose gold palette, editorial design, emotional copy targeting women 35+ frustrated with ineffective products.</p>
+                    <div class="hook">"The $4.7 Billion Anti-Aging Industry Has Been Lying to You..."</div>
+                    <div class="card-footer">
+                        <span class="sections">15 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 2. Fitness -->
+            <a href="02-fitness.html" class="card">
+                <div class="card-preview preview-fitness">
+                    <span class="preview-num">02</span>
+                    <span class="preview-label">APEX</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-fitness">Fitness Supplements</span>
+                    <h3>Elite Pre-Workout Formula</h3>
+                    <div class="brand">APEX PRE-X — Performance Nutrition</div>
+                    <p class="desc">Dark, aggressive aesthetic with neon accents. Transparent dosing, clinical proof, and an "empty tub guarantee" that eliminates all risk.</p>
+                    <div class="hook">"97% of Pre-Workouts Are Underdosed Garbage. Here's What Elite Athletes Actually Use."</div>
+                    <div class="card-footer">
+                        <span class="sections">15 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 3. Fashion -->
+            <a href="03-fashion.html" class="card">
+                <div class="card-preview preview-fashion">
+                    <span class="preview-num">03</span>
+                    <span class="preview-label">ÈLAN</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-fashion">Fashion & Apparel</span>
+                    <h3>Sustainable Luxury Capsule</h3>
+                    <div class="brand">ÈLAN Essentials — Capsule Wardrobe</div>
+                    <p class="desc">Ultra-clean editorial luxury. Minimal design with abundant white space, sustainability narrative, and capsule wardrobe value proposition.</p>
+                    <div class="hook">"You Own 100+ Pieces of Clothing. You Wear 20. We Made Those 20 Perfect."</div>
+                    <div class="card-footer">
+                        <span class="sections">15 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 4. Home -->
+            <a href="04-home.html" class="card">
+                <div class="card-preview preview-home">
+                    <span class="preview-num">04</span>
+                    <span class="preview-label">ChefMate</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-home">Home & Kitchen</span>
+                    <h3>Smart All-in-One Kitchen System</h3>
+                    <div class="brand">ChefMate Pro — Kitchen Innovation</div>
+                    <p class="desc">Warm, family-focused design with forest green and copper tones. Replaces 7 appliances. ROI messaging on time and money saved.</p>
+                    <div class="hook">"Replace 7 Kitchen Appliances With One. Save 3 Hours a Week. Eat Like a Michelin Chef."</div>
+                    <div class="card-footer">
+                        <span class="sections">16 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 5. Pets -->
+            <a href="05-pets.html" class="card">
+                <div class="card-preview preview-pets">
+                    <span class="preview-num">05</span>
+                    <span class="preview-label">NobleBowl</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-pets">Pet Products</span>
+                    <h3>Premium Freeze-Dried Raw Food</h3>
+                    <div class="brand">NobleBowl — Dog Nutrition</div>
+                    <p class="desc">Earthy, natural aesthetic. Shocking ingredient comparison table, transformation stories, and a "Picky Eater Guarantee" risk reversal.</p>
+                    <div class="hook">"The Ingredient List on Your Dog's Food Would Make You Sick. Literally."</div>
+                    <div class="card-footer">
+                        <span class="sections">15 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 6. Coffee -->
+            <a href="06-coffee.html" class="card">
+                <div class="card-preview preview-coffee">
+                    <span class="preview-num">06</span>
+                    <span class="preview-label">Origin Black</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-coffee">Coffee & Specialty Food</span>
+                    <h3>Single-Origin Coffee Subscription</h3>
+                    <div class="brand">Origin Black — Artisan Coffee</div>
+                    <p class="desc">Rich espresso-toned design with artisanal warmth. Sensory-rich copy, wine-style tasting cards, farm-to-cup journey visualization.</p>
+                    <div class="hook">"Your Morning Coffee Was Roasted 6 Months Ago. No Wonder It Tastes Like Cardboard."</div>
+                    <div class="card-footer">
+                        <span class="sections">15 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 7. Tech -->
+            <a href="07-tech.html" class="card">
+                <div class="card-preview preview-tech">
+                    <span class="preview-num">07</span>
+                    <span class="preview-label">DeskForge</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-tech">Tech Accessories</span>
+                    <h3>Productivity Desk Command System</h3>
+                    <div class="brand">DeskForge — Workspace Optimization</div>
+                    <p class="desc">Apple-inspired minimal aesthetic. Data-driven productivity claims, before/after workspace comparison, spec-heavy feature cards.</p>
+                    <div class="hook">"Your Desk Is Costing You 2.5 Hours of Productivity Every Single Day."</div>
+                    <div class="card-footer">
+                        <span class="sections">16 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 8. Baby -->
+            <a href="08-baby.html" class="card">
+                <div class="card-preview preview-baby">
+                    <span class="preview-num">08</span>
+                    <span class="preview-label">PureSprout</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-baby">Baby & Parenting</span>
+                    <h3>Organic Baby Skincare Collection</h3>
+                    <div class="brand">PureSprout — Baby Care</div>
+                    <p class="desc">Soft, nurturing pastels with mint and peach. Ingredient transparency comparison, pediatrician authority, protective parent messaging.</p>
+                    <div class="hook">"We Tested 47 'Baby-Safe' Products. 39 Contained Chemicals Linked to Skin Irritation."</div>
+                    <div class="card-footer">
+                        <span class="sections">15 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 9. Jewelry -->
+            <a href="09-jewelry.html" class="card">
+                <div class="card-preview preview-jewelry">
+                    <span class="preview-num">09</span>
+                    <span class="preview-label">Aurelie</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-jewelry">Jewelry & Accessories</span>
+                    <h3>Custom Fine Jewelry Atelier</h3>
+                    <div class="brand">Maison Aurelie — Bespoke Jewelry</div>
+                    <p class="desc">Ultra-luxurious navy and gold. Gallery-like aesthetic with shimmer animations, craftsmanship timeline, emotional storytelling.</p>
+                    <div class="hook">"Every Piece of Jewelry Tells a Story. Most Brands Just Forgot to Ask You Yours."</div>
+                    <div class="card-footer">
+                        <span class="sections">15 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 10. Wellness -->
+            <a href="10-wellness.html" class="card">
+                <div class="card-preview preview-wellness">
+                    <span class="preview-num">10</span>
+                    <span class="preview-label">Adaptiv</span>
+                </div>
+                <div class="card-body">
+                    <span class="card-tag tag-wellness">Health & Wellness</span>
+                    <h3>Adaptogen & Nootropic Stack</h3>
+                    <div class="brand">Adaptiv — Performance Wellness</div>
+                    <p class="desc">Modern scientific aesthetic with indigo and purple. Clinical study references, 3-product daily system, high-performer targeting.</p>
+                    <div class="hook">"You're Not Tired Because You Need More Sleep. You're Tired Because Your Stress Response Is Broken."</div>
+                    <div class="card-footer">
+                        <span class="sections">16 sections · Full funnel</span>
+                        <span class="view-btn">View Page →</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Built by <a href="https://cornerstoneandcompass.com" target="_blank">Cornerstone & Compass</a> · Sell Like Crazy Framework by Sabri Suby</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin Black | Premium Single-Origin Coffee Subscription</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            color: #2C1810;
+            background-color: #F5E6D3;
+            line-height: 1.6;
+        }
+
+        /* ============ STICKY NAVIGATION ============ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2C1810 100%);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #D4A853;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: #F5E6D3;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin: 0 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #D4A853;
+        }
+
+        .nav-cta {
+            background: #C4622D;
+            color: #F5E6D3;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #C4622D;
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: #C4622D;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .nav-cta {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2C1810 50%, #1A1A1A 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: #F5E6D3;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212, 168, 83, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            color: #D4A853;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtext {
+            font-size: 1.3rem;
+            color: #F5E6D3;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-highlight {
+            background: #C4622D;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            color: #F5E6D3;
+            font-weight: 600;
+        }
+
+        .pattern-interrupt {
+            background: #C4622D;
+            color: #F5E6D3;
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 6px solid #D4A853;
+        }
+
+        .pattern-interrupt p {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtext {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* ============ PROBLEM AGITATION ============ */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #2C1810;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: #FFF;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(44, 24, 16, 0.15);
+            border-top: 4px solid #C4622D;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(44, 24, 16, 0.25);
+        }
+
+        .problem-card h3 {
+            color: #C4622D;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .problem-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ============ DREAM BUYER CALLOUT ============ */
+        .dream-buyer {
+            background: linear-gradient(135deg, #C4622D 0%, #A84A23 100%);
+            color: #F5E6D3;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dream-buyer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="15" fill="rgba(245,230,211,0.05)"/><circle cx="80" cy="80" r="25" fill="rgba(245,230,211,0.05)"/></svg>');
+            pointer-events: none;
+        }
+
+        .dream-buyer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dream-buyer h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .dream-buyer p {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .dream-buyer h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ============ SOLUTION REVEAL ============ */
+        .solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+
+        .solution-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2C1810;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .solution-text p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.9;
+        }
+
+        .solution-benefits {
+            list-style: none;
+        }
+
+        .solution-benefits li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #E8D4C4;
+            color: #2C1810;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+
+        .solution-benefits li:before {
+            content: '✓';
+            color: #C4622D;
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .solution-visual {
+            background: linear-gradient(135deg, #2C1810 0%, #3D2817 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            color: #F5E6D3;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-visual::before {
+            content: '☕';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.1;
+            top: -40px;
+            right: -40px;
+            transform: rotate(-20deg);
+        }
+
+        .solution-visual h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #D4A853;
+        }
+
+        .solution-visual-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .visual-item {
+            background: rgba(212, 168, 83, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid #D4A853;
+        }
+
+        .visual-item-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #D4A853;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .visual-item-text {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .solution {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .solution-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .solution-visual-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ JOURNEY SECTION ============ */
+        .journey {
+            background: #2C1810;
+            color: #F5E6D3;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin: 4rem 0;
+        }
+
+        .journey h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #D4A853;
+        }
+
+        .journey-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+
+        .journey-step {
+            text-align: center;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .journey-step::after {
+            content: '';
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 3px;
+            background: #D4A853;
+        }
+
+        .journey-step:last-child::after {
+            display: none;
+        }
+
+        .journey-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .journey-step h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #D4A853;
+        }
+
+        .journey-step p {
+            font-size: 0.95rem;
+            color: #E8D4C4;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .journey-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .journey-step::after {
+                display: none;
+            }
+
+            .journey h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ============ TASTING EXPERIENCE ============ */
+        .tasting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .tasting-card {
+            background: #FFF;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(44, 24, 16, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tasting-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(44, 24, 16, 0.25);
+        }
+
+        .tasting-header {
+            background: linear-gradient(135deg, #2C1810 0%, #3D2817 100%);
+            color: #F5E6D3;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .tasting-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: #D4A853;
+        }
+
+        .origin-name {
+            font-size: 0.9rem;
+            color: #C4622D;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tasting-body {
+            padding: 2rem 1.5rem;
+        }
+
+        .flavor-profile {
+            background: #F5E6D3;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .flavor-profile h4 {
+            color: #C4622D;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .flavor-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .flavor-tag {
+            background: #C4622D;
+            color: #F5E6D3;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .roast-info {
+            background: #E8D4C4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .roast-info h4 {
+            color: #2C1810;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .roast-details {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .story-text {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .tasting-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .tasting-header h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* ============ SOCIAL PROOF ============ */
+        .testimonials {
+            background: linear-gradient(135deg, #F5E6D3 0%, #F0D9C6 100%);
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin: 4rem 0;
+        }
+
+        .testimonials h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2C1810;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial {
+            background: #FFF;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(44, 24, 16, 0.1);
+        }
+
+        .testimonial-stars {
+            color: #D4A853;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #2C1810;
+            border-top: 2px solid #E8D4C4;
+            padding-top: 1rem;
+        }
+
+        .author-title {
+            font-size: 0.85rem;
+            color: #C4622D;
+            font-weight: 500;
+            margin-top: 0.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials h2 {
+                font-size: 1.8rem;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ AUTHORITY ============ */
+        .authority {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #2C1810;
+            color: #F5E6D3;
+            border-radius: 12px;
+            margin: 4rem 0;
+        }
+
+        .authority h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #D4A853;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .authority-item {
+            background: rgba(212, 168, 83, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 2px solid #D4A853;
+        }
+
+        .authority-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #D4A853;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .authority-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #E8D4C4;
+        }
+
+        .certification-logos {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 168, 83, 0.3);
+        }
+
+        .cert-badge {
+            background: rgba(212, 168, 83, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: #D4A853;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .authority h2 {
+                font-size: 1.8rem;
+            }
+
+            .authority-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-logos {
+                gap: 1rem;
+            }
+        }
+
+        /* ============ GODFATHER OFFER ============ */
+        .godfather-offer {
+            background: linear-gradient(135deg, #D4A853 0%, #C4622D 100%);
+            color: #1A1A1A;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 50px rgba(212, 168, 83, 0.3);
+        }
+
+        .godfather-offer::before {
+            content: '✦';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            top: -30px;
+            left: -30px;
+        }
+
+        .godfather-offer::after {
+            content: '✦';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.1;
+            bottom: -30px;
+            right: -30px;
+        }
+
+        .godfather-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .godfather-offer h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: #1A1A1A;
+            font-weight: 800;
+        }
+
+        .godfather-badge {
+            display: inline-block;
+            background: #1A1A1A;
+            color: #D4A853;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .offer-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .offer-item {
+            text-align: center;
+        }
+
+        .offer-item-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .offer-item-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1A1A1A;
+            font-weight: 700;
+        }
+
+        .value-line-through {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .price-highlight {
+            background: #1A1A1A;
+            color: #D4A853;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .original-price {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .final-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1A1A1A;
+            color: #D4A853;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 3px solid #1A1A1A;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #1A1A1A;
+        }
+
+        .offer-subtext {
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .godfather-offer {
+                padding: 3rem 1.5rem;
+            }
+
+            .godfather-offer h2 {
+                font-size: 2rem;
+            }
+
+            .offer-breakdown {
+                grid-template-columns: 1fr;
+            }
+
+            .final-price {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* ============ RISK REVERSAL ============ */
+        .risk-reversal {
+            background: #FFF;
+            border: 3px solid #C4622D;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .risk-reversal::before {
+            content: '🛡️';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            background: #F5E6D3;
+            padding: 0.5rem;
+            border-radius: 50%;
+        }
+
+        .risk-reversal h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #C4622D;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+        .risk-reversal p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.9;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .guarantee-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .guarantee-list li {
+            background: #F5E6D3;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #C4622D;
+            text-align: left;
+            font-weight: 500;
+            color: #2C1810;
+        }
+
+        .guarantee-list li:before {
+            content: '✓ ';
+            color: #C4622D;
+            font-weight: bold;
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .risk-reversal h2 {
+                font-size: 1.6rem;
+            }
+
+            .guarantee-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============ URGENCY ============ */
+        .urgency {
+            background: linear-gradient(135deg, #C4622D 0%, #A84A23 100%);
+            color: #F5E6D3;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+            border: 2px solid #D4A853;
+        }
+
+        .urgency-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .urgency h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1A1A1A;
+        }
+
+        .urgency p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .roast-schedule {
+            background: rgba(26, 26, 26, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            color: #1A1A1A;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .urgency h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ============ FAQ ============ */
+        .faq {
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+
+        .faq h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #2C1810;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background: #FFF;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(44, 24, 16, 0.1);
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, #2C1810 0%, #3D2817 100%);
+            color: #F5E6D3;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #3D2817 0%, #4D3520 100%);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #FFF;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem 2rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .faq h2 {
+                font-size: 1.8rem;
+            }
+
+            .faq-question {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 1.2rem 1.5rem;
+            }
+        }
+
+        /* ============ FINAL CTA ============ */
+        .final-cta {
+            background: linear-gradient(135deg, #2C1810 0%, #1A1A1A 100%);
+            color: #F5E6D3;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212, 168, 83, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: #D4A853;
+            font-weight: 800;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .cta-button {
+            background: #D4A853;
+            color: #1A1A1A;
+            padding: 1.3rem 3.5rem;
+            font-size: 1.2rem;
+            border-color: #D4A853;
+        }
+
+        .final-cta .cta-button:hover {
+            background: transparent;
+            color: #D4A853;
+        }
+
+        @media (max-width: 768px) {
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta p {
+                font-size: 1rem;
+            }
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: #1A1A1A;
+            color: #E8D4C4;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 3px solid #C4622D;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: #D4A853;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #C4622D;
+        }
+
+        .footer-links {
+            margin: 1.5rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 0.9rem;
+        }
+
+        .footer-legal {
+            border-top: 1px solid rgba(212, 168, 83, 0.3);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ============ SCROLL ANIMATIONS ============ */
+        .section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============ FLOATING CTA ============ */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #C4622D;
+            color: #F5E6D3;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(196, 98, 45, 0.4);
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 999;
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(196, 98, 45, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- STICKY NAVIGATION -->
+    <nav>
+        <div class="logo">Origin Black</div>
+        <div style="display: flex; align-items: center; gap: 2rem;">
+            <a href="#origins">Our Coffee</a>
+            <a href="#guarantee">Guarantee</a>
+            <a href="#faq">FAQ</a>
+            <a href="#order" class="nav-cta">Order Discovery Box</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Morning Coffee Was Roasted 6 Months Ago.</h1>
+            <div class="pattern-interrupt">
+                <p>No wonder it tastes like cardboard.</p>
+            </div>
+            <p class="hero-subtext">
+                Most coffee drinkers have never tasted what coffee <span class="hero-highlight">actually tastes like</span>.
+                Mass-roasted, mass-shipped, sitting on shelves for months, their coffee is stale before it ever reaches home.
+                <br><br>
+                It's time to change that.
+            </p>
+        </div>
+    </section>
+
+    <!-- PROBLEM AGITATION -->
+    <section class="section">
+        <h2 class="section-title">The Coffee Industry's Dirty Secret</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">📦</div>
+                <h3>Stale Beans</h3>
+                <p>
+                    Coffee beans are roasted, shipped, warehoused, and shipped again. By the time they reach your cup,
+                    they've lost 80% of their aromatic compounds. You're not tasting coffee—you're tasting dust.
+                </p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">🔥</div>
+                <h3>Burnt Mass-Roasting</h3>
+                <p>
+                    Industrial roasters push 500+ pounds through at once. Consistency? Non-existent. Half the beans
+                    are dark-roasted charcoal, the other half undercooked. The result: bitter, ashy, unpalatable.
+                </p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">🚚</div>
+                <h3>Zero Traceability</h3>
+                <p>
+                    You don't know where your coffee came from. You don't know the farmer. You don't know if they
+                    were paid fairly. Commercial coffee blends hide their origins for a reason.
+                </p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">☕</div>
+                <h3>Masking the Taste</h3>
+                <p>
+                    That's why you dump cream and sugar into it. Not because you like your coffee that way—because
+                    bad coffee tastes bad, and you're covering it up every single morning.
+                </p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">⛓️</div>
+                <h3>Exploitative Supply Chains</h3>
+                <p>
+                    Coffee farmers earn $1-2 per pound while you pay $15 per bag. Middlemen pocket the difference
+                    while farmers struggle. Fair trade helps, but it's still not fair enough.
+                </p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-icon">💭</div>
+                <h3>You've Never Tasted Real Coffee</h3>
+                <p>
+                    And you don't even know what you're missing. Fresh, single-origin coffee tastes nothing like
+                    what you've been drinking. It's a completely different experience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DREAM BUYER CALLOUT -->
+    <section class="section">
+        <div class="dream-buyer">
+            <div class="dream-buyer-content">
+                <h2>If you drink coffee every single day but have never tasted what coffee is <span style="color: #1A1A1A;">actually</span> supposed to taste like...</h2>
+                <p>This message is for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION REVEAL -->
+    <section class="section">
+        <div class="solution">
+            <div class="solution-text">
+                <h2>Meet Origin Black</h2>
+                <p>
+                    We're doing coffee differently. Obsessively different.
+                </p>
+                <p>
+                    Coffee that's roasted within 48 hours of shipping. Single-origin beans from named farms where
+                    you can know the farmer by name. Beans roasted on a 60-pound capacity roaster by a master roaster
+                    who knows every bean personally.
+                </p>
+                <p>
+                    Coffee with flavor notes like a fine wine. With tasting notes you can actually taste. With a taste
+                    so good, you'll finally understand why people are obsessed with coffee.
+                </p>
+                <ul class="solution-benefits">
+                    <li>Roasted within 48 hours of shipment (peak freshness)</li>
+                    <li>Single-origin from documented farms and farmers</li>
+                    <li>Small-batch roasting (60 lb capacity) for consistency</li>
+                    <li>Direct trade pricing—farmers get 3x fair trade rates</li>
+                    <li>Tasting notes you can actually taste (not marketing fluff)</li>
+                    <li>SCA certified specialty-grade beans only (92+ scores)</li>
+                </ul>
+            </div>
+            <div class="solution-visual">
+                <h3>Our Promise</h3>
+                <div class="solution-visual-items">
+                    <div class="visual-item">
+                        <div class="visual-item-number">48h</div>
+                        <div class="visual-item-text">Roast to Ship</div>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-item-number">100%</div>
+                        <div class="visual-item-text">Single-Origin</div>
+                    </div>
+                    <div class="visual-item">
+                        <div class="visual-item-number">92+</div>
+                        <div class="visual-item-text">SCA Score Minimum</div>
+                    </div>
+                </div>
+                <p style="font-size: 1.1rem; margin-top: 2rem; color: #D4A853; font-weight: 600;">
+                    Coffee that tastes like what coffee should taste like.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JOURNEY SECTION -->
+    <section class="section">
+        <div class="journey">
+            <h2>From Farmer to Your Cup</h2>
+            <div class="journey-timeline">
+                <div class="journey-step">
+                    <div class="journey-icon">🌱</div>
+                    <h3>Farm</h3>
+                    <p>High-altitude single-origin farms in Ethiopia, Colombia, and Guatemala. Named farmers. Personal relationships.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-icon">🚜</div>
+                    <h3>Harvest</h3>
+                    <p>Hand-picked at peak ripeness. Washed, fermented, and dried with care. Only the best cherries make the cut.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-icon">🔥</div>
+                    <h3>Roast</h3>
+                    <p>Small-batch roasting. Every bean monitored. Released only when it's perfect—Tuesday mornings.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-icon">📦</div>
+                    <h3>Ship</h3>
+                    <p>Packed fresh. Shipped within 48 hours. In your hands within 2-3 days, at peak freshness.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-icon">☕</div>
+                    <h3>Brew</h3>
+                    <p>Ground or whole bean. The taste? Nothing like you've ever had. This is real coffee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TASTING EXPERIENCE -->
+    <section class="section" id="origins">
+        <h2 class="section-title">Taste the Terroir</h2>
+        <p style="text-align: center; font-size: 1.1rem; color: #555; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            Each origin tells a story. Each sip tells you something new. These aren't just coffee blends—they're experiences.
+        </p>
+        <div class="tasting-grid">
+            <div class="tasting-card">
+                <div class="tasting-header">
+                    <div class="origin-name">Ethiopia</div>
+                    <h3>Yirgacheffe</h3>
+                </div>
+                <div class="tasting-body">
+                    <div class="flavor-profile">
+                        <h4>Flavor Profile</h4>
+                        <div class="flavor-tags">
+                            <span class="flavor-tag">Blueberry</span>
+                            <span class="flavor-tag">Bergamot</span>
+                            <span class="flavor-tag">Floral</span>
+                        </div>
+                    </div>
+                    <div class="roast-info">
+                        <h4>Roast Level</h4>
+                        <div class="roast-details">
+                            Light roast. Bright acidity. Peak at 24-48 hours post-roast. Altitude: 1,900m. Farmer: Bekele Meskela.
+                        </div>
+                    </div>
+                    <p class="story-text">
+                        The birthplace of coffee. This washed varietal from the Gedeo Zone carries the unmistakable brightness
+                        of Ethiopian highlands—like breathing in morning air mixed with fresh berries. Acidity that shouldn't work
+                        but does. Complexity that reveals itself with every sip. This is what inspired coffee culture.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tasting-card">
+                <div class="tasting-header">
+                    <div class="origin-name">Colombia</div>
+                    <h3>Huila</h3>
+                </div>
+                <div class="tasting-body">
+                    <div class="flavor-profile">
+                        <h4>Flavor Profile</h4>
+                        <div class="flavor-tags">
+                            <span class="flavor-tag">Chocolate</span>
+                            <span class="flavor-tag">Caramel</span>
+                            <span class="flavor-tag">Nutty</span>
+                        </div>
+                    </div>
+                    <div class="roast-info">
+                        <h4>Roast Level</h4>
+                        <div class="roast-details">
+                            Medium roast. Balanced body. Optimal at 48-72 hours. Altitude: 2,000m. Farmer: Carmen Rodríguez Cooperative.
+                        </div>
+                    </div>
+                    <p class="story-text">
+                        The sweetness of Colombian mountains. Grown in volcanic soil at high altitude, these beans develop
+                        a natural sweetness—caramel and dark chocolate without being bitter. Smooth enough to drink black,
+                        complex enough to notice something different every morning. This is comfort in a cup.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tasting-card">
+                <div class="tasting-header">
+                    <div class="origin-name">Guatemala</div>
+                    <h3>Antigua</h3>
+                </div>
+                <div class="tasting-body">
+                    <div class="flavor-profile">
+                        <h4>Flavor Profile</h4>
+                        <div class="flavor-tags">
+                            <span class="flavor-tag">Spice</span>
+                            <span class="flavor-tag">Smoke</span>
+                            <span class="flavor-tag">Cocoa</span>
+                        </div>
+                    </div>
+                    <div class="roast-info">
+                        <h4>Roast Level</h4>
+                        <div class="roast-details">
+                            Medium-dark roast. Full body. Best fresh at 72+ hours. Altitude: 1,500m. Farmer: Don Julio Morales.
+                        </div>
+                    </div>
+                    <p class="story-text">
+                        Volcanic earth and ancient traditions. Grown on the slopes of three volcanoes, Antigua coffee tastes
+                        like its terroir—earthy, complex, with hints of spice and smoke. A full body that coats your palate.
+                        The kind of coffee that makes mornings feel ceremonial. Perfect for those who prefer their coffee bold.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section class="section">
+        <div class="testimonials">
+            <h2>What Coffee Lovers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "I've been a coffee person my whole life, and I thought I knew good coffee. This blew me away.
+                        I can actually taste the flavors they describe. I can't go back to store-bought coffee anymore."
+                    </p>
+                    <div class="testimonial-author">
+                        Sarah Mitchell
+                        <div class="author-title">Portland, Oregon</div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The freshness is insane. I never realized how stale my old coffee was. When this arrived,
+                        I opened the bag and it smelled like a coffee roastery. Two minutes later? The best coffee I've ever had."
+                    </p>
+                    <div class="testimonial-author">
+                        James Chen
+                        <div class="author-title">San Francisco, California</div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "I was paying $15/bag for my 'specialty' coffee before. This is cheaper AND better.
+                        Knowing I'm supporting actual farmers instead of corporate middlemen? That makes it even better."
+                    </p>
+                    <div class="testimonial-author">
+                        Michelle Torres
+                        <div class="author-title">Austin, Texas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY -->
+    <section class="section">
+        <div class="authority">
+            <h2>Trusted by Coffee Lovers & Industry Experts</h2>
+            <div class="authority-grid">
+                <div class="authority-item">
+                    <div class="authority-number">35,000+</div>
+                    <div class="authority-text">Active subscribers who've switched to fresh, single-origin coffee for life</div>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-number">92+</div>
+                    <div class="authority-text">SCA scores (Specialty Coffee Association certified) on every single bag</div>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-number">3x</div>
+                    <div class="authority-text">Fair trade pricing—farmers earn triple the standard fair trade rates</div>
+                </div>
+            </div>
+            <div class="certification-logos">
+                <div class="cert-badge">SCA Certified</div>
+                <div class="cert-badge">Direct Trade</div>
+                <div class="cert-badge">Featured in Food & Wine</div>
+                <div class="cert-badge">Roaster's Guild Member</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GODFATHER OFFER -->
+    <section class="section" id="order">
+        <div class="godfather-offer">
+            <div class="godfather-content">
+                <div class="godfather-badge">Limited Time</div>
+                <h2>The Discovery Box</h2>
+                <p style="font-size: 1.15rem; line-height: 1.8; color: #1A1A1A; margin-bottom: 2rem;">
+                    Your first box isn't just coffee. It's an education in what fresh, single-origin coffee can be.
+                </p>
+
+                <div class="offer-breakdown">
+                    <div class="offer-item">
+                        <div class="offer-item-name">3 Single-Origin Bags</div>
+                        <div class="offer-item-value">$75<span class="value-line-through">$75</span></div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="offer-item-name">Brewing Guide Book</div>
+                        <div class="offer-item-value">$25</div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="offer-item-name">Coffee Tasting Journal</div>
+                        <div class="offer-item-value">$20</div>
+                    </div>
+                </div>
+
+                <p style="text-align: center; color: #1A1A1A; font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600;">
+                    Total Value: $120
+                </p>
+
+                <div class="price-highlight">
+                    <div class="original-price">Retail Value: $120</div>
+                    <div class="final-price">$39</div>
+                    <div class="price-subtitle">+ FREE Shipping</div>
+                    <p style="font-size: 0.95rem; margin: 1rem 0 0 0; color: #D4A853;">
+                        That's 67% off. You save $81. You're welcome.
+                    </p>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="cta-button" onclick="document.querySelector('#confirm-order').scrollIntoView({behavior: 'smooth'})">
+                        Get the Discovery Box
+                    </button>
+                    <p class="offer-subtext">
+                        New subscribers only. One Discovery Box per person. <br>
+                        Each box includes 3 different origins: Ethiopian Yirgacheffe, Colombian Huila, and Guatemalan Antigua.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL -->
+    <section class="section" id="guarantee">
+        <div class="risk-reversal">
+            <h2>The Coffee Snob Guarantee</h2>
+            <p>
+                We're so confident this is the best coffee you'll ever have, we put our money where our mouth is.
+            </p>
+            <ul class="guarantee-list">
+                <li>Love the coffee? Enjoy it. If not...</li>
+                <li>Keep the coffee. Yes, seriously. Keep it.</li>
+                <li>Get your full $39 back. No questions asked.</li>
+                <li>We believe in our coffee that much.</li>
+            </ul>
+            <p style="margin-top: 2rem; font-weight: 600; font-size: 1.05rem;">
+                30-day money-back guarantee. Full refund. Zero risk. Zero questions.
+            </p>
+        </div>
+    </section>
+
+    <!-- URGENCY -->
+    <section class="section">
+        <div class="urgency">
+            <div class="urgency-icon">⏰</div>
+            <h3>Fresh Coffee Means Fresh Roasts</h3>
+            <p>
+                We roast in small batches every Tuesday morning. Order by Sunday, and your coffee will be
+                roasted from THIS WEEK'S batch—at absolute peak freshness, right in your mailbox by Friday.
+            </p>
+            <div class="roast-schedule">
+                Order Deadline: Sunday 11:59 PM PT<br>
+                Roast Date: Tuesday 6:00 AM PT<br>
+                Arrival: Friday (2-3 day shipping)
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="faq">
+            <h2>Questions Coffee Lovers Ask</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What grind options do you offer?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        You can choose whole bean or your preferred grind: French press, pour-over, espresso, or Turkish.
+                        We recommend whole bean and grinding fresh right before brewing for maximum flavor, but we respect
+                        how you take your coffee. Pro tip: If you choose espresso grind, you'll get that incredible crema.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How often does my subscription renew?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Every month. You'll get a new box roasted fresh and shipped out on our Tuesday roast day.
+                        You can change your frequency, origins, or quantity anytime from your account. And you can pause
+                        or cancel with zero hassle whenever you want. We're not one of those companies that makes cancellation hard.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I cancel whenever I want?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Yep. No contracts. No cancellation fees. One click and you're done. We don't want you to feel trapped—
+                        we want you to stay because the coffee is so good you can't imagine quitting. If you ever leave,
+                        the door is always open to come back.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How fresh is the coffee when I receive it?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Incredibly fresh. Roasted Tuesday morning, shipped the same day, in your hands by Friday. That's
+                        3-4 days from roast to your cup. Coffee is best from day 3-21 after roasting, so you're getting it
+                        at literally the peak window. Store it in an airtight container away from light and heat, and it'll stay
+                        fresh for up to 4 weeks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if I don't have a burr grinder?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        We can grind it for you—just select your brewing method at checkout. Pour-over? French press?
+                        Espresso? We'll grind it perfectly for that method. Ideally, grab a burr grinder (they're not expensive),
+                        because freshly ground coffee tastes noticeably better. But we'll grind it if you need us to.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if I really don't like it?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Keep the coffee and get your money back. The Coffee Snob Guarantee means zero risk. 30 days,
+                        full refund, no questions. We're that confident. But once you taste what real fresh coffee tastes like,
+                        we think you'll understand why so many people become obsessed with Origin Black.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section">
+        <div class="final-cta" id="confirm-order">
+            <div class="final-cta-content">
+                <h2>Taste What You've Been Missing</h2>
+                <p>
+                    For less than the price of 2 fancy lattes, you can experience what real coffee tastes like.
+                    The Discovery Box arrives at peak freshness. You get to try three single-origin coffees from
+                    the world's best coffee regions. And if it's not the best coffee you've ever had, you keep the
+                    coffee and get your $39 back.
+                </p>
+                <p style="margin-top: 1.5rem; font-weight: 600; font-size: 1.1rem;">
+                    No risk. No BS. Just incredible coffee.
+                </p>
+                <a href="#order" class="cta-button" style="background: #D4A853; color: #1A1A1A; border-color: #D4A853;">
+                    Order the Discovery Box Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="font-size: 1rem; margin-bottom: 1.5rem; color: #F5E6D3;">
+            <strong style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #D4A853;">Origin Black</strong>
+            <br>
+            Premium Single-Origin Coffee, Roasted Fresh Every Tuesday
+        </p>
+
+        <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Sustainability</a>
+        </div>
+
+        <div class="footer-legal">
+            <p>
+                © 2024 Origin Black Coffee, Inc. All rights reserved.<br>
+                Direct trade coffee connecting coffee lovers with the farmers who grow it.
+            </p>
+            <p>
+                Roasted fresh in our small-batch facility. Shipped within 48 hours.<br>
+                Guaranteed to be the best coffee you've ever had.
+            </p>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA -->
+    <a href="#order" class="floating-cta">Order Now — $39</a>
+
+    <!-- FAQ FUNCTIONALITY -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+
+                // Close other items
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    if (el !== item && el.classList.contains('active')) {
+                        el.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile navigation menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add any additional interactive features here
+            console.log('Origin Black landing page loaded');
+        });
+    </script>
+</body>
+</html>

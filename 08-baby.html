@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureSprout - Organic Baby Skincare & Bath Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --mint: #E8F5E9;
+            --white: #FFFEF7;
+            --peach: #FDDCB5;
+            --sage: #8CAE68;
+            --lavender: #D1C4E9;
+            --dark-text: #2C3E50;
+            --light-gray: #F5F5F5;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* ============ STICKY NAVIGATION ============ */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 254, 247, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-logo {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sage);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-logo::before {
+            content: "🌿";
+            font-size: 1.8rem;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--sage) 0%, #6B8E4E 100%);
+            color: white;
+            padding: 0.75rem 1.75rem;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(140, 174, 104, 0.3);
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(140, 174, 104, 0.4);
+        }
+
+        /* ============ FLOATING STICKY CTA ============ */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--sage) 0%, #6B8E4E 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(140, 174, 104, 0.4);
+            animation: float 3s ease-in-out infinite;
+            z-index: 999;
+            display: none;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .floating-cta.show {
+            display: block;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* ============ HERO SECTION ============ */
+        .hero {
+            background: linear-gradient(135deg, var(--mint) 0%, rgba(212, 196, 233, 0.3) 100%);
+            padding: 8rem 2rem 4rem;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(253, 220, 181, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(140, 174, 104, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .pattern-interrupt {
+            background: #FFF3E0;
+            border-left: 5px solid var(--peach);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(253, 220, 181, 0.3);
+        }
+
+        .pattern-interrupt h2 {
+            font-size: 2.2rem;
+            color: #D84315;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--dark-text);
+            margin: 2rem 0 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subheading {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--sage) 0%, #6B8E4E 100%);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(140, 174, 104, 0.35);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(140, 174, 104, 0.45);
+        }
+
+        .cta-secondary {
+            background: var(--white);
+            color: var(--sage);
+            padding: 1.2rem 2.5rem;
+            border: 2px solid var(--sage);
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: var(--mint);
+            transform: translateY(-3px);
+        }
+
+        /* ============ PROBLEM AGITATION ============ */
+        .problem-section {
+            max-width: 1100px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-text);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--sage);
+            border-radius: 2px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FCE4EC 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #E91E63;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .problem-card h3 {
+            color: #D81B60;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .problem-card p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* ============ DREAM BUYER ============ */
+        .dream-buyer-section {
+            background: linear-gradient(135deg, var(--lavender) 0%, rgba(212, 196, 233, 0.4) 100%);
+            padding: 4rem 2rem;
+            margin: 5rem 0;
+            border-radius: 12px;
+        }
+
+        .dream-buyer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .dream-buyer-content h2 {
+            font-size: 2.2rem;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .dream-buyer-content p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* ============ SOLUTION REVEAL ============ */
+        .solution-section {
+            max-width: 1100px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .solution-highlight {
+            background: linear-gradient(135deg, var(--mint) 0%, rgba(140, 174, 104, 0.08) 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px solid rgba(140, 174, 104, 0.2);
+        }
+
+        .solution-highlight h3 {
+            font-size: 2rem;
+            color: var(--sage);
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h4 {
+            color: var(--sage);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .benefit-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ============ INGREDIENT TRANSPARENCY ============ */
+        .ingredient-section {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .comparison-column {
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-column.typical {
+            background: linear-gradient(135deg, #FFEBEE 0%, #FCE4EC 100%);
+        }
+
+        .comparison-column.pureSprout {
+            background: linear-gradient(135deg, var(--mint) 0%, rgba(140, 174, 104, 0.08) 100%);
+            border: 2px solid var(--sage);
+        }
+
+        .comparison-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .comparison-column.typical h3 {
+            color: #D81B60;
+        }
+
+        .comparison-column.pureSprout h3 {
+            color: var(--sage);
+        }
+
+        .ingredient-list {
+            list-style: none;
+        }
+
+        .ingredient-list li {
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .ingredient-list li.harmful {
+            background: rgba(244, 67, 54, 0.1);
+            color: #D32F2F;
+            font-weight: 600;
+        }
+
+        .ingredient-list li.safe {
+            background: rgba(76, 175, 80, 0.1);
+            color: #2E7D32;
+            font-weight: 600;
+        }
+
+        /* ============ PRODUCT RANGE ============ */
+        .products-section {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 280px;
+            background: linear-gradient(135deg, var(--mint) 0%, var(--peach) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.4rem;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .product-benefit {
+            color: var(--sage);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .ingredient-count {
+            display: inline-block;
+            background: var(--mint);
+            color: var(--sage);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        /* ============ SOCIAL PROOF ============ */
+        .testimonials-section {
+            background: linear-gradient(135deg, var(--white) 0%, var(--mint) 100%);
+            padding: 5rem 2rem;
+            margin: 5rem 0 0 0;
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--sage);
+        }
+
+        .testimonial-stars {
+            color: #FFB300;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--dark-text);
+            font-style: normal;
+        }
+
+        .testimonial-role {
+            color: var(--sage);
+            font-size: 0.9rem;
+        }
+
+        /* ============ AUTHORITY ============ */
+        .authority-section {
+            max-width: 1100px;
+            margin: 5rem auto;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(140, 174, 104, 0.05) 0%, rgba(209, 196, 233, 0.05) 100%);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .authority-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+        }
+
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .trust-badge {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .trust-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .trust-badge h4 {
+            color: var(--sage);
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-badge p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ============ GODFATHER OFFER ============ */
+        .offer-section {
+            background: linear-gradient(135deg, var(--peach) 0%, rgba(253, 220, 181, 0.3) 100%);
+            padding: 5rem 2rem;
+            margin: 5rem 0;
+        }
+
+        .offer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .offer-headline {
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--dark-text);
+            margin-bottom: 2rem;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .offer-items {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #E0E0E0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .offer-item:last-child {
+            border-bottom: none;
+        }
+
+        .offer-item-name {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        .offer-item-price {
+            color: var(--sage);
+            font-weight: 700;
+        }
+
+        .offer-total {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--sage);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .offer-total-value {
+            color: #D32F2F;
+            text-decoration: line-through;
+        }
+
+        .offer-summary {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .offer-savings {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--sage);
+            margin-bottom: 1rem;
+        }
+
+        .offer-savings-desc {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .offer-price-big {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--peach);
+            margin-bottom: 1rem;
+        }
+
+        .offer-price-label {
+            color: #666;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* ============ RISK REVERSAL ============ */
+        .risk-reversal-section {
+            max-width: 1000px;
+            margin: 5rem auto;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--mint) 0%, rgba(140, 174, 104, 0.08) 100%);
+            border-radius: 12px;
+            border: 2px solid rgba(140, 174, 104, 0.2);
+            text-align: center;
+        }
+
+        .risk-reversal-section h2 {
+            font-size: 2.2rem;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .risk-guarantee {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--sage);
+        }
+
+        .risk-guarantee-text {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-terms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .guarantee-term {
+            padding: 1.5rem;
+            background: var(--mint);
+            border-radius: 8px;
+        }
+
+        .guarantee-term-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--sage);
+        }
+
+        .guarantee-term-desc {
+            color: var(--dark-text);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ============ URGENCY ============ */
+        .urgency-section {
+            background: linear-gradient(135deg, var(--lavender) 0%, rgba(212, 196, 233, 0.4) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 5rem 0;
+        }
+
+        .urgency-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .urgency-headline {
+            font-size: 1.8rem;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .countdown {
+            display: inline-flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .countdown-item {
+            background: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            color: var(--sage);
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .urgency-bonus {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 2px solid var(--peach);
+            display: inline-block;
+        }
+
+        .urgency-bonus-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ============ FAQ ============ */
+        .faq-section {
+            max-width: 900px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: var(--mint);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark-text);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(140, 174, 104, 0.15);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ============ FINAL CTA SECTION ============ */
+        .final-cta-section {
+            background: linear-gradient(135deg, var(--sage) 0%, #6B8E4E 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta-headline {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .final-cta-subtext {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .final-cta-button {
+            background: var(--peach);
+            color: var(--dark-text);
+            padding: 1.3rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        .final-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* ============ FOOTER ============ */
+        .footer {
+            background: var(--dark-text);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h4 {
+            color: var(--peach);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #DDD;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--peach);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #AAA;
+            font-size: 0.9rem;
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .sticky-nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+                margin-top: 50px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .pattern-interrupt h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-subheading {
+                font-size: 1rem;
+            }
+
+            .hero-cta-group {
+                gap: 0.75rem;
+            }
+
+            .cta-primary, .cta-secondary {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-headline {
+                font-size: 2rem;
+            }
+
+            .final-cta-headline {
+                font-size: 2rem;
+            }
+
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVIGATION -->
+    <nav class="sticky-nav">
+        <div class="nav-logo">PureSprout</div>
+        <button class="nav-cta" onclick="document.querySelector('.final-cta-button').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
+    </nav>
+
+    <!-- FLOATING CTA -->
+    <button class="floating-cta" onclick="document.querySelector('.final-cta-button').scrollIntoView({behavior: 'smooth'})">👶 Get Pure Protection Now</button>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="pattern-interrupt">
+                <h2>⚠️ We Tested 47 "Baby-Safe" Products. 39 Contained Chemicals Linked to Skin Irritation.</h2>
+            </div>
+            <h1>Your Baby's Skin Deserves Better</h1>
+            <p class="hero-subheading">Stop guessing. Stop worrying. Start protecting with ingredients you can actually pronounce.</p>
+            <div class="hero-cta-group">
+                <button class="cta-primary" onclick="document.querySelector('.offer-section').scrollIntoView({behavior: 'smooth'})">See Our New Parent Bundle</button>
+                <button class="cta-secondary" onclick="document.querySelector('.ingredient-section').scrollIntoView({behavior: 'smooth'})">See Our Ingredient Breakdown</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM AGITATION -->
+    <section class="problem-section">
+        <h2 class="section-title">The Hidden Danger in Most "Baby" Products</h2>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>🧪 Hidden Chemical Cocktails</h3>
+                <p>Products labeled "gentle" often contain parabens, sulfates, and synthetic fragrances that accumulate in your baby's delicate system. Why? Because regulations are loose.</p>
+            </div>
+            <div class="problem-card">
+                <h3>💔 The Eczema Epidemic</h3>
+                <p>Infant eczema has tripled in the last 15 years. Harsh ingredients trigger flare-ups, angry rashes, and sleepless nights for you and your baby.</p>
+            </div>
+            <div class="problem-card">
+                <h3>🎭 The "Natural" Lie</h3>
+                <p>Just because the label says "natural" doesn't mean it's safe. Marketing departments are masters at greenwashing. Real safety requires certified standards.</p>
+            </div>
+            <div class="problem-card">
+                <h3>😔 Parent Guilt</h3>
+                <p>You want to protect your child with everything you have. But how do you know what's actually safe when companies use misleading labels and unclear ingredients?</p>
+            </div>
+            <div class="problem-card">
+                <h3>👶 Sensitive Skin, Limited Options</h3>
+                <p>If your baby has sensitive skin, you're stuck with expensive dermatologist-approved brands or settling for unknown ingredients.</p>
+            </div>
+            <div class="problem-card">
+                <h3>❓ The Label Mystery</h3>
+                <p>20+ ingredients listed. Half of them are unpronounceable. You can't tell what's doing what. That's on purpose—complexity hides questionable choices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DREAM BUYER CALL OUT -->
+    <section class="dream-buyer-section">
+        <div class="dream-buyer-content">
+            <h2>✨ If You're a Parent Who...</h2>
+            <p>...reads every single label, questions every ingredient, refuses to compromise on what touches your baby's skin, and wants evidence-based reassurance that you're making the right choice—then you've been looking for PureSprout.</p>
+        </div>
+    </section>
+
+    <!-- SOLUTION REVEAL -->
+    <section class="solution-section">
+        <h2 class="section-title">Meet PureSprout: Pure Protection, Plain Ingredients</h2>
+
+        <div class="solution-highlight">
+            <h3>🌿 Organic Baby Skincare Done Right</h3>
+            <p style="font-size: 1.1rem; color: #666; margin-bottom: 0;">Developed by pediatricians. Tested on sensitive skin. Verified by the most trusted certification bodies.</p>
+        </div>
+
+        <div class="benefit-list">
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <h4>100% Certified Organic</h4>
+                <p>No synthetic chemicals, no hidden additives. Just what's on the label.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🔬</div>
+                <h4>Pediatrician-Developed</h4>
+                <p>Formulated with 15+ years of pediatric dermatology expertise.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">📋</div>
+                <h4>5 Ingredients or Fewer</h4>
+                <p>Every product is delightfully simple. If we can't use it, we don't.</p>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🏆</div>
+                <h4>EWG Verified</h4>
+                <p>Verified by the Environmental Working Group's strictest standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INGREDIENT TRANSPARENCY -->
+    <section class="ingredient-section">
+        <h2 class="section-title">Shocking Truth: What's Really in Most Baby Products?</h2>
+
+        <div class="comparison-table">
+            <div class="comparison-column typical">
+                <h3>❌ Typical "Baby" Product</h3>
+                <ul class="ingredient-list">
+                    <li class="harmful">Sodium Lauryl Sulfate</li>
+                    <li class="harmful">Methylparaben</li>
+                    <li class="harmful">Dimethicone</li>
+                    <li class="harmful">Fragrance (undisclosed compounds)</li>
+                    <li class="harmful">Cetearyl Alcohol</li>
+                    <li class="harmful">PEG-40 Hydrogenated Castor Oil</li>
+                    <li class="harmful">FD&C Blue No. 1</li>
+                    <li class="harmful">EDTA</li>
+                    <li style="color: #666;">+ 12 more synthetic additives</li>
+                </ul>
+                <p style="margin-top: 1rem; color: #D81B60; font-weight: bold;">Average: 23-28 ingredients</p>
+            </div>
+
+            <div class="comparison-column pureSprout">
+                <h3>✅ PureSprout Baby Wash</h3>
+                <ul class="ingredient-list">
+                    <li class="safe">Organic Coconut Oil</li>
+                    <li class="safe">Organic Aloe Vera</li>
+                    <li class="safe">Organic Chamomile Extract</li>
+                    <li class="safe">Vitamin E (Natural)</li>
+                </ul>
+                <p style="margin-top: 1rem; color: var(--sage); font-weight: bold;">Total: 4 ingredients</p>
+                <p style="margin-top: 1rem; background: rgba(140, 174, 104, 0.1); padding: 1rem; border-radius: 6px; color: var(--sage);">All certified organic. All EWG Verified. Zero synthetic chemicals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT RANGE -->
+    <section class="products-section">
+        <h2 class="section-title">Our Complete Product Range</h2>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">🧼</div>
+                <div class="product-info">
+                    <h3 class="product-name">Baby Wash</h3>
+                    <p class="product-benefit">✓ Gentle cleansing without stripping</p>
+                    <p class="product-description">Our gentlest formula—coconut oil base with chamomile. Perfect for daily bathing from newborn onwards. Won't disrupt the skin barrier.</p>
+                    <span class="ingredient-count">4 Ingredients</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">💧</div>
+                <div class="product-info">
+                    <h3 class="product-name">Baby Lotion</h3>
+                    <p class="product-benefit">✓ Deep hydration for sensitive skin</p>
+                    <p class="product-description">Aloe vera meets organic oils in our lightweight lotion. Absorbs instantly. No greasy residue. Calms irritated skin naturally.</p>
+                    <span class="ingredient-count">5 Ingredients</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">👼</div>
+                <div class="product-info">
+                    <h3 class="product-name">Diaper Cream</h3>
+                    <p class="product-benefit">✓ Relieves diaper rash in hours</p>
+                    <p class="product-description">Organic zinc oxide with calendula and beeswax. Protects sensitive diaper areas. Stops rashes before they start. Tested by parents with real babies.</p>
+                    <span class="ingredient-count">5 Ingredients</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">🛁</div>
+                <div class="product-info">
+                    <h3 class="product-name">Bath Soak</h3>
+                    <p class="product-benefit">✓ Soothing ritual for itchy skin</p>
+                    <p class="product-description">Organic colloidal oatmeal, lavender, and chamomile. Transforms bath time into a skin-healing ritual. Perfect for eczema-prone babies.</p>
+                    <span class="ingredient-count">4 Ingredients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF / TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 class="section-title">Parents Are Seeing Real Results</h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"My daughter had severe eczema flare-ups every single week. We'd tried everything. Two weeks into PureSprout, the itching stopped. Her skin is now clear and calm for the first time in months. I feel like I finally have a product I can actually trust."</p>
+                <p class="testimonial-author">Sarah M.</p>
+                <p class="testimonial-role">Mother of 2, Seattle WA</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"The ingredient list literally has 4 items. FOUR. I can actually pronounce everything. My newborn's skin looks healthier than it ever did with the 'premium' brands. And I sleep better knowing exactly what's touching his skin. Worth every penny."</p>
+                <p class="testimonial-author">James T.</p>
+                <p class="testimonial-role">First-time parent, Portland OR</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"My pediatrician actually recommended this. She said she'd reviewed the ingredients and felt comfortable suggesting it to her sensitive-skin patients. That endorsement meant everything to me. We've been using it for 8 months now—no looking back."</p>
+                <p class="testimonial-author">Michelle D.</p>
+                <p class="testimonial-role">Mother of twins, Austin TX</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY / TRUST -->
+    <section class="authority-section">
+        <h2>We Earn Our Reputation Every Single Day</h2>
+
+        <div class="trust-badges">
+            <div class="trust-badge">
+                <div class="trust-icon">🩺</div>
+                <h4>Recommended by 500+ Pediatricians</h4>
+                <p>Real doctors trust us with their own children's skin.</p>
+            </div>
+
+            <div class="trust-badge">
+                <div class="trust-icon">🌿</div>
+                <h4>EWG Verified Badge</h4>
+                <p>Meets the most stringent ingredient safety standards in the industry.</p>
+            </div>
+
+            <div class="trust-badge">
+                <div class="trust-icon">🏅</div>
+                <h4>USDA Organic Certified</h4>
+                <p>100% of ingredients meet federal organic standards. No exceptions.</p>
+            </div>
+
+            <div class="trust-badge">
+                <div class="trust-icon">📰</div>
+                <h4>Featured In</h4>
+                <p>Parenting Today, Natural Baby Quarterly, Pediatric Care Magazine</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GODFATHER OFFER -->
+    <section class="offer-section">
+        <div class="offer-content">
+            <h2 class="offer-headline">The New Parent Bundle: Complete Protection at 57% Off</h2>
+
+            <div class="offer-grid">
+                <div class="offer-items">
+                    <div class="offer-item">
+                        <span class="offer-item-name">Baby Wash (8 oz)</span>
+                        <span class="offer-item-price">$24</span>
+                    </div>
+                    <div class="offer-item">
+                        <span class="offer-item-name">Baby Lotion (6 oz)</span>
+                        <span class="offer-item-price">$28</span>
+                    </div>
+                    <div class="offer-item">
+                        <span class="offer-item-name">Diaper Cream (4 oz)</span>
+                        <span class="offer-item-price">$22</span>
+                    </div>
+                    <div class="offer-item">
+                        <span class="offer-item-name">Bath Soak (12 oz)</span>
+                        <span class="offer-item-price">$22</span>
+                    </div>
+                    <div class="offer-item">
+                        <span class="offer-item-name">Organic Cotton Washcloth Set</span>
+                        <span class="offer-item-price">$25</span>
+                    </div>
+                    <div class="offer-item">
+                        <span class="offer-item-name">Complete Ingredient Guide (PDF)</span>
+                        <span class="offer-item-price">$15</span>
+                    </div>
+                    <div class="offer-total">
+                        <span>Full Value</span>
+                        <span class="offer-total-value">$136</span>
+                    </div>
+                </div>
+
+                <div class="offer-summary">
+                    <div class="offer-savings">Save $77 Today</div>
+                    <p class="offer-savings-desc">You get complete skin protection—everything a new parent needs—at less than the cost of a single premium product elsewhere.</p>
+                    <div class="offer-price-big">$59</div>
+                    <p class="offer-price-label">Complete New Parent Bundle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL -->
+    <section class="risk-reversal-section">
+        <h2>The Sensitive Skin Promise: 100% Risk-Free</h2>
+
+        <div class="risk-guarantee">
+            <p class="risk-guarantee-text">If your baby's skin doesn't love PureSprout within 60 days, we'll refund every penny. No questions asked. No hassle. We only win when your baby's skin wins.</p>
+        </div>
+
+        <div class="guarantee-terms">
+            <div class="guarantee-term">
+                <div class="guarantee-term-number">60</div>
+                <p class="guarantee-term-desc">Days to try PureSprout risk-free</p>
+            </div>
+            <div class="guarantee-term">
+                <div class="guarantee-term-number">100%</div>
+                <p class="guarantee-term-desc">Full refund if you're not satisfied</p>
+            </div>
+            <div class="guarantee-term">
+                <div class="guarantee-term-number">0</div>
+                <p class="guarantee-term-desc">Questions asked. No red tape.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY -->
+    <section class="urgency-section">
+        <div class="urgency-content">
+            <h2 class="urgency-headline">🎁 This Week Only: Free Organic Muslin Swaddle Blanket</h2>
+
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="days">5</span> Days
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">12</span> Hours
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">34</span> Minutes
+                </div>
+            </div>
+
+            <p style="color: #666; margin: 1.5rem 0; font-size: 1.1rem;">Every order placed this week includes an organic muslin swaddle blanket ($45 value) absolutely free.</p>
+
+            <div class="urgency-bonus">
+                <div class="urgency-bonus-emoji">✨</div>
+                <p style="color: var(--dark-text); font-weight: 600;">Perfect for swaddling, stroller cover, or quick cleanup. $45 value, yours free with the New Parent Bundle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <h2 class="section-title">Questions Parents Ask</h2>
+
+        <div class="faq-item active">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>What age can I start using PureSprout products?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>PureSprout is safe from birth onwards. Our formulations are designed for newborn-sensitive skin. The Baby Wash and Bath Soak are perfect for gentle newborn baths. The Lotion and Diaper Cream work beautifully on all ages. Do a patch test if your baby has extremely reactive skin, but our products have been safely used on thousands of newborns.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>My baby has eczema. Will PureSprout help?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Many parents have seen eczema improvement within weeks. Our minimal ingredient formula removes common irritants (parabens, sulfates, synthetic fragrances) that trigger flare-ups. The Bath Soak and Lotion are especially recommended for eczema-prone skin. That said, every baby is different—this is why we offer the 60-day money-back guarantee. If it doesn't work for your baby, return it with no questions.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>Are these products fragrance-free?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes and no. Our products contain zero synthetic fragrances. However, they have natural, subtle scents from organic ingredients (like chamomile in the Baby Wash). These aren't added fragrances—they're inherent to the botanicals. No artificial scents, no undisclosed "fragrance" ingredients. If even natural botanical scents are problematic for your baby, the Diaper Cream is completely unscented.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>What certifications do you have?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>We hold USDA Organic certification, EWG Verified badge, and Pediatrician-Developed endorsement. We're also tested for heavy metals, microplastics, and chemical residues. Full certification documents are available on our website. Transparency isn't just a buzzword for us—we publish everything.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>Will the products work for sensitive skin conditions?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>Our products are designed for sensitive skin. They've been used successfully by parents managing eczema, dermatitis, and general sensitivity. However, if your baby has a diagnosed skin condition, consult your pediatrician before introducing any new product. We recommend a patch test on a small area first, just to be safe.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                <span>How long will the bottles last?</span>
+                <span class="faq-toggle">▼</span>
+            </div>
+            <div class="faq-answer">
+                <p>A bottle of Baby Wash typically lasts 2-3 months of daily use. Lotion lasts 3-4 months. Diaper Cream lasts 4-5 months because you use very little per application. Bath Soak lasts 6-8 months. Usage varies by baby size and frequency, but families generally find our products quite economical.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-section">
+        <div class="final-cta-content">
+            <h2 class="final-cta-headline">Only the Purest for Your Little One</h2>
+            <p class="final-cta-subtext">Make the choice that protects your baby's skin today. Join 50,000+ families who sleep better knowing their baby is wrapped in pure, certified organic care.</p>
+            <button class="final-cta-button" onclick="alert('Thank you for your interest in PureSprout! This is a demo landing page. In a real implementation, this button would take you to our checkout page.')">Get The New Parent Bundle Now → $59</button>
+            <p style="margin-top: 2rem; font-size: 0.95rem; opacity: 0.9;">✓ 60-Day Money-Back Guarantee | ✓ Free Shipping | ✓ Free Organic Muslin Blanket This Week</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>🌿 PureSprout</h4>
+                <p style="color: #DDD; margin-bottom: 1rem;">Pediatrician-developed organic baby skincare. Trusted by parents who refuse to compromise.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Products</h4>
+                <a href="#products">Baby Wash</a>
+                <a href="#products">Baby Lotion</a>
+                <a href="#products">Diaper Cream</a>
+                <a href="#products">Bath Soak</a>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <a href="#faq">FAQ</a>
+                <a href="#guarantee">Satisfaction Guarantee</a>
+                <a href="#shipping">Shipping Info</a>
+                <a href="#returns">Returns</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PureSprout, Inc. All rights reserved. | Made for parents who care. | Certified Organic | EWG Verified | Pediatrician-Developed</p>
+        </div>
+    </footer>
+
+    <script>
+        // Floating CTA visibility
+        window.addEventListener('scroll', function() {
+            const floatingCta = document.querySelector('.floating-cta');
+            const heroSection = document.querySelector('.hero');
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+
+            if (window.scrollY > heroBottom + 200) {
+                floatingCta.classList.add('show');
+            } else {
+                floatingCta.classList.remove('show');
+            }
+        });
+
+        // Simple countdown timer (for demo purposes)
+        function updateCountdown() {
+            let days = Math.floor(Math.random() * 7) + 2;
+            let hours = Math.floor(Math.random() * 24);
+            let minutes = Math.floor(Math.random() * 60);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+        }
+
+        updateCountdown();
+
+        // Smooth scroll on anchor clicks
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
