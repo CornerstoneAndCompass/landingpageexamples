@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackstone & Hart | Premium Estate Agents | Sell Your Home for More</title>
+    <meta name="description" content="Award-winning estate agents specialising in premium property sales. Average 4.2% above asking price. Book your free property valuation today.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --midnight-green: #004D40;
+            --champagne-gold: #D4AF37;
+            --ivory: #FFFFF0;
+            --charcoal: #2C2C2C;
+            --soft-sage: #E8F0E8;
+            --light-gray: #F5F5F5;
+            --border-color: #DDD;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--charcoal);
+            line-height: 1.6;
+            background-color: var(--ivory);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+        }
+
+        a {
+            color: var(--midnight-green);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* STICKY NAV */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 240, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--midnight-green);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: var(--champagne-gold);
+            border-radius: 50%;
+        }
+
+        nav ul {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul li a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        nav ul li a:hover {
+            color: var(--midnight-green);
+        }
+
+        .nav-cta {
+            background: var(--midnight-green);
+            color: var(--ivory);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--champagne-gold);
+            color: var(--midnight-green);
+        }
+
+        @media (min-width: 1024px) {
+            nav ul {
+                display: flex;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, var(--midnight-green) 0%, #035250 100%);
+            color: var(--ivory);
+            padding: clamp(4rem, 10vw, 8rem) 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(232, 240, 232, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            color: var(--ivory);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-hook {
+            color: var(--champagne-gold);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .hero-subheading {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 240, 0.9);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--champagne-gold);
+            color: var(--midnight-green);
+            padding: 1.1rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            border: 2px solid var(--champagne-gold);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--champagne-gold);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--ivory);
+            border: 2px solid var(--ivory);
+            margin-left: 1rem;
+        }
+
+        .cta-secondary:hover {
+            background: var(--ivory);
+            color: var(--midnight-green);
+        }
+
+        @media (max-width: 768px) {
+            .cta-secondary {
+                display: block;
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        /* PATTERN BREAK */
+        .pattern-break {
+            background: var(--soft-sage);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 0;
+        }
+
+        .pattern-break p {
+            font-size: 1.1rem;
+            color: var(--midnight-green);
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* PROBLEM SECTION */
+        .problem-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--ivory);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: var(--midnight-green);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .problem-card {
+            background: #FFF;
+            padding: 2rem;
+            border-radius: 4px;
+            border-left: 4px solid var(--champagne-gold);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 77, 64, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .problem-card h3 {
+            color: var(--midnight-green);
+            margin-bottom: 1rem;
+        }
+
+        .problem-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* IDEAL CLIENT SECTION */
+        .ideal-client {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--soft-sage);
+        }
+
+        .ideal-client .section-container {
+            max-width: 900px;
+        }
+
+        .ideal-client h2 {
+            color: var(--midnight-green);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .client-callout {
+            background: #FFF;
+            padding: 2.5rem;
+            border-radius: 4px;
+            border-top: 4px solid var(--champagne-gold);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .client-callout h3 {
+            color: var(--midnight-green);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .client-callout p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .checkmark-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .checkmark-list li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            color: #555;
+        }
+
+        .checkmark-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--champagne-gold);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* SOLUTION SECTION */
+        .solution-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--ivory);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .solution-content h2 {
+            color: var(--midnight-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-content p {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .solution-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box {
+            background: var(--soft-sage);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--champagne-gold);
+        }
+
+        .highlight-box h4 {
+            color: var(--midnight-green);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .solution-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PROCESS SECTION */
+        .process-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--soft-sage);
+        }
+
+        .process-section h2 {
+            text-align: center;
+            color: var(--midnight-green);
+            margin-bottom: 3rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--midnight-green);
+            color: var(--ivory);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .process-step h3 {
+            color: var(--midnight-green);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .process-step::after {
+            content: "";
+            position: absolute;
+            right: -1rem;
+            top: 30px;
+            width: 2rem;
+            height: 2px;
+            background: var(--champagne-gold);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .process-step::after {
+                display: none;
+            }
+        }
+
+        /* RESULTS & STATS */
+        .results-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: linear-gradient(135deg, var(--midnight-green) 0%, #035250 100%);
+            color: var(--ivory);
+        }
+
+        .results-section h2 {
+            text-align: center;
+            color: var(--ivory);
+            margin-bottom: 2rem;
+        }
+
+        .main-stat {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--champagne-gold);
+            margin-bottom: 3rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 240, 0.1);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--champagne-gold);
+            margin-bottom: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 240, 0.9);
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--ivory);
+        }
+
+        .testimonials-section h2 {
+            text-align: center;
+            color: var(--midnight-green);
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #FFF;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--champagne-gold);
+        }
+
+        .stars {
+            color: var(--champagne-gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3rem;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--midnight-green);
+            font-size: 1rem;
+        }
+
+        .testimonial-detail {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        /* PORTFOLIO */
+        .portfolio-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--soft-sage);
+        }
+
+        .portfolio-section h2 {
+            text-align: center;
+            color: var(--midnight-green);
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .property-card {
+            background: #FFF;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .property-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 77, 64, 0.15);
+            transform: translateY(-6px);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #ccc 0%, #999 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFF;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .property-info {
+            padding: 1.5rem;
+        }
+
+        .property-location {
+            color: var(--champagne-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-title {
+            font-size: 1.3rem;
+            color: var(--midnight-green);
+            margin-bottom: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .property-type {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .property-details {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .property-details span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .property-price {
+            font-size: 1.5rem;
+            color: var(--midnight-green);
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .sold-tag {
+            display: inline-block;
+            background: var(--champagne-gold);
+            color: var(--midnight-green);
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 2px;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+
+        /* AUTHORITY SECTION */
+        .authority-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--ivory);
+        }
+
+        .authority-section h2 {
+            text-align: center;
+            color: var(--midnight-green);
+            margin-bottom: 2rem;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .authority-card {
+            background: var(--soft-sage);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid rgba(0, 77, 64, 0.1);
+        }
+
+        .authority-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .authority-card h3 {
+            color: var(--midnight-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .authority-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* OFFER STACK */
+        .offer-stack-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: linear-gradient(135deg, var(--midnight-green) 0%, #035250 100%);
+            color: var(--ivory);
+        }
+
+        .offer-stack-section h2 {
+            text-align: center;
+            color: var(--ivory);
+            margin-bottom: 2rem;
+        }
+
+        .offer-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .offer-headline {
+            text-align: center;
+            font-size: 1.3rem;
+            color: var(--champagne-gold);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .stack-items {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stack-item {
+            background: rgba(255, 255, 240, 0.1);
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--champagne-gold);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .stack-checkmark {
+            color: var(--champagne-gold);
+            font-size: 1.3rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .stack-item-content h4 {
+            color: var(--ivory);
+            margin-bottom: 0.3rem;
+        }
+
+        .stack-item-content p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 240, 0.85);
+            margin: 0;
+        }
+
+        .stack-value {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+        }
+
+        .stack-value p {
+            margin: 0;
+            color: rgba(255, 255, 240, 0.9);
+            font-size: 1rem;
+        }
+
+        .stack-value .value-amount {
+            font-size: 2rem;
+            color: var(--champagne-gold);
+            font-weight: 700;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .stack-value .value-label {
+            font-size: 1.2rem;
+            color: var(--ivory);
+            margin-top: 0.5rem;
+        }
+
+        /* RISK REVERSAL */
+        .risk-reversal-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--soft-sage);
+        }
+
+        .risk-reversal-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #FFF;
+            padding: 3rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 2px solid var(--champagne-gold);
+        }
+
+        .risk-reversal-container h2 {
+            color: var(--midnight-green);
+            margin-bottom: 1.5rem;
+        }
+
+        .guarantee-text {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .guarantee-highlight {
+            color: var(--midnight-green);
+            font-weight: 700;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            padding: clamp(3rem, 8vw, 6rem) 2rem;
+            background: var(--ivory);
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            color: var(--midnight-green);
+            margin-bottom: 3rem;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-q-text {
+            font-size: 1.1rem;
+            color: var(--midnight-green);
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            color: var(--champagne-gold);
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 1rem;
+            color: #555;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* FINAL CTA */
+        .final-cta-section {
+            padding: clamp(4rem, 8vw, 6rem) 2rem;
+            background: linear-gradient(135deg, var(--midnight-green) 0%, #035250 100%);
+            text-align: center;
+            color: var(--ivory);
+        }
+
+        .final-cta-section h2 {
+            color: var(--ivory);
+            margin-bottom: 1.5rem;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .final-cta-subtext {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 240, 0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button-large {
+            display: inline-block;
+            background: var(--champagne-gold);
+            color: var(--midnight-green);
+            padding: 1.3rem 3rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            margin: 0 1rem 1rem 0;
+        }
+
+        .cta-button-large:hover {
+            background: var(--ivory);
+            color: var(--midnight-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal);
+            color: var(--ivory);
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--ivory);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 240, 0.7);
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 240, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 240, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* UTILITY */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .pattern-break {
+                padding: 2rem;
+            }
+
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-item {
+                padding-bottom: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-button {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            .cta-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAV -->
+    <header>
+        <nav>
+            <div class="logo">Blackstone & Hart</div>
+            <ul>
+                <li><a href="#process">Our Process</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#portfolio">Properties</a></li>
+                <li><a href="#faq">FAQs</a></li>
+            </ul>
+            <a href="#cta" class="nav-cta">Free Valuation</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Most Estate Agents Will List Your Property.</h1>
+            <p class="hero-hook">We'll Actually Sell It — For More Than You Expected.</p>
+            <p class="hero-subheading">Proactive selling, professional staging, and expert negotiation. Average sale price 4.2% above asking. In just 21 days.</p>
+            <div style="margin-top: 2rem;">
+                <button class="cta-button">Book Your Free Appraisal</button>
+                <a href="#" class="cta-button cta-secondary">See Our Recent Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PATTERN BREAK -->
+    <section class="pattern-break">
+        <p>"The difference between Blackstone & Hart and other agencies is night and day. They sold our house in 18 days, for significantly more than other agents had predicted."</p>
+    </section>
+
+    <!-- PROBLEM AGITATION -->
+    <section class="problem-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Why Most Properties Languish on the Market</h2>
+                <p>The traditional estate agent model is broken. Passivity and underinvestment leave sellers frustrated, undervalued, and waiting.</p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>Months Without Movement</h3>
+                    <p>Your property sits on Rightmove with generic listings whilst agents do the bare minimum. Six months, nine months, a year—time becomes your enemy.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Passive Listing-and-Forget</h3>
+                    <p>Most agents list your property and wait for enquiries. No proactive buyer targeting. No creative marketing strategy. No urgency.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Poor Visual Presentation</h3>
+                    <p>Generic photographs don't sell homes. Staging is rarely discussed. Buyers form their first impression online, and most properties fail that critical moment.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Undervalued Appraisals</h3>
+                    <p>Some agents price low to promise a "quick sale"—costing you tens of thousands. Others miscalculate the market entirely.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Weak Negotiation</h3>
+                    <p>When offers come in below asking, passive agents accept them. Strong negotiators secure higher final prices. You deserve the latter.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Hidden Fees & Surprises</h3>
+                    <p>Fees appear at completion. "Additional charges" surprise sellers. Lack of transparency leaves you uncertain about true costs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IDEAL CLIENT CALLOUT -->
+    <section class="ideal-client">
+        <div class="section-container">
+            <h2>The Blackstone & Hart Ideal Client</h2>
+            <div class="client-callout">
+                <h3>If you're thinking of selling but dread the idea of your home sitting on Rightmove for 6 months, receiving weak offers, and watching a passive agent do nothing...</h3>
+                <p>...then we're speaking directly to you.</p>
+                <p>You want a partner who will:</p>
+                <ul class="checkmark-list">
+                    <li>Invest in professional photography and staging to showcase your home</li>
+                    <li>Actively market your property to qualified buyers</li>
+                    <li>Negotiate strategically to secure the highest possible price</li>
+                    <li>Keep you informed every step of the way</li>
+                    <li>Close quickly without unnecessary delays or complications</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION REVEAL -->
+    <section class="solution-section">
+        <div class="section-container">
+            <div class="solution-grid">
+                <div class="solution-content">
+                    <h2>The Blackstone & Hart Difference</h2>
+                    <p>We've spent two decades perfecting the art of selling premium properties. Our approach is simple: treat every home like it matters, because it does.</p>
+                    <p>Rather than passive listing, we employ active marketing. Rather than generic photography, we use award-winning visual storytelling. Rather than accepting weak offers, we negotiate with confidence and expertise.</p>
+                    <p>The result? Our clients sell faster, for more money, with less stress.</p>
+                </div>
+                <div>
+                    <div class="solution-highlights">
+                        <div class="highlight-box">
+                            <h4>Proactive Selling</h4>
+                            <p>Not passive listing. We identify qualified buyers and create urgency.</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>Professional Staging</h4>
+                            <p>Your home is presented perfectly. First impressions translate to higher offers.</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>Expert Photography</h4>
+                            <p>Award-winning imagery that sells. Not the generic snapshots you see everywhere.</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>Targeted Marketing</h4>
+                            <p>We reach the right buyers, at the right time, through the right channels.</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>Skilled Negotiation</h4>
+                            <p>We secure the highest price. Every offer is negotiated with precision.</p>
+                        </div>
+                        <div class="highlight-box">
+                            <h4>Complete Transparency</h4>
+                            <p>No hidden fees. No surprises. Clear communication throughout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process-section" id="process">
+        <div class="section-container">
+            <h2>The Five-Step Premium Selling Process</h2>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Expert Valuation</h3>
+                    <p>We conduct a thorough in-home assessment, analysing comparable properties and market conditions to determine the optimal asking price.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Styling & Photography</h3>
+                    <p>Professional staging advice and award-winning photography ensure your home makes an unforgettable first impression online and in-person.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Strategic Marketing</h3>
+                    <p>Targeted digital campaigns, premium listings, and direct buyer outreach generate genuine interest from qualified prospects.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Viewings & Negotiation</h3>
+                    <p>We arrange and host professional viewings, then negotiate each offer with skill and confidence to secure the best outcome.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Smooth Completion</h3>
+                    <p>Coordinated with conveyancers and buyers, we guide you through to completion, ensuring no delays or complications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS & STATS -->
+    <section class="results-section" id="results">
+        <div class="section-container">
+            <h2>Proven Results That Speak for Themselves</h2>
+            <div class="main-stat">4.2% Above Asking Price</div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">21</div>
+                    <div class="stat-label">Average Days to First Offer</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-label">Asking Price Achievement Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">350+</div>
+                    <div class="stat-label">Properties Sold</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9.7/10</div>
+                    <div class="stat-label">Client Satisfaction Score</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="section-container">
+            <h2>What Our Clients Say</h2>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"We were told our Victorian terrace would take 8–10 months to sell. Blackstone & Hart sold it in 19 days, for 8% above our asking price. Their staging and photography made all the difference. Exceptional service."</p>
+                    <div class="testimonial-author">Sarah & Michael Thompson</div>
+                    <div class="testimonial-detail">Sold their Notting Hill home for £1,450,000</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The traditional agents we met seemed more interested in their fees than in selling our home. Blackstone & Hart proved the opposite. Transparent, proactive, and genuinely invested. They got us £165,000 more than anticipated."</p>
+                    <div class="testimonial-author">James Henderson</div>
+                    <div class="testimonial-detail">Sold his Chelsea apartment for £895,000</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Moving to Cornwall and needed a quick sale. Their marketing strategy attracted multiple buyers within weeks. The negotiation process was seamless. Couldn't recommend them more highly."</p>
+                    <div class="testimonial-author">Eleanor & David Price</div>
+                    <div class="testimonial-detail">Sold their Mayfair townhouse in 22 days</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="section-container">
+            <h2>Recent Premium Sales</h2>
+
+            <div class="portfolio-grid">
+                <div class="property-card">
+                    <div class="property-image">Victorian Terrace, Notting Hill</div>
+                    <div class="property-info">
+                        <div class="property-location">Notting Hill, London</div>
+                        <div class="property-title">Regency Townhouse</div>
+                        <div class="property-type">4-Bedroom Victorian Terrace</div>
+                        <div class="property-details">
+                            <span>4 Bedrooms</span>
+                            <span>2 Bathrooms</span>
+                        </div>
+                        <div class="property-price">£1,450,000</div>
+                        <div class="sold-tag">SOLD</div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">Modern Apartment, Chelsea</div>
+                    <div class="property-info">
+                        <div class="property-location">Chelsea, London</div>
+                        <div class="property-title">Riverside Residence</div>
+                        <div class="property-type">2-Bedroom Contemporary Apartment</div>
+                        <div class="property-details">
+                            <span>2 Bedrooms</span>
+                            <span>2 Bathrooms</span>
+                        </div>
+                        <div class="property-price">£895,000</div>
+                        <div class="sold-tag">SOLD</div>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">Listed Manor, Mayfair</div>
+                    <div class="property-info">
+                        <div class="property-location">Mayfair, London</div>
+                        <div class="property-title">Georgian Townhouse</div>
+                        <div class="property-type">5-Bedroom Luxury Townhouse</div>
+                        <div class="property-details">
+                            <span>5 Bedrooms</span>
+                            <span>4 Bathrooms</span>
+                        </div>
+                        <div class="property-price">£3,250,000</div>
+                        <div class="sold-tag">SOLD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY SECTION -->
+    <section class="authority-section">
+        <div class="section-container">
+            <h2>Trusted & Accredited</h2>
+
+            <div class="authority-grid">
+                <div class="authority-card">
+                    <div class="authority-icon">✓</div>
+                    <h3>NAEA Propertymark</h3>
+                    <p>Members of the National Association of Estate Agents, upholding the highest professional standards and client protection.</p>
+                </div>
+                <div class="authority-card">
+                    <div class="authority-icon">◆</div>
+                    <h3>Guild of Property Professionals</h3>
+                    <p>Recognised for excellence in property services. Committed to transparency, integrity, and customer satisfaction.</p>
+                </div>
+                <div class="authority-card">
+                    <div class="authority-icon">★</div>
+                    <h3>20+ Years of Experience</h3>
+                    <p>Two decades of premium property sales across London's most prestigious neighbourhoods. Proven expertise you can rely on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IRRESISTIBLE STACK / OFFER -->
+    <section class="offer-stack-section">
+        <div class="section-container">
+            <h2>The Free Property Power Appraisal</h2>
+            <p class="offer-headline">Everything you need to maximise your selling price — at zero cost</p>
+
+            <div class="offer-container">
+                <div class="stack-items">
+                    <div class="stack-item">
+                        <div class="stack-checkmark">✓</div>
+                        <div class="stack-item-content">
+                            <h4>In-Home Valuation</h4>
+                            <p>Expert assessment of your property's true market value, considering all factors and recent comparable sales.</p>
+                        </div>
+                    </div>
+
+                    <div class="stack-item">
+                        <div class="stack-checkmark">✓</div>
+                        <div class="stack-item-content">
+                            <h4>Market Comparison Report</h4>
+                            <p>Detailed analysis of comparable properties sold in your area, positioning your home competitively.</p>
+                        </div>
+                    </div>
+
+                    <div class="stack-item">
+                        <div class="stack-checkmark">✓</div>
+                        <div class="stack-item-content">
+                            <h4>Bespoke Marketing Plan</h4>
+                            <p>Tailored strategy for reaching qualified buyers and generating interest in your specific property.</p>
+                        </div>
+                    </div>
+
+                    <div class="stack-item">
+                        <div class="stack-checkmark">✓</div>
+                        <div class="stack-item-content">
+                            <h4>Professional Photography Consultation</h4>
+                            <p>Expert advice on staging and presentation to ensure your home photographs beautifully online.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-value">
+                    <p class="value-amount">£1,500</p>
+                    <p class="value-label">Typical Value</p>
+                    <p style="color: var(--champagne-gold); font-weight: 600; margin-top: 0.5rem;">Yours Complimentary</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL -->
+    <section class="risk-reversal-section">
+        <div class="section-container">
+            <div class="risk-reversal-container">
+                <h2>Our Selling Guarantee</h2>
+                <p class="guarantee-text">
+                    <span class="guarantee-highlight">The Sell or Walk Guarantee:</span> If we don't find a qualified buyer within 60 days, you can walk away with zero fees. We're confident in our ability to sell your home—because we've spent two decades perfecting it.
+                </p>
+                <p style="color: #888; font-size: 0.95rem; margin-top: 1rem;">This is how confident we are in our process and your property's appeal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <div class="section-container">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-q-text">What are your fees and how do they compare?</div>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        We operate on a transparent, fixed-fee structure—no hidden costs or surprise charges. Our fees are competitive with premium agents and typically lower than you'd expect for the calibre of service we provide. We'll discuss all costs clearly during your initial valuation. Most sellers find the investment worthwhile given the higher selling prices we consistently achieve.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-q-text">How long does the selling process typically take?</div>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        From valuation to completion, most properties sell within 8–12 weeks. However, we've achieved sales in as little as 18 days, whilst some premium properties take longer due to their complexity or buyer pool. Our average is 21 days to the first offer—significantly faster than the national average of 67 days.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-q-text">Do I need an EPC certificate? What if mine's out of date?</div>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, an EPC (Energy Performance Certificate) is required by law when selling. If yours is expired, you'll need a new one. We can arrange this for you quickly and cost-effectively. A valid EPC is essential for listing your property and achieving viewings.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-q-text">Is staging really necessary? Won't my home sell on its own?</div>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Many buyers form their first impression online. Staging and professional photography increase engagement dramatically—typically resulting in more viewings and higher offers. We've found that properties presented beautifully outsell identical properties shown poorly by 15–25%. It's one of the highest-ROI investments you can make in your sale.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-q-text">What if the buyer is not chain-free? Will that delay completion?</div>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Chain sales are common and manageable. We coordinate closely with all parties involved—the buyer's solicitor, their mortgage lender, and any properties in their chain. Delays can happen, but good communication and professional management minimise them. We prioritise chain-free buyers where possible, but won't reject strong offers simply due to a chain.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-q-text">Can I still accept an offer if it's below my asking price?</div>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely. You retain complete control throughout the selling process. We'll advise on whether an offer represents fair value, but the decision is always yours. Our role is to negotiate on your behalf and provide expert guidance—the final choice is yours alone.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-section" id="cta">
+        <div class="section-container">
+            <h2>Your Home Deserves Better. So Do You.</h2>
+            <p class="final-cta-subtext">Book your complimentary Property Power Appraisal today and discover what your home is truly worth—and how Blackstone & Hart can achieve it.</p>
+            <div>
+                <button class="cta-button-large">Claim Your Free Appraisal</button>
+                <button class="cta-button-large" style="background: transparent; border: 2px solid var(--ivory); color: var(--ivory);">Call Us: 020 XXXX XXXX</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Blackstone & Hart</h3>
+                <p style="color: rgba(255, 255, 240, 0.7); font-size: 0.95rem; line-height: 1.6;">Premium estate agents specialising in exceptional property sales across London's most prestigious neighbourhoods. Proactive, transparent, and proven.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#results">Results & Stats</a></li>
+                    <li><a href="#portfolio">Recent Sales</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p style="color: rgba(255, 255, 240, 0.7); font-size: 0.95rem;">
+                    Phone: 020 XXXX XXXX<br>
+                    Email: enquiries@blackstoneandhart.co.uk<br>
+                    Address: Mayfair, London
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Credentials</h3>
+                <p style="color: rgba(255, 255, 240, 0.7); font-size: 0.95rem; line-height: 1.6;">
+                    NAEA Propertymark Member<br>
+                    Guild of Property Professionals<br>
+                    20+ Years Experience<br>
+                    350+ Properties Sold
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Blackstone & Hart. All rights reserved. | Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ toggle functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#cta') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Add scroll effect to sticky header
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 50) {
+                header.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.08)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Injury Solicitors | Ashford & Lane | No Win, No Fee</title>
+    <meta name="description" content="Award-winning personal injury solicitors. No Win, No Fee. 30+ years experience. £200M+ recovered. Free case review today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            line-height: 1.6;
+            color: #1A1A2E;
+            background-colour: #FFFEF7;
+            overflow-x: hidden;
+        }
+
+        /* ========================================
+           COLOUR & TYPOGRAPHY VARIABLES
+           ======================================== */
+        :root {
+            --navy: #0C1B33;
+            --gold: #B8860B;
+            --cream: #FFFEF7;
+            --steel: #4A6FA5;
+            --charcoal: #1A1A2E;
+            --light-grey: #F5F5F5;
+            --border-grey: #E0E0E0;
+            --success: #27AE60;
+            --text-light: #666666;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            colour: var(--navy);
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            colour: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            colour: var(--navy);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            colour: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* ========================================
+           STICKY NAVIGATION
+           ======================================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--navy);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            colour: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            colour: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: colour 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            colour: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            colour: var(--navy);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: #D4AF37;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* ========================================
+           SPACING
+           ======================================== */
+        main {
+            margin-top: 70px;
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ========================================
+           BUTTON STYLES
+           ======================================== */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.05rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            colour: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: #D4AF37;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(184, 134, 11, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--steel);
+            colour: #FFFFFF;
+        }
+
+        .btn-secondary:hover {
+            background: #3d5984;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(74, 111, 165, 0.2);
+        }
+
+        .btn-block {
+            width: 100%;
+            display: block;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f4a 100%);
+            colour: #FFFFFF;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(184, 134, 11, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(184, 134, 11, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            colour: #FFFFFF;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            colour: #E8E8E8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero .btn {
+            margin: 0.5rem;
+            font-size: 1.1rem;
+            padding: 1.2rem 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* ========================================
+           PATTERN BREAK SECTION
+           ======================================== */
+        .pattern-break {
+            background: var(--light-grey);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--gold);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .pattern-break-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pattern-break h2 {
+            font-size: 2.2rem;
+            colour: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .pattern-break p {
+            font-size: 1.2rem;
+            colour: var(--charcoal);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           PROBLEM AGITATION SECTION
+           ======================================== */
+        .problem-section {
+            background: #FFFFFF;
+            padding: 5rem 2rem;
+        }
+
+        .problem-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .problem-section h2 {
+            colour: var(--navy);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .problem-card {
+            background: var(--light-grey);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-card h3 {
+            colour: var(--navy);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .problem-card p {
+            colour: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* ========================================
+           IDEAL CLIENT CALL-OUT
+           ======================================== */
+        .ideal-client {
+            background: linear-gradient(135deg, var(--steel) 0%, #5a7fb8 100%);
+            colour: #FFFFFF;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 8px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .ideal-client h3 {
+            colour: #FFFFFF;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .ideal-client p {
+            colour: #E8E8E8;
+            font-size: 1.15rem;
+        }
+
+        /* ========================================
+           SOLUTION REVEAL SECTION
+           ======================================== */
+        .solution-section {
+            background: var(--cream);
+            padding: 5rem 2rem;
+        }
+
+        .solution-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .solution-text h2 {
+            colour: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .solution-text p {
+            margin-bottom: 1.2rem;
+            colour: var(--text-light);
+        }
+
+        .solution-highlights {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .solution-highlights li {
+            padding: 0.8rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            colour: var(--charcoal);
+            font-weight: 500;
+        }
+
+        .solution-highlights li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            colour: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .solution-visual {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            colour: #FFFFFF;
+            position: relative;
+        }
+
+        .solution-visual::before {
+            content: '⚖';
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .solution-visual h3 {
+            colour: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .solution-visual p {
+            colour: #E8E8E8;
+        }
+
+        @media (max-width: 768px) {
+            .solution-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        /* ========================================
+           PRACTICE AREAS SECTION
+           ======================================== */
+        .practice-section {
+            background: #FFFFFF;
+            padding: 5rem 2rem;
+        }
+
+        .practice-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .practice-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .practice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .practice-card {
+            background: var(--light-grey);
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+
+        .practice-card:hover {
+            border-top-colour: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .practice-card h3 {
+            colour: var(--navy);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .practice-card p {
+            colour: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* ========================================
+           HOW IT WORKS SECTION
+           ======================================== */
+        .how-it-works {
+            background: var(--cream);
+            padding: 5rem 2rem;
+        }
+
+        .how-it-works-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .step {
+            background: #FFFFFF;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            colour: var(--navy);
+            border-radius: 50%;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            colour: var(--navy);
+            margin-bottom: 0.8rem;
+        }
+
+        .step p {
+            colour: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* ========================================
+           RESULTS / CASE HIGHLIGHTS SECTION
+           ======================================== */
+        .results-section {
+            background: #FFFFFF;
+            padding: 5rem 2rem;
+        }
+
+        .results-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .results-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+        }
+
+        .result-card {
+            background: var(--light-grey);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-amount {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.4rem;
+            colour: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .result-case {
+            colour: var(--navy);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .result-description {
+            colour: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           SOCIAL PROOF / TESTIMONIALS
+           ======================================== */
+        .testimonials-section {
+            background: var(--cream);
+            padding: 5rem 2rem;
+        }
+
+        .testimonials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial {
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 3px solid var(--gold);
+        }
+
+        .testimonial-stars {
+            colour: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            colour: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            colour: var(--navy);
+            font-weight: 600;
+        }
+
+        .testimonial-role {
+            colour: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ========================================
+           AUTHORITY / CREDENTIALS SECTION
+           ======================================== */
+        .authority-section {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f4a 100%);
+            colour: #FFFFFF;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .authority-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .authority-section h2 {
+            colour: #FFFFFF;
+            margin-bottom: 2rem;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .authority-item {
+            background: rgba(184, 134, 11, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(184, 134, 11, 0.3);
+        }
+
+        .authority-stat {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.4rem;
+            colour: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .authority-label {
+            colour: #E8E8E8;
+            font-weight: 500;
+        }
+
+        /* ========================================
+           IRRESISTIBLE STACK / VALUE PROP
+           ======================================== */
+        .stack-section {
+            background: #FFFFFF;
+            padding: 5rem 2rem;
+        }
+
+        .stack-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stack-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .stack-intro {
+            text-align: center;
+            font-size: 1.15rem;
+            colour: var(--text-light);
+            margin-bottom: 2.5rem;
+        }
+
+        .stack-items {
+            background: var(--light-grey);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .stack-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-grey);
+        }
+
+        .stack-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .stack-item-icon {
+            colour: var(--gold);
+            font-size: 1.5rem;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .stack-item-content h4 {
+            colour: var(--navy);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .stack-item-content p {
+            colour: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .stack-value {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border-grey);
+        }
+
+        .stack-value-text {
+            colour: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .original-value {
+            text-decoration: line-through;
+            colour: #999999;
+            font-weight: normal;
+        }
+
+        .free-value {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.2rem;
+            colour: var(--success);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stack-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* ========================================
+           RISK REVERSAL SECTION
+           ======================================== */
+        .risk-reversal {
+            background: linear-gradient(135deg, var(--gold) 0%, #D4AF37 100%);
+            colour: var(--navy);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 3rem auto;
+            max-width: 900px;
+        }
+
+        .risk-reversal h3 {
+            colour: var(--navy);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .risk-reversal p {
+            colour: var(--charcoal);
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        /* ========================================
+           FAQ SECTION
+           ======================================== */
+        .faq-section {
+            background: var(--cream);
+            padding: 5rem 2rem;
+        }
+
+        .faq-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            background: #FFFFFF;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 1.8rem;
+            background: var(--light-grey);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            colour: var(--navy);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .faq-question:hover {
+            background: #EEEEEE;
+            border-left-colour: var(--gold);
+        }
+
+        .faq-toggle {
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+            colour: var(--gold);
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #FFFFFF;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem 1.8rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            colour: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           FINAL CTA SECTION
+           ======================================== */
+        .final-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2f4a 100%);
+            colour: #FFFFFF;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            colour: #FFFFFF;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            colour: #E8E8E8;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .btn {
+            margin: 0 0.5rem;
+            padding: 1.3rem 2.8rem;
+            font-size: 1.15rem;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: var(--charcoal);
+            colour: #CCCCCC;
+            padding: 3rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            colour: #FFFFFF;
+            margin-bottom: 1rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            colour: #CCCCCC;
+            text-decoration: none;
+            transition: colour 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            colour: var(--gold);
+        }
+
+        .footer-divider {
+            border-top: 1px solid #444444;
+            margin: 2rem 0;
+            padding-top: 2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #444444;
+        }
+
+        .footer-sra {
+            colour: #999999;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-disclaimer {
+            colour: #888888;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .practice-grid,
+            .steps-grid,
+            .results-grid,
+            .testimonials-grid,
+            .authority-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.95rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .text-center {
+            text-align: centre;
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 3rem;
+        }
+
+        /* ========================================
+           ACCESSIBILITY
+           ======================================== */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== STICKY NAVIGATION ===== -->
+    <nav>
+        <div class="nav-logo">Ashford & Lane</div>
+        <ul class="nav-links">
+            <li><a href="#practices">Our Practice Areas</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#cta" class="nav-cta">Free Case Review</a>
+    </nav>
+
+    <main>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>The Insurance Company Has a Team of Lawyers Fighting Against You.</h1>
+                <h1 style="colour: var(--gold); margin-bottom: 1.5rem;">Who's Fighting For You?</h1>
+                <p class="hero-subtitle">You've suffered an injury. You deserve justice. Not compensation based on what the insurance company *thinks* they can get away with.</p>
+                <div style="margin-top: 2.5rem;">
+                    <a href="#cta" class="btn btn-primary">Get Your Free Case Review</a>
+                    <a href="#how" class="btn btn-secondary">See How We Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PATTERN BREAK ===== -->
+        <section class="pattern-break">
+            <div class="pattern-break-content">
+                <h2>Insurance Companies Have Teams of Lawyers. You Should Too.</h2>
+                <p>They're trained to settle claims for as little as possible. We're trained to get you what you actually deserve.</p>
+            </div>
+        </section>
+
+        <!-- ===== PROBLEM AGITATION ===== -->
+        <section class="problem-section">
+            <div class="problem-content">
+                <h2>You've Been Injured. Now You're Fighting Alone.</h2>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <h3>The Lowball Offer</h3>
+                        <p>Insurance adjusters open with lowball figures. They're betting you'll accept out of desperation or ignorance of your true claim value.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Feeling Overwhelmed</h3>
+                        <p>Medical appointments. Bills piling up. Phone calls from the insurer. The pressure is relentless, and you don't know where to start.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Unsure of Your Rights</h3>
+                        <p>What evidence matters? How long do you have to claim? Can they really pressure you to settle? You're navigating the system blind.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Terrified of Costs</h3>
+                        <p>Legal fees are frightening. What if you don't win? What if you spend thousands and still end up with nothing?</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Early Settlement Pressure</h3>
+                        <p>Insurance companies push for quick settlements before you understand your injury's full impact. One mistake and you could lose six figures.</p>
+                    </div>
+                    <div class="problem-card">
+                        <h3>Blamed For Your Injury</h3>
+                        <p>They're questioning your story. Suggesting you caused your own accident. Making you feel guilty for pursuing what's rightfully yours.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== IDEAL CLIENT CALL-OUT ===== -->
+        <section class="stack-section">
+            <div class="ideal-client">
+                <h3>If you've been injured and the insurance company is making you feel like it's your fault...</h3>
+                <p>You need a solicitor who actually believes in you. Who'll stand between you and the insurance company. Who'll fight for justice, not just a cheque.</p>
+            </div>
+        </section>
+
+        <!-- ===== SOLUTION REVEAL ===== -->
+        <section class="solution-section">
+            <div class="container">
+                <h2 style="text-align: centre;">Meet Ashford & Lane</h2>
+            </div>
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h3>Specialists in Personal Injury.</h3>
+                    <p>For over three decades, we've helped injured people get what they deserve. We're not a call centre. You get a dedicated solicitor who knows your case inside out and fights for you at every step.</p>
+                    <p>We've recovered over £200 million in compensation for our clients. We know how to value your claim. We know how to negotiate with insurers. And we know how to win.</p>
+                    <ul class="solution-highlights">
+                        <li>30+ years combined specialist experience</li>
+                        <li>£200M+ recovered for clients</li>
+                        <li>Dedicated case manager (not a call centre)</li>
+                        <li>No Win, No Fee — you pay nothing unless we win</li>
+                        <li>98% claim success rate</li>
+                        <li>Law Society accredited, SRA regulated</li>
+                    </ul>
+                    <p><strong>This isn't about us. It's about you getting what you deserve.</strong></p>
+                </div>
+                <div class="solution-visual">
+                    <h3>Justice Starts Here</h3>
+                    <p>Your injury. Your claim. Our expertise. One simple goal: get you the compensation you deserve, so you can focus on healing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PRACTICE AREAS ===== -->
+        <section class="practice-section" id="practices">
+            <div class="practice-content">
+                <h2>We Specialise In</h2>
+                <div class="practice-grid">
+                    <div class="practice-card">
+                        <h3>Road Traffic Accidents</h3>
+                        <p>Car, motorcycle, or lorry accidents. Whiplash to serious injury. Insurance companies know we don't back down. We get you fair compensation.</p>
+                    </div>
+                    <div class="practice-card">
+                        <h3>Workplace Injuries</h3>
+                        <p>Slips at work. Equipment failures. Lack of safety measures. Your employer has a legal duty to protect you. We hold them accountable.</p>
+                    </div>
+                    <div class="practice-card">
+                        <h3>Medical Negligence</h3>
+                        <p>Wrong diagnosis. Surgical errors. Delayed treatment. When healthcare professionals fall short, we're here to help you get answers and compensation.</p>
+                    </div>
+                    <div class="practice-card">
+                        <h3>Slips & Falls</h3>
+                        <p>Supermarket accidents. Wet floors. Poor maintenance. Premises owners must keep you safe. If they don't, we'll prove their negligence.</p>
+                    </div>
+                    <div class="practice-card">
+                        <h3>Public Liability</h3>
+                        <p>Injured in a public space? Accidents at events, restaurants, or public buildings. We'll identify who's responsible and make sure you're compensated.</p>
+                    </div>
+                    <div class="practice-card">
+                        <h3>Sports & Leisure Injuries</h3>
+                        <p>Gym accidents, leisure centre incidents, activities gone wrong. If negligence caused your injury, we'll help you claim.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HOW IT WORKS ===== -->
+        <section class="how-it-works" id="how">
+            <div class="how-it-works-content">
+                <h2>How It Works — Simple, Straightforward, Transparent</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Free Case Review</h3>
+                        <p>Tell us what happened. We assess your claim, review evidence, and give you an honest evaluation of your case's strength and potential value — at no cost, with no obligation.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>We Handle Everything</h3>
+                        <p>Gather evidence. Negotiate with insurers. Manage medical reports. Update you regularly. You focus on healing. We focus on building your case and fighting for your compensation.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>You Get Justice</h3>
+                        <p>We settle your claim with fair compensation, or win at court if needed. Under our No Win, No Fee agreement, you only pay us if we succeed. No win, you owe us nothing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RESULTS ===== -->
+        <section class="results-section">
+            <div class="results-content">
+                <h2>Real Cases. Real Results. Real Compensation.</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-amount">£87,500</div>
+                        <div class="result-case">Road Traffic Accident</div>
+                        <div class="result-description">Serious spinal injuries from a motorway collision. Insurance offered £35,000. We negotiated £87,500 for future care and lost earnings.</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-amount">£124,000</div>
+                        <div class="result-case">Workplace Injury</div>
+                        <div class="result-description">Client injured by faulty machinery. Employer denied negligence. We proved unsafe conditions and won compensation for permanent disability.</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-amount">£156,300</div>
+                        <div class="result-case">Medical Negligence</div>
+                        <div class="result-description">Surgical error left client with chronic pain. Hospital refused liability. We won full compensation including pain, suffering, and ongoing treatment.</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-amount">£63,800</div>
+                        <div class="result-case">Slip & Fall</div>
+                        <div class="result-description">Client slipped in supermarket due to poor maintenance. Store tried to blame the customer. We proved negligence and secured compensation for injuries.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS ===== -->
+        <section class="testimonials-section">
+            <div class="testimonials-content">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"I was terrified of legal costs and felt completely alone after my accident. Ashford & Lane took that fear away. They handled everything, kept me informed at every step, and got me far more than I expected. I can't thank them enough."</p>
+                        <div class="testimonial-author">Sarah M.</div>
+                        <div class="testimonial-role">Road Traffic Accident Claim</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"The insurance company kept insisting my injury wasn't serious. Ashford & Lane didn't back down. They fought for me, got evidence, and proved the insurer wrong. Now I have the compensation I need to rebuild my life."</p>
+                        <div class="testimonial-author">James K.</div>
+                        <div class="testimonial-role">Workplace Injury Claim</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p class="testimonial-text">"My solicitor was always available. Not a faceless call centre. They genuinely cared about my case and my wellbeing. Professional, compassionate, and relentless. Exactly what I needed during a difficult time."</p>
+                        <div class="testimonial-author">Rachel T.</div>
+                        <div class="testimonial-role">Medical Negligence Claim</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== AUTHORITY ===== -->
+        <section class="authority-section">
+            <div class="authority-content">
+                <h2>Award-Winning. Accredited. Trusted.</h2>
+                <div class="authority-grid">
+                    <div class="authority-item">
+                        <div class="authority-stat">SRA Regulated</div>
+                        <div class="authority-label">Solicitors Regulation Authority</div>
+                    </div>
+                    <div class="authority-item">
+                        <div class="authority-stat">Law Society</div>
+                        <div class="authority-label">Accredited Personal Injury Specialists</div>
+                    </div>
+                    <div class="authority-item">
+                        <div class="authority-stat">98%</div>
+                        <div class="authority-label">Claims Success Rate</div>
+                    </div>
+                    <div class="authority-item">
+                        <div class="authority-stat">30+</div>
+                        <div class="authority-label">Years Combined Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== IRRESISTIBLE STACK ===== -->
+        <section class="stack-section">
+            <div class="stack-content">
+                <h2>Your Free Case Review Includes</h2>
+                <p class="stack-intro">Everything you need to understand your claim's true value. Normally £500+. Completely free.</p>
+                <div class="stack-items">
+                    <div class="stack-item">
+                        <div class="stack-item-icon">✓</div>
+                        <div class="stack-item-content">
+                            <h4>Full Legal Assessment</h4>
+                            <p>We review your case thoroughly and give you an honest evaluation of its strengths, weaknesses, and realistic settlement range.</p>
+                        </div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-item-icon">✓</div>
+                        <div class="stack-item-content">
+                            <h4>Claim Valuation</h4>
+                            <p>Based on comparable cases, we calculate what your injury is actually worth — including pain and suffering, medical costs, and lost earnings.</p>
+                        </div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-item-icon">✓</div>
+                        <div class="stack-item-content">
+                            <h4>Evidence Checklist</h4>
+                            <p>We identify exactly what evidence you need to gather — medical records, witness statements, photos — to strengthen your position.</p>
+                        </div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-item-icon">✓</div>
+                        <div class="stack-item-content">
+                            <h4>Dedicated Solicitor Consultation</h4>
+                            <p>You don't get passed between departments. A dedicated solicitor handles your case from start to finish and is always available for questions.</p>
+                        </div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-item-icon">✓</div>
+                        <div class="stack-item-content">
+                            <h4>No Win, No Fee Guarantee</h4>
+                            <p>You only pay us if we win your case. If we don't, you owe us nothing. We only succeed when you succeed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stack-value">
+                    <p class="stack-value-text">This comprehensive review normally costs</p>
+                    <p class="original-value">£500 - £750</p>
+                    <p class="free-value">FREE</p>
+                    <p class="stack-value-text">No obligation. No strings attached.</p>
+                </div>
+                <div class="stack-cta">
+                    <a href="#cta" class="btn btn-primary">Claim Your Free Case Review Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RISK REVERSAL ===== -->
+        <section class="stack-section">
+            <div class="risk-reversal">
+                <h3>No Win, No Fee. It's That Simple.</h3>
+                <p>We only get paid if we win your case. You pay nothing unless we recover compensation for you. We believe so strongly in our ability to help you that we're willing to take on the financial risk ourselves.</p>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="faq-section" id="faq">
+            <div class="faq-content">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>How long do I have to make a claim?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For most personal injury claims in the UK, you have three years from the date of your injury (or from the date you became aware of your injury) to start court proceedings. However, this deadline can be shorter in some circumstances, and it's crucial to act quickly. Even if you have three years, evidence degrades over time. Witness memories fade. CCTV footage is deleted. We recommend contacting us as soon as possible to protect your claim.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How much will this cost me?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Under our No Win, No Fee agreement, you pay us nothing unless we win your case. If we successfully settle or win your claim, our fees come from a portion of your compensation (typically 25-33% of damages recovered, depending on case complexity). You'll never pay upfront costs or face surprise bills. This aligns our interests with yours — we only succeed when you do.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does a personal injury claim take?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most straightforward claims settle within 6-12 months. More complex cases involving ongoing medical treatment or court proceedings may take longer. We push for swift resolution while never compromising the value of your claim. We won't accept a lowball offer just to close your case quickly. We'll keep you updated on progress at every stage.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What evidence do I need?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evidence varies depending on your case type, but typically includes: medical records and treatment history, photographs of the accident scene or injuries, witness statements, police reports (for road accidents), employment records (for workplace claims), and proof of financial losses. Don't worry if you don't have everything — we'll help you gather what's needed. Our evidence checklist in your free case review will tell you exactly what to pursue.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I switch solicitors if I'm unhappy?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. You have the right to change solicitors at any point. However, you may face issues transferring your file or complications with insurance agreements. We're confident in our service and track record. If you choose us, we'll prove why you made the right decision every step of the way. Communication, transparency, and results are our foundation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will my case go to court?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most claims (around 90%) settle before reaching court through negotiation. However, some cases do require court proceedings to achieve fair compensation. We'll always advise you of this possibility upfront. If court is necessary, we'll prepare thoroughly and represent you confidently. The goal is always fair resolution — whether through settlement or litigation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FINAL CTA ===== -->
+        <section class="final-cta" id="cta">
+            <div class="final-cta-content">
+                <h2>You Deserve Justice.</h2>
+                <p>Stop feeling alone. Stop accepting lowball offers. Stop letting insurance companies dictate your future. Let Ashford & Lane fight for what's rightfully yours.</p>
+                <p>Your first step is free. Your consultation is free. Getting justice shouldn't require you to risk everything.</p>
+                <div>
+                    <a href="tel:+441234567890" class="btn btn-primary">Call Us Now: 01234 567 890</a>
+                    <a href="mailto:claims@ashfordlane.co.uk" class="btn btn-secondary">Email: claims@ashfordlane.co.uk</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Ashford & Lane</h4>
+                <p>Award-winning personal injury solicitors. Fighting for justice since 1995.</p>
+                <p><strong>SRA Registration No:</strong> L987654</p>
+            </div>
+            <div class="footer-section">
+                <h4>Practice Areas</h4>
+                <ul>
+                    <li><a href="#practices">Road Traffic Accidents</a></li>
+                    <li><a href="#practices">Workplace Injuries</a></li>
+                    <li><a href="#practices">Medical Negligence</a></li>
+                    <li><a href="#practices">Slips & Falls</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="tel:+441234567890">01234 567 890</a></li>
+                    <li><a href="mailto:claims@ashfordlane.co.uk">claims@ashfordlane.co.uk</a></li>
+                    <li><a href="#">Monday-Friday, 8am-6pm</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="#">No Win, No Fee Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Complaints Procedure</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <div class="footer-sra">
+                Ashford & Lane Solicitors Limited is authorised and regulated by the Solicitors Regulation Authority (SRA) under registration number L987654. All solicitors are fully qualified and insured.
+            </div>
+            <div class="footer-disclaimer">
+                <strong>Legal Disclaimer:</strong> This website is for information purposes only and does not constitute legal advice. The information contained on this site should not be taken as legal advice. If you require professional legal advice, please contact us directly. Ashford & Lane does not accept liability for any loss, damage, or inconvenience caused by reliance on this information. All personal injury claims are subject to statutory time limits and evidence requirements. Seek advice immediately to protect your rights.
+            </div>
+            <p style="margin-top: 2rem; colour: #888888;">© 2026 Ashford & Lane Solicitors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== FAQ TOGGLE FUNCTIONALITY ===== -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

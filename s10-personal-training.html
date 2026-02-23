@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forge Fitness | Personal Training for Busy Professionals</title>
+    <meta name="description" content="Results-driven personal training designed for busy professionals. The Forge Method transforms your body and life in just 3 sessions per week.">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-colour: #1a1a1a;
+            colour: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn-primary {
+            background-colour: #ff5722;
+            colour: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary:hover {
+            background-colour: #d32f2f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 87, 34, 0.3);
+        }
+
+        .btn-secondary {
+            background-colour: transparent;
+            colour: #ff5722;
+            padding: 14px 28px;
+            border: 2px solid #ff5722;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-secondary:hover {
+            background-colour: #ff5722;
+            colour: white;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: clamp(32px, 6vw, 72px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: clamp(28px, 5vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: clamp(20px, 3.5vw, 32px);
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        /* ===== STICKY NAV ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-colour: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 87, 34, 0.2);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            colour: #ff5722;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            colour: #e0e0e0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: colour 0.3s ease;
+        }
+
+        nav a:hover {
+            colour: #ff5722;
+        }
+
+        nav .btn-primary {
+            padding: 12px 24px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            nav .btn-primary {
+                padding: 10px 16px;
+                font-size: 11px;
+            }
+        }
+
+        /* ===== STICKY CTA ===== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-colour: #ff5722;
+            colour: white;
+            padding: 16px 24px;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(255, 87, 34, 0.4);
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sticky-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 87, 34, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 18px;
+                font-size: 11px;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 80px;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 87, 34, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-content h1 {
+            colour: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 .orange {
+            colour: #ff5722;
+        }
+
+        .hero-subheading {
+            font-size: 18px;
+            colour: #ff5722;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            colour: #b0b0b0;
+            margin-bottom: 40px;
+            max-width: 650px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0;
+                margin-top: 70px;
+            }
+
+            .hero::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .hero-cta .btn-primary,
+            .hero-cta .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* ===== PATTERN BREAK / PROBLEM SECTION ===== */
+        .problem-section {
+            padding: 80px 0;
+            background-colour: #1a1a1a;
+            position: relative;
+        }
+
+        .problem-section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 200px;
+            background: linear-gradient(to bottom, #ff5722, transparent);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .problem-item {
+            padding: 24px;
+            background-colour: rgba(255, 87, 34, 0.08);
+            border-left: 4px solid #ff5722;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .problem-item:hover {
+            background-colour: rgba(255, 87, 34, 0.12);
+            transform: translateX(8px);
+        }
+
+        .problem-item h4 {
+            font-size: 16px;
+            colour: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .problem-item p {
+            font-size: 15px;
+            colour: #b0b0b0;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .problem-section {
+                padding: 60px 0;
+            }
+
+            .problem-grid {
+                gap: 20px;
+            }
+
+            .problem-item {
+                padding: 16px;
+            }
+        }
+
+        /* ===== IDEAL CLIENT SECTION ===== */
+        .ideal-client {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+            position: relative;
+        }
+
+        .ideal-client::after {
+            content: '';
+            position: absolute;
+            right: -100px;
+            bottom: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(211, 47, 47, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .ideal-client .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .ideal-client h2 {
+            colour: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .ideal-client-box {
+            background-colour: rgba(255, 87, 34, 0.15);
+            border: 2px solid #ff5722;
+            padding: 40px;
+            border-radius: 4px;
+            margin-top: 32px;
+        }
+
+        .ideal-client-box p {
+            font-size: 18px;
+            colour: #ffffff;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .ideal-client {
+                padding: 60px 0;
+            }
+
+            .ideal-client-box {
+                padding: 24px;
+            }
+
+            .ideal-client-box p {
+                font-size: 16px;
+            }
+        }
+
+        /* ===== SOLUTION SECTION ===== */
+        .solution-section {
+            padding: 80px 0;
+            background-colour: #1a1a1a;
+            position: relative;
+        }
+
+        .solution-section::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, #ff5722, transparent);
+            top: -50px;
+        }
+
+        .solution-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .solution-header h2 {
+            colour: #ffffff;
+        }
+
+        .solution-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 32px 24px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-colour: #ff5722;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 28px;
+            font-weight: 700;
+            colour: white;
+        }
+
+        .feature-card h3 {
+            font-size: 16px;
+            colour: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            colour: #b0b0b0;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .solution-section {
+                padding: 60px 0;
+            }
+
+            .solution-features {
+                gap: 20px;
+            }
+
+            .feature-card {
+                padding: 20px 16px;
+            }
+        }
+
+        /* ===== THE SYSTEM SECTION ===== */
+        .system-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+            position: relative;
+        }
+
+        .system-section::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 87, 34, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .system-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .system-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .system-header h2 {
+            colour: #ffffff;
+        }
+
+        .system-header p {
+            font-size: 16px;
+            colour: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .system-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            position: relative;
+        }
+
+        .system-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #ff5722, transparent);
+            z-index: 0;
+        }
+
+        .step {
+            background-colour: rgba(26, 26, 26, 0.8);
+            border: 2px solid #ff5722;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-colour: #ff5722;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            colour: white;
+            margin: 0 auto 16px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .step h3 {
+            font-size: 16px;
+            colour: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-size: 14px;
+            colour: #b0b0b0;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .system-section {
+                padding: 60px 0;
+            }
+
+            .system-steps::before {
+                display: none;
+            }
+
+            .step {
+                margin-top: 16px;
+            }
+        }
+
+        /* ===== TRANSFORMATIONS SECTION ===== */
+        .transformations-section {
+            padding: 80px 0;
+            background-colour: #1a1a1a;
+            position: relative;
+        }
+
+        .transformations-section h2 {
+            text-align: center;
+            colour: #ffffff;
+            margin-bottom: 60px;
+        }
+
+        .transformations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .transformation-card {
+            background-colour: rgba(255, 87, 34, 0.05);
+            border: 1px solid rgba(255, 87, 34, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .transformation-card:hover {
+            border-colour: #ff5722;
+            box-shadow: 0 15px 40px rgba(255, 87, 34, 0.15);
+        }
+
+        .transformation-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #ff5722, #d32f2f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            colour: rgba(255, 255, 255, 0.3);
+        }
+
+        .transformation-content {
+            padding: 32px;
+        }
+
+        .transformation-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            colour: #ff5722;
+            margin-bottom: 8px;
+        }
+
+        .transformation-title {
+            font-size: 12px;
+            colour: #b0b0b0;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .transformation-results {
+            background-colour: rgba(255, 87, 34, 0.1);
+            padding: 16px;
+            border-left: 3px solid #ff5722;
+            margin: 16px 0;
+            border-radius: 2px;
+        }
+
+        .transformation-results p {
+            font-weight: 600;
+            colour: #ffffff;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .transformation-quote {
+            font-style: italic;
+            colour: #b0b0b0;
+            font-size: 14px;
+            margin-top: 16px;
+            border-left: 2px solid #ff5722;
+            padding-left: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .transformations-section {
+                padding: 60px 0;
+            }
+
+            .transformations-grid {
+                gap: 20px;
+            }
+
+            .transformation-content {
+                padding: 20px;
+            }
+        }
+
+        /* ===== SOCIAL PROOF SECTION ===== */
+        .proof-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+            position: relative;
+        }
+
+        .proof-section h2 {
+            text-align: center;
+            colour: #ffffff;
+            margin-bottom: 60px;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .testimonial {
+            background-colour: rgba(255, 87, 34, 0.08);
+            padding: 32px;
+            border-radius: 4px;
+            border-left: 4px solid #ff5722;
+        }
+
+        .stars {
+            colour: #ff5722;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-quote {
+            colour: #ffffff;
+            font-size: 15px;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #ff5722, #d32f2f);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            colour: white;
+            font-size: 20px;
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .author-name {
+            font-weight: 700;
+            colour: #ffffff;
+        }
+
+        .author-role {
+            colour: #b0b0b0;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .proof-section {
+                padding: 60px 0;
+            }
+
+            .testimonials {
+                gap: 20px;
+            }
+        }
+
+        /* ===== AUTHORITY SECTION ===== */
+        .authority-section {
+            padding: 80px 0;
+            background-colour: #1a1a1a;
+            position: relative;
+        }
+
+        .authority-section h2 {
+            text-align: center;
+            colour: #ffffff;
+            margin-bottom: 60px;
+        }
+
+        .credentials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .credential-item {
+            text-align: center;
+        }
+
+        .credential-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff5722, #d32f2f);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 36px;
+        }
+
+        .credential-title {
+            colour: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .credential-description {
+            colour: #b0b0b0;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .authority-section {
+                padding: 60px 0;
+            }
+
+            .credentials {
+                gap: 20px;
+            }
+
+            .credential-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 28px;
+            }
+        }
+
+        /* ===== OFFER SECTION ===== */
+        .offer-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #ff5722, #d32f2f);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .offer-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .offer-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .offer-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .offer-header h2 {
+            colour: white;
+        }
+
+        .offer-header p {
+            colour: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+        }
+
+        .offer-stack {
+            background-colour: rgba(26, 26, 26, 0.95);
+            padding: 40px;
+            border-radius: 4px;
+            margin-bottom: 40px;
+        }
+
+        .stack-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+
+        .stack-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .stack-check {
+            width: 24px;
+            height: 24px;
+            background-colour: #ff5722;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            colour: white;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .stack-item h4 {
+            colour: #ffffff;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .stack-item p {
+            colour: #b0b0b0;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .offer-pricing {
+            background-colour: rgba(255, 255, 255, 0.1);
+            padding: 32px;
+            border-radius: 4px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .offer-pricing p {
+            colour: white;
+            font-size: 14px;
+            text-decoration: line-through;
+            margin-bottom: 8px;
+        }
+
+        .offer-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 56px;
+            colour: #ff5722;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .offer-cta {
+            text-align: center;
+        }
+
+        .offer-cta .btn-primary {
+            background-colour: white;
+            colour: #ff5722;
+            padding: 20px 48px;
+            font-size: 18px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .offer-cta .btn-primary:hover {
+            background-colour: #f0f0f0;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .offer-section {
+                padding: 60px 0;
+            }
+
+            .offer-stack {
+                padding: 24px;
+            }
+
+            .offer-price {
+                font-size: 42px;
+            }
+
+            .offer-cta .btn-primary {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+        }
+
+        /* ===== RISK REVERSAL SECTION ===== */
+        .risk-section {
+            padding: 80px 0;
+            background-colour: #1a1a1a;
+            position: relative;
+        }
+
+        .risk-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .risk-content h2 {
+            colour: #ffffff;
+            margin-bottom: 24px;
+        }
+
+        .risk-guarantee {
+            background-colour: rgba(255, 87, 34, 0.1);
+            border: 2px solid #ff5722;
+            padding: 32px;
+            border-radius: 4px;
+            margin-top: 32px;
+        }
+
+        .risk-guarantee p {
+            colour: #ffffff;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .risk-section {
+                padding: 60px 0;
+            }
+
+            .risk-guarantee {
+                padding: 20px;
+            }
+
+            .risk-guarantee p {
+                font-size: 16px;
+            }
+        }
+
+        /* ===== URGENCY SECTION ===== */
+        .urgency-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+            position: relative;
+            border-top: 2px solid #ff5722;
+        }
+
+        .urgency-content {
+            text-align: center;
+        }
+
+        .urgency-content h3 {
+            colour: #ff5722;
+            margin-bottom: 16px;
+        }
+
+        .urgency-content p {
+            font-size: 16px;
+            colour: #e0e0e0;
+        }
+
+        .spots-remaining {
+            display: inline-block;
+            background-colour: #d32f2f;
+            colour: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .urgency-section {
+                padding: 40px 0;
+            }
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 80px 0;
+            background-colour: #1a1a1a;
+            position: relative;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            colour: #ffffff;
+            margin-bottom: 60px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-colour: rgba(255, 87, 34, 0.05);
+            border: 1px solid rgba(255, 87, 34, 0.2);
+            margin-bottom: 16px;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            border-colour: #ff5722;
+            background-colour: rgba(255, 87, 34, 0.1);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            colour: #ffffff;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-question {
+            colour: #ff5722;
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            background-colour: #ff5722;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            colour: white;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+        }
+
+        .faq-answer p {
+            colour: #b0b0b0;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-section {
+                padding: 60px 0;
+            }
+
+            .faq-question {
+                padding: 16px;
+                font-size: 14px;
+            }
+        }
+
+        /* ===== FINAL CTA SECTION ===== */
+        .final-cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #d32f2f, #ff5722);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .final-cta-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta-section h2 {
+            colour: white;
+            margin-bottom: 24px;
+        }
+
+        .final-cta-section p {
+            colour: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .final-cta-section .btn-primary {
+            background-colour: white;
+            colour: #ff5722;
+            padding: 20px 48px;
+            font-size: 18px;
+        }
+
+        .final-cta-section .btn-primary:hover {
+            background-colour: #f0f0f0;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .final-cta-section {
+                padding: 60px 0;
+            }
+
+            .final-cta-section h2 {
+                font-size: 32px;
+            }
+
+            .final-cta-section p {
+                font-size: 16px;
+            }
+
+            .final-cta-section .btn-primary {
+                width: 100%;
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-colour: #0f0f0f;
+            border-top: 1px solid rgba(255, 87, 34, 0.2);
+            padding: 60px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-section h4 {
+            colour: #ffffff;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            colour: #b0b0b0;
+            text-decoration: none;
+            font-size: 13px;
+            transition: colour 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            colour: #ff5722;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 87, 34, 0.1);
+            colour: #707070;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 40px 0 30px;
+            }
+
+            .footer-content {
+                gap: 32px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .hero {
+                padding: 50px 0;
+                margin-top: 70px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            nav .container {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVIGATION -->
+    <nav>
+        <div class="container">
+            <div class="logo">FORGE</div>
+            <ul>
+                <li><a href="#system">The Method</a></li>
+                <li><a href="#transformations">Results</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#offer" class="btn-primary">Claim Trial</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- STICKY CTA -->
+    <a href="#offer" class="sticky-cta">Secure Spot →</a>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-subheading">Results-Driven Personal Training</div>
+                <h1>You Don't Need Another Diet or 6AM Boot Camp.<br><span class="orange">You Need a System That Fits Your Life.</span></h1>
+                <p class="hero-description">
+                    Reframes the problem — it's not motivation, it's methodology. The Forge Method is precision coaching designed for busy professionals who've tried everything and are ready for a different approach.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn-primary" onclick="document.querySelector('#offer').scrollIntoView({behaviour: 'smooth'})">Start Your 14-Day Trial</button>
+                    <button class="btn-secondary" onclick="document.querySelector('#system').scrollIntoView({behaviour: 'smooth'})">Learn The Method</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM AGITATION SECTION -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>The Problem with Traditional Fitness</h2>
+            <p style="colour: #b0b0b0; font-size: 16px; max-width: 700px;">You've experienced all of these. And none of them worked long-term.</p>
+
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <h4>Generic Programmes</h4>
+                    <p>One-size-fits-all routines that don't account for your schedule, goals, or body.</p>
+                </div>
+                <div class="problem-item">
+                    <h4>Yo-Yo Dieting</h4>
+                    <p>Lost the same 10kg three times? You're not weak—the approach is broken.</p>
+                </div>
+                <div class="problem-item">
+                    <h4>Gym Intimidation</h4>
+                    <p>Crowded spaces, judgemental stares, trainers too busy to actually coach you.</p>
+                </div>
+                <div class="problem-item">
+                    <h4>Wasted Memberships</h4>
+                    <p>£50+ per month for equipment you don't use and expertise you can't access.</p>
+                </div>
+                <div class="problem-item">
+                    <h4>Information Overload</h4>
+                    <p>Conflicting advice online. No idea what's actually true or relevant to you.</p>
+                </div>
+                <div class="problem-item">
+                    <h4>Counting Reps, Not Coaching</h4>
+                    <p>Trainers who stand nearby instead of actually teaching you proper form and technique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IDEAL CLIENT CALL-OUT -->
+    <section class="ideal-client">
+        <div class="container">
+            <h2>This is for You If...</h2>
+            <div class="ideal-client-box">
+                <p>You're a busy professional who's tried everything. You've lost the same 10kg three times. You're exhausted by fitness advice that assumes you have unlimited time. You're sick of feeling like fitness isn't designed for people with real jobs, real families, and real lives. You've spent thousands on programmes and memberships that promised results but delivered frustration. And you're done trying to force yourself into a system. You want a system that's designed for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION REVEAL SECTION -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="solution-header">
+                <h2>Introducing Forge Fitness</h2>
+                <p style="colour: #b0b0b0; font-size: 16px; max-width: 700px; margin: 0 auto;">Precision coaching for busy professionals. Built for results. Built for your life.</p>
+            </div>
+
+            <div class="solution-features">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Just 3x45 Minutes</h3>
+                    <p>Not your whole life. Three focused sessions per week, structured around your schedule.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalised Coaching</h3>
+                    <p>Every programme built for your body, your goals, and your circumstances.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>Nutrition Guidance</h3>
+                    <p>No calorie counting obsession. Real food, real flexibility, real results.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Flexible Scheduling</h3>
+                    <p>Early mornings, lunch hours, or evenings. We adapt to your life, not the other way around.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Science-Backed</h3>
+                    <p>Not trends. Proven methods from exercise physiology and sports science.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Weekly Progress</h3>
+                    <p>Check-ins that matter. Accountability that motivates, not crushes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE SYSTEM SECTION -->
+    <section class="system-section" id="system">
+        <div class="container">
+            <div class="system-header">
+                <h2>The Forge Method</h2>
+                <p>A proven five-step system that gets results</p>
+            </div>
+
+            <div class="system-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Assessment</h3>
+                    <p>We understand your history, goals, injuries, and lifestyle. Not generic assumptions.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Personalised Programme</h3>
+                    <p>Built from scratch based on your results, not a template everyone uses.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Nutrition Coaching</h3>
+                    <p>Real guidance that fits your habits. No restrictions. Just better choices.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Weekly Check-Ins</h3>
+                    <p>Progress tracking, adjustments, and accountability that actually works.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Progressive Adaptation</h3>
+                    <p>Your programme evolves as you do. Constantly challenging, never stalling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSFORMATIONS SECTION -->
+    <section class="transformations-section" id="transformations">
+        <div class="container">
+            <h2>Real People, Real Results</h2>
+
+            <div class="transformations-grid">
+                <!-- Transformation 1 -->
+                <div class="transformation-card">
+                    <div class="transformation-image">
+                        📊
+                    </div>
+                    <div class="transformation-content">
+                        <div class="transformation-name">Sarah Mitchell</div>
+                        <div class="transformation-title">Managing Director, Financial Services</div>
+
+                        <div class="transformation-results">
+                            <p>🎯 Lost 12kg of body fat</p>
+                            <p>⚡ Energy levels up 40%</p>
+                            <p>👔 Fits back into clothes from 5 years ago</p>
+                        </div>
+
+                        <div class="transformation-quote">
+                            "I've paid for trainers before. I've done online programmes. Nothing stuck because nothing fitted my life. The Forge Method actually works because it's designed for people like me. Four months in and the results speak for themselves."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation 2 -->
+                <div class="transformation-card">
+                    <div class="transformation-image">
+                        💪
+                    </div>
+                    <div class="transformation-content">
+                        <div class="transformation-name">James Chen</div>
+                        <div class="transformation-title">Solicitor, Law Firm</div>
+
+                        <div class="transformation-results">
+                            <p>🎯 Gained 8kg of muscle</p>
+                            <p>⚡ Strength increased 35%</p>
+                            <p>🧠 Mental clarity improved dramatically</p>
+                        </div>
+
+                        <div class="transformation-quote">
+                            "I was sceptical about having a trainer. Seemed indulgent. But the ROI on this is insane. I'm more focused at work, sleep better, and feel stronger than I have in a decade. Best investment I've made."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transformation 3 -->
+                <div class="transformation-card">
+                    <div class="transformation-image">
+                        ✨
+                    </div>
+                    <div class="transformation-content">
+                        <div class="transformation-name">Emma Rodriguez</div>
+                        <div class="transformation-title">Emergency Department Nurse</div>
+
+                        <div class="transformation-results">
+                            <p>🎯 Reduced body fat by 15%</p>
+                            <p>⚡ Energy to match her demanding shifts</p>
+                            <p>😊 Confidence restored completely</p>
+                        </div>
+
+                        <div class="transformation-quote">
+                            "Shift work destroyed my fitness routine. I thought I was stuck. The flexible scheduling and realistic expectations changed everything. I'm stronger, happier, and finally feel in control of my body."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF SECTION -->
+    <section class="proof-section">
+        <div class="container">
+            <h2>What Professional Clients Say</h2>
+
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-quote">
+                        "Finally, a trainer who understands that I can't commit to 6AM every day. The flexibility and results are unmatched."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">L</div>
+                        <div class="author-info">
+                            <p class="author-name">Lauren Stevens</p>
+                            <p class="author-role">Architect, 6 months</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-quote">
+                        "I've spent thousands on trainers and programmes. This is the first time I've actually stuck with something and seen sustainable results."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <p class="author-name">Mark Thompson</p>
+                            <p class="author-role">CEO, Tech Company, 8 months</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-quote">
+                        "The nutrition coaching is game-changing. No restriction, no guilt. Just better decisions that fit my actual life."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">J</div>
+                        <div class="author-info">
+                            <p class="author-name">Jessica Williams</p>
+                            <p class="author-role">GP, 5 months</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY SECTION -->
+    <section class="authority-section">
+        <div class="container">
+            <h2>Why Trust Us</h2>
+
+            <div class="credentials">
+                <div class="credential-item">
+                    <div class="credential-icon">📜</div>
+                    <div class="credential-title">Level 4 CIMSPA</div>
+                    <div class="credential-description">UK's highest personal training certification. Comprehensive expertise in exercise science and programming.</div>
+                </div>
+
+                <div class="credential-item">
+                    <div class="credential-icon">🥗</div>
+                    <div class="credential-title">Precision Nutrition Certified</div>
+                    <div class="credential-description">Advanced nutrition coaching certification. Specialising in behaviour change, not restriction.</div>
+                </div>
+
+                <div class="credential-item">
+                    <div class="credential-icon">🏆</div>
+                    <div class="credential-title">1,000+ Transformations</div>
+                    <div class="credential-description">Real people. Real results. Documented progress from all walks of professional life.</div>
+                </div>
+
+                <div class="credential-item">
+                    <div class="credential-icon">📰</div>
+                    <div class="credential-title">Published &amp; Featured</div>
+                    <div class="credential-description">Featured in Men's Health, Women's Health, and professional fitness publications.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IRRESISTIBLE OFFER SECTION -->
+    <section class="offer-section" id="offer">
+        <div class="container">
+            <div class="offer-header">
+                <h2>The 14-Day Trial</h2>
+                <p>Everything you need to see real, measurable transformation</p>
+            </div>
+
+            <div class="offer-stack">
+                <div class="stack-item">
+                    <div class="stack-check">✓</div>
+                    <div>
+                        <h4>6 Personal Training Sessions</h4>
+                        <p>Three weeks of guided, personalised coaching. Form correction, intensity management, real coaching.</p>
+                    </div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="stack-check">✓</div>
+                    <div>
+                        <h4>Body Composition Analysis</h4>
+                        <p>Not just weight. We measure body fat, muscle, and baseline metrics that actually matter.</p>
+                    </div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="stack-check">✓</div>
+                    <div>
+                        <h4>Personalised Meal Plan</h4>
+                        <p>Built for your lifestyle, preferences, and goals. No generic templates.</p>
+                    </div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="stack-check">✓</div>
+                    <div>
+                        <h4>Progress Tracking App</h4>
+                        <p>14 days of access to log workouts, meals, and see your progress in real-time.</p>
+                    </div>
+                </div>
+
+                <div class="stack-item">
+                    <div class="stack-check">✓</div>
+                    <div>
+                        <h4>Nutrition Consultation</h4>
+                        <p>One-on-one session to discuss nutrition, flexibility, and sustainable habits.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offer-pricing">
+                <p>Typical value: £450</p>
+                <div class="offer-price">£97</div>
+                <p style="colour: #ff5722; font-weight: 700; margin-bottom: 0;">78% Discount</p>
+            </div>
+
+            <div class="offer-cta">
+                <button class="btn-primary" onclick="alert('Trial booking form would open here')">Secure Your Trial Spot</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL SECTION -->
+    <section class="risk-section">
+        <div class="container">
+            <div class="risk-content">
+                <h2>The Results Promise</h2>
+                <p style="colour: #b0b0b0; font-size: 16px;">We're confident. You should be too.</p>
+
+                <div class="risk-guarantee">
+                    <p>If you don't see measurable progress in 14 days—more energy, visible body composition changes, increased strength—we'll refund every penny. No questions. No arguments. No fine print.</p>
+                </div>
+
+                <p style="colour: #b0b0b0; font-size: 14px; margin-top: 24px;">We're not betting against you. We're betting on you. And our 1,000+ transformations prove it works.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY SECTION -->
+    <section class="urgency-section">
+        <div class="container">
+            <div class="urgency-content">
+                <h3>⚠️ Limited Spots Available</h3>
+                <p>Only 5 trial spots available per month. Currently <strong>3 remaining</strong>.</p>
+                <div class="spots-remaining">Only 3 spots left this month</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>Do I need to be fit to start?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely not. We work with complete beginners every single day. The Forge Method meets you where you are. Your personalised programme is built around your current fitness level and will progress from there. We specialise in making fitness accessible, regardless of your starting point.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How flexible is the nutrition guidance?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Completely flexible. We're not counting macros or restricting foods you love. We work with your habits, preferences, and lifestyle to make sustainable improvements. If you love wine on Friday nights, that stays. We just help you optimise everything else. No obsession. Just better choices.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I can't commit to the same times every week?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>That's exactly why we're different. Sessions can be rescheduled with 48 hours notice. We work around your schedule—early mornings, lunch hours, evenings, whatever works. The only rule is you get three sessions in per week. Your life comes first; we adapt to it.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I have an existing injury?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We work with injuries constantly. During your assessment, we'll understand exactly what you're dealing with. Your programme will be modified to work around your injury, not ignore it. We communicate with physios if needed and create a safe path back to full strength. This is a huge part of what we do.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's your cancellation policy?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cancel anytime, no penalties. We're so confident you'll see results that we don't believe in locking you in. Give the trial two weeks. If it's not working, you get your money back and walk away with no hard feelings. That's it.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What do I need to bring to my first session?</span>
+                        <div class="faq-toggle">+</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Just yourself and comfortable workout clothes. We have everything else—weights, equipment, forms. Your first session is an assessment, so we'll take measurements, discuss your history, and get you set up on the app. No experience or fancy kit required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta-section">
+        <div class="container">
+            <h2>Your Strongest Chapter Starts Here</h2>
+            <p>You've tried the generic approach. You know it doesn't work. The Forge Method is built for you—for professionals with real lives, real schedules, real goals. Fourteen days to prove it. £97. No risk. Real results.</p>
+            <button class="btn-primary" onclick="document.querySelector('#offer').scrollIntoView({behaviour: 'smooth'})">Claim Your Trial Spot</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>FORGE FITNESS</h4>
+                    <p style="colour: #b0b0b0; font-size: 13px;">Results-driven personal training for busy professionals. The Forge Method. Built for your life.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="#system">The Method</a></li>
+                        <li><a href="#transformations">Transformations</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#offer">Start Trial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>CONTACT</h4>
+                    <ul>
+                        <li><a href="mailto:hello@forgefitness.co.uk">hello@forgefitness.co.uk</a></li>
+                        <li><a href="tel:+442071234567">+44 (0) 207 123 4567</a></li>
+                        <li>London, UK</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>CERTIFICATIONS</h4>
+                    <ul>
+                        <li>Level 4 CIMSPA</li>
+                        <li>Precision Nutrition Certified</li>
+                        <li>First Aid &amp; CPR</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Forge Fitness. All rights reserved. | <a href="#" style="colour: #b0b0b0;">Privacy Policy</a> | <a href="#" style="colour: #b0b0b0;">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', function() {
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll behaviour
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behaviour: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>

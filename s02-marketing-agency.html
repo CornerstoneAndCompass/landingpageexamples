@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalyst Digital | Performance Marketing Agency | ROI Guaranteed</title>
+    <meta name="description" content="Stop wasting money on vanity metrics. Catalyst Digital specialises in performance marketing with guaranteed ROI. Free growth audit. No lock-in contracts.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563EB;
+            --navy: #0F172A;
+            --accent: #22C55E;
+            --white: #FFFFFF;
+            --light-grey: #F1F5F9;
+            --dark-grey: #94A3B8;
+            --border: #E2E8F0;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .small-text {
+            font-size: 0.875rem;
+            color: var(--dark-grey);
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .btn-accent:hover {
+            background: #16a34a;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* LAYOUT */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* STICKY NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: none;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        @media (min-width: 768px) {
+            nav ul {
+                display: flex;
+            }
+        }
+
+        .nav-cta {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-cta {
+                display: inline-block;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 80px;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2847 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+        }
+
+        .hero-highlight {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-cta {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .hero-cta p {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* PATTERN BREAK */
+        .pattern-break {
+            padding: 60px 0;
+            background: var(--light-grey);
+            border-top: 3px solid var(--primary);
+        }
+
+        .pattern-break .container {
+            text-align: center;
+        }
+
+        .pattern-stat {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--white);
+            border-radius: 8px;
+            margin: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .pattern-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .pattern-stat-label {
+            font-size: 0.875rem;
+            color: var(--dark-grey);
+            margin-top: 0.5rem;
+        }
+
+        /* PROBLEM SECTION */
+        .problem {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--dark-grey);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problem-card {
+            padding: 2.5rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .problem-card p {
+            color: var(--dark-grey);
+            margin: 0;
+        }
+
+        /* IDEAL CLIENT */
+        .ideal-client {
+            padding: 80px 0;
+            background: var(--light-grey);
+        }
+
+        .ideal-client-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .ideal-client-content h2 {
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .ideal-client-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .ideal-client-list {
+            list-style: none;
+            padding: 2rem 0;
+        }
+
+        .ideal-client-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .ideal-client-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* SOLUTION SECTION */
+        .solution {
+            padding: 80px 0;
+        }
+
+        .solution-grid {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .solution-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .solution-feature {
+            padding-left: 2rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .solution-feature h3 {
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .solution-feature p {
+            color: var(--dark-grey);
+        }
+
+        .solution-visual {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2847 100%);
+            border-radius: 12px;
+            padding: 3rem;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .solution-visual-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .solution-visual-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard-widget {
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: left;
+        }
+
+        .dashboard-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .dashboard-row:last-child {
+            border-bottom: none;
+        }
+
+        .dashboard-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        .dashboard-value {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 80px 0;
+            background: var(--light-grey);
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+            transform: translateY(-8px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.75rem;
+            color: var(--navy);
+        }
+
+        .service-value {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border);
+        }
+
+        /* CASE STUDIES */
+        .case-studies {
+            padding: 80px 0;
+        }
+
+        .case-study {
+            background: var(--white);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .case-study:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .case-study-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .case-study-title h3 {
+            margin: 0;
+            color: var(--navy);
+        }
+
+        .case-study-title p {
+            margin: 0;
+            color: var(--dark-grey);
+            font-size: 0.875rem;
+        }
+
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Space Grotesk', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--dark-grey);
+        }
+
+        .case-study-description {
+            color: var(--dark-grey);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--light-grey);
+            color: var(--navy);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--light-grey);
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            color: var(--navy);
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--dark-grey);
+            font-size: 0.875rem;
+        }
+
+        /* AUTHORITY */
+        .authority {
+            padding: 60px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .authority .container {
+            text-align: center;
+        }
+
+        .authority h2 {
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .authority-item {
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .authority-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .authority-item p {
+            color: rgba(255,255,255,0.8);
+            margin: 0;
+        }
+
+        /* IRRESISTIBLE STACK */
+        .irresistible {
+            padding: 80px 0;
+        }
+
+        .stack-container {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .stack-box {
+            background: linear-gradient(135deg, var(--primary) 0%, #1d4ed8 100%);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stack-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(34, 197, 94, 0.3) 0%, transparent 50%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .stack-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stack-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .stack-items {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stack-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .stack-item-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+            text-align: center;
+        }
+
+        .stack-item-text h4 {
+            margin: 0 0 0.25rem 0;
+            color: var(--white);
+            font-size: 0.95rem;
+        }
+
+        .stack-item-text p {
+            margin: 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .stack-value {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .stack-value p {
+            margin: 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .stack-value-highlight {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .stack-cta {
+            text-align: center;
+        }
+
+        .stack-cta .btn {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 16px 40px;
+            font-size: 1rem;
+        }
+
+        .stack-cta .btn:hover {
+            background: #16a34a;
+            color: var(--white);
+        }
+
+        /* RISK REVERSAL */
+        .risk-reversal {
+            padding: 80px 0;
+            background: var(--light-grey);
+        }
+
+        .risk-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 3px solid var(--accent);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .risk-box h3 {
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+            font-size: 2rem;
+        }
+
+        .risk-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), #16a34a);
+            color: var(--navy);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            background: var(--light-grey);
+            padding: 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .faq-question:hover {
+            background: var(--white);
+            border-color: var(--primary);
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            color: var(--navy);
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+            min-width: 30px;
+            text-align: right;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: var(--dark-grey);
+            line-height: 1.8;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a2847 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .final-cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .final-cta .btn {
+            font-size: 1rem;
+            padding: 16px 40px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.875rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .pattern-break {
+                padding: 40px 0;
+            }
+
+            .problem,
+            .ideal-client,
+            .solution,
+            .services,
+            .case-studies,
+            .testimonials,
+            .irresistible,
+            .risk-reversal,
+            .faq,
+            .final-cta {
+                padding: 60px 0;
+            }
+
+            .authority {
+                padding: 40px 0;
+            }
+
+            .ideal-client-content {
+                padding: 2rem;
+            }
+
+            .stack-box {
+                padding: 2rem;
+            }
+
+            .risk-box {
+                padding: 2rem;
+            }
+
+            .case-study-metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .pattern-stat {
+                display: block;
+                margin: 0.75rem 0;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .counter {
+            animation: countUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<!-- STICKY NAV -->
+<nav>
+    <div class="container">
+        <div class="logo">Catalyst<span>.</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#case-studies">Results</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a href="#cta" class="btn btn-primary nav-cta">Start Free Audit</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>You're Spending £5,000/Month on Marketing. <span class="hero-highlight">Can You Prove It's Working?</span></h1>
+            <p>Most agencies show you vanity metrics. We show you revenue. Every pound tracked. Every conversion attributed. No more guessing games.</p>
+
+            <div class="hero-cta">
+                <a href="#cta" class="btn btn-primary">Get Your Free Audit</a>
+                <p>Takes 15 mins. No credit card needed.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PATTERN BREAK -->
+<section class="pattern-break">
+    <div class="container">
+        <h3>Why Catalyst Digital?</h3>
+        <div style="margin-top: 2rem;">
+            <div class="pattern-stat">
+                <div class="pattern-stat-number counter">£50M+</div>
+                <div class="pattern-stat-label">in managed ad spend</div>
+            </div>
+            <div class="pattern-stat">
+                <div class="pattern-stat-number counter">340%</div>
+                <div class="pattern-stat-label">average ROAS improvement</div>
+            </div>
+            <div class="pattern-stat">
+                <div class="pattern-stat-number counter">250+</div>
+                <div class="pattern-stat-label">businesses transformed</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM AGITATION -->
+<section class="problem">
+    <div class="container">
+        <div class="section-header">
+            <h2>The Problem With Most Agencies</h2>
+            <p>You're trapped in a cycle of empty promises and meaningless metrics.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="problem-card">
+                <div class="problem-icon">📊</div>
+                <h3>Vanity Metrics</h3>
+                <p>They obsess over website traffic, click-through rates, and impressions. You care about revenue. We measure what matters.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">🔒</div>
+                <h3>Locked Contracts</h3>
+                <p>12-month minimums. Unbreakable commitments. You're stuck paying whether results appear or not. There's no accountability.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">🎭</div>
+                <h3>Zero Transparency</h3>
+                <p>Vague reporting. Hidden assumptions. You never know where your money is going or why certain tactics work.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">🔄</div>
+                <h3>Cookie-Cutter Strategies</h3>
+                <p>Every client gets the same playbook. No customisation. No consideration for your unique market, audience, or goals.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">💸</div>
+                <h3>Wasted Ad Spend</h3>
+                <p>Poorly targeted campaigns. Inefficient bidding. They profit from your poor performance. The incentives are backwards.</p>
+            </div>
+
+            <div class="problem-card">
+                <div class="problem-icon">📈</div>
+                <h3>No Real Strategy</h3>
+                <p>They tinker with small optimisations. You need a cohesive strategy that compounds. Real growth requires orchestration.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IDEAL CLIENT CALLOUT -->
+<section class="ideal-client">
+    <div class="container">
+        <div class="ideal-client-content">
+            <h2>Is This You?</h2>
+            <p>You're spending real money on marketing. Thousands per month. But you can't point to exactly which pounds turned into revenue.</p>
+            <p>You're tired of agencies who hide behind jargon and hide their results behind locked dashboards. You want transparency. You want accountability. You want proof.</p>
+            <p>You know that great marketing should be measurable, predictable, and repeatable. And you're willing to work with an agency that operates the same way.</p>
+
+            <ul class="ideal-client-list">
+                <li>You're generating £100k+ annual revenue</li>
+                <li>You've tried agencies before (with mixed results)</li>
+                <li>You understand that marketing is an investment, not a cost</li>
+                <li>You want to scale systematically, not hope for breakthroughs</li>
+                <li>You prefer clear communication over impressive powerpoints</li>
+            </ul>
+
+            <p style="margin-top: 2rem; font-weight: 600;">If this sounds like you, keep reading.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SOLUTION REVEAL -->
+<section class="solution">
+    <div class="container">
+        <div class="section-header">
+            <h2>The Catalyst Difference</h2>
+            <p>Performance marketing built for transparency. Real-time visibility. Full attribution. No lock-in.</p>
+        </div>
+
+        <div class="solution-grid">
+            <div>
+                <div class="solution-feature">
+                    <h3>Real-Time Dashboards</h3>
+                    <p>Every metric that matters to your business lives in one unified dashboard. You see exactly what's happening with your marketing, updated hourly.</p>
+                </div>
+
+                <div class="solution-feature">
+                    <h3>Revenue Attribution</h3>
+                    <p>We don't guess. We implement advanced tracking to attribute every customer, every transaction, every pound of revenue back to the marketing that created it.</p>
+                </div>
+
+                <div class="solution-feature">
+                    <h3>No Lock-In Contracts</h3>
+                    <p>Month-to-month agreements. If we're not delivering results, you're free to leave. Our confidence comes from performance, not contractual obligation.</p>
+                </div>
+
+                <div class="solution-feature">
+                    <h3>Custom Strategies</h3>
+                    <p>We analyse your market, audit your competitors, understand your customers, and build a bespoke strategy designed specifically for your business model.</p>
+                </div>
+            </div>
+
+            <div class="solution-visual">
+                <div class="solution-visual-content">
+                    <h3>Your Marketing Command Centre</h3>
+
+                    <div class="dashboard-widget">
+                        <div class="dashboard-row">
+                            <span class="dashboard-label">Total Revenue (30d)</span>
+                            <span class="dashboard-value">£87,420</span>
+                        </div>
+                        <div class="dashboard-row">
+                            <span class="dashboard-label">ROAS</span>
+                            <span class="dashboard-value">4.2:1</span>
+                        </div>
+                        <div class="dashboard-row">
+                            <span class="dashboard-label">Cost Per Acquisition</span>
+                            <span class="dashboard-value">£18.50</span>
+                        </div>
+                        <div class="dashboard-row">
+                            <span class="dashboard-label">Conversion Rate</span>
+                            <span class="dashboard-value">3.8%</span>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.9;">Updated every 60 minutes. Full access. Zero hidden metrics.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>We specialise in every major channel. Integrated for maximum impact.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>SEO</h3>
+                <p>Sustainable organic growth. We optimise on-page elements, build authority through strategic link building, and create content that converts. Measured by revenue, not rankings.</p>
+                <div class="service-value">Predictable organic revenue growth</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📢</div>
+                <h3>PPC</h3>
+                <p>Precision paid advertising. Google Ads, Bing, LinkedIn—every platform is optimised for conversions, not clicks. We reduce wasted spend within 14 days.</p>
+                <div class="service-value">Immediate, measurable results</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Social Media</h3>
+                <p>Organic social. Paid social. We build audiences that buy. Strategic content, community management, and paid amplification aligned with your revenue goals.</p>
+                <div class="service-value">Engaged, converting audiences</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">✉️</div>
+                <h3>Email Marketing</h3>
+                <p>Your most owned channel. We build segmented lists, create sequences that sell, and nurture cold leads into warm customers. Some of the highest ROAS we deliver.</p>
+                <div class="service-value">High-margin customer revenue</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Conversion Rate Optimisation</h3>
+                <p>Your website is your salesforce. We run tests, analyse behaviour, reduce friction, and increase the percentage of visitors who convert. Every 1% matters.</p>
+                <div class="service-value">More revenue from existing traffic</div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Analytics & Tracking</h3>
+                <p>The foundation of everything. We implement sophisticated tracking systems that attribute every customer and every pound back to the marketing that created it.</p>
+                <div class="service-value">Perfect visibility into your funnel</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="case-studies" id="case-studies">
+    <div class="container">
+        <div class="section-header">
+            <h2>Results That Speak</h2>
+            <p>Real cases. Real revenue. Real improvement.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-logo">EC</div>
+                    <div class="case-study-title">
+                        <h3>E-Commerce Brand</h3>
+                        <p>Online retail • £2.4M annual revenue</p>
+                    </div>
+                </div>
+
+                <div class="case-study-metrics">
+                    <div class="metric">
+                        <div class="metric-value">340%</div>
+                        <div class="metric-label">ROAS Increase</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">£127k</div>
+                        <div class="metric-label">Monthly Revenue</div>
+                    </div>
+                </div>
+
+                <div class="case-study-description">
+                    Client was burning money on Facebook and Google Ads with poor targeting and weak creative. We rebuilt their audience segmentation, implemented conversion API tracking, A/B tested 40+ ad variations, and optimised landing pages. Within 90 days, ROAS went from 0.8:1 to 3.5:1.
+                </div>
+
+                <div class="case-study-tags">
+                    <span class="tag">PPC</span>
+                    <span class="tag">Facebook Ads</span>
+                    <span class="tag">CRO</span>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-logo">SB</div>
+                    <div class="case-study-title">
+                        <h3>SaaS Company</h3>
+                        <p>B2B software • £800k ARR</p>
+                    </div>
+                </div>
+
+                <div class="case-study-metrics">
+                    <div class="metric">
+                        <div class="metric-value">67%</div>
+                        <div class="metric-label">CAC Reduction</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">£18.5k</div>
+                        <div class="metric-label">MRR</div>
+                    </div>
+                </div>
+
+                <div class="case-study-description">
+                    SaaS client was struggling to fill their sales pipeline cost-effectively. We launched a multi-channel approach: content SEO targeting high-intent keywords, LinkedIn outreach campaigns, and optimised landing pages. Combined with email nurturing, we reduced their customer acquisition cost from £2,200 to £725 while increasing qualified demo requests by 156%.
+                </div>
+
+                <div class="case-study-tags">
+                    <span class="tag">SEO</span>
+                    <span class="tag">LinkedIn Ads</span>
+                    <span class="tag">Email</span>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div class="case-study-logo">LS</div>
+                    <div class="case-study-title">
+                        <h3>Local Services</h3>
+                        <p>Plumbing & HVAC • £450k annual revenue</p>
+                    </div>
+                </div>
+
+                <div class="case-study-metrics">
+                    <div class="metric">
+                        <div class="metric-value">213%</div>
+                        <div class="metric-label">Lead Volume</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">38%</div>
+                        <div class="metric-label">Cost Reduction</div>
+                    </div>
+                </div>
+
+                <div class="case-study-description">
+                    Local service provider was relying on Google Local Services Ads exclusively. We diversified their lead generation mix: optimised Google Ads with better landing pages, implemented reputation marketing to boost reviews, and launched local SEO campaigns targeting service areas. Same budget, 213% more leads.
+                </div>
+
+                <div class="case-study-tags">
+                    <span class="tag">Google Ads</span>
+                    <span class="tag">Local SEO</span>
+                    <span class="tag">Reputation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from the businesses we've transformed.</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "Catalyst completely changed how we think about marketing. For the first time, we can actually see which marketing activities drive revenue. The transparency alone is worth it, but the results speak louder."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JM</div>
+                    <div class="author-info">
+                        <h4>James Mitchell</h4>
+                        <p>Founder, E-Commerce Brand</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "We switched agencies six months ago. Catalyst didn't make promises about rankings or traffic—they promised revenue. They delivered 67% lower customer acquisition costs. That's the partnership we needed."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SL</div>
+                    <div class="author-info">
+                        <h4>Sarah Livingstone</h4>
+                        <p>CEO, SaaS Platform</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">
+                    "No more guessing. No more vanity metrics. Just clean, real results. The team understands our business model, treats our money like it's their own, and delivers what they promise. That's rare."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RM</div>
+                    <div class="author-info">
+                        <h4>Robert Chen</h4>
+                        <p>Managing Director, Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AUTHORITY -->
+<section class="authority">
+    <div class="container">
+        <h2>Trusted By Industry</h2>
+
+        <div class="authority-grid">
+            <div class="authority-item">
+                <h4>Google Premier Partner</h4>
+                <p>Certified partner with Google. Proven track record managing accounts effectively. Premium support access.</p>
+            </div>
+
+            <div class="authority-item">
+                <h4>Meta Business Partner</h4>
+                <p>Recognised and certified by Meta. Early access to new advertising features. Dedicated account support.</p>
+            </div>
+
+            <div class="authority-item">
+                <h4>£50M+ Managed</h4>
+                <p>Over £50 million in advertising spend managed across all major platforms. Proven expertise at scale.</p>
+            </div>
+
+            <div class="authority-item">
+                <h4>Featured in Marketing Week</h4>
+                <p>Recognition from leading marketing publication. Case studies and insights recognised industry-wide.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IRRESISTIBLE STACK -->
+<section class="irresistible" id="cta">
+    <div class="container">
+        <div class="section-header">
+            <h2>The £2,500 Growth Audit (Yours Free)</h2>
+            <p>This is exactly what we deliver to paid clients. You get it free, no strings attached. Take 48 hours to consider if working together makes sense.</p>
+        </div>
+
+        <div class="stack-container">
+            <div class="stack-box">
+                <div class="stack-content">
+                    <h3>What's Included</h3>
+
+                    <div class="stack-items">
+                        <div class="stack-item">
+                            <div class="stack-item-icon">🔍</div>
+                            <div class="stack-item-text">
+                                <h4>Website & Competitor Audit</h4>
+                                <p>Deep analysis of your site, your top 3 competitors, and your market. We identify technical gaps, missed opportunities, and competitive advantages.</p>
+                            </div>
+                        </div>
+
+                        <div class="stack-item">
+                            <div class="stack-item-icon">📊</div>
+                            <div class="stack-item-text">
+                                <h4>90-Day Growth Roadmap</h4>
+                                <p>A concrete, prioritised action plan for the next quarter. Specific tactics, estimated impact, and clear metrics. Nothing vague. Everything actionable.</p>
+                            </div>
+                        </div>
+
+                        <div class="stack-item">
+                            <div class="stack-item-icon">💡</div>
+                            <div class="stack-item-text">
+                                <h4>Ad Account & Analytics Review</h4>
+                                <p>We'll audit your current advertising accounts and tracking setup. Identify waste, misconfigurations, and immediate optimisation opportunities.</p>
+                            </div>
+                        </div>
+
+                        <div class="stack-item">
+                            <div class="stack-item-icon">🎯</div>
+                            <div class="stack-item-text">
+                                <h4>Strategy Session (60 Minutes)</h4>
+                                <p>Walk through findings with our team. Ask anything. Understand exactly how we'd approach your growth. See if working together is right for both of us.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stack-value">
+                        <p>Normally £2,500</p>
+                        <div class="stack-value-highlight">Now Free</div>
+                        <p>For qualifying businesses</p>
+                    </div>
+
+                    <div class="stack-cta">
+                        <button class="btn btn-primary" onclick="scrollToForm()">Request Your Free Audit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RISK REVERSAL -->
+<section class="risk-reversal">
+    <div class="container">
+        <div class="risk-box">
+            <div class="guarantee-badge">Performance Guarantee</div>
+            <h3>If We Don't Win, We Work Free</h3>
+            <p>We're so confident in our approach that we'll continue working with you—at no cost—until we beat your existing marketing results.</p>
+            <p style="opacity: 0.8;">If after 90 days our strategy hasn't improved your ROAS, CAC, or revenue attribution, we'll refund your engagement fee and continue at no charge until we do.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <div class="section-header">
+            <h2>Questions? We've Got Answers</h2>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How much does Catalyst Digital cost?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Our minimum monthly engagement is £1,500 for fully-managed services. Most clients spend £2,500-£8,000/month depending on complexity and channels. We structure pricing around value and results, not hourly rates. Let's discuss your specific situation in the free audit.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What if you don't deliver results?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer a performance guarantee: if we don't beat your existing marketing performance within 90 days, we work at no cost until we do. We're not paid unless your revenue, ROAS, or customer acquisition improves. This aligns our incentives with yours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Can I leave whenever I want?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Month-to-month agreements only. No lock-in contracts. If you're not satisfied, you're free to leave at the end of the month. We've earned long-term retention through delivering results, not through contracts.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Do you work with small businesses?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>We work with businesses generating £100k+ annual revenue. This isn't about company size—it's about having sufficient scale to properly test, measure, and optimise marketing. If you're below this threshold, you'd likely benefit from a fractional CMO or different approach.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How long until I see results?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>PPC results are immediate—usually 2-4 weeks to optimisation wins. SEO takes 3-6 months to compound. Email works immediately if you have a list. We'll have your roadmap prioritised: quick wins first, then longer-term plays. Most clients see measurable improvement within 30 days.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What about reporting and transparency?</h4>
+                    <div class="faq-toggle">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Full transparency. Real-time dashboards show every metric. Monthly strategy calls discuss what's working, what isn't, and what we're testing next. You have access to all underlying data. No hidden reporting. No vanity metrics. Just the numbers that matter to your business.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Stop Guessing. Start Growing.</h2>
+        <p>Every pound of your marketing budget should be measurable, accountable, and proven. Let's show you what that looks like.</p>
+        <a href="#form" class="btn btn-primary">Book Your Free Audit</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Catalyst Digital</h4>
+                <p>Performance marketing agency. No vanity metrics. No lock-in contracts. Just measurable results.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">SEO</a></li>
+                    <li><a href="#services">PPC</a></li>
+                    <li><a href="#services">Social Media</a></li>
+                    <li><a href="#services">Email Marketing</a></li>
+                    <li><a href="#services">CRO</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="mailto:hello@catalystdigital.com">Contact Us</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@catalystdigital.com</p>
+                <p>Phone: +44 (0) 20 XXXX XXXX</p>
+                <p>London, UK</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Catalyst Digital. All rights reserved. | <a href="#privacy" style="color: rgba(255,255,255,0.7);">Privacy</a> | <a href="#terms" style="color: rgba(255,255,255,0.7);">Terms</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Toggle FAQ items
+    function toggleFaq(element) {
+        const item = element.parentElement;
+        item.classList.toggle('active');
+    }
+
+    // Smooth scroll helper
+    function scrollToForm() {
+        document.getElementById('form')?.scrollIntoView({ behaviour: 'smooth' }) ||
+        window.scrollTo({ top: document.body.scrollHeight, behaviour: 'smooth' });
+    }
+
+    // Counter animation
+    function animateCounters() {
+        const counters = document.querySelectorAll('.counter');
+
+        counters.forEach(counter => {
+            const text = counter.textContent;
+            const isNumber = /^\d+/.test(text);
+
+            if (isNumber) {
+                counter.style.opacity = '1';
+            }
+        });
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+        animateCounters();
+
+        // Add fade-in animation to elements
+        const elements = document.querySelectorAll('.problem-card, .service-card, .case-study, .testimonial');
+        elements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.1}s`;
+            el.classList.add('fade-in');
+        });
+    });
+
+    // Active nav on scroll
+    window.addEventListener('scroll', () => {
+        const nav = document.querySelector('nav');
+        if (window.scrollY > 50) {
+            nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+        } else {
+            nav.style.boxShadow = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>

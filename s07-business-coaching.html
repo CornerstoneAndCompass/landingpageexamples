@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business coaching for SMEs. Strategic growth coaching for business owners doing £250K-£5M. Systems, sales, strategy, and scale.">
+    <title>Vantage Point Consulting | Strategic Business Coaching for SMEs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-teal: #0D4E4E;
+            --warm-amber: #E8923E;
+            --off-white: #FAFAF5;
+            --charcoal: #252525;
+            --light-teal: #E0F2F1;
+            --dark-teal: #0a3d3d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--off-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--deep-teal);
+        }
+
+        /* ===== STICKY NAVIGATION ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(13, 78, 78, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--deep-teal);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--warm-amber);
+        }
+
+        .cta-btn-nav {
+            background: var(--deep-teal);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn-nav:hover {
+            background: var(--dark-teal);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .cta-btn-nav {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--dark-teal) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(232, 146, 62, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            opacity: 0.95;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--warm-amber);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero-cta:hover {
+            background: #d67f2f;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(232, 146, 62, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-cta {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* ===== PATTERN BREAK / SUBHEADER ===== */
+        .pattern-break {
+            background: var(--light-teal);
+            padding: 2rem;
+            text-align: center;
+            border-top: 3px solid var(--warm-amber);
+        }
+
+        .pattern-break p {
+            font-size: 1.1rem;
+            color: var(--deep-teal);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        /* ===== PROBLEM AGITATION SECTION ===== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-left: 4px solid var(--warm-amber);
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(13, 78, 78, 0.12);
+        }
+
+        .problem-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--deep-teal);
+        }
+
+        .problem-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* ===== IDEAL CLIENT SECTION ===== */
+        .ideal-client {
+            background: linear-gradient(135deg, var(--light-teal) 0%, rgba(224, 242, 241, 0.5) 100%);
+            border: 2px solid var(--deep-teal);
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .ideal-client h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--deep-teal);
+        }
+
+        .ideal-client p {
+            font-size: 1.15rem;
+            color: var(--charcoal);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .ideal-client .highlight {
+            color: var(--warm-amber);
+            font-weight: 700;
+        }
+
+        /* ===== SOLUTION SECTION ===== */
+        .solution-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .solution-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--deep-teal);
+        }
+
+        .solution-content p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .solution-benefits {
+            list-style: none;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .solution-benefits li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .solution-benefits li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--warm-amber);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .solution-visual {
+            position: relative;
+            background: linear-gradient(135deg, var(--light-teal) 0%, #c8e6e6 100%);
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .solution-visual h4 {
+            font-size: 1.8rem;
+            color: var(--deep-teal);
+            margin-bottom: 2rem;
+        }
+
+        .growth-arrow {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: arrowBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes arrowBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .metric {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--warm-amber);
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .solution-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .solution-visual {
+                min-height: 300px;
+            }
+        }
+
+        /* ===== FRAMEWORK SECTION ===== */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pillar {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--warm-amber);
+        }
+
+        .pillar:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(13, 78, 78, 0.15);
+        }
+
+        .pillar-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--deep-teal);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .pillar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--deep-teal);
+        }
+
+        .pillar p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* ===== CASE STUDIES SECTION ===== */
+        .case-studies {
+            background: var(--light-teal);
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .case-study {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--warm-amber);
+        }
+
+        .case-study-metric {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-metric .before-after {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-metric .before-after span {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background: var(--light-teal);
+            color: var(--deep-teal);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .case-study-metric .arrow {
+            color: var(--warm-amber);
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .case-study-metric .after {
+            background: var(--deep-teal);
+            color: white;
+        }
+
+        .case-study h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--deep-teal);
+        }
+
+        .case-study-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .case-study-results {
+            font-size: 0.9rem;
+            color: #777;
+            line-height: 1.7;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            margin-top: 5rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--warm-amber);
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-quote {
+            color: var(--warm-amber);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--deep-teal);
+            font-size: 1rem;
+        }
+
+        .testimonial-title {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== AUTHORITY SECTION ===== */
+        .authority {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--dark-teal) 100%);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .authority-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .authority h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .authority-stat {
+            text-align: center;
+        }
+
+        .authority-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--warm-amber);
+            margin-bottom: 0.5rem;
+        }
+
+        .authority-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ===== IRRESISTIBLE STACK SECTION ===== */
+        .irresistible-stack {
+            background: linear-gradient(135deg, var(--light-teal) 0%, rgba(224, 242, 241, 0.5) 100%);
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+            border-top: 3px solid var(--warm-amber);
+            border-bottom: 3px solid var(--warm-amber);
+        }
+
+        .irresistible-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .irresistible-stack h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .irresistible-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2.5rem;
+        }
+
+        .stack-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stack-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .stack-item-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .stack-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--deep-teal);
+        }
+
+        .stack-item p {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .value-summary {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 2px solid var(--warm-amber);
+        }
+
+        .value-summary h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--deep-teal);
+        }
+
+        .value-summary p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-item {
+            background: var(--light-teal);
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .value-item-amount {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--warm-amber);
+        }
+
+        .value-item-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        .free-badge {
+            display: inline-block;
+            background: var(--warm-amber);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 1rem 0;
+        }
+
+        /* ===== RISK REVERSAL SECTION ===== */
+        .risk-reversal {
+            background: white;
+            border: 3px solid var(--deep-teal);
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .risk-reversal h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--deep-teal);
+        }
+
+        .risk-reversal p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: var(--light-teal);
+            border: 2px solid var(--deep-teal);
+            padding: 1.5rem 2rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        .guarantee-badge h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--deep-teal);
+        }
+
+        .guarantee-badge p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* ===== URGENCY SECTION ===== */
+        .urgency {
+            background: linear-gradient(135deg, var(--warm-amber) 0%, #d67f2f 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+
+        .urgency h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+
+        .urgency p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .spots-available {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq {
+            margin-top: 4rem;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            background: var(--light-teal);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+            border-left: 4px solid var(--warm-amber);
+        }
+
+        .faq-question:hover {
+            background: #d4e9e8;
+        }
+
+        .faq-question h4 {
+            font-size: 1.1rem;
+            color: var(--deep-teal);
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--warm-amber);
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* ===== FINAL CTA SECTION ===== */
+        .final-cta {
+            background: linear-gradient(135deg, var(--deep-teal) 0%, var(--dark-teal) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .final-cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .final-cta-button {
+            display: inline-block;
+            background: var(--warm-amber);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .final-cta-button:hover {
+            background: #d67f2f;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(232, 146, 62, 0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--charcoal);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--warm-amber);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-text {
+            color: #aaa;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">VP Consulting</a>
+            <ul class="nav-links">
+                <li><a href="#solution">The Solution</a></li>
+                <li><a href="#framework">Framework</a></li>
+                <li><a href="#case-studies">Results</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#final-cta" class="cta-btn-nav">Book Your Diagnostic</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>You Didn't Start a Business to Work 70 Hours a Week and Still Feel Broke.</h1>
+            <p>Yet here you are. Overwhelmed. Stretched thin. Wondering when the growth curve actually gets easier.</p>
+            <button class="hero-cta">Get Your Free Growth Diagnostic</button>
+        </div>
+    </section>
+
+    <!-- PATTERN BREAK -->
+    <section class="pattern-break">
+        <p>The truth? You're not behind. You're just working with the wrong business model. Let's fix that.</p>
+    </section>
+
+    <!-- PROBLEM AGITATION SECTION -->
+    <section class="section">
+        <h2>You're Familiar With This Loop</h2>
+        <p class="section-intro">Most business owners find themselves in one or all of these situations. Does this sound familiar?</p>
+
+        <div class="problem-grid">
+            <div class="problem-card">
+                <h3>Working IN, Not ON</h3>
+                <p>You're the business. If you take a week off, deals fall through, quality drops, team panics. You're a bottleneck disguised as a business owner.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Revenue Plateau</h3>
+                <p>You hit £400K, £750K, maybe £2M. Then everything stops. You throw marketing money at it. Nothing moves. Something feels fundamentally broken.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Team Chaos</h3>
+                <p>You can't delegate effectively because nothing is properly documented. People keep asking you the same questions. Culture is nonexistent.</p>
+            </div>
+            <div class="problem-card">
+                <h3>Feast or Famine</h3>
+                <p>One month you're swamped, the next you're staring at your phone waiting for calls. No pipeline stability. No predictability. Constant stress.</p>
+            </div>
+            <div class="problem-card">
+                <h3>No Real Holiday</h3>
+                <p>You're "on holiday" but your phone buzzes 47 times a day. You can't switch off. You can't actually rest. Your family's noticed.</p>
+            </div>
+            <div class="problem-card">
+                <h3>The Comparison Trap</h3>
+                <p>Your competitor's business looks frictionless. They've figured something out. You haven't. Imposter syndrome kicks in. You feel behind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IDEAL CLIENT CALL-OUT -->
+    <section class="section">
+        <div class="ideal-client">
+            <h3>If This Is You...</h3>
+            <p>You're a business owner doing <span class="highlight">£250K to £5M in revenue</span>. You know you should be further along. You're not broke, but you're not thriving either. You've got revenue, but the lifestyle? That's still broken.</p>
+            <p>And here's the thing: <span class="highlight">it's not your fault</span>. Nobody teaches business owners how to build systems. They just tell you to "work harder."</p>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="section" id="solution">
+        <h2>Here's What Changes</h2>
+
+        <div class="solution-container">
+            <div class="solution-content">
+                <h3>Strategic Business Coaching Built Differently</h3>
+                <p>Vantage Point isn't another generic coaching programme. We specialise in building <strong>systems, not dependency</strong>. We work in 90-day sprints because real transformation happens fast when the strategy is right.</p>
+
+                <p>Our approach combines proven frameworks, strategic accountability, and genuine partnership. We work alongside you, not above you.</p>
+
+                <h3 style="font-size: 1.5rem; margin-top: 1.5rem; margin-bottom: 1rem;">What You Get</h3>
+                <ul class="solution-benefits">
+                    <li>Strategic clarity on your exact bottleneck</li>
+                    <li>A 90-day action plan built specifically for your business</li>
+                    <li>Systems and frameworks that remove you from day-to-day chaos</li>
+                    <li>Sales strategies that create predictable revenue</li>
+                    <li>Team coaching that actually gets people aligned</li>
+                    <li>Weekly accountability meetings with a coach who knows your business</li>
+                    <li>A clear roadmap to scale without losing your mind</li>
+                </ul>
+            </div>
+
+            <div class="solution-visual">
+                <h4>The Real Outcome</h4>
+                <div class="growth-arrow">📈</div>
+
+                <div class="metric">
+                    <div class="metric-value">40-60%</div>
+                    <div class="metric-label">average revenue increase</div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-value">50% less</div>
+                    <div class="metric-label">time spent on operations</div>
+                </div>
+
+                <div class="metric">
+                    <div class="metric-value">90 days</div>
+                    <div class="metric-label">to measurable transformation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FRAMEWORK SECTION -->
+    <section class="section" id="framework">
+        <h2>The Vantage Point Growth System</h2>
+        <p class="section-intro">Four pillars. Proven. Transformational.</p>
+
+        <div class="framework-grid">
+            <div class="pillar">
+                <div class="pillar-number">1</div>
+                <h3>Strategy</h3>
+                <p>Clarity on your competitive advantage, ideal customer, and revenue model. Remove the guessing game. Build on certainty.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-number">2</div>
+                <h3>Systems</h3>
+                <p>Document everything. Create repeatable processes. Build a business that runs without you present. Delegation becomes possible.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-number">3</div>
+                <h3>Sales</h3>
+                <p>A predictable pipeline. Consistent lead generation. Conversion frameworks that actually work. Revenue ceases to be a mystery.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-number">4</div>
+                <h3>Scale</h3>
+                <p>Multiply revenue without multiplying chaos. Team leverage. Strategic positioning. Growth that's sustainable and profitable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION -->
+    <section class="section case-studies" id="case-studies">
+        <h2>Real Results From Real Business Owners</h2>
+        <p class="section-intro">These aren't hypothetical. These are your peers. Some of these were sitting exactly where you are now.</p>
+
+        <div class="case-study-grid">
+            <div class="case-study">
+                <h4>Tech Services Agency</h4>
+                <div class="case-study-metric">
+                    <div class="before-after">
+                        <span class="before">Revenue: £400K</span>
+                        <span class="arrow">→</span>
+                        <span class="after">£1.2M</span>
+                    </div>
+                    <div class="before-after">
+                        <span class="before">Working: 60 hrs/week</span>
+                        <span class="arrow">→</span>
+                        <span class="after">35 hrs/week</span>
+                    </div>
+                </div>
+                <p class="case-study-description">Director, 7-person team</p>
+                <p class="case-study-results">"Within 90 days, our pricing was wrong. Our positioning was wrong. Our sales process didn't exist. Vantage Point showed us exactly what to fix, in what order. 18 months later, we 3x revenue and I actually get weekends back."</p>
+            </div>
+
+            <div class="case-study">
+                <h4>Recruitment Firm</h4>
+                <div class="case-study-metric">
+                    <div class="before-after">
+                        <span class="before">Revenue: £650K</span>
+                        <span class="arrow">→</span>
+                        <span class="after">£1.8M</span>
+                    </div>
+                    <div class="before-after">
+                        <span class="before">Team: 3 people</span>
+                        <span class="arrow">→</span>
+                        <span class="after">8 people (scalable)</span>
+                    </div>
+                </div>
+                <p class="case-study-description">Managing Director, consultancy</p>
+                <p class="case-study-results">"The systems work we did was a game-changer. We documented everything. Suddenly, hiring and training became easy. Our team doesn't need me to make every decision."</p>
+            </div>
+
+            <div class="case-study">
+                <h4>SaaS Startup</h4>
+                <div class="case-study-metric">
+                    <div class="before-after">
+                        <span class="before">MRR: £18K</span>
+                        <span class="arrow">→</span>
+                        <span class="after">£67K</span>
+                    </div>
+                    <div class="before-after">
+                        <span class="before">Runway: 6 months</span>
+                        <span class="arrow">→</span>
+                        <span class="after">18 months (plus growth)</span>
+                    </div>
+                </div>
+                <p class="case-study-description">Founder, bootstrapped</p>
+                <p class="case-study-results">"We were failing silently. Lots of effort, slow growth. Vantage Point helped us identify which customers actually paid well, then we rebuilt our entire go-to-market around them. Profit and growth happened simultaneously."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS / SOCIAL PROOF -->
+    <section class="section testimonials">
+        <h2>The Real Talk From Business Owners</h2>
+        <p class="section-intro">Here's what happens when someone who actually knows your business starts coaching you.</p>
+
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">"I came in thinking I needed to work harder. Turns out, I needed to work smarter. The diagnostic alone was worth thousands. Three months in, we'd already fixed our biggest bottleneck. Now we're predictable and profitable."</p>
+                <p class="testimonial-author">James Mitchell</p>
+                <p class="testimonial-title">Founder, Manufacturing Business</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">"What stands out is they're not trying to sell me their 'system' — they're solving my actual problems. The accountability helps, but the frameworks? That's what changes everything. We went from chaos to clarity in weeks."</p>
+                <p class="testimonial-author">Sarah Chen</p>
+                <p class="testimonial-title">Director, Marketing Agency</p>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">"I've done other coaching programmes. This is different. They focus on systems and profitability, not just vanity metrics. My business now runs without me constantly fighting fires. That's priceless."</p>
+                <p class="testimonial-author">Michael O'Reilly</p>
+                <p class="testimonial-title">Managing Director, Logistics Firm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY SECTION -->
+    <section class="authority">
+        <div class="authority-container">
+            <h2>Coaching From Someone Who's Actually Done It</h2>
+
+            <div class="authority-grid">
+                <div class="authority-stat">
+                    <div class="authority-number">500+</div>
+                    <div class="authority-label">Businesses Coached</div>
+                </div>
+                <div class="authority-stat">
+                    <div class="authority-number">£200M+</div>
+                    <div class="authority-label">Client Revenue Generated</div>
+                </div>
+                <div class="authority-stat">
+                    <div class="authority-number">ICF</div>
+                    <div class="authority-label">Certified Coach</div>
+                </div>
+                <div class="authority-stat">
+                    <div class="authority-number">15+</div>
+                    <div class="authority-label">Years in Business</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; font-size: 1rem; opacity: 0.95;">
+                <p>Published author | Podcast host | Regular speaker at business conferences | Founder of multiple 7-figure businesses</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IRRESISTIBLE STACK / OFFER SECTION -->
+    <section class="irresistible-stack">
+        <div class="irresistible-container">
+            <h2>Your Free Growth Diagnostic Package</h2>
+            <p class="irresistible-intro">This isn't a generic consultation. This is a deep-dive designed to pinpoint exactly what's holding you back.</p>
+
+            <div class="stack-items">
+                <div class="stack-item">
+                    <div class="stack-item-icon">🎯</div>
+                    <h4>90-Minute Deep Dive</h4>
+                    <p>Strategic assessment of your business model, bottlenecks, and untapped opportunities.</p>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-icon">📊</div>
+                    <h4>Business Scorecard</h4>
+                    <p>A comprehensive overview of your business across 12 key metrics compared to industry benchmarks.</p>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-icon">🔍</div>
+                    <h4>Bottleneck Analysis</h4>
+                    <p>Crystal-clear identification of your number one constraint and what fixing it would enable.</p>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-icon">📋</div>
+                    <h4>90-Day Action Plan</h4>
+                    <p>A specific, prioritised roadmap for your first quarter. Not vague. Actionable. Real.</p>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-icon">🎙️</div>
+                    <h4>Session Recording</h4>
+                    <p>Full access to the recording so you can review insights and share with your team.</p>
+                </div>
+            </div>
+
+            <div class="value-summary">
+                <h3>What This Actually Costs (If You Bought It)</h3>
+                <div class="value-breakdown">
+                    <div class="value-item">
+                        <div class="value-item-amount">£600</div>
+                        <div class="value-item-label">Deep Dive Session</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-item-amount">£400</div>
+                        <div class="value-item-label">Business Scorecard</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-item-amount">£300</div>
+                        <div class="value-item-label">Analysis & Plan</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-item-amount">£200</div>
+                        <div class="value-item-label">Recording & Materials</div>
+                    </div>
+                </div>
+                <p><strong>Total Value: £1,500</strong></p>
+                <div class="free-badge">Completely Free (For Qualifying Businesses)</div>
+                <p style="font-size: 0.9rem; margin-top: 1rem; color: #777;">We only work with businesses where we believe we can genuinely help. That's why we screen carefully.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL -->
+    <section class="section">
+        <div class="risk-reversal">
+            <h3>The ROI Promise</h3>
+            <p>If you don't see measurable progress within the first 90 days of working with us, we'll refund your entire investment.</p>
+            <div class="guarantee-badge">
+                <h4>100% Results-Based Guarantee</h4>
+                <p>Not "you'll feel better." Measurable: revenue growth, time reclaimed, systems built, team clarity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY -->
+    <section class="section">
+        <div class="urgency">
+            <h3>Limited Availability</h3>
+            <p>We only take on 8 new clients per quarter. This isn't artificial urgency—it's a genuine constraint. We refuse to scale beyond what we can deliver with excellence.</p>
+            <div class="spots-available">⏱️ Next Quarter: 3 Spots Remaining</div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section faq" id="faq">
+        <h2>Questions We Hear Often</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How much time commitment is this?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The coaching itself is 90 minutes per week during your sprint (usually one call + some async work). Most clients find they save far more time than they invest because we eliminate the activities that weren't working anyway. You're replacing chaos with clarity, not adding hours on top of your existing schedule.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What industries do you specialise in?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We work across service-based businesses: agencies, consultancies, SaaS, recruitment, manufacturing, logistics, professional services, e-commerce, and more. The fundamentals of strategy, systems, sales, and scale are universal. Your industry's nuances are something we'll absolutely understand during the diagnostic.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>Is this remote or in-person coaching?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We primarily operate remotely via video call, which gives you access to coaching regardless of location. We occasionally do in-person intensive workshops for clients within the UK, particularly for team coaching. The default is always what works best for your business.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>How is this different from other business coaches?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Most coaches are generalists. We specialise. We focus on strategy, systems, sales, and scale—the four pillars that actually move the needle. We're not here to motivate you or sell you on your dream. We're here to fix your business model, build repeatable systems, and help you scale without losing your sanity. We're accountability plus frameworks.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What if my business is unique?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Every business is unique in some ways. But the problems are remarkably similar: unclear strategy, missing systems, inconsistent sales, inability to scale. The frameworks adapt to your context. That's why we do the diagnostic first—to understand exactly what "unique" means for you before we recommend anything.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <h4>What's the investment for ongoing coaching?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The diagnostic is free for qualifying businesses. Ongoing coaching typically ranges from £3K to £8K per month depending on your business size and the scope of work. Most clients find the ROI is 10-20x the investment within the first 90 days. We'll discuss investment during your diagnostic based on your specific situation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta" id="final-cta">
+        <div class="final-cta-container">
+            <h2>Stop Guessing. Start Scaling.</h2>
+            <p>Your free diagnostic is waiting. Ninety minutes to get absolute clarity on what's holding you back. No pitch. No obligation. Just honest assessment and a real action plan.</p>
+            <button class="final-cta-button">Book Your Free Growth Diagnostic</button>
+            <p style="font-size: 0.95rem; margin-top: 2rem; opacity: 0.85;">Limited to qualifying businesses. Usually booked 2-3 weeks in advance.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <h3 style="color: var(--warm-amber); margin-bottom: 1rem; font-family: 'Sora', sans-serif;">Vantage Point Consulting</h3>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+                <a href="#">Podcast</a>
+                <a href="#">Blog</a>
+            </div>
+            <p class="footer-text">Strategic business coaching for SME founders. Building systems, not dependency. ICF Certified.</p>
+            <p class="footer-text">© 2025 Vantage Point Consulting. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('open');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // CTA Button Functionality (placeholder for actual booking integration)
+        const ctaButtons = document.querySelectorAll('.hero-cta, .final-cta-button');
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Book your Free Growth Diagnostic\n\nThis would typically redirect to your booking calendar (Calendly, HubSpot, etc.)');
+            });
+        });
+    </script>
+
+</body>
+</html>

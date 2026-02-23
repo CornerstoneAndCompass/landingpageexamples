@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivory & Ember | Fine Art Documentary Wedding Photography</title>
+    <meta name="description" content="Award-winning wedding photographers specialising in fine art documentary photography. Capturing authentic moments with cinematic storytelling.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ivory: #FFFEF5;
+            --blush: #E8C4B8;
+            --olive: #3D4A3A;
+            --gold: #C9B97A;
+            --charcoal: #2A2A2A;
+            --light-gray: #F5F3F0;
+            --border-light: #E8DFD7;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--ivory);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Film grain texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise"/></filter><rect width="400" height="400" fill="%232A2A2A" filter="url(%23noise)"/></svg>');
+            z-index: -1;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--charcoal);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            line-height: 1.8;
+        }
+
+        a {
+            color: var(--olive);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--gold);
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 254, 245, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--charcoal);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .cta-btn-nav {
+            background: var(--olive);
+            color: var(--ivory);
+            padding: 0.8rem 1.8rem;
+            border-radius: 2px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-btn-nav:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-container {
+                justify-content: space-between;
+            }
+        }
+
+        /* ===== SECTIONS LAYOUT ===== */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .title-accent {
+            display: inline-block;
+            height: 3px;
+            width: 60px;
+            background: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== HERO SECTION ===== */
+        #hero {
+            background: linear-gradient(135deg, var(--ivory) 0%, rgba(232, 196, 184, 0.1) 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 185, 122, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-overline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-headline {
+            font-size: clamp(2.2rem, 7vw, 3.8rem);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+        }
+
+        .hero-subheadline {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: var(--olive);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--olive);
+            color: var(--ivory);
+            padding: 1.2rem 3rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            margin-top: 1rem;
+        }
+
+        .hero-cta:hover {
+            background: var(--gold);
+            color: var(--charcoal);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* ===== PATTERN BREAK / FEAR OF LOSS ===== */
+        #pattern-break {
+            background: var(--olive);
+            color: var(--ivory);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .pattern-break-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .pattern-break-text strong {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* ===== PROBLEM AGITATION ===== */
+        #problem {
+            background: var(--light-gray);
+            padding: 6rem 2rem;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: var(--ivory);
+            padding: 2rem;
+            border-left: 4px solid var(--blush);
+            border-radius: 0 4px 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            border-left-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .problem-card h4 {
+            margin-bottom: 1rem;
+            color: var(--olive);
+        }
+
+        .problem-card p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* ===== IDEAL CLIENT SECTION ===== */
+        #ideal-client {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: var(--ivory);
+        }
+
+        .ideal-client-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ideal-client-content h2 {
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+        }
+
+        .ideal-client-highlight {
+            background: linear-gradient(120deg, rgba(232, 196, 184, 0.2) 0%, rgba(201, 185, 122, 0.1) 100%);
+            padding: 2rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            font-size: 1.1rem;
+            color: var(--olive);
+            font-style: italic;
+            line-height: 1.9;
+        }
+
+        /* ===== SOLUTION REVEAL ===== */
+        #solution {
+            background: var(--light-gray);
+            padding: 6rem 2rem;
+        }
+
+        .solution-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-feature {
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .solution-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-feature h4 {
+            margin-bottom: 0.8rem;
+            color: var(--olive);
+        }
+
+        .solution-feature p {
+            font-size: 0.95rem;
+        }
+
+        /* ===== EXPERIENCE / TIMELINE ===== */
+        #experience {
+            padding: 6rem 2rem;
+            background: var(--ivory);
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: 3rem auto;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--border-light);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+            padding-right: 52%;
+        }
+
+        .timeline-item:nth-child(even) {
+            text-align: left;
+            padding-left: 52%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: var(--gold);
+            border: 3px solid var(--ivory);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--border-light);
+        }
+
+        .timeline-content {
+            background: var(--light-gray);
+            padding: 1.8rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: rgba(201, 185, 122, 0.05);
+        }
+
+        .timeline-content h4 {
+            color: var(--olive);
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                text-align: left;
+                padding-left: 80px;
+                padding-right: 0;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        /* ===== PORTFOLIO / STORIES ===== */
+        #portfolio {
+            background: var(--light-gray);
+            padding: 6rem 2rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-card {
+            background: var(--ivory);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-image-placeholder {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, rgba(232, 196, 184, 0.3) 0%, rgba(201, 185, 122, 0.2) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--gold);
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-content h4 {
+            color: var(--olive);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-content p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.9;
+        }
+
+        .portfolio-meta {
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        /* ===== SOCIAL PROOF / TESTIMONIALS ===== */
+        #testimonials {
+            padding: 6rem 2rem;
+            background: var(--ivory);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            padding: 2.5rem;
+            border-radius: 4px;
+            border-top: 4px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--charcoal);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ivory);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-author-text h5 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--charcoal);
+        }
+
+        .testimonial-author-text p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--gold);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== AUTHORITY ===== */
+        #authority {
+            background: var(--olive);
+            color: var(--ivory);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .authority-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .authority-item {
+            padding: 1.5rem;
+        }
+
+        .authority-item h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .authority-item p {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        /* ===== IRRESISTIBLE STACK ===== */
+        #stack {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--light-gray) 0%, rgba(232, 196, 184, 0.1) 100%);
+        }
+
+        .stack-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stack-features {
+            background: var(--ivory);
+            border: 2px solid var(--border-light);
+            border-radius: 4px;
+            padding: 3rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stack-feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stack-feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-check {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+        }
+
+        .stack-pricing {
+            background: var(--gold);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .stack-pricing h3 {
+            color: var(--ivory);
+            margin-bottom: 1rem;
+        }
+
+        .original-price {
+            font-size: 1.2rem;
+            color: rgba(255, 254, 245, 0.7);
+            text-decoration: line-through;
+            margin-bottom: 0.5rem;
+        }
+
+        .offer-price {
+            font-size: 3rem;
+            color: var(--ivory);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: rgba(255, 254, 245, 0.85);
+            font-style: italic;
+        }
+
+        .stack-cta {
+            background: var(--olive);
+            color: var(--ivory);
+            padding: 1.2rem 3rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 2rem auto 0;
+        }
+
+        .stack-cta:hover {
+            background: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        /* ===== RISK REVERSAL ===== */
+        #risk-reversal {
+            padding: 6rem 2rem;
+            background: var(--ivory);
+            text-align: center;
+        }
+
+        .risk-reversal-content {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(120deg, rgba(232, 196, 184, 0.1) 0%, rgba(201, 185, 122, 0.1) 100%);
+            padding: 3rem 2rem;
+            border-radius: 4px;
+            border: 2px solid var(--border-light);
+        }
+
+        .risk-reversal-content h3 {
+            margin-bottom: 1.5rem;
+            color: var(--olive);
+        }
+
+        .risk-reversal-content p {
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--charcoal);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* ===== URGENCY ===== */
+        #urgency {
+            background: var(--blush);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .urgency-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .urgency-content h3 {
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .urgency-content p {
+            font-size: 1.1rem;
+            color: var(--olive);
+            font-weight: 500;
+        }
+
+        /* ===== FAQ ===== */
+        #faq {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: var(--ivory);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--ivory);
+            transition: background 0.3s ease;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .faq-question:hover {
+            background: rgba(201, 185, 122, 0.05);
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-answer p {
+            padding: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-question {
+            background: rgba(201, 185, 122, 0.08);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        /* ===== FINAL CTA SECTION ===== */
+        #final-cta {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--olive) 100%);
+            color: var(--ivory);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta-content h2 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta-content p {
+            color: rgba(255, 254, 245, 0.95);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        .final-cta-btn {
+            background: var(--gold);
+            color: var(--charcoal);
+            padding: 1.3rem 3.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .final-cta-btn:hover {
+            background: var(--ivory);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--charcoal);
+            color: var(--ivory);
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 254, 245, 0.8);
+            display: block;
+            margin-bottom: 0.7rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 254, 245, 0.1);
+            color: rgba(255, 254, 245, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-gold {
+            color: var(--gold);
+        }
+
+        .text-olive {
+            color: var(--olive);
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 3rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            h3 {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .problem-grid,
+            .solution-grid,
+            .portfolio-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                padding-left: 60px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-dot {
+                left: 15px;
+            }
+
+            .authority-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stack-feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Ivory & Ember</div>
+            <ul class="nav-links">
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#final-cta" class="cta-btn-nav">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-overline">Fine Art Documentary Wedding Photography</div>
+                <h1 class="hero-headline">Your Wedding Will Last One Day</h1>
+                <p class="hero-subheadline">The wrong photographer means you'll regret it forever. We specialise in capturing the moments you'll want to relive for a lifetime.</p>
+                <button class="hero-cta" onclick="document.getElementById('stack').scrollIntoView({behavior: 'smooth'})">Discover Our Approach</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PATTERN BREAK ===== -->
+    <section id="pattern-break">
+        <div class="pattern-break-text">
+            Most couples spend more time choosing the perfect venue than choosing their photographer. <strong>That's backwards.</strong>
+        </div>
+    </section>
+
+    <!-- ===== PROBLEM AGITATION ===== -->
+    <section id="problem">
+        <div class="container">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2>What Keeps Couples Up At Night</h2>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h4>No Backup Plan</h4>
+                    <p>Single photographers get ill, equipment fails. Your wedding day has no second chance. You need insurance that actually covers it.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Stiff, Posed Awkwardness</h4>
+                    <p>Those stilted wedding shots where everyone looks uncomfortable? That's not your wedding. That's a photograph session that happens to be at a wedding.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Missing the Magic Moments</h4>
+                    <p>One lens, one angle, one pair of eyes. The stolen kiss before the ceremony, the quiet moment with your mum—gone, because they were looking the other way.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Waiting Forever For Photos</h4>
+                    <p>Six months later, your stories are fading. Months of waiting leaves memories scattered. Your album becomes an afterthought you've already moved past.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Poor Editing & Inconsistency</h4>
+                    <p>Overly processed, over-saturated, colours that don't match reality. Or worse—images that look nothing like each other, as if five different photographers shot your day.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Images You're Afraid To Share</h4>
+                    <p>You don't want to display your own wedding photos. That's not a collection—that's a regret. Your photographs should make you proud.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== IDEAL CLIENT ===== -->
+    <section id="ideal-client">
+        <div class="ideal-client-content">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2>Is Ivory & Ember Right For You?</h2>
+            </div>
+            <div class="ideal-client-highlight">
+                If you want your wedding photos to feel like a beautiful film—natural, emotional, timeless—and not like a stiff portrait session, where every frame tells the story of who you actually are together, then yes. We're the right choice.
+            </div>
+            <p style="margin-top: 2rem; font-size: 1rem;">You believe your love story deserves to be told beautifully. You want photographs that make you *feel* something when you look at them years from now. You're not interested in trends—you want timeless. You want art.</p>
+        </div>
+    </section>
+
+    <!-- ===== SOLUTION REVEAL ===== -->
+    <section id="solution">
+        <div class="solution-content">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2>The Ivory & Ember Difference</h2>
+            </div>
+            <div class="solution-grid">
+                <div class="solution-feature">
+                    <div class="solution-feature-icon">📸</div>
+                    <h4>Two Photographers, Always</h4>
+                    <p>Never a single point of failure. Double the coverage, double the perspective, twice the magic captured.</p>
+                </div>
+                <div class="solution-feature">
+                    <div class="solution-feature-icon">✨</div>
+                    <h4>Golden Hour Mastery</h4>
+                    <p>We plan your entire day around the most beautiful light. Your portraits aren't an afterthought—they're the centrepiece.</p>
+                </div>
+                <div class="solution-feature">
+                    <div class="solution-feature-icon">🎬</div>
+                    <h4>Cinematic Storytelling</h4>
+                    <p>Fine art documentary approach. We blend into your day, capturing authentic moments that feel like scenes from a film you'll want to watch forever.</p>
+                </div>
+                <div class="solution-feature">
+                    <div class="solution-feature-icon">⚡</div>
+                    <h4>Fast Delivery</h4>
+                    <p>Your gallery delivered in 4 weeks, not 4 months. Memories arrive while they're still fresh, not when you've already moved on.</p>
+                </div>
+                <div class="solution-feature">
+                    <div class="solution-feature-icon">🎨</div>
+                    <h4>Fine Art Editing</h4>
+                    <p>Consistent, elegant, timeless. Your colours are true to life—beautiful, but recognisably *your* wedding. Not a filter over someone else's vision.</p>
+                </div>
+                <div class="solution-feature">
+                    <div class="solution-feature-icon">📖</div>
+                    <h4>Full Day Coverage</h4>
+                    <p>Getting ready through the send-off. We capture the entire story, not just the ceremony and reception highlights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE / TIMELINE ===== -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2>How We Cover Your Day</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Getting Ready</h4>
+                        <p>We arrive early to capture the anticipation—the quiet moments before everything changes. Your family helping with buttons, champagne smiles, the candid laughter no one plans for.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>First Look & Ceremony Prep</h4>
+                        <p>That moment when they first see you. The raw emotion. The steadying breath. We're there for the realness that happens before you walk down the aisle.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>The Ceremony</h4>
+                        <p>Two angles, two photographers. The vows, the tears, the kiss. We capture every exchange so you'll never miss a moment—even when you're living it.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Portraits & Golden Hour</h4>
+                        <p>This is when we create art. The light is perfect. You're relaxed. We guide you through moments of connection that will become the images you treasure most.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Reception Details</h4>
+                        <p>Speeches, dancing, stolen glances across the room. The joy, the celebration, the messy beautiful reality of your loved ones together.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>The Send-Off</h4>
+                        <p>Those final moments as the evening winds down. The exit, the goodbye, the beginning of your next chapter—captured with the same care as the first dance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO / STORIES ===== -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2>Wedding Stories We've Told</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image-placeholder">🌹</div>
+                    <div class="portfolio-content">
+                        <h4>Eleanor & James</h4>
+                        <p>An intimate ceremony in the Cotswolds where the weather turned and the light became something magical. We captured the stolen moments between the rain—a quiet first dance under the marquee, the way she looked at him when she thought no one was watching, his hand finding hers during the meal.</p>
+                        <div class="portfolio-meta">Cotswolds • May • 650 images</div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image-placeholder">💍</div>
+                    <div class="portfolio-content">
+                        <h4>Sophie & Marcus</h4>
+                        <p>A modern celebration in London where energy and emotion filled every frame. The getting-ready chaos, the spontaneous laughter, the way his entire face changed when she walked in—these are the moments that define a marriage. Unscripted. Honest. Utterly theirs.</p>
+                        <div class="portfolio-meta">London • July • 720 images</div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image-placeholder">💐</div>
+                    <div class="portfolio-content">
+                        <h4>Emma & David</h4>
+                        <p>A countryside celebration where autumn light painted everything in gold. We documented their entire story—from getting ready in the farmhouse to dancing barefoot under the stars. The intimate portrait of a couple deeply in love, told through light, emotion, and the spaces between moments.</p>
+                        <div class="portfolio-meta">Yorkshire • September • 680 images</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2>What Couples Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"When we saw the photos, I cried. They didn't feel like wedding photographs—they felt like a love story. Every image told us something about ourselves we'd never seen before. Ivory & Ember didn't just capture our day; they captured our marriage."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">L&J</div>
+                        <div class="testimonial-author-text">
+                            <h5>Lucy & Jack</h5>
+                            <p>Married June 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"We were nervous about being photographed all day, but they made us feel invisible in the best way. They captured the moments we were actually living, not posing. The whole experience felt intimate and unhurried. That's rare."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S&M</div>
+                        <div class="testimonial-author-text">
+                            <h5>Sophie & Marcus</h5>
+                            <p>Married August 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Having two photographers meant nothing was missed. But more than that—having them there made us feel like our day mattered. They treated every moment like it was important. That care shows in every single frame."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">E&D</div>
+                        <div class="testimonial-author-text">
+                            <h5>Emma & David</h5>
+                            <p>Married September 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AUTHORITY ===== -->
+    <section id="authority">
+        <div class="authority-content">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2 style="color: var(--ivory);">We're Trusted By</h2>
+            </div>
+            <div class="authority-grid">
+                <div class="authority-item">
+                    <h4>400+</h4>
+                    <p>Couples married & celebrated</p>
+                </div>
+                <div class="authority-item">
+                    <h4>Featured In</h4>
+                    <p>Vogue Weddings, Brides Magazine, Rock My Wedding</p>
+                </div>
+                <div class="authority-item">
+                    <h4>International</h4>
+                    <p>UK & destination weddings worldwide</p>
+                </div>
+                <div class="authority-item">
+                    <h4>Professional</h4>
+                    <p>Master class member, SWPP certified</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== IRRESISTIBLE STACK / OFFER ===== -->
+    <section id="stack">
+        <div class="stack-container">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2>The Ivory & Ember Signature Collection</h2>
+            </div>
+
+            <div class="stack-features">
+                <h3 style="text-align: center; color: var(--olive); margin-bottom: 2rem;">What You Get</h3>
+                <div class="stack-feature-list">
+                    <div class="stack-feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text"><strong>Full Day Coverage</strong> (2 photographers)</div>
+                    </div>
+                    <div class="stack-feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text"><strong>500+ Edited Images</strong> (gallery delivery in 4 weeks)</div>
+                    </div>
+                    <div class="stack-feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text"><strong>Online Gallery</strong> (shareable with all guests)</div>
+                    </div>
+                    <div class="stack-feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text"><strong>Engagement Shoot</strong> (2-hour session, 100+ images)</div>
+                    </div>
+                    <div class="stack-feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text"><strong>30-Page Fine Art Album</strong> (museum-quality print)</div>
+                    </div>
+                    <div class="stack-feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text"><strong>Highlight Film</strong> (3-4 minute cinematic edit)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stack-pricing">
+                <h3>The Signature Collection</h3>
+                <div class="original-price">£6,500 value</div>
+                <div class="offer-price">£3,900</div>
+                <div class="price-note">Early booking rate (limited to first 5 bookings of 2026)</div>
+                <button class="stack-cta" onclick="document.getElementById('final-cta').scrollIntoView({behavior: 'smooth'})">Check Availability</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RISK REVERSAL ===== -->
+    <section id="risk-reversal">
+        <div class="risk-reversal-content">
+            <h3>The Love It Guarantee</h3>
+            <p>If you don't absolutely love your photos, we'll re-edit your entire gallery to your vision at no extra cost. We're not interested in working with couples who aren't thrilled with the result. Your satisfaction is non-negotiable.</p>
+            <div class="guarantee-badge">100% Satisfaction Promise</div>
+        </div>
+    </section>
+
+    <!-- ===== URGENCY ===== -->
+    <section id="urgency">
+        <div class="urgency-content">
+            <h3>We Photograph Only 30 Weddings Per Year</h3>
+            <p>2026 dates are filling fast. The best date slots typically book 8-12 months in advance. If your wedding is this year, contact us now to check availability.</p>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-title">
+                <div class="title-accent"></div>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <h4>What happens if it rains on the wedding day?</h4>
+                        <div class="faq-toggle">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Rain doesn't stop stories. We have decades of experience shooting in all weather—and honestly, some of the most romantic images happen under grey skies. We'll work with you beforehand to identify covered spaces and backup locations. Rainy day photos often have the most emotional depth.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <h4>How many photos will we receive?</h4>
+                        <div class="faq-toggle">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The Signature Collection includes 500+ fully edited, gallery-ready images. We deliver every moment that matters—not hundreds of near-duplicates. Each image we deliver is one we're proud to show you. Most of our couples tell us they wish they had more!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <h4>Do you travel for destination weddings?</h4>
+                        <div class="faq-toggle">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We've photographed weddings across Europe, the Mediterranean, and beyond. We specialise in destination weddings—the travel costs, accommodation, and logistics are handled with professionalism. We've documented 80+ destination celebrations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <h4>Can we see a full gallery from a previous wedding?</h4>
+                        <div class="faq-toggle">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes—with permission from that couple. We respect privacy, but we're happy to arrange a portfolio view or connect you directly with past clients who are keen to share their experience. Seeing a full day's work from start to finish is the best way to understand our style.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <h4>What's the deposit and payment structure?</h4>
+                        <div class="faq-toggle">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>£800 secures your date and holds your booking. The balance of £3,100 is due 8 weeks before your wedding. We also offer payment plans to spread costs over time. Full invoice details and terms are in your booking agreement.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <h4>Do you offer videography?</h4>
+                        <div class="faq-toggle">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We include a 3-4 minute highlight film with cinematic editing as part of the Signature Collection. For a full wedding film (4K, longer edit, multiple angles), we work with our trusted videography partners. Ask us about bundle pricing when you enquire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section id="final-cta">
+        <div class="final-cta-content">
+            <h2>Let's Tell Your Love Story</h2>
+            <p>Your wedding deserves photography that matches the beauty of the day itself. We're here to capture the moments that matter—the ones you'll want to relive forever.</p>
+            <button class="final-cta-btn" onclick="alert('Thank you for your interest! In a live site, this would open an enquiry form or email booking.')">Start Your Enquiry</button>
+            <p style="font-size: 0.9rem; margin-top: 2rem; opacity: 0.8;">Available for 2026 and 2027 weddings • Limited to 30 weddings per year</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Ivory & Ember</h4>
+                <p style="color: rgba(255, 254, 245, 0.8); margin-bottom: 1rem;">Fine art documentary wedding photography specialising in authentic, cinematic storytelling across the UK and beyond.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Service</h4>
+                <a href="#portfolio">View Portfolio</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="#stack">Pricing</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Pinterest</a>
+                <a href="#">hello@ivoryandember.co.uk</a>
+            </div>
+            <div class="footer-section">
+                <h4>Locations</h4>
+                <a href="#">UK Weddings</a>
+                <a href="#">Destination Weddings</a>
+                <a href="#">European Weddings</a>
+                <a href="#">Custom Inquiries</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ivory & Ember. All rights reserved. | <a href="#" style="color: rgba(255, 254, 245, 0.6);">Privacy Policy</a> | <a href="#" style="color: rgba(255, 254, 245, 0.6);">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- ===== INTERACTIVE FAQ SCRIPT ===== -->
+    <script>
+        // FAQ Toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll enhancement
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

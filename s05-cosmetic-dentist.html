@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lumière Dental - Luxury cosmetic dentistry in London. Transform your smile with anxiety-free treatments, digital smile design, and 0% finance options.">
+    <title>Lumière Dental | Luxury Cosmetic Dentistry | Transform Your Smile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --soft-rose: #E8B4B8;
+            --pearl-white: #FAF9F6;
+            --deep-plum: #4A1942;
+            --gold: #C5A55A;
+            --light-blush: #FFF0F0;
+            --dark-text: #2A2A2A;
+            --light-text: #666666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--dark-text);
+            background-color: var(--pearl-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(232, 180, 184, 0.2);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--deep-plum), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--deep-plum), #3a1435);
+            color: white;
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(74, 25, 66, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-blush) 0%, var(--pearl-white) 50%, rgba(232, 180, 184, 0.1) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(197, 165, 90, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232, 180, 184, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--deep-plum);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--deep-plum), #3a1435);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 25, 66, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(74, 25, 66, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--deep-plum);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 2px solid var(--deep-plum);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--deep-plum);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1.5rem;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+            }
+        }
+
+        /* Section Spacing */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: var(--pearl-white);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: var(--deep-plum);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 1rem auto 0;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: linear-gradient(135deg, var(--light-blush) 0%, rgba(255, 240, 240, 0.5) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(232, 180, 184, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(74, 25, 66, 0.1);
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--deep-plum);
+            margin-bottom: 0.8rem;
+        }
+
+        .problem-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* Ideal Client Section */
+        .ideal-client {
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.1) 0%, var(--pearl-white) 100%);
+        }
+
+        .ideal-client-box {
+            background: white;
+            border-left: 5px solid var(--gold);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .ideal-client-box p {
+            font-size: 1.2rem;
+            color: var(--deep-plum);
+            font-weight: 500;
+            line-height: 1.8;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: linear-gradient(135deg, var(--deep-plum) 0%, #3a1435 100%);
+            color: white;
+        }
+
+        .solution .section-title {
+            color: white;
+        }
+
+        .solution .section-title::after {
+            background: var(--gold);
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .solution-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+        }
+
+        .solution-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .solution-item p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        /* Treatments Section */
+        .treatments {
+            background: var(--pearl-white);
+        }
+
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .treatment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            border: 1px solid rgba(232, 180, 184, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(74, 25, 66, 0.15);
+            border-color: var(--gold);
+        }
+
+        .treatment-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .treatment-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--deep-plum);
+            margin-bottom: 1rem;
+        }
+
+        .treatment-card p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Transformations Section */
+        .transformations {
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.08) 0%, var(--pearl-white) 100%);
+        }
+
+        .transformations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .transformation-story {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--gold);
+        }
+
+        .transformation-story h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--deep-plum);
+            margin-bottom: 1rem;
+        }
+
+        .transformation-label {
+            display: inline-block;
+            background: var(--soft-rose);
+            color: var(--deep-plum);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .transformation-story p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .transformation-quote {
+            background: var(--light-blush);
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-style: italic;
+            color: var(--deep-plum);
+            font-weight: 500;
+            border-left: 3px solid var(--gold);
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, var(--light-blush) 0%, rgba(255, 240, 240, 0.3) 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(232, 180, 184, 0.3);
+            position: relative;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--dark-text);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .testimonial-author {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--deep-plum);
+            font-size: 0.95rem;
+        }
+
+        /* Authority Section */
+        .authority {
+            background: linear-gradient(135deg, var(--deep-plum) 0%, #3a1435 100%);
+            color: white;
+        }
+
+        .authority .section-title {
+            color: white;
+        }
+
+        .authority .section-title::after {
+            background: var(--gold);
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .credential-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .credential-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .credential-text {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Stack Section */
+        .stack {
+            background: var(--pearl-white);
+        }
+
+        .stack-box {
+            background: linear-gradient(135deg, var(--light-blush) 0%, rgba(255, 240, 240, 0.3) 100%);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 3.5rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .stack-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--deep-plum);
+            margin-bottom: 2rem;
+        }
+
+        .stack-items {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .stack-items li {
+            padding: 0.8rem 0;
+            color: var(--dark-text);
+            font-weight: 500;
+            border-bottom: 1px solid rgba(232, 180, 184, 0.2);
+        }
+
+        .stack-items li:last-child {
+            border-bottom: none;
+        }
+
+        .stack-items li::before {
+            content: '✓ ';
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 0.8rem;
+        }
+
+        .stack-value {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .value-label {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--deep-plum);
+            font-weight: 700;
+        }
+
+        .value-cta {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Risk Reversal Section */
+        .risk-reversal {
+            background: linear-gradient(135deg, rgba(197, 165, 90, 0.1) 0%, rgba(232, 180, 184, 0.1) 100%);
+        }
+
+        .guarantee-box {
+            background: white;
+            border-left: 5px solid var(--gold);
+            padding: 2.5rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 2rem auto;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .guarantee-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--deep-plum);
+            margin-bottom: 1rem;
+        }
+
+        .guarantee-box p {
+            color: var(--light-text);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Urgency Section */
+        .urgency {
+            background: linear-gradient(135deg, var(--soft-rose) 0%, rgba(232, 180, 184, 0.6) 100%);
+            color: var(--deep-plum);
+            text-align: center;
+        }
+
+        .urgency-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .urgency h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .urgency p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .spots-remaining {
+            background: white;
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            color: var(--deep-plum);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--pearl-white);
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid rgba(232, 180, 184, 0.2);
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(74, 25, 66, 0.1);
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, var(--light-blush) 0%, rgba(255, 240, 240, 0.5) 100%);
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--deep-plum);
+            font-size: 1rem;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, rgba(232, 180, 184, 0.2) 0%, rgba(255, 240, 240, 0.8) 100%);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            padding: 1.5rem;
+            color: var(--light-text);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--deep-plum) 0%, #3a1435 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .problems-grid,
+            .solution-grid,
+            .treatments-grid,
+            .transformations-grid,
+            .testimonials-grid,
+            .credentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stack-box {
+                padding: 2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .ideal-client-box,
+            .guarantee-box {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Smooth animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Lumière Dental</div>
+            <ul class="nav-links">
+                <li><a href="#treatments">Treatments</a></li>
+                <li><a href="#transformations">Transformations</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#cta" class="cta-button">Book Consultation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>You Don't Need to Hide Your Smile Anymore. And You Don't Need to Spend a Fortune to Fix It.</h1>
+            <p>Transform your smile with anxiety-free cosmetic dentistry, digital smile design, and flexible finance options from just £250 per month.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.getElementById('cta').scrollIntoView({behavior: 'smooth'})">Get Your Free Consultation</button>
+                <button class="btn-secondary" onclick="document.getElementById('transformations').scrollIntoView({behavior: 'smooth'})">See Real Results</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Agitation Section -->
+    <section class="problem">
+        <div class="section-container">
+            <h2 class="section-title">You're Not Alone in Feeling This Way</h2>
+
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">😔</div>
+                    <h3>Hiding Your Smile</h3>
+                    <p>Covering your mouth when you laugh or smile for photos, feeling self-conscious in social situations and missing out on life's moments.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">💭</div>
+                    <h3>Confidence Lost</h3>
+                    <p>Avoiding important meetings, presentations, and opportunities because you're worried about how your teeth look. Your smile affects everything.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">😰</div>
+                    <h3>Fear of the Dentist</h3>
+                    <p>Past negative experiences, fear of pain, and anxiety about the dentist's chair have kept you from getting the help you need.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">💷</div>
+                    <h3>Cost Concerns</h3>
+                    <p>You've been putting off treatment because you think it'll cost thousands of pounds and you can't afford it right now.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">❓</div>
+                    <h3>Not Sure Who to Trust</h3>
+                    <p>So many dental practices out there—how do you know you're choosing the right one? Who has genuine expertise and actually cares?</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Waiting for the Right Time</h3>
+                    <p>You've been telling yourself you'll sort your smile "someday," but that day never comes. You're tired of waiting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ideal Client Section -->
+    <section class="ideal-client">
+        <div class="section-container">
+            <div class="ideal-client-box">
+                <p>🎯 <strong>If you've been putting off fixing your smile because you're scared of the dentist, the cost, or both—this is for you.</strong></p>
+                <p style="margin-top: 1.5rem;">You deserve to walk into a room with confidence. You deserve to smile freely without overthinking it. And you deserve a dental practice that understands your fears and treats you like family, not just another appointment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="section-container">
+            <h2 class="section-title">Meet Lumière Dental: Anxiety-Free Cosmetic Dentistry</h2>
+
+            <div class="solution-grid">
+                <div class="solution-item">
+                    <h3>✓ Anxiety-Free Zone</h3>
+                    <p>Sedation options available. Our team specialises in nervous patients. You're in control. Always.</p>
+                </div>
+
+                <div class="solution-item">
+                    <h3>✓ Digital Smile Design</h3>
+                    <p>See exactly what your smile will look like before we start treatment. No surprises. Pure confidence.</p>
+                </div>
+
+                <div class="solution-item">
+                    <h3>✓ 0% Finance</h3>
+                    <p>Flexible payment plans from just £250 per month. Your dream smile is more affordable than you think.</p>
+                </div>
+
+                <div class="solution-item">
+                    <h3>✓ Expert Care</h3>
+                    <p>GDC registered, CQC rated, and Invisalign Diamond Provider status. Your smile is in expert hands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatments Section -->
+    <section class="treatments" id="treatments">
+        <div class="section-container">
+            <h2 class="section-title">Treatments That Transform Lives</h2>
+
+            <div class="treatments-grid">
+                <div class="treatment-card">
+                    <div class="treatment-icon">✨</div>
+                    <h3>Porcelain Veneers</h3>
+                    <p>Custom-designed porcelain veneers transform discoloured, chipped, or misaligned teeth in just two appointments. Natural-looking results that last for years.</p>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">🦷</div>
+                    <h3>Invisalign Aligners</h3>
+                    <p>Invisible teeth straightening without the hassle of traditional braces. Subtle, comfortable, and effective. The confidence booster that no one will notice.</p>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">💎</div>
+                    <h3>Professional Teeth Whitening</h3>
+                    <p>Brighten your smile by up to eight shades with our bespoke whitening treatments. Clinically proven results that last.</p>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">🎨</div>
+                    <h3>Composite Bonding</h3>
+                    <p>Repair chips, cracks, and gaps with tooth-coloured composite resin. Quick, affordable, and beautifully natural.</p>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">🌟</div>
+                    <h3>Dental Implants</h3>
+                    <p>Replace missing teeth with implants that look, feel, and function like natural teeth. A permanent solution to boost your confidence and oral health.</p>
+                </div>
+
+                <div class="treatment-card">
+                    <div class="treatment-icon">👑</div>
+                    <h3>Complete Smile Makeovers</h3>
+                    <p>Combine multiple treatments for your ultimate smile transformation. Our bespoke approach ensures results tailored to you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smile Transformations Section -->
+    <section class="transformations" id="transformations">
+        <div class="section-container">
+            <h2 class="section-title">Real People. Real Results. Real Confidence.</h2>
+
+            <div class="transformations-grid">
+                <div class="transformation-story">
+                    <h3>From Hiding to Shining: Sophie's Journey</h3>
+                    <span class="transformation-label">Porcelain Veneers</span>
+                    <p>Sophie had always covered her mouth when laughing. Years of self-consciousness about stained and chipped teeth meant she avoided social situations and hated photographs.</p>
+                    <p><strong>The Transformation:</strong> She chose porcelain veneers and experienced not just a new smile, but a new life. Within weeks of treatment, she was the first to volunteer for photos at her sister's wedding.</p>
+                    <div class="transformation-quote">"I didn't realise how much my teeth were holding me back. Now I smile all the time. The confidence is real."</div>
+                </div>
+
+                <div class="transformation-story">
+                    <h3>Invisalign Success: James's Story</h3>
+                    <span class="transformation-label">Invisalign Aligners</span>
+                    <p>James was a successful businessman, but his crooked teeth affected his self-image. He'd always avoided Invisalign because he thought it wouldn't work, or he'd be too busy to manage it.</p>
+                    <p><strong>The Transformation:</strong> Invisalign aligners were perfect for his lifestyle. Eighteen months later, he had the straight smile he'd always wanted—and nobody at work even noticed the treatment happening.</p>
+                    <div class="transformation-quote">"I wish I'd done this years ago. My straight smile has genuinely changed how I feel about myself."</div>
+                </div>
+
+                <div class="transformation-story">
+                    <h3>Panic to Peace: Lisa's Dental Anxiety Breakthrough</h3>
+                    <span class="transformation-label">Composite Bonding + Whitening</span>
+                    <p>Lisa had been terrified of the dentist for over a decade. A negative childhood experience had left her avoiding dental care. Her teeth suffered, and her confidence plummeted. She felt trapped.</p>
+                    <p><strong>The Transformation:</strong> We introduced sedation and created a safe, supportive environment. Composite bonding fixed her chips and cracks; professional whitening restored her smile's brightness. She's now a regular visitor and feels genuinely calm.</p>
+                    <div class="transformation-quote">"I was so nervous, but the team made me feel completely safe. I'm not afraid anymore. I actually look forward to my appointments."</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="section-container">
+            <h2 class="section-title">Trusted by Over 5,000 Delighted Patients</h2>
+
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Lumière Dental transformed my smile and my life. I'm confident again. The staff are incredible, and the technology they use is truly world-class. I couldn't recommend them more highly."</p>
+                    <p class="testimonial-author">— Victoria M., London</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I was terrified of the dentist after a bad experience years ago. Lumière understood my anxiety and never rushed me. The sedation option gave me the confidence to finally get my teeth sorted. I'm so grateful."</p>
+                    <p class="testimonial-author">— Marcus T., Surrey</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The digital smile design was genius. I could see exactly what my veneers would look like before I committed. No guessing, no worrying. And the results exceeded my expectations. Best investment I've made."</p>
+                    <p class="testimonial-author">— Priya K., Brighton</p>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I've been coming to Lumière for two years. The finance options made my smile makeover actually possible. And the quality of care is genuinely exceptional. They treat you like family, not a patient number."</p>
+                    <p class="testimonial-author">— David C., Manchester</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authority Section -->
+    <section class="authority">
+        <div class="section-container">
+            <h2 class="section-title">Why Lumière Dental</h2>
+
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <div class="credential-number">5000+</div>
+                    <div class="credential-text">Smile Transformations Completed</div>
+                </div>
+
+                <div class="credential-item">
+                    <div class="credential-number">GDC</div>
+                    <div class="credential-text">Registered & CQC Rated</div>
+                </div>
+
+                <div class="credential-item">
+                    <div class="credential-number">Diamond</div>
+                    <div class="credential-text">Invisalign Provider Status</div>
+                </div>
+
+                <div class="credential-item">
+                    <div class="credential-number">20+</div>
+                    <div class="credential-text">Years Combined Expert Experience</div>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 3rem; font-size: 0.95rem; color: rgba(255, 255, 255, 0.85);">Featured in Tatler, Vogue, and The Times. Trusted by thousands of patients across the UK.</p>
+        </div>
+    </section>
+
+    <!-- Irresistible Stack Section -->
+    <section class="stack" id="cta">
+        <div class="section-container">
+            <div class="stack-box">
+                <h2>Your Free Smile Consultation Includes:</h2>
+
+                <ul class="stack-items">
+                    <li>Digital Smile Design Preview (see your results before treatment)</li>
+                    <li>Comprehensive Treatment Plan Tailored to You</li>
+                    <li>Detailed Finance Options (0% interest available)</li>
+                    <li>Professional X-rays & Examination</li>
+                    <li>Personalised Aftercare Guide</li>
+                </ul>
+
+                <div class="stack-value">
+                    <div class="value-label">Total Value of This Consultation Normally</div>
+                    <div class="value-amount">£350</div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--deep-plum); margin-bottom: 0.5rem;">Your Price Today</h3>
+                    <div class="value-cta">Completely Complimentary</div>
+                </div>
+
+                <button class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.8rem;" onclick="alert('Book your free consultation here or integrate with booking system')">Book Your Free Consultation Now</button>
+
+                <p style="margin-top: 1.5rem; color: var(--light-text); font-size: 0.9rem;">No credit card required. No obligation. Just a friendly conversation about your smile goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Reversal Section -->
+    <section class="risk-reversal">
+        <div class="section-container">
+            <div class="guarantee-box">
+                <h3>🎯 Our Love Your Smile Guarantee</h3>
+                <p>We're so confident you'll love your results that we back it with our guarantee: If you're not completely happy with your smile after your treatment is finished, we'll make it right at no additional cost. That's not just a promise—that's our commitment to your confidence.</p>
+                <p style="margin-top: 1.2rem; font-size: 0.9rem; color: var(--light-text);">This guarantee covers all cosmetic treatments for 12 months after completion.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section class="urgency">
+        <div class="section-container">
+            <div class="urgency-content">
+                <h2>Don't Wait Any Longer</h2>
+                <p>Your confidence is waiting. The smile you've always wanted is just one consultation away.</p>
+
+                <div class="spots-remaining">
+                    ⏰ Only 15 Complimentary Consultations Available This Month
+                </div>
+
+                <button class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.8rem;" onclick="document.getElementById('cta').scrollIntoView({behavior: 'smooth'})">Claim Your Consultation Spot Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="section-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Will cosmetic dentistry treatment hurt?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not at all. We use advanced local anaesthesia, and our team specialises in making treatment completely comfortable. If you're nervous, we offer sedation options to ensure you're relaxed throughout. Many patients tell us they barely feel a thing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>How can I afford cosmetic dentistry?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer flexible finance options with 0% interest available. Treatments can be spread over months or years, making your dream smile genuinely affordable. Our team will discuss all your options during your free consultation and find a plan that works for your budget.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>How long does cosmetic dentistry treatment take?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>This depends on your treatment. Some treatments like teeth whitening take a single appointment. Veneers typically require two visits. Invisalign takes 12-18 months with regular appointments. During your consultation, we'll give you a detailed timeline for your specific treatment plan.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>How do I maintain my results?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Cosmetic treatments are built to last. We provide comprehensive aftercare instructions for your specific treatment. Regular brushing, flossing, and avoiding staining foods and drinks will help. Most treatments require minimal maintenance—just good oral hygiene habits and regular check-ups.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Am I too old for cosmetic dentistry?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely not. We treat patients from their early 20s through to those well into retirement. There's no age limit when it comes to improving your smile. Some of our most delighted patients are over 60—they tell us they wish they'd done it sooner!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>What if I'm a nervous patient?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We specialise in nervous patients and genuinely understand dental anxiety. We offer sedation options, break treatment into smaller appointments if needed, and create a completely safe environment. Many anxious patients come to us and leave feeling confident about their dental care. You're in control. Always.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="section-container">
+            <h2>The Smile You've Always Wanted Is Closer Than You Think</h2>
+            <p>Stop putting it off. Stop hiding. Stop waiting for the right time. The right time is now. Your free consultation is waiting, and it costs nothing except a few minutes of your time.</p>
+
+            <button class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.8rem; margin-bottom: 2rem;" onclick="document.getElementById('cta').scrollIntoView({behavior: 'smooth'})">Book Your Free Smile Consultation</button>
+
+            <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.85);">No credit card. No commitment. Just the start of your smile journey.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Lumière Dental</h4>
+                <p>Luxury cosmetic dentistry in the heart of London. Transforming smiles, transforming lives.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Accreditations</h4>
+                <p>GDC Registered: 239847</p>
+                <p>CQC Registered</p>
+                <p>Invisalign Diamond Provider</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="#treatments">Our Treatments</a></p>
+                <p><a href="#transformations">Transformations</a></p>
+                <p><a href="#faq">FAQ</a></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Lumière Dental. All rights reserved. | GDC Registration: 239847 | CQC Registration: 1234567 | Privacy Policy</p>
+            <p style="margin-top: 1rem;">This website is for informational purposes. Always consult with a qualified dental professional for treatment advice.</p>
+        </div>
+    </footer>
+
+    <!-- FAQ Toggle Script -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll enhancements
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({behavior: 'smooth'});
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

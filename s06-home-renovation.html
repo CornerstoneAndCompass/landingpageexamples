@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Renovations & Extensions | Hearthstone Builds</title>
+    <meta name="description" content="Premium home renovation & extension specialists. Fixed-price contracts, dedicated project managers, 3D visualisations. Your dream home, stress-free.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;600;700;800&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: #1A1A1A;
+            background-color: #FFF8F0;
+            line-height: 1.6;
+        }
+
+        /* COLOUR PALETTE */
+        :root {
+            --slate-grey: #3D4F5F;
+            --warm-oak: #C4915E;
+            --cream: #FFF8F0;
+            --forest-green: #2D5F2D;
+            --charcoal: #1A1A1A;
+            --light-grey: #E8E4E0;
+            --accent-blue: #4A7C7E;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Vollkorn', serif;
+            color: var(--charcoal);
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: #333;
+        }
+
+        a {
+            color: var(--warm-oak);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--forest-green);
+        }
+
+        /* STICKY NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 248, 240, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Vollkorn', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--charcoal);
+        }
+
+        .logo span {
+            color: var(--warm-oak);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--slate-grey);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-cta {
+            background: var(--warm-oak);
+            color: white;
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--forest-green);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 60px;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--slate-grey) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(196, 145, 94, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pattern-break {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--warm-oak);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3.8rem;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: #E8E4E0;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--warm-oak);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(196, 145, 94, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--forest-green);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(196, 145, 94, 0.4);
+        }
+
+        .hero-subtext {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #C0C0C0;
+        }
+
+        /* PROBLEM SECTION */
+        .problem-section {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--slate-grey);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .problem-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--warm-oak);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .problem-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-item h4 {
+            color: var(--charcoal);
+            margin-bottom: 0.8rem;
+        }
+
+        .problem-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* IDEAL CLIENT CALL-OUT */
+        .ideal-client {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--slate-grey) 0%, var(--accent-blue) 100%);
+            color: white;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .ideal-client-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .ideal-client h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .ideal-client p {
+            font-size: 1.2rem;
+            color: #E8E4E0;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        /* SOLUTION SECTION */
+        .solution-section {
+            padding: 6rem 2rem;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .solution-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, #F5F1ED 0%, white 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--light-grey);
+            transition: all 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--warm-oak);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .solution-card h4 {
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .solution-card p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* SERVICES SECTION */
+        .services-section {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--warm-oak);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h4 {
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+
+        .service-benefits {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .service-benefits li {
+            padding: 0.4rem 0;
+            color: #555;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-benefits li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--forest-green);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PROCESS SECTION */
+        .process-section {
+            padding: 6rem 2rem;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: var(--warm-oak);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 5px 15px rgba(196, 145, 94, 0.3);
+        }
+
+        .process-step h4 {
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+
+        .process-step p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        .process-step::after {
+            content: '';
+            position: absolute;
+            top: 35px;
+            left: 100%;
+            width: calc(100% - 20px);
+            height: 2px;
+            background: linear-gradient(90deg, var(--warm-oak) 0%, transparent 100%);
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        @media (max-width: 1024px) {
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-step::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* PORTFOLIO SECTION */
+        .portfolio-section {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-image {
+            background: linear-gradient(135deg, var(--slate-grey) 0%, var(--accent-blue) 100%);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .portfolio-content {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .portfolio-header h4 {
+            color: var(--warm-oak);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-header h3 {
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid var(--light-grey);
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .detail {
+            text-align: left;
+        }
+
+        .detail-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--slate-grey);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .detail-value {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+
+        .portfolio-reaction {
+            background: #FFF8F0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--forest-green);
+        }
+
+        .portfolio-reaction p {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .client-name {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-style: normal;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-card {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-details {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-image {
+                min-height: 250px;
+            }
+        }
+
+        /* SOCIAL PROOF */
+        .testimonials-section {
+            padding: 6rem 2rem;
+            background: white;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, #F5F1ED 0%, white 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--light-grey);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 1rem;
+            font-size: 4rem;
+            color: var(--warm-oak);
+            opacity: 0.3;
+            font-family: 'Vollkorn', serif;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .stars {
+            color: var(--warm-oak);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 1rem;
+        }
+
+        .testimonial-role {
+            font-size: 0.85rem;
+            color: var(--slate-grey);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* AUTHORITY SECTION */
+        .authority-section {
+            padding: 5rem 2rem;
+            background: var(--charcoal);
+            color: white;
+        }
+
+        .authority-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .authority-section h2 {
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .authority-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(196, 145, 94, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .authority-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--warm-oak);
+        }
+
+        .authority-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--warm-oak);
+            margin-bottom: 0.5rem;
+            font-family: 'Vollkorn', serif;
+        }
+
+        .authority-label {
+            font-size: 0.95rem;
+            color: #C0C0C0;
+            letter-spacing: 0.5px;
+        }
+
+        .certifications {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(196, 145, 94, 0.2);
+        }
+
+        .certifications h4 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .certs-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .certs-list li {
+            font-size: 1.1rem;
+            color: #E8E4E0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .certs-list li::before {
+            content: '✓';
+            color: var(--forest-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .authority-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* IRRESISTIBLE STACK SECTION */
+        .stack-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--forest-green) 0%, #1F4620 100%);
+            color: white;
+            margin: 3rem 0;
+        }
+
+        .stack-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stack-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stack-price {
+            text-align: center;
+            font-size: 0.95rem;
+            color: #C0F0D5;
+            margin-bottom: 3rem;
+        }
+
+        .stack-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stack-benefits {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2.5rem;
+        }
+
+        .stack-benefits h3 {
+            color: white;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .benefits-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: #E8E4E0;
+        }
+
+        .benefits-list li::before {
+            content: '→';
+            color: #C4F0D5;
+            font-weight: bold;
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .stack-cta {
+            background: var(--warm-oak);
+            color: white;
+            padding: 1.5rem 3.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .stack-cta:hover {
+            background: #B27A4D;
+            transform: translateY(-3px);
+        }
+
+        .stack-button-wrapper {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* RISK REVERSAL */
+        .risk-reversal {
+            padding: 5rem 2rem;
+            background: white;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .risk-reversal h2 {
+            margin-bottom: 2rem;
+        }
+
+        .risk-reversal-content {
+            background: linear-gradient(135deg, #FFF8F0 0%, #F5F1ED 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 2px solid var(--warm-oak);
+        }
+
+        .risk-reversal-content p {
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: var(--warm-oak);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1.5rem;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            padding: 6rem 2rem;
+            background: var(--cream);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-container {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-question {
+            padding: 1.8rem;
+            background: linear-gradient(135deg, #F5F1ED 0%, white 100%);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .faq-question:hover {
+            background: #F0EAE6;
+        }
+
+        .faq-question h4 {
+            margin: 0;
+            color: var(--charcoal);
+            font-size: 1.1rem;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--warm-oak);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 2rem 1.8rem;
+            background: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 2rem 1.8rem;
+        }
+
+        .faq-answer p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        /* FINAL CTA SECTION */
+        .final-cta-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--slate-grey) 100%);
+            color: white;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta-section h2 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .final-cta-section p {
+            color: #E8E4E0;
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .final-cta-button {
+            background: var(--warm-oak);
+            color: white;
+            padding: 1.3rem 3.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(196, 145, 94, 0.4);
+        }
+
+        .final-cta-button:hover {
+            background: var(--forest-green);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(196, 145, 94, 0.5);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--charcoal);
+            color: #C0C0C0;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #C0C0C0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--warm-oak);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(196, 145, 94, 0.2);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* UTILITY CLASSES */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-wrapper {
+            padding: 0 2rem;
+        }
+
+        /* BLUEPRINT DECORATION */
+        .blueprint-accent {
+            position: relative;
+            display: inline-block;
+        }
+
+        .blueprint-accent::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, var(--warm-oak), var(--warm-oak) 10px, transparent 10px, transparent 20px);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.8rem 0;
+            }
+            .logo {
+                font-size: 1.3rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            h3 {
+                font-size: 1.4rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .hero {
+                padding: 4rem 1.5rem;
+                margin-top: 70px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Hearthstone <span>Builds</span></div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button class="nav-cta">Get Started</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="pattern-break">Your Home, Your Rules</div>
+            <h1>3 Out of 4 Renovation Projects Go Over Budget.<br>Yours Won't.</h1>
+            <p>Because we charge fixed prices, manage the whole process, and stand behind every single promise.</p>
+            <button class="cta-button">Book Your Free Design Session</button>
+            <div class="hero-subtext">→ No commitment. No pressure. Just expert advice.</div>
+        </div>
+    </section>
+
+    <!-- PROBLEM AGITATION SECTION -->
+    <section class="problem-section">
+        <div class="section-title">
+            <h2>You've Heard the Horror Stories</h2>
+            <p>And they've probably stopped you from renovating.</p>
+        </div>
+        <div class="problem-grid">
+            <div class="problem-item">
+                <h4>Builders Who Vanish</h4>
+                <p>Your calls go unanswered. Your emails pile up. You're left wondering what's actually happening on your property.</p>
+            </div>
+            <div class="problem-item">
+                <h4>Projects That Never End</h4>
+                <p>A "6-week extension" turns into 6 months. Your family's routine is destroyed. Your stress levels through the roof.</p>
+            </div>
+            <div class="problem-item">
+                <h4>Hidden Costs Everywhere</h4>
+                <p>You get the initial quote, then discover "unforeseen issues." Suddenly you've spent £15,000 more than planned.</p>
+            </div>
+            <div class="problem-item">
+                <h4>You Become the Project Manager</h4>
+                <p>With nobody else driving progress, you're chasing tradespeople, dealing with disputes, and coordinating schedules.</p>
+            </div>
+            <div class="problem-item">
+                <h4>Dodgy Workmanship</h4>
+                <p>The work's sloppy. The trades aren't properly vettted. Your home's left with defects, and nobody takes responsibility.</p>
+            </div>
+            <div class="problem-item">
+                <h4>Living in a Building Site</h4>
+                <p>Your home becomes uninhabitable. There's dust, noise, strangers everywhere, and no end in sight to the chaos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IDEAL CLIENT CALL-OUT -->
+    <section class="ideal-client">
+        <div class="ideal-client-content">
+            <h2>If you've been dreaming of your perfect home but the horror stories have you paralysed...</h2>
+            <p>There's a better way. One where you actually enjoy the process. Where everything stays on time, on budget, and stress-free.</p>
+        </div>
+    </section>
+
+    <!-- SOLUTION REVEAL SECTION -->
+    <section class="solution-section">
+        <div class="solution-header">
+            <h2>Hearthstone Builds: The Better Way to Renovate</h2>
+            <p style="font-size: 1.2rem; color: var(--slate-grey); text-align: center; max-width: 700px; margin: 0 auto;">We handle everything. You enjoy the results.</p>
+        </div>
+        <div class="solution-grid">
+            <div class="solution-card">
+                <div class="solution-icon">📋</div>
+                <h4>Fixed-Price Contracts</h4>
+                <p>You know the cost upfront. No surprises. No hidden fees. That's the price—full stop.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon">👤</div>
+                <h4>Dedicated Project Manager</h4>
+                <p>One person. Direct point of contact. They know your project inside out and control the entire timeline.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon">📹</div>
+                <h4>Weekly Video Updates</h4>
+                <p>Never wondering what's happening. Every week you get a video walk-through showing your project's progress.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon">🎨</div>
+                <h4>3D Renders Before Work</h4>
+                <p>See exactly what your home will look like. Visualise the finished space. Make changes before we build a thing.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon">🛡️</div>
+                <h4>12-Month Defect Warranty</h4>
+                <p>Any issues within a year? We fix them. No questions. Fully covered. Your peace of mind is guaranteed.</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon">💼</div>
+                <h4>Expert Trade Network</h4>
+                <p>We work with only the best craftspeople. All vetted, insured, and accountable to us—which means accountable to you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <div class="section-title">
+            <h2>We Specialise In</h2>
+            <p>Whatever your vision, we've got the expertise to make it real.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h4>Home Extensions</h4>
+                <p>Add valuable living space without the need to move. Fully designed, fully permitted, fully managed.</p>
+                <ul class="service-benefits">
+                    <li>Single & double-storey extensions</li>
+                    <li>Structural engineering included</li>
+                    <li>Building regulation approval handled</li>
+                    <li>Seamless integration with your home</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h4>Loft Conversions</h4>
+                <p>Transform your loft into a functional bedroom, office, or studio space. Adds genuine value to your property.</p>
+                <ul class="service-benefits">
+                    <li>Full structural assessment</li>
+                    <li>Staircase installation</li>
+                    <li>Insulation & ventilation</li>
+                    <li>Building & planning approval</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h4>Full Home Renovations</h4>
+                <p>Reimagine your entire space from the ground up. We handle layout, systems, finishes, and everything between.</p>
+                <ul class="service-benefits">
+                    <li>Design from scratch</li>
+                    <li>Structural work & rewiring</li>
+                    <li>Plumbing & heating systems</li>
+                    <li>Complete interior finishing</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h4>Kitchen & Bathroom Renovations</h4>
+                <p>The rooms that matter most. Premium finishes, expert installation, and attention to every detail.</p>
+                <ul class="service-benefits">
+                    <li>Bespoke design & layout</li>
+                    <li>High-quality fixtures & fittings</li>
+                    <li>Plumbing & electrical work</li>
+                    <li>Tiling & finishes expertise</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h4>New Builds (Residential)</h4>
+                <p>Building something from nothing. We deliver complete residential properties built to the highest standards.</p>
+                <ul class="service-benefits">
+                    <li>Architectural design services</li>
+                    <li>Complete structural construction</li>
+                    <li>All systems installation</li>
+                    <li>Final handover ready</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h4>Bespoke Projects</h4>
+                <p>Whatever your specific vision—whether unique or complex—we deliver custom solutions tailored to you.</p>
+                <ul class="service-benefits">
+                    <li>Specialist consultancy</li>
+                    <li>Unique structural solutions</li>
+                    <li>Craftsmanship & detail</li>
+                    <li>Complete project ownership</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process-section" id="process">
+        <div class="section-title">
+            <h2>How We Work Together</h2>
+            <p>A 5-step process designed to eliminate confusion and deliver results.</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Design Consultation</h4>
+                <p>We meet at your home, understand your vision, explore options, and discuss timelines and budgets.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>3D Visualisation</h4>
+                <p>We create detailed 3D renders so you can see exactly what your space will look like before we break ground.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Fixed-Price Quote</h4>
+                <p>You get a transparent, itemised quote with no hidden costs. Everything's locked in. No surprises later.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Build & Updates</h4>
+                <p>Work begins. Your dedicated project manager leads the charge with weekly video updates keeping you in the loop.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <h4>Handover & Warranty</h4>
+                <p>Your home is ready. We hand over the keys and stand behind our work with a 12-month defect warranty.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="section-title">
+            <h2>Real Projects. Real Results.</h2>
+            <p>See how we've transformed homes for families like yours.</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-image">🏠</div>
+                <div class="portfolio-content">
+                    <div class="portfolio-header">
+                        <h4>EXTENSION</h4>
+                        <h3>Modern Oak Extension in Berkshire</h3>
+                    </div>
+                    <div class="portfolio-details">
+                        <div class="detail">
+                            <div class="detail-label">Scope</div>
+                            <div class="detail-value">Single-storey rear extension + new kitchen</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Timeline</div>
+                            <div class="detail-value">16 weeks (on schedule)</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Budget</div>
+                            <div class="detail-value">£89,000 (no overruns)</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Completed</div>
+                            <div class="detail-value">October 2024</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-reaction">
+                        <p>"We were convinced it would overrun. The fact that Hearthstone finished exactly when they said they would, with zero extra costs, was honestly shocking. Best part? Our dedicated project manager answered every question immediately. No guessing. No drama." <span class="client-name">— Helen & Marcus T.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-image">🛏️</div>
+                <div class="portfolio-content">
+                    <div class="portfolio-header">
+                        <h4>LOFT CONVERSION</h4>
+                        <h3>Georgian Master Suite in Islington</h3>
+                    </div>
+                    <div class="portfolio-details">
+                        <div class="detail">
+                            <div class="detail-label">Scope</div>
+                            <div class="detail-value">Full loft conversion + ensuite bathroom</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Timeline</div>
+                            <div class="detail-value">12 weeks (accelerated)</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Budget</div>
+                            <div class="detail-value">£65,000 (locked in)</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Completed</div>
+                            <div class="detail-value">August 2024</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-reaction">
+                        <p>"We got 3D renders before anything started. We could see the space, adjust details, even visualise the colour. By the time the team arrived, we were 100% confident. That visual certainty made all the difference. The execution was flawless." <span class="client-name">— Sarah K.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="portfolio-image">✨</div>
+                <div class="portfolio-content">
+                    <div class="portfolio-header">
+                        <h4>FULL RENOVATION</h4>
+                        <h3>Period Cottage Revitalisation in Surrey</h3>
+                    </div>
+                    <div class="portfolio-details">
+                        <div class="detail">
+                            <div class="detail-label">Scope</div>
+                            <div class="detail-value">Complete internal renovation, new systems</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Timeline</div>
+                            <div class="detail-label">20 weeks (complex structural work)</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Budget</div>
+                            <div class="detail-value">£156,000 (final cost matched quote)</div>
+                        </div>
+                        <div class="detail">
+                            <div class="detail-label">Completed</div>
+                            <div class="detail-value">May 2024</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-reaction">
+                        <p>"A full renovation of a period cottage is complex. Hearthstone's weekly video updates meant we never felt out of the loop, even when we were working abroad. Seeing our home transform week by week was brilliant. Worth every penny." <span class="client-name">— David & Jennifer M.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS / SOCIAL PROOF -->
+    <section class="testimonials-section">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+            <p>Don't just take our word for it.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Hearthstone completely changed our perception of home renovation. Our extension was finished on time, on budget, and the quality was exceptional. The project manager was in constant contact. We felt totally supported throughout."</p>
+                <div class="testimonial-author">Claire R.</div>
+                <div class="testimonial-role">Kitchen Extension, Sussex</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Every other builder we spoke to gave vague timelines and rough estimates. Hearthstone gave us a fixed price and stuck to it. When they said 14 weeks, they meant 14 weeks. The professionalism was night and day."</p>
+                <div class="testimonial-author">James T.</div>
+                <div class="testimonial-role">Loft Conversion, London</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"The 3D renders before work started were brilliant. My wife and I could walk around our 'new kitchen' before a single board was cut. By the time installation began, we had zero doubts. That visual confidence made the whole process feel controlled."</p>
+                <div class="testimonial-author">Robert W.</div>
+                <div class="testimonial-role">Full Renovation, Hampshire</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY SECTION -->
+    <section class="authority-section">
+        <div class="authority-container">
+            <h2>Why You Can Trust Hearthstone</h2>
+            <div class="authority-grid">
+                <div class="authority-item">
+                    <div class="authority-value">£15M+</div>
+                    <div class="authority-label">Projects Completed</div>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-value">98%</div>
+                    <div class="authority-label">On-Time Delivery</div>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-value">450+</div>
+                    <div class="authority-label">Happy Homeowners</div>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-value">24/7</div>
+                    <div class="authority-label">Emergency Support</div>
+                </div>
+            </div>
+            <div class="certifications">
+                <h4>Certifications & Credentials</h4>
+                <ul class="certs-list">
+                    <li>Federation of Master Builders Member</li>
+                    <li>TrustMark Registered</li>
+                    <li>Checkatrade: 9.8/10 Rating</li>
+                    <li>Full Public Liability Insurance (£10M)</li>
+                    <li>NHBC Registered Builder</li>
+                    <li>Fully Qualified & Insured Workforce</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- IRRESISTIBLE STACK / OFFER -->
+    <section class="stack-section">
+        <div class="stack-container">
+            <h2>Your Free Design & Budget Session</h2>
+            <div class="stack-price">
+                <span>Valued at</span> <span class="stack-value">£2,000</span> <span>—</span> <span>Complimentary</span>
+            </div>
+            <div class="stack-benefits">
+                <h3>Here's What You Get:</h3>
+                <ul class="benefits-list">
+                    <li>On-site design consultation with our head designer</li>
+                    <li>Detailed scope and requirements assessment</li>
+                    <li>Concept sketches tailored to your home</li>
+                    <li>3D visualisation of your project (minimum 2 options)</li>
+                    <li>Fixed-price estimate (no hidden costs)</li>
+                    <li>Planning permission guidance & advice</li>
+                    <li>Recommendations on timelines and sequencing</li>
+                    <li>No obligation. No pressure to commit.</li>
+                </ul>
+            </div>
+            <div class="stack-button-wrapper">
+                <button class="stack-cta">Claim Your Free Session Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL / GUARANTEE -->
+    <section class="risk-reversal">
+        <h2>The On-Time, On-Budget Promise</h2>
+        <div class="risk-reversal-content">
+            <p>Every single project comes with our iron-clad guarantee:</p>
+            <p><strong>If we don't deliver on time or come in under budget, we absorb the cost difference. Not you.</strong></p>
+            <p>We're so confident in our process, our team, and our planning that we're willing to stake our margin on it. That's how much we believe in getting it right.</p>
+            <div class="guarantee-badge">Fully Guaranteed. Zero Risk.</div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know.</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do I need planning permission?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>It depends on what you're building and where. Most extensions, loft conversions, and renovations fall under "Permitted Development" if they meet certain criteria, meaning you won't need formal permission. However, some projects do require it. During your free design session, we'll assess your specific situation and advise you exactly what's required. We handle all planning applications and approvals—it's included in our service.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>How long will my project take?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Timelines vary based on scope and complexity. A kitchen renovation might take 8–12 weeks. An extension could be 14–20 weeks. A full house renovation might be 20–30 weeks. We give you a fixed timeline during the quote phase—and we hit it. Our 98% on-time delivery record speaks for itself. We build in contingency where it matters and communicate any changes immediately.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Can I stay in my home during the work?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Most of our clients stay home during renovations. We manage dust, noise, and access carefully. For large-scale work, we'll recommend temporary protection measures (like dust barriers) to minimise disruption. For full house renovations or periods of significant structural work, temporary relocation might make sense—we'll advise you on what works best for your situation and can help coordinate arrangements if needed.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What warranty do you provide?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Every project comes with a 12-month defect warranty. Any issues with materials, workmanship, or installation that appear within 12 months of handover are our responsibility—we fix them at no cost. For structural work, we provide an NHBC warranty which extends protection for up to 10 years on certain elements. You'll receive full documentation covering all warranties when we complete your project.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>What's the payment schedule?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We use a staged payment approach: 25% deposit to secure your start date and materials, 50% at key milestones throughout the project, and the final 25% upon satisfactory handover. This protects both of us and ensures we're incentivised to deliver on schedule. For larger projects (£100k+), we can discuss flexible payment structures that work for your cash flow. All details are clearly outlined in your fixed-price contract.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h4>Do you offer eco-friendly & sustainable options?</h4>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. We specialise in sustainable renovations including: high-performance insulation, renewable energy systems (solar PV, heat pumps), sustainable materials, water-efficient fixtures, and energy-efficient heating. Building regulations now require better energy performance, and we exceed these standards. We'll discuss eco options during your design consultation and include them in your quote. Investing in sustainability can reduce your energy bills significantly—we'll model the financial return for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta-section">
+        <div class="final-cta-content">
+            <h2>Your Dream Home Is One Conversation Away</h2>
+            <p>Stop letting the horror stories hold you back. Get your free design session. See your vision in 3D. Get a fixed price with zero hidden costs.</p>
+            <button class="final-cta-button">Book Your Free Design Session Today</button>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #A0A0A0;">No credit card required. No strings attached. 45-minute consultation.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#faq">FAQ</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Hearthstone Builds. All rights reserved. | Federation of Master Builders Member | TrustMark Registered | Checkatrade 9.8/10</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAQ TOGGLE SCRIPT -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // CTA button tracking
+        document.querySelectorAll('.cta-button, .final-cta-button, .stack-cta, .nav-cta').forEach(button => {
+            button.addEventListener('click', () => {
+                console.log('CTA clicked');
+                // In a real implementation, this would trigger a modal, form, or redirect
+                alert('Design session booking form would open here. This is a demo page.');
+            });
+        });
+    </script>
+
+</body>
+</html>

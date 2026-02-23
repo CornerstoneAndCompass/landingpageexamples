@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian Finance - Mortgage & Finance Broker | Best Rates Guaranteed</title>
+    <meta name="description" content="Get the best mortgage rates in Australia and UK. Meridian Finance compares 60+ lenders. Free service. Average savings of £47,000 over lifetime.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,100..700;1,9..40,100..700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1B2A4A;
+            --gold: #C9A84C;
+            --white: #FFFFFF;
+            --light-grey: #F7F8FA;
+            --charcoal: #2D3748;
+            --accent-blue: #0F5A9F;
+            --success: #10B981;
+            --text-dark: #1F2937;
+            --text-light: #6B7280;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* ===== STICKY NAV ===== */
+        nav.sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(27, 42, 74, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold), #B8933A);
+            color: var(--navy) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(201, 168, 76, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            nav.sticky-nav {
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .nav-links a {
+                display: none;
+            }
+
+            .nav-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #0F2F5C 50%, var(--accent-blue) 100%);
+            color: var(--white);
+            padding: 120px 2rem 80px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(15, 90, 159, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 168, 76, 0.2);
+            border: 1px solid rgba(201, 168, 76, 0.5);
+            color: var(--gold);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        h1.hero-heading {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-heading strong {
+            color: var(--gold);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .hero-subheading {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold), #B8933A);
+            color: var(--navy);
+            box-shadow: 0 12px 30px rgba(201, 168, 76, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(201, 168, 76, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--gold);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(201, 168, 76, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 1.5rem 60px;
+            }
+
+            h1.hero-heading {
+                font-size: 2rem;
+            }
+
+            .hero-subheading {
+                font-size: 1rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* ===== PROBLEM SECTION ===== */
+        section {
+            padding: 80px 2rem;
+        }
+
+        .section-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-heading {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .problem {
+            background-color: var(--light-grey);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--navy);
+        }
+
+        .problem-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 50px 1.5rem;
+            }
+
+            .section-heading {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ===== IDEAL CLIENT ===== */
+        .ideal-client {
+            background: var(--white);
+        }
+
+        .ideal-client .section-heading {
+            color: var(--navy);
+            margin-bottom: 2rem;
+        }
+
+        .ideal-client-box {
+            background: linear-gradient(135deg, rgba(27, 42, 74, 0.05) 0%, rgba(201, 168, 76, 0.05) 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 2px solid rgba(201, 168, 76, 0.3);
+            margin: 2rem 0;
+        }
+
+        .ideal-client-box p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .ideal-client-traits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .trait {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .trait-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--gold), #B8933A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+
+        .trait-text h4 {
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--navy);
+        }
+
+        .trait-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* ===== SOLUTION ===== */
+        .solution {
+            background: linear-gradient(135deg, var(--navy) 0%, #0F2F5C 100%);
+            color: var(--white);
+        }
+
+        .solution .section-heading {
+            color: var(--white);
+        }
+
+        .solution-intro {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .solution-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .highlight {
+            background: rgba(201, 168, 76, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            text-align: center;
+        }
+
+        .highlight-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ===== HOW IT WORKS ===== */
+        .how-it-works {
+            background: var(--white);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--gold), #B8933A);
+            color: var(--navy);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .step p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .step-connector {
+            position: absolute;
+            right: -1rem;
+            top: 30px;
+            width: 2rem;
+            height: 2px;
+            background: var(--gold);
+            display: none;
+        }
+
+        @media (min-width: 769px) {
+            .steps {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .step:not(:last-child) .step-connector {
+                display: block;
+            }
+        }
+
+        .timeline-note {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        .timeline-note strong {
+            color: var(--success);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== RESULTS ===== */
+        .results {
+            background: linear-gradient(135deg, var(--light-grey), rgba(201, 168, 76, 0.05));
+        }
+
+        .results-intro {
+            font-size: 1.15rem;
+            color: var(--text-dark);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            background: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-grey);
+            padding: 2.5rem;
+            border-radius: 12px;
+            position: relative;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), #B8933A);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .savings-badge {
+            background: linear-gradient(135deg, var(--success), #059669);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        /* ===== AUTHORITY ===== */
+        .authority {
+            background: linear-gradient(135deg, var(--navy) 0%, #0F2F5C 100%);
+            color: var(--white);
+        }
+
+        .authority .section-heading {
+            color: var(--white);
+        }
+
+        .authority-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .authority-item {
+            text-align: center;
+        }
+
+        .authority-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(201, 168, 76, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .authority-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .authority-item p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+        }
+
+        /* ===== THE OFFER ===== */
+        .the-offer {
+            background: var(--light-grey);
+        }
+
+        .offer-container {
+            background: linear-gradient(135deg, var(--white), rgba(201, 168, 76, 0.03));
+            padding: 3.5rem;
+            border-radius: 16px;
+            border: 2px solid var(--gold);
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -5%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .offer-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background: var(--success);
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .offer-header h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.8rem;
+        }
+
+        .offer-header p {
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .offer-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .offer-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--success);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .offer-item-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .offer-item-text h4 {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            color: var(--navy);
+        }
+
+        .offer-item-text p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .offer-value {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid rgba(201, 168, 76, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .offer-value-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .offer-value-amount {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .offer-value-free {
+            font-size: 1.3rem;
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* ===== RISK REVERSAL ===== */
+        .risk-reversal {
+            background: var(--white);
+        }
+
+        .risk-box {
+            background: linear-gradient(135deg, rgba(27, 42, 74, 0.03), rgba(201, 168, 76, 0.05));
+            padding: 3rem;
+            border-radius: 12px;
+            border: 2px solid var(--navy);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .risk-guarantee {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .risk-description {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .risk-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .risk-point {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .risk-point-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .risk-point-text {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* ===== URGENCY ===== */
+        .urgency {
+            background: linear-gradient(135deg, var(--gold), #B8933A);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .urgency h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .urgency p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .urgency-subtext {
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-items {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            background: var(--light-grey);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 168, 76, 0.2);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--navy);
+            background: var(--white);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: rgba(201, 168, 76, 0.05);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* ===== FINAL CTA ===== */
+        .final-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, #0F2F5C 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            border-radius: 6px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--navy);
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+            background: var(--white);
+        }
+
+        .form-disclaimer {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--gold), #B8933A);
+            color: var(--navy);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(201, 168, 76, 0.4);
+        }
+
+        /* ===== FLOATING CTA ===== */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--gold), #B8933A);
+            color: var(--navy);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 12px 30px rgba(201, 168, 76, 0.4);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(201, 168, 76, 0.5);
+        }
+
+        .floating-cta.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.8rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .booking-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'DM Serif Display', serif;
+            color: var(--gold);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-compliance {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        .compliance-text {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        @media (prefers-reduced-motion: no-preference) {
+            .problem-card,
+            .stat-card,
+            .testimonial-card,
+            .authority-item {
+                opacity: 0;
+                animation: fadeInUp 0.6s ease-out forwards;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        /* ===== UTILITY ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-3 {
+            margin-top: 3rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- STICKY NAVIGATION -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Meridian Finance</a>
+            <ul class="nav-links">
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="nav-cta">Book Free Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                🛡️ Trusted by 5,000+ Australians & UK Clients
+            </div>
+            <h1 class="hero-heading">Your Bank Doesn't Want You to Know This: <strong>You're Probably Paying Thousands More Than You Should on Your Mortgage.</strong></h1>
+            <p class="hero-subheading">While you've been loyal to your bank, they've been quiet about the rates your competitors are getting. Let's fix that.</p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn btn-primary">Get Your Free Rate Comparison</a>
+                <a href="#how" class="btn btn-secondary">See How We Help</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM AGITATION SECTION -->
+    <section class="problem">
+        <div class="section-container">
+            <h2 class="section-heading">The Problem With Your Current Mortgage</h2>
+            <p style="font-size: 1.05rem; color: #6B7280; margin-bottom: 2rem;">Banks profit from your loyalty. Here's what they're banking on:</p>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h3>🏦 Banks Profit From Loyalty</h3>
+                    <p>You stay because switching feels complicated. Your bank knows this. They don't compete—they pocket the difference.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🔍 Hidden Fees Everywhere</h3>
+                    <p>Valuation fees, establishment fees, early exit fees—buried in the fine print. Nobody tells you they're negotiable.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>😴 Comparison Fatigue</h3>
+                    <p>50+ lenders. Different terms. Different timelines. It's designed to overwhelm you into staying put.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>⚠️ Rate Anxiety Without Action</h3>
+                    <p>You know better rates exist. But without expert guidance, you don't move. Meanwhile, every month costs you more.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>🗣️ Brokers Who Push One Lender</h3>
+                    <p>Some brokers have kickback arrangements. They recommend what pays them—not what's best for you.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>😓 Overwhelmed by Financial Jargon</h3>
+                    <p>LVR. Offset accounts. Split loans. Variable vs. fixed. Nobody explains it clearly. You just feel lost.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IDEAL CLIENT SECTION -->
+    <section class="ideal-client">
+        <div class="section-container">
+            <h2 class="section-heading">Is This You?</h2>
+            <div class="ideal-client-box">
+                <p>"I'm a homeowner or first-time buyer who suspects I could be getting a better deal, but I don't have 40 hours to compare 50+ lenders or navigate the complex world of mortgage finance."</p>
+            </div>
+            <div class="ideal-client-traits">
+                <div class="trait">
+                    <div class="trait-icon">✓</div>
+                    <div class="trait-text">
+                        <h4>Homeowners</h4>
+                        <p>Stuck on a rate and wondering if it's still competitive</p>
+                    </div>
+                </div>
+                <div class="trait">
+                    <div class="trait-icon">✓</div>
+                    <div class="trait-text">
+                        <h4>First-Time Buyers</h4>
+                        <p>Navigating the property market for the first time</p>
+                    </div>
+                </div>
+                <div class="trait">
+                    <div class="trait-icon">✓</div>
+                    <div class="trait-text">
+                        <h4>Refinancers</h4>
+                        <p>Ready to switch but overwhelmed by options</p>
+                    </div>
+                </div>
+                <div class="trait">
+                    <div class="trait-icon">✓</div>
+                    <div class="trait-text">
+                        <h4>Property Investors</h4>
+                        <p>Building a portfolio with tax-efficient strategies</p>
+                    </div>
+                </div>
+                <div class="trait">
+                    <div class="trait-icon">✓</div>
+                    <div class="trait-text">
+                        <h4>Self-Employed</h4>
+                        <p>Facing tougher lending criteria from traditional banks</p>
+                    </div>
+                </div>
+                <div class="trait">
+                    <div class="trait-icon">✓</div>
+                    <div class="trait-text">
+                        <h4>Busy Professionals</h4>
+                        <p>Too busy to shop around; need expert guidance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION SECTION -->
+    <section class="solution">
+        <div class="section-container">
+            <h2 class="section-heading">Introducing Meridian Finance: Your Independent Mortgage Strategist</h2>
+            <p class="solution-intro">We're not a bank. We don't push one lender. We're mortgage brokers with access to the whole market—60+ lenders across Australia and the UK. Our job is simple: find you the best deal, explain it clearly, and handle all the paperwork. Think of us as your financial GPS in a world of confusing routes.</p>
+
+            <div class="solution-highlights">
+                <div class="highlight">
+                    <div class="highlight-number">60+</div>
+                    <div class="highlight-text">Lenders Compared</div>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-number">100%</div>
+                    <div class="highlight-text">Independent, Fee-Free Service</div>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-number">1</div>
+                    <div class="highlight-text">Dedicated Strategist</div>
+                </div>
+                <div class="highlight">
+                    <div class="highlight-number">5</div>
+                    <div class="highlight-text">Business Days to Approval</div>
+                </div>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 2rem; border-radius: 12px; margin-top: 3rem; border: 1px solid rgba(201, 168, 76, 0.3);">
+                <p style="font-size: 1rem; line-height: 1.7; margin: 0;">
+                    <strong>Here's what makes us different:</strong> We're FCA regulated (UK) and hold an Australian Credit Licence. We specialise in Australia and UK mortgages. We don't have kickback arrangements. We don't pressure you. We give it straight: if we can't beat your current rate, we'll tell you honestly. Our fee comes from the lender we place you with—never from you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section class="how-it-works" id="how">
+        <div class="section-container">
+            <h2 class="section-heading">How We Work: Simple 3-Step Process</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-connector"></div>
+                    <h3>Free Strategy Call</h3>
+                    <p>Book 30 minutes with your dedicated strategist. We understand your situation, goals, and current mortgage. No pressure. No sales tactics. Just clarity.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-connector"></div>
+                    <h3>We Compare 60+ Lenders</h3>
+                    <p>You relax. We do the work. We analyse rates, fees, terms, and loan structures. We run the numbers across dozens of lenders to find your best fit.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>You Choose. We Execute.</h3>
+                    <p>We present your top 3 options with clear comparisons. You choose. We handle the application, valuations, and approvals. You're never left hanging.</p>
+                </div>
+            </div>
+
+            <div class="timeline-note">
+                <strong>⏱️ Speed Matters</strong>
+                <p>Most clients have approval within 5 business days. Some in 3 days. We're efficient because we know every day you wait on your old rate is money out of your pocket.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS & STATS SECTION -->
+    <section class="results" id="results">
+        <div class="section-container">
+            <h2 class="section-heading">The Results Our Clients See</h2>
+            <p class="results-intro">Numbers don't lie. Here's what happens when you work with specialists who access the whole market instead of staying loyal to one bank.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">£47,000</div>
+                    <div class="stat-label">Average Lifetime Savings per Client</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">0.85%</div>
+                    <div class="stat-label">Average Rate Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Approval Rate on First Application</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4.9/5</div>
+                    <div class="stat-label">Client Satisfaction Score</div>
+                </div>
+            </div>
+
+            <div style="background: var(--white); padding: 2.5rem; border-radius: 12px; margin-top: 3rem; border-left: 4px solid var(--success);">
+                <p style="font-size: 1rem; color: var(--text-dark); line-height: 1.7;">
+                    <strong>What does £47,000 mean for you?</strong> On a £300,000 mortgage over 25 years, a 0.85% rate reduction saves you roughly £1,880 per year. Over the life of the loan, that's £47,000 in your pocket instead of your bank's. Money that could go towards education, retirement, or your next investment property.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="section-container">
+            <h2 class="section-heading">Hear From People We've Helped</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"I thought I had a good rate at 4.2%. Meridian showed me 3.45%. I nearly fell off my chair. They handled everything—I just signed at the end. Simple. Cost me nothing. Saved me £8,400 a year. Game changer."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SH</div>
+                        <div class="author-info">
+                            <h4>Sarah Harris</h4>
+                            <p>First-time home buyer, Melbourne</p>
+                        </div>
+                    </div>
+                    <div class="savings-badge">Saved £84,000 lifetime</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Refinancing was on my to-do list for 2 years. Meridian made it painless. New rate, same property, zero hassle. They explained every step. Best decision I made this year. Already saving money."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <h4>Michael Johnson</h4>
+                            <p>Property refinancer, London</p>
+                        </div>
+                    </div>
+                    <div class="savings-badge">Saved £52,000 lifetime</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"As a property investor with multiple loans, I need someone who understands strategy. Meridian structured my portfolio across three lenders to maximise offset accounts and minimise taxes. Professional. Knowledgeable. Worth every penny (which is zero, since their service is free)."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RP</div>
+                        <div class="author-info">
+                            <h4>Rajesh Patel</h4>
+                            <p>Property investor, Sydney</p>
+                        </div>
+                    </div>
+                    <div class="savings-badge">Saved £156,000 lifetime</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Banks said 'no' to my mortgage application because I'm self-employed. Meridian knew exactly which lenders specialise in self-employed borrowers. Got me approved at a competitive rate in 4 business days. They believed in me when others didn't."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EC</div>
+                        <div class="author-info">
+                            <h4>Emma Clarke</h4>
+                            <p>Self-employed, Brisbane</p>
+                        </div>
+                    </div>
+                    <div class="savings-badge">Saved £39,000 lifetime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHORITY SECTION -->
+    <section class="authority">
+        <div class="section-container">
+            <h2 class="section-heading">We're Trusted. We're Regulated. We're Experts.</h2>
+            <div class="authority-grid">
+                <div class="authority-item">
+                    <div class="authority-icon">🛡️</div>
+                    <h3>FCA Regulated (UK)</h3>
+                    <p>Authorised and regulated by the Financial Conduct Authority. Full compliance with mortgage regulations.</p>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-icon">📜</div>
+                    <h3>Australian Credit Licence</h3>
+                    <p>Licensed by the Australian Securities & Investments Commission (ASIC). ACL #123456789.</p>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-icon">📰</div>
+                    <h3>Featured in Financial Press</h3>
+                    <p>Mentioned in The Times, The Guardian, The Telegraph, ABC News, and Mortgage News Australia.</p>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-icon">⏱️</div>
+                    <h3>15+ Years Experience</h3>
+                    <p>Our team has been helping Australians and UK clients access better rates since 2009.</p>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-icon">🏆</div>
+                    <h3>Award-Winning</h3>
+                    <p>Mortgage Broker of the Year (2023). Best Customer Service in Finance (2022).</p>
+                </div>
+                <div class="authority-item">
+                    <div class="authority-icon">👥</div>
+                    <h3>5,000+ Happy Clients</h3>
+                    <p>From first-time buyers to seasoned investors. All with one goal: better rates, better service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE OFFER SECTION -->
+    <section class="the-offer">
+        <div class="section-container">
+            <div class="offer-container">
+                <div class="offer-header">
+                    <span class="offer-badge">Limited Time Offer</span>
+                    <h2>Your Free Mortgage Health Check</h2>
+                    <p>Everything you need to know about your mortgage—in one strategy session</p>
+                </div>
+
+                <div class="offer-items">
+                    <div class="offer-item">
+                        <div class="offer-item-icon">📊</div>
+                        <div class="offer-item-text">
+                            <h4>Rate Comparison Report</h4>
+                            <p>Full analysis of your current rate vs. market (£500 value)</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="offer-item-icon">💰</div>
+                        <div class="offer-item-text">
+                            <h4>Savings Projection</h4>
+                            <p>Exact numbers showing what you could save annually</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="offer-item-icon">👤</div>
+                        <div class="offer-item-text">
+                            <h4>1-on-1 Strategy Session</h4>
+                            <p>30 minutes with your dedicated mortgage strategist</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="offer-item-icon">📈</div>
+                        <div class="offer-item-text">
+                            <h4>12 Months Rate Monitoring</h4>
+                            <p>We watch rates and alert you to refinancing opportunities</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="offer-item-icon">⚡</div>
+                        <div class="offer-item-text">
+                            <h4>Priority Refinance Alerts</h4>
+                            <p>First to know when a better rate becomes available for you</p>
+                        </div>
+                    </div>
+                    <div class="offer-item">
+                        <div class="offer-item-icon">🎯</div>
+                        <div class="offer-item-text">
+                            <h4>No-Obligation Comparison</h4>
+                            <p>See your options without commitment or pressure</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-value">
+                    <p class="offer-value-text">This package typically costs our corporate clients:</p>
+                    <div class="offer-value-amount">£1,200+</div>
+                    <div class="offer-value-free">Completely Free for You</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISK REVERSAL SECTION -->
+    <section class="risk-reversal">
+        <div class="section-container">
+            <h2 class="section-heading">Zero Risk. Full Transparency. Your Peace of Mind.</h2>
+            <div class="risk-box">
+                <div class="risk-guarantee">Zero Cost. Zero Obligation. Zero Pressure.</div>
+                <p class="risk-description">Our service is completely free. If we can't beat your current rate or find a better structure for your situation, we'll tell you honestly. No hidden agenda. No pressure to proceed. You're always in control.</p>
+                <div class="risk-points">
+                    <div class="risk-point">
+                        <div class="risk-point-icon">✓</div>
+                        <div class="risk-point-text">Free Service, Always</div>
+                    </div>
+                    <div class="risk-point">
+                        <div class="risk-point-icon">✓</div>
+                        <div class="risk-point-text">No Credit Check Without Permission</div>
+                    </div>
+                    <div class="risk-point">
+                        <div class="risk-point-icon">✓</div>
+                        <div class="risk-point-text">We Tell You If We Can't Help</div>
+                    </div>
+                    <div class="risk-point">
+                        <div class="risk-point-icon">✓</div>
+                        <div class="risk-point-text">No Pressure. Period.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGENCY SECTION -->
+    <section class="urgency">
+        <div class="section-container">
+            <h2>Rates Are Moving. Every Week You Wait Costs You.</h2>
+            <p>Right now, someone is getting a better rate than you. Don't let that be you a year from now looking back and thinking, "I should have called."</p>
+            <div class="urgency-subtext">Book your free strategy call today. Take 30 minutes to see if we can save you thousands.</div>
+            <a href="#contact" class="btn btn-primary" style="margin-top: 1rem;">Secure Your Spot Now</a>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq" id="faq">
+        <div class="faq-container">
+            <h2 class="section-heading text-center">Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How is your service free?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When we place you with a lender, the lender pays us a commission. It's standard in the industry. Your rate isn't inflated because of this—the lender pays us from their profit margin. You pay nothing extra. In fact, because we compare 60+ lenders, we often find you a better rate than you'd get by approaching the bank directly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Will checking my mortgage with you affect my credit score?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No. Our initial consultation and rate comparison are done without a credit check. We only run your credit with your explicit permission when you've decided to move forward with a specific lender. A single credit inquiry has minimal impact and disappears in 12 months. Multiple applications within 14 days count as one inquiry, so we time them strategically.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does the whole process take?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our strategy call is 30 minutes. We then spend 1-2 weeks comparing options and gathering your documentation. Once you've chosen a lender and approved our application, approval typically takes 3-5 business days. Settlement happens 4-6 weeks after approval. The entire process from call to money in your account is usually 6-8 weeks. Refinancing can be faster—sometimes 3-4 weeks total.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I'm self-employed or have irregular income?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Self-employed borrowers are our speciality. Many mainstream banks reject self-employed applicants outright. We work with specialist lenders who understand business income, tax strategies, and investment structures. We'll help you present your financials in the best light. Most self-employed clients are approved within the same timeline as traditional borrowers.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are you able to help with first-home buyer grants and schemes?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. We specialise in first-home buyer strategy. We know which lenders offer the best terms for first-time buyers, how to navigate stamp duty exemptions (Australia), and how to maximise shared ownership schemes (UK). We also know which grants you might be eligible for and how to structure your purchase to access them.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you help with investment property loans?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. Investment loans are more complex than home loans, and many mainstream banks don't specialise in them. We work with lenders who understand property portfolios, negative gearing, depreciation scheduling, and multi-property strategies. We'll help you structure your loans to maximise tax efficiency and build wealth faster.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="final-cta" id="contact">
+        <div class="section-container">
+            <h2>Stop Overpaying. Start Saving.</h2>
+            <p>Book your free mortgage health check now. See exactly what you could save—no commitment needed.</p>
+
+            <form class="booking-form">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Smith">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+44 7700 123456">
+                </div>
+                <div class="form-group">
+                    <label for="location">Where Are You Based? *</label>
+                    <select id="location" name="location" required>
+                        <option value="">Select your location</option>
+                        <option value="australia">Australia (New South Wales)</option>
+                        <option value="australia-vic">Australia (Victoria)</option>
+                        <option value="australia-qld">Australia (Queensland)</option>
+                        <option value="australia-wa">Australia (Western Australia)</option>
+                        <option value="australia-sa">Australia (South Australia)</option>
+                        <option value="australia-tas">Australia (Tasmania)</option>
+                        <option value="uk-england">UK (England)</option>
+                        <option value="uk-scotland">UK (Scotland)</option>
+                        <option value="uk-wales">UK (Wales)</option>
+                        <option value="uk-ni">UK (Northern Ireland)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="situation">Your Situation *</label>
+                    <select id="situation" name="situation" required>
+                        <option value="">Select your situation</option>
+                        <option value="first-buyer">First-time home buyer</option>
+                        <option value="refinancer">Looking to refinance</option>
+                        <option value="investor">Property investor</option>
+                        <option value="homeowner">Current homeowner, unsure about rate</option>
+                    </select>
+                </div>
+                <div class="form-disclaimer">
+                    By submitting this form, you agree to receive a call from a Meridian Finance strategist. We'll never share your details and respect your privacy.
+                </div>
+                <button type="submit" class="btn-submit">Book My Free Call</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Meridian Finance</div>
+            <p style="margin-bottom: 2rem; color: rgba(255, 255, 255, 0.8);">Independent mortgage and finance brokers serving Australia and the United Kingdom.</p>
+
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Home Loans</a></li>
+                        <li><a href="#">Refinancing</a></li>
+                        <li><a href="#">Investment Loans</a></li>
+                        <li><a href="#">Commercial Finance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">In the Press</a></li>
+                        <li><a href="#">Awards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Mortgage Guides</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-compliance">
+                <div class="footer-badges">
+                    <div class="badge">FCA Regulated</div>
+                    <div class="badge">ASIC Licensed</div>
+                    <div class="badge">ISO 27001 Certified</div>
+                    <div class="badge">PCI DSS Compliant</div>
+                </div>
+
+                <div class="compliance-text">
+                    Meridian Finance Limited | FCA Registration Number: 654321 | Australian Credit Licence #123456789
+                </div>
+                <div class="compliance-text">
+                    © 2024 Meridian Finance. All rights reserved. This website contains general information only. It does not constitute financial or legal advice. Always seek professional guidance before making mortgage decisions.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING CTA BUTTON -->
+    <button class="floating-cta" id="floatingCta" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
+        <span>💬</span> Get Your Free Call
+    </button>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Floating CTA visibility
+        const floatingCta = document.getElementById('floatingCta');
+        const contactSection = document.getElementById('contact');
+
+        window.addEventListener('scroll', () => {
+            const contactRect = contactSection.getBoundingClientRect();
+            if (contactRect.top < window.innerHeight) {
+                floatingCta.classList.add('hidden');
+            } else {
+                floatingCta.classList.remove('hidden');
+            }
+        });
+
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('.booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            alert(`Thank you, ${name}! A Meridian Finance strategist will call you within 24 hours to schedule your free mortgage health check. Check your email for confirmation.`);
+            this.reset();
+        });
+
+        // Simple scroll animation trigger
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.problem-card, .stat-card, .testimonial-card, .authority-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
