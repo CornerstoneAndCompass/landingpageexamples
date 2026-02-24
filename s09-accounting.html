@@ -365,7 +365,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -538,7 +538,7 @@
 
         .testimonial-role {
             font-size: 0.85rem;
-            color: #999;
+            color: #666;
         }
 
         .stars {
@@ -643,7 +643,7 @@
 
         .offer-components {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
         }
@@ -906,7 +906,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-bottom: 2rem;
         }
@@ -1029,7 +1029,18 @@
             cursor: pointer;
             font-family: 'Open Sans', sans-serif;
         }
-    </style>
+    
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .offer-components { grid-template-columns: repeat(2, 1fr) !important; }
+    .footer-content { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 640px) {
+    .services-grid { grid-template-columns: 1fr !important; }
+    .offer-components { grid-template-columns: 1fr !important; }
+    .footer-content { grid-template-columns: 1fr !important; }
+  }
+</style>
 </head>
  <body>
 <div id="cc-back-bar" style="width:100%;background:#121212;padding:9px 20px;display:flex;align-items:center;position:fixed;top:0;left:0;right:0;z-index:10001;font-family:Inter,system-ui,sans-serif;height:38px;box-sizing:border-box;"><a href="index.html" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#fff;text-decoration:none;letter-spacing:0.3px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);padding:4px 14px 4px 9px;border-radius:6px;transition:all 0.2s;" onmouseover="this.style.background='#9BEC0E';this.style.color='#121212';this.style.borderColor='#9BEC0E'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.18)'"><svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to Collection</a></div>
